@@ -2,7 +2,6 @@ import { useState, useEffect, type FC } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail } from 'lucide-react';
 import logo from '../../assets/logo.png';
-import bannerVideo from '../../assets/banner-video.mp4';
 
 export const ComingSoonPage: FC = () => {
   // Target countdown timer (28 days launch window)
@@ -42,7 +41,7 @@ export const ComingSoonPage: FC = () => {
         {/* Background Video with Precision Industrial Aesthetics */}
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
           <video
-            src={bannerVideo}
+            src="/banner-video.mp4"
             autoPlay
             loop
             muted
