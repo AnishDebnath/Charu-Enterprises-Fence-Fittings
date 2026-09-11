@@ -46,7 +46,7 @@ export const Partners = () => {
   const marqueeItems = [...partners, ...partners, ...partners];
 
   return (
-    <div className="w-full bg-white px-2 sm:px-3 md:px-4 py-8 sm:py-10 border-b border-neutral-100">
+    <div className="w-full bg-white px-2 sm:px-3 md:px-4 py-8 sm:py-10">
       {/* Marquee viewport container matching hero section width with fade gradients on both edges */}
       <div className="w-full relative overflow-hidden">
         {/* Left Side Fade Effect */}

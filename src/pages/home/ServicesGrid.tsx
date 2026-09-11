@@ -39,7 +39,7 @@ export const ServicesGrid: FC = () => {
   const marqueeItems = [...services, ...services];
 
   return (
-    <section id="products" className="w-full bg-[#f8fafc] py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] overflow-hidden border-t border-slate-200/80">
+    <section id="products" className="w-full bg-[#DBEAFE] py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] overflow-hidden border-b border-blue-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mb-12 sm:mb-14 lg:mb-16 items-start">
@@ -47,7 +47,7 @@ export const ServicesGrid: FC = () => {
           <div className="lg:col-span-7 space-y-3">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-              <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight">
+              <span className="text-[#2563EB] text-sm sm:text-base font-bold tracking-tight">
                 Our Services
               </span>
             </div>
@@ -59,12 +59,12 @@ export const ServicesGrid: FC = () => {
 
           {/* Right Column: Paragraph + Blue CTA Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-4 pt-1">
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-md font-medium">
+            <p className="text-slate-700 text-sm sm:text-base leading-relaxed max-w-md font-medium">
               From new decks to shaded patios, we help homeowners build, repair, and improve outdoor areas they can use more often.
             </p>
 
             <button
-              className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+              className="group/btn bg-[#3B82F6] hover:bg-[#0a1532] text-white font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
             >
               <span className="transition-colors">View All Services</span>
               <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
@@ -94,18 +94,18 @@ export const ServicesGrid: FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/95 via-[#071128]/40 via-50% to-[#071128]/10" />
 
               {/* Top-Right Cutout Notch with Concave Fillets */}
-              <div className="absolute top-0 right-0 w-[74px] h-[74px] sm:w-[82px] sm:h-[82px] bg-[#f8fafc] rounded-bl-[28px] sm:rounded-bl-[32px] pointer-events-none z-20 flex items-center justify-center">
+              <div className="absolute top-0 right-0 w-[74px] h-[74px] sm:w-[82px] sm:h-[82px] bg-[#DBEAFE] rounded-bl-[28px] sm:rounded-bl-[32px] pointer-events-none z-20 flex items-center justify-center">
                 {/* Left concave fillet */}
                 <div className="absolute top-0 -left-5 w-5 h-5 overflow-hidden pointer-events-none">
-                  <div className="w-10 h-10 rounded-tr-[22px] shadow-[10px_-10px_0_0_#f8fafc]" />
+                  <div className="w-10 h-10 rounded-tr-[22px] shadow-[10px_-10px_0_0_#DBEAFE]" />
                 </div>
                 {/* Bottom concave fillet */}
                 <div className="absolute -bottom-5 right-0 w-5 h-5 overflow-hidden pointer-events-none">
-                  <div className="w-10 h-10 rounded-tr-[22px] shadow-[10px_-10px_0_0_#f8fafc]" />
+                  <div className="w-10 h-10 rounded-tr-[22px] shadow-[10px_-10px_0_0_#DBEAFE]" />
                 </div>
 
                 {/* Circular Arrow Button inside the Notch */}
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white group-hover:bg-[#3B82F6] text-[#0a1532] group-hover:text-white flex items-center justify-center shadow-md transition-all duration-300 group-hover:scale-105 pointer-events-auto border border-blue-100">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white group-hover:bg-[#3B82F6] text-[#0a1532] group-hover:text-white flex items-center justify-center shadow-md transition-all duration-300 group-hover:scale-105 pointer-events-auto border border-blue-200">
                   <ArrowRight className="w-5 h-5 stroke-[2] group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </div>

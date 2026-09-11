@@ -119,14 +119,14 @@ export const OutdoorTips: FC = () => {
   return (
     <section
       id="outdoor-tips"
-      className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-t border-slate-200/80"
+      className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-b border-slate-200/80"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 lg:mb-16 space-y-3 sm:space-y-4">
           <div className="inline-flex items-center justify-center gap-2">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-            <span className="text-[#3B82F6] text-xs sm:text-sm font-bold tracking-tight uppercase">
+            <span className="text-[#2563EB] text-xs sm:text-sm font-bold tracking-tight uppercase">
               Outdoor Tips
             </span>
           </div>
@@ -143,11 +143,11 @@ export const OutdoorTips: FC = () => {
             <div
               key={article.id}
               onClick={() => setSelectedArticle(article)}
-              className="group bg-white hover:bg-slate-50/50 rounded-[22px] sm:rounded-[24px] border border-slate-200/90 hover:border-[#3B82F6]/50 shadow-sm hover:shadow-xl transition-all duration-300 p-4 sm:p-5 flex flex-col justify-between cursor-pointer transform hover:-translate-y-1"
+              className="group bg-[#DBEAFE] hover:bg-[#bfdbfe]/80 rounded-[22px] sm:rounded-[24px] border border-blue-200/80 hover:border-[#3B82F6]/60 shadow-sm hover:shadow-xl transition-all duration-300 p-4 sm:p-5 flex flex-col justify-between cursor-pointer transform hover:-translate-y-1"
             >
               <div>
                 {/* Nested Image with Rounded Corners */}
-                <div className="relative w-full aspect-[4/3] rounded-[16px] sm:rounded-[18px] overflow-hidden bg-slate-100 mb-5">
+                <div className="relative w-full aspect-[4/3] rounded-[16px] sm:rounded-[18px] overflow-hidden bg-blue-100 mb-5">
                   <img
                     src={article.image}
                     alt={article.title}
@@ -158,17 +158,17 @@ export const OutdoorTips: FC = () => {
 
                 {/* Card Title & Description */}
                 <div className="space-y-2">
-                  <h3 className="text-lg sm:text-[19px] font-bold text-[#0a1532] group-hover:text-[#3B82F6] transition-colors line-clamp-2 leading-snug">
+                  <h3 className="text-lg sm:text-[19px] font-bold text-[#0a1532] group-hover:text-[#1d4ed8] transition-colors line-clamp-2 leading-snug">
                     {article.title}
                   </h3>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal line-clamp-3">
+                  <p className="text-slate-700 text-xs sm:text-sm leading-relaxed font-normal line-clamp-3">
                     {article.description}
                   </p>
                 </div>
               </div>
 
               {/* Read Article Link in Website Brand Blue */}
-              <div className="pt-5 flex items-center text-[#3B82F6] group-hover:text-[#0a1532] font-bold text-xs sm:text-sm gap-2 transition-colors">
+              <div className="pt-5 flex items-center text-[#1d4ed8] group-hover:text-[#0a1532] font-bold text-xs sm:text-sm gap-2 transition-colors">
                 <span>Read Article</span>
                 <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300 stroke-[2.5]" />
               </div>

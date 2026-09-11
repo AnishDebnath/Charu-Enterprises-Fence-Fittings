@@ -24,7 +24,7 @@ export const AboutTeam: FC = () => {
   ];
 
   return (
-    <section id="about" className="w-full bg-[#f5f8fc] py-14 sm:py-16 lg:py-20 font-['Outfit',sans-serif] border-b border-blue-100/60">
+    <section id="about" className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header Row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 mb-10 sm:mb-12 lg:mb-14 items-start">

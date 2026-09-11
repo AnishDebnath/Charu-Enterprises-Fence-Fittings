@@ -60,7 +60,7 @@ export const HomeownerReviews: FC = () => {
   return (
     <section
       id="reviews"
-      className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-t border-slate-200/80"
+      className="w-full bg-[#DBEAFE] py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-b border-blue-200/80"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end">
@@ -70,7 +70,7 @@ export const HomeownerReviews: FC = () => {
             <div className="mb-6 sm:mb-8 space-y-3.5">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-                <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight">
+                <span className="text-[#2563EB] text-sm sm:text-base font-bold tracking-tight">
                   Homeowner reviews
                 </span>
               </div>
@@ -81,7 +81,7 @@ export const HomeownerReviews: FC = () => {
             </div>
 
             {/* Patio Sunset Image */}
-            <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden aspect-[16/11] sm:aspect-[4/3] w-full shadow-md bg-neutral-900 border border-slate-200/80">
+            <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden aspect-[16/11] sm:aspect-[4/3] w-full shadow-md bg-neutral-900 border border-blue-200/80">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentReview.image}

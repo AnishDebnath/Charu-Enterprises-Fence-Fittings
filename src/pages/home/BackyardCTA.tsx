@@ -5,7 +5,7 @@ export const BackyardCTA: FC = () => {
   return (
     <section
       id="estimate-cta"
-      className="relative w-full overflow-hidden font-['Outfit',sans-serif]"
+      className="relative w-full overflow-hidden font-['Outfit',sans-serif] border-t border-b border-slate-900/60"
     >
       {/* Background Image of Outdoor Yard & Craftsmanship */}
       <div className="absolute inset-0 z-0">

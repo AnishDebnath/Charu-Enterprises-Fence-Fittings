@@ -26,7 +26,7 @@ export const RecentProjects: FC = () => {
   return (
     <section
       id="recent-projects"
-      className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-t border-slate-200/80"
+      className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-b border-slate-200/80"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header Row */}

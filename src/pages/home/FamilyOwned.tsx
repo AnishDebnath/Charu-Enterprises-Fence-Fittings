@@ -21,7 +21,7 @@ export const FamilyOwned: FC = () => {
   ];
 
   return (
-    <section id="family-owned" className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-t border-slate-200/80">
+    <section id="family-owned" className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header Row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-12 sm:mb-14 lg:mb-16 items-start">
