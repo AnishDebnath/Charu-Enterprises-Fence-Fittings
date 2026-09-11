@@ -1,3 +1,5 @@
+import { Navbar } from '../../components/common/Navbar';
+import { Footer } from '../../components/common/Footer';
 import { Hero } from './Hero';
 import { Partners } from './Partners';
 import { AboutTeam } from './AboutTeam';
@@ -13,6 +15,7 @@ import { OutdoorTips } from './OutdoorTips';
 export default function HomePage() {
   return (
     <>
+      <Navbar />
       <Hero />
       <Partners />
       <AboutTeam />
@@ -24,6 +27,7 @@ export default function HomePage() {
       <FAQSection />
       <BackyardCTA />
       <OutdoorTips />
+      <Footer />
     </>
   );
 }
