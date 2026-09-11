@@ -1,6 +1,11 @@
 {
   "name": "Charu Enterprises Fence Fittings",
-  "description": "Charu Enterprises Fence Fittings - quality fence fittings and hardware.",
+  "description": "Official website for Charu Enterprises - India's leading manufacturer of pressed steel, malleable iron, and aluminum fence fittings with 50+ years of experience.",
+  "version": "1.0.0",
+  "author": "Charu Enterprises",
+  "url": "https://charuenterprises.com",
+  "industry": "Fence Fittings Manufacturing",
+  "location": "India",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
