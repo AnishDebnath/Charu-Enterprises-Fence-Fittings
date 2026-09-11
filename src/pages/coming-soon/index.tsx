@@ -2,20 +2,20 @@ import { useState, useEffect, type FC } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail } from 'lucide-react';
 import logo from '../../assets/logo.png';
+import bannerVideo from '../../assets/banner video.mp4';
 
 export const ComingSoonPage: FC = () => {
   // Target countdown timer (28 days launch window)
   const [timeLeft, setTimeLeft] = useState({
-    days: 28,
-    hours: 14,
-    minutes: 36,
-    seconds: 22,
+    days: 5,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
   });
 
   useEffect(() => {
     const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 28);
-    targetDate.setHours(targetDate.getHours() + 14);
+    targetDate.setDate(targetDate.getDate() + 5);
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -38,12 +38,15 @@ export const ComingSoonPage: FC = () => {
     <div className="w-full h-[100dvh] bg-white font-['Outfit',sans-serif] p-1.5 sm:p-2.5 md:p-3 lg:p-4 flex flex-col justify-between overflow-hidden selection:bg-[#3B82F6] selection:text-white">
       {/* Outer Container Card */}
       <div className="w-full flex-1 h-full bg-[#0a1532] rounded-xl sm:rounded-2xl md:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl flex flex-col justify-between border border-blue-900/50 text-white px-3 sm:px-6 lg:px-8 py-3.5 sm:py-5 lg:py-6">
-        
-        {/* Background Image with Precision Industrial Aesthetics */}
+
+        {/* Background Video with Precision Industrial Aesthetics */}
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
-          <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2560&q=85"
-            alt="Charu Enterprises Fence Fittings Manufacturing"
+          <video
+            src={bannerVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover object-[70%_center] lg:object-[80%_center] opacity-75 sm:opacity-80"
           />
           {/* Multi-stop cinematic gradient matching Home Hero */}
@@ -55,28 +58,28 @@ export const ComingSoonPage: FC = () => {
         <header className="relative z-20 w-full max-w-7xl mx-auto flex items-center justify-between gap-2">
           {/* Logo Badge */}
           <div className="bg-[#DBEAFE] rounded-full px-2.5 py-1 sm:px-4 sm:py-1.5 md:px-5 md:py-2 shadow-md flex items-center shrink-0">
-            <img 
-              src={logo} 
-              alt="Charu Enterprises" 
-              className="h-5 sm:h-6 md:h-7 lg:h-8 w-auto object-contain" 
+            <img
+              src={logo}
+              alt="Charu Enterprises"
+              className="h-5 sm:h-6 md:h-7 lg:h-8 w-auto object-contain"
             />
           </div>
 
           {/* Quick Inquiry Call Action */}
           <a
-            href="tel:+123450346"
+            href="tel:+919830083777"
             className="group bg-transparent hover:bg-[#DBEAFE] text-white hover:text-black font-semibold pl-2 pr-3 py-1.5 sm:pl-3 sm:pr-4 sm:py-2 md:py-2.5 rounded-full flex items-center gap-1.5 sm:gap-2 border border-white hover:border-[#DBEAFE] backdrop-blur-sm text-[11px] sm:text-xs md:text-sm transition-all transform hover:scale-105 shadow-md shrink-0"
           >
             <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white group-hover:bg-[#22C55E] text-[#0a1532] group-hover:text-white flex items-center justify-center shadow-sm shrink-0 transition-colors">
               <Phone className="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-current" />
             </div>
-            <span className="transition-colors font-bold whitespace-nowrap">+1 234 503 46</span>
+            <span className="transition-colors font-bold whitespace-nowrap">•91 98300 83777</span>
           </a>
         </header>
 
         {/* Center Hero Body Content - Fluid responsive scaling */}
         <main className="relative z-20 w-full max-w-3xl mx-auto py-4 sm:py-6 md:py-8 lg:py-10 my-auto text-center flex flex-col items-center justify-center">
-          
+
           {/* Eyebrow Badge */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -84,7 +87,7 @@ export const ComingSoonPage: FC = () => {
             transition={{ duration: 0.4 }}
             className="flex items-center justify-center gap-2 mb-3.5 sm:mb-4 md:mb-5"
           >
-            
+
             <span className="text-[#60A5FA] text-xs sm:text-sm font-semibold tracking-wider uppercase">
               Charu Enterprises — India • 50+ Years of Manufacturing
             </span>
@@ -142,11 +145,11 @@ export const ComingSoonPage: FC = () => {
             {/* Quick Inquiry Contact Badges */}
             <div className="flex items-center justify-center pt-3 sm:pt-4">
               <a
-                href="mailto:contact@charuenterprises.com"
+                href="mailto:info@charufence.com"
                 className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-4.5 sm:py-2 md:px-5 md:py-2 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-[11px] xs:text-xs sm:text-sm border border-white/15 backdrop-blur-sm transition-all shadow-sm max-w-full"
               >
                 <Mail className="w-3.5 h-3.5 text-[#60A5FA] shrink-0" />
-                <span className="truncate">contact@charuenterprises.com</span>
+                <span className="truncate">info@charufence.com</span>
               </a>
             </div>
           </motion.div>
