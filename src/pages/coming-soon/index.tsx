@@ -35,9 +35,9 @@ export const ComingSoonPage: FC = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-[100dvh] bg-white font-['Outfit',sans-serif] p-1.5 sm:p-2.5 md:p-3 lg:p-4 flex flex-col justify-between overflow-x-hidden selection:bg-[#3B82F6] selection:text-white">
+    <div className="w-full h-[100dvh] bg-white font-['Outfit',sans-serif] p-1.5 sm:p-2.5 md:p-3 lg:p-4 flex flex-col justify-between overflow-hidden selection:bg-[#3B82F6] selection:text-white">
       {/* Outer Container Card */}
-      <div className="w-full flex-1 bg-[#0a1532] rounded-xl sm:rounded-2xl md:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[calc(100dvh-12px)] sm:min-h-[calc(100dvh-20px)] flex flex-col justify-between border border-blue-900/50 text-white px-3 sm:px-6 lg:px-8 py-3.5 sm:py-5 lg:py-6">
+      <div className="w-full flex-1 h-full bg-[#0a1532] rounded-xl sm:rounded-2xl md:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl flex flex-col justify-between border border-blue-900/50 text-white px-3 sm:px-6 lg:px-8 py-3.5 sm:py-5 lg:py-6">
         
         {/* Background Image with Precision Industrial Aesthetics */}
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
