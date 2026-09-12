@@ -1,7 +1,25 @@
 import type { FC } from 'react';
 import { Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
 
-export const Footer: FC = () => {
+interface FooterProps {
+  onNavigate?: (page: 'home' | 'about') => void;
+}
+
+export const Footer: FC<FooterProps> = ({ onNavigate }) => {
+  const handleNav = (page: 'home' | 'about', hash?: string) => {
+    if (onNavigate) {
+      onNavigate(page);
+    }
+    if (hash) {
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="w-full font-['Outfit',sans-serif] bg-white px-2 sm:px-3 md:px-4 pt-4 pb-4 sm:pb-6">
       {/* Outer Card Container matching Hero Section Width & Border-Radius */}
@@ -62,29 +80,49 @@ export const Footer: FC = () => {
               </h4>
               <ul className="space-y-3 text-sm sm:text-base text-neutral-200 font-normal">
                 <li>
-                  <a href="#" className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200">
+                  <button
+                    type="button"
+                    onClick={() => handleNav('home')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
+                  >
                     Home
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#about" className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200">
+                  <button
+                    type="button"
+                    onClick={() => handleNav('about')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
+                  >
                     About Us
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#services" className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200">
+                  <button
+                    type="button"
+                    onClick={() => handleNav('home', '#services')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
+                  >
                     Service
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#testimonials" className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200">
+                  <button
+                    type="button"
+                    onClick={() => handleNav('home', '#reviews')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
+                  >
                     Testimonials
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#projects" className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200">
+                  <button
+                    type="button"
+                    onClick={() => handleNav('home', '#recent-projects')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
+                  >
                     Projects
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>

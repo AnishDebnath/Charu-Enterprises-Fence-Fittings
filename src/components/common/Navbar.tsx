@@ -3,9 +3,28 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import logo from '../../assets/logo.png';
 
-export const Navbar: FC = () => {
+interface NavbarProps {
+  currentPage?: 'home' | 'about';
+  onNavigate?: (page: 'home' | 'about') => void;
+}
+
+export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleNavClick = (page: 'home' | 'about', hash?: string) => {
+    if (onNavigate) {
+      onNavigate(page);
+    }
+    if (hash) {
+      setTimeout(() => {
+        const elem = document.querySelector(hash);
+        if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -68,9 +87,13 @@ export const Navbar: FC = () => {
         >
           {/* Logo */}
           <div className="bg-[#DBEAFE] rounded-full px-2.5 py-1 sm:px-3 sm:py-1.5 shrink-0 transition-transform duration-300 hover:scale-105">
-            <a href="#" className="flex items-center">
-              <img src={logo} alt="Charu Enterprises" className="h-6 sm:h-7 md:h-8 w-auto" />
-            </a>
+            <button
+              type="button"
+              onClick={() => handleNavClick('home')}
+              className="flex items-center cursor-pointer"
+            >
+              <img src={logo} alt="Deckora" className="h-6 sm:h-7 md:h-8 w-auto" />
+            </button>
           </div>
 
           {/* Desktop Nav Links with synchronized zero-shift width and opacity transition */}
@@ -86,30 +109,49 @@ export const Navbar: FC = () => {
                   className="overflow-hidden flex items-center"
                 >
                   <nav className="flex items-center gap-7 xl:gap-8 text-sm font-bold tracking-wider uppercase text-neutral-100 whitespace-nowrap px-4 xl:px-6">
-                    <a
-                      href="#"
-                      className="text-[#60A5FA] font-extrabold transition-colors hover:text-[#93c5fd]"
+                    <button
+                      type="button"
+                      onClick={() => handleNavClick('home')}
+                      className={`transition-colors cursor-pointer ${
+                        currentPage === 'home'
+                          ? 'text-[#60A5FA] font-extrabold'
+                          : 'text-neutral-100 hover:text-white'
+                      }`}
                     >
                       HOME
-                    </a>
-                    <a
-                      href="#about"
-                      className="hover:text-white transition-colors"
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleNavClick('about')}
+                      className={`transition-colors cursor-pointer ${
+                        currentPage === 'about'
+                          ? 'text-[#60A5FA] font-extrabold'
+                          : 'text-neutral-100 hover:text-white'
+                      }`}
                     >
                       ABOUT
-                    </a>
-                    <a
-                      href="#products"
-                      className="hover:text-white transition-colors"
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleNavClick('home', '#services')}
+                      className="text-neutral-100 hover:text-white transition-colors cursor-pointer"
                     >
-                      PRODUCTS
-                    </a>
-                    <a
-                      href="#contact"
-                      className="hover:text-white transition-colors"
+                      SERVICE
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleNavClick('home', '#recent-projects')}
+                      className="text-neutral-100 hover:text-white transition-colors cursor-pointer"
+                    >
+                      PROJECTS
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleNavClick('home', '#estimate-cta')}
+                      className="text-neutral-100 hover:text-white transition-colors cursor-pointer"
                     >
                       CONTACT
-                    </a>
+                    </button>
                   </nav>
                 </motion.div>
               )}
@@ -208,46 +250,75 @@ export const Navbar: FC = () => {
                 isScrolled ? 'max-w-[300px] sm:max-w-[420px] md:max-w-[440px]' : 'max-w-7xl'
               }`}
             >
-              <motion.a
-                href="#"
-                onClick={() => setMobileMenuOpen(false)}
+              <motion.button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('home');
+                }}
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.05 }}
-                className="block py-2 text-[#60A5FA] font-bold text-base border-b border-white/10 transition-colors hover:text-[#93c5fd]"
+                className={`w-full text-left py-2 font-bold text-base border-b border-white/10 transition-colors cursor-pointer ${
+                  currentPage === 'home' ? 'text-[#60A5FA]' : 'text-neutral-200 hover:text-white'
+                }`}
               >
                 HOME
-              </motion.a>
-              <motion.a
-                href="#about"
-                onClick={() => setMobileMenuOpen(false)}
+              </motion.button>
+              <motion.button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('about');
+                }}
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.09 }}
-                className="block py-2 text-neutral-200 hover:text-white text-base border-b border-white/10 transition-colors"
+                className={`w-full text-left py-2 font-bold text-base border-b border-white/10 transition-colors cursor-pointer ${
+                  currentPage === 'about' ? 'text-[#60A5FA]' : 'text-neutral-200 hover:text-white'
+                }`}
               >
                 ABOUT
-              </motion.a>
-              <motion.a
-                href="#products"
-                onClick={() => setMobileMenuOpen(false)}
+              </motion.button>
+              <motion.button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('home', '#services');
+                }}
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.13 }}
-                className="block py-2 text-neutral-200 hover:text-white text-base border-b border-white/10 transition-colors"
+                className="w-full text-left py-2 text-neutral-200 hover:text-white text-base border-b border-white/10 transition-colors cursor-pointer"
               >
-                PRODUCTS
-              </motion.a>
-              <motion.a
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
+                SERVICE
+              </motion.button>
+              <motion.button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('home', '#recent-projects');
+                }}
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.17 }}
-                className="block py-2 text-neutral-200 hover:text-white text-base transition-colors"
+                className="w-full text-left py-2 text-neutral-200 hover:text-white text-base border-b border-white/10 transition-colors cursor-pointer"
+              >
+                PROJECTS
+              </motion.button>
+              <motion.button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('home', '#estimate-cta');
+                }}
+                initial={{ opacity: 0, x: -8 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.21 }}
+                className="w-full text-left py-2 text-neutral-200 hover:text-white text-base transition-colors cursor-pointer"
               >
                 CONTACT
-              </motion.a>
+              </motion.button>
               <motion.div
                 className="pt-2"
                 initial={{ opacity: 0, y: 6 }}

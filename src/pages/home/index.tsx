@@ -12,10 +12,14 @@ import { FAQSection } from './FAQSection';
 import { BackyardCTA } from './BackyardCTA';
 import { OutdoorTips } from './OutdoorTips';
 
-export default function HomePage() {
+interface HomePageProps {
+  onNavigate?: (page: 'home' | 'about') => void;
+}
+
+export default function HomePage({ onNavigate }: HomePageProps) {
   return (
     <>
-      <Navbar />
+      <Navbar currentPage="home" onNavigate={onNavigate} />
       <Hero />
       <Partners />
       <AboutTeam />
@@ -27,7 +31,7 @@ export default function HomePage() {
       <FAQSection />
       <BackyardCTA />
       <OutdoorTips />
-      <Footer />
+      <Footer onNavigate={onNavigate} />
     </>
   );
 }
