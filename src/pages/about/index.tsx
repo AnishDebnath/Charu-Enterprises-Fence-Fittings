@@ -9,7 +9,7 @@ import { ProjectFinder } from '../home/ProjectFinder';
 import { TeamSection } from './TeamSection';
 
 interface AboutPageProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
 }
 
 export const AboutPage: FC<AboutPageProps> = ({ onNavigate }) => {

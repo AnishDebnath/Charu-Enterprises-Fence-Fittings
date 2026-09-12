@@ -1,29 +1,29 @@
 import type { FC } from 'react';
 import { motion } from 'motion/react';
 
-interface ContactHeroProps {
+interface ProjectsHeroProps {
   onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
 }
 
-export const ContactHero: FC<ContactHeroProps> = ({ onNavigate }) => {
+export const ProjectsHero: FC<ProjectsHeroProps> = ({ onNavigate }) => {
   return (
     <div className="w-full bg-white px-2 sm:px-3 md:px-4 pt-2 sm:pt-3 pb-2 font-['Outfit',sans-serif]">
-      {/* Outer Rounded Hero Container Card matching About Hero Design */}
+      {/* Outer Rounded Hero Container matching About/Services Hero */}
       <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[420px] sm:min-h-[470px] md:min-h-[520px] lg:min-h-[560px] flex flex-col justify-between border border-blue-900/50">
         
-        {/* Background Image with Outdoor Patio/Deck & Dark Navy Multi-stop Overlay */}
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2560&q=85"
-            alt="Outdoor pergola and backyard patio living space"
-            className="w-full h-full object-cover object-[75%_center] lg:object-[80%_center] opacity-80"
+            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2560&q=85"
+            alt="Finished backyard deck, pergola, and outdoor living renovation"
+            className="w-full h-full object-cover object-[center_45%] opacity-85"
           />
-          {/* Multi-stop gradient matching Home & About Hero aesthetics */}
+          {/* Multi-stop gradient matching website aesthetic */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/95 via-[#071128]/80 via-50% to-[#071128]/35 z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/90 via-transparent to-[#071128]/40 z-10" />
         </div>
 
-        {/* Hero Content - Centered vertically with top spacing for floating navbar */}
+        {/* Hero Content */}
         <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-36 md:pt-44 lg:pt-52 pb-12 sm:pb-16 lg:pb-20 flex flex-col justify-end">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -33,15 +33,15 @@ export const ContactHero: FC<ContactHeroProps> = ({ onNavigate }) => {
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Contact Us
+              Our Projects
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              Ready to build or upgrade your outdoor living space? Get in touch with our team for honest estimates, design advice, and project planning.
+              Explore our portfolio of custom decks, shaded pergolas, covered patios, and complete backyard transformations crafted for everyday living.
             </p>
 
-            {/* Breadcrumb Navigation matching About Hero */}
+            {/* Breadcrumb Navigation */}
             <div className="pt-2 flex items-center gap-2 text-sm sm:text-base font-semibold">
               <button
                 type="button"
@@ -51,7 +51,7 @@ export const ContactHero: FC<ContactHeroProps> = ({ onNavigate }) => {
                 Home
               </button>
               <span className="text-white/50">/</span>
-              <span className="text-[#f0c75e] font-bold">Contact Us</span>
+              <span className="text-[#f0c75e] font-bold">Our Projects</span>
             </div>
           </motion.div>
         </div>
@@ -60,4 +60,4 @@ export const ContactHero: FC<ContactHeroProps> = ({ onNavigate }) => {
   );
 };
 
-export default ContactHero;
+export default ProjectsHero;

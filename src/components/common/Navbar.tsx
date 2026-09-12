@@ -4,15 +4,15 @@ import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import logo from '../../assets/logo.png';
 
 interface NavbarProps {
-  currentPage?: 'home' | 'about' | 'services' | 'contact';
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'contact') => void;
+  currentPage?: 'home' | 'about' | 'services' | 'projects' | 'contact';
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
 }
 
 export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleNavClick = (page: 'home' | 'about' | 'services' | 'contact', hash?: string) => {
+  const handleNavClick = (page: 'home' | 'about' | 'services' | 'projects' | 'contact', hash?: string) => {
     if (onNavigate) {
       onNavigate(page);
     }
@@ -144,8 +144,12 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleNavClick('home', '#recent-projects')}
-                      className="text-neutral-100 hover:text-white transition-colors cursor-pointer"
+                      onClick={() => handleNavClick('projects')}
+                      className={`transition-colors cursor-pointer ${
+                        currentPage === 'projects'
+                          ? 'text-[#60A5FA] font-extrabold'
+                          : 'text-neutral-100 hover:text-white'
+                      }`}
                     >
                       PROJECTS
                     </button>
@@ -309,12 +313,14 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                 type="button"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  handleNavClick('home', '#recent-projects');
+                  handleNavClick('projects');
                 }}
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.17 }}
-                className="w-full text-left py-2 text-neutral-200 hover:text-white text-base border-b border-white/10 transition-colors cursor-pointer"
+                className={`w-full text-left py-2 text-base border-b border-white/10 transition-colors cursor-pointer ${
+                  currentPage === 'projects' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
+                }`}
               >
                 PROJECTS
               </motion.button>

@@ -2,11 +2,11 @@ import type { FC } from 'react';
 import { Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
 
 interface FooterProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
 }
 
 export const Footer: FC<FooterProps> = ({ onNavigate }) => {
-  const handleNav = (page: 'home' | 'about' | 'services' | 'contact', hash?: string) => {
+  const handleNav = (page: 'home' | 'about' | 'services' | 'projects' | 'contact', hash?: string) => {
     if (onNavigate) {
       onNavigate(page);
     }
@@ -118,7 +118,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => handleNav('home', '#recent-projects')}
+                    onClick={() => handleNav('projects')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
                   >
                     Projects

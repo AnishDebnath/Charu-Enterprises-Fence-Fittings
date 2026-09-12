@@ -13,7 +13,7 @@ import { BackyardCTA } from './BackyardCTA';
 import { OutdoorTips } from './OutdoorTips';
 
 interface HomePageProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
 }
 
 export default function HomePage({ onNavigate }: HomePageProps) {

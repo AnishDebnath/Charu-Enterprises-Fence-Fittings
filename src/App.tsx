@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import HomePage from './pages/home';
 import AboutPage from './pages/about';
 import ServicesPage from './pages/services';
+import ProjectsPage from './pages/projects';
 import ContactPage from './pages/contact';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'services' | 'contact'>(() => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'services' | 'projects' | 'contact'>(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash.toLowerCase();
       if (hash.startsWith('#/about') || hash === '#about-page') {
@@ -13,6 +14,9 @@ export default function App() {
       }
       if (hash.startsWith('#/services') || hash === '#services-page') {
         return 'services';
+      }
+      if (hash.startsWith('#/projects') || hash === '#projects-page') {
+        return 'projects';
       }
       if (hash.startsWith('#/contact') || hash === '#contact-page') {
         return 'contact';
@@ -28,6 +32,8 @@ export default function App() {
         setCurrentPage('about');
       } else if (hash.startsWith('#/services') || hash === '#services-page') {
         setCurrentPage('services');
+      } else if (hash.startsWith('#/projects') || hash === '#projects-page') {
+        setCurrentPage('projects');
       } else if (hash.startsWith('#/contact') || hash === '#contact-page') {
         setCurrentPage('contact');
       } else if (hash.startsWith('#/home') || hash === '#home-page') {
@@ -39,13 +45,15 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const navigateTo = (page: 'home' | 'about' | 'services' | 'contact') => {
+  const navigateTo = (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => {
     setCurrentPage(page);
     window.location.hash =
       page === 'about'
         ? '/about'
         : page === 'services'
         ? '/services'
+        : page === 'projects'
+        ? '/projects'
         : page === 'contact'
         ? '/contact'
         : '/home';
@@ -58,6 +66,10 @@ export default function App() {
 
   if (currentPage === 'services') {
     return <ServicesPage onNavigate={navigateTo} />;
+  }
+
+  if (currentPage === 'projects') {
+    return <ProjectsPage onNavigate={navigateTo} />;
   }
 
   if (currentPage === 'contact') {
