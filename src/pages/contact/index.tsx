@@ -1,31 +1,27 @@
 import type { FC } from 'react';
 import { Navbar } from '../../components/common/Navbar';
 import { Footer } from '../../components/common/Footer';
-import { AboutHero } from './AboutHero';
-import { GetToKnowUs } from './GetToKnowUs';
-import { OurFoundation } from './OurFoundation';
-import { FamilyOwned } from '../home/FamilyOwned';
+import { ContactHero } from './ContactHero';
+import { ContactSection } from './ContactSection';
 import { ProjectFinder } from '../home/ProjectFinder';
-import { TeamSection } from './TeamSection';
+import { FAQSection } from '../home/FAQSection';
 
-interface AboutPageProps {
+interface ContactPageProps {
   onNavigate?: (page: 'home' | 'about' | 'services' | 'contact') => void;
 }
 
-export const AboutPage: FC<AboutPageProps> = ({ onNavigate }) => {
+export const ContactPage: FC<ContactPageProps> = ({ onNavigate }) => {
   return (
     <div className="min-h-screen bg-white flex flex-col justify-between selection:bg-[#3B82F6] selection:text-white font-['Outfit',sans-serif]">
-      {/* Floating Navbar */}
-      <Navbar currentPage="about" onNavigate={onNavigate} />
+      {/* Floating Navbar with 'contact' active */}
+      <Navbar currentPage="contact" onNavigate={onNavigate} />
 
       {/* Main Content Sections */}
       <main className="flex-1 flex flex-col">
-        <AboutHero onNavigate={onNavigate} />
-        <GetToKnowUs onNavigate={onNavigate} />
-        <OurFoundation onNavigate={onNavigate} />
-        <FamilyOwned />
+        <ContactHero onNavigate={onNavigate} />
+        <ContactSection />
         <ProjectFinder />
-        <TeamSection />
+        <FAQSection />
       </main>
 
       {/* Footer */}
@@ -34,4 +30,4 @@ export const AboutPage: FC<AboutPageProps> = ({ onNavigate }) => {
   );
 };
 
-export default AboutPage;
+export default ContactPage;

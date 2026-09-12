@@ -1,24 +1,24 @@
 import type { FC } from 'react';
 import { motion } from 'motion/react';
 
-interface AboutHeroProps {
+interface ServicesHeroProps {
   onNavigate?: (page: 'home' | 'about' | 'services' | 'contact') => void;
 }
 
-export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
+export const ServicesHero: FC<ServicesHeroProps> = ({ onNavigate }) => {
   return (
     <div className="w-full bg-white px-2 sm:px-3 md:px-4 pt-2 sm:pt-3 pb-2 font-['Outfit',sans-serif]">
-      {/* Outer Rounded Hero Container Card with Expanded Height */}
+      {/* Outer Rounded Hero Container Card matching About & Contact Hero Design */}
       <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[420px] sm:min-h-[470px] md:min-h-[520px] lg:min-h-[560px] flex flex-col justify-between border border-blue-900/50">
         
-        {/* Background Image with Craftsman Deck Building & Dark Navy Multi-stop Overlay */}
+        {/* Background Image with Outdoor Wooden Decking, Patio & Pergola */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2560&q=85"
-            alt="Carpenter crafting outdoor deck wood structure"
-            className="w-full h-full object-cover object-[75%_center] lg:object-[80%_center] opacity-85"
+            src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=2560&q=85"
+            alt="Custom timber deck and backyard outdoor living area"
+            className="w-full h-full object-cover object-[center_40%] opacity-80"
           />
-          {/* Multi-stop gradient matching Home Hero aesthetics */}
+          {/* Multi-stop gradient matching website aesthetic */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/95 via-[#071128]/80 via-50% to-[#071128]/35 z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/90 via-transparent to-[#071128]/40 z-10" />
         </div>
@@ -33,15 +33,15 @@ export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              About Us
+              Our Services
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              We build outdoor spaces with custom decks, patios, pergolas, repairs, and backyard upgrades made for everyday living.
+              From custom timber decks to shaded pergolas and stone patios, we deliver expert craftsmanship built for everyday outdoor living.
             </p>
 
-            {/* Breadcrumb Navigation matching design */}
+            {/* Breadcrumb Navigation */}
             <div className="pt-2 flex items-center gap-2 text-sm sm:text-base font-semibold">
               <button
                 type="button"
@@ -51,7 +51,7 @@ export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
                 Home
               </button>
               <span className="text-white/50">/</span>
-              <span className="text-[#f0c75e] font-bold">About Us</span>
+              <span className="text-[#f0c75e] font-bold">Our Services</span>
             </div>
           </motion.div>
         </div>
@@ -60,4 +60,4 @@ export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
   );
 };
 
-export default AboutHero;
+export default ServicesHero;

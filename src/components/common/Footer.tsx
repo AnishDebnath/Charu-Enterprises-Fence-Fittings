@@ -2,11 +2,11 @@ import type { FC } from 'react';
 import { Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
 
 interface FooterProps {
-  onNavigate?: (page: 'home' | 'about') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'contact') => void;
 }
 
 export const Footer: FC<FooterProps> = ({ onNavigate }) => {
-  const handleNav = (page: 'home' | 'about', hash?: string) => {
+  const handleNav = (page: 'home' | 'about' | 'services' | 'contact', hash?: string) => {
     if (onNavigate) {
       onNavigate(page);
     }
@@ -100,10 +100,10 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => handleNav('home', '#services')}
+                    onClick={() => handleNav('services')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
                   >
-                    Service
+                    Services
                   </button>
                 </li>
                 <li>
@@ -122,6 +122,15 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
                   >
                     Projects
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => handleNav('contact')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
+                  >
+                    Contact Us
                   </button>
                 </li>
               </ul>

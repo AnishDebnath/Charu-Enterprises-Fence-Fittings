@@ -4,15 +4,15 @@ import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import logo from '../../assets/logo.png';
 
 interface NavbarProps {
-  currentPage?: 'home' | 'about';
-  onNavigate?: (page: 'home' | 'about') => void;
+  currentPage?: 'home' | 'about' | 'services' | 'contact';
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'contact') => void;
 }
 
 export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleNavClick = (page: 'home' | 'about', hash?: string) => {
+  const handleNavClick = (page: 'home' | 'about' | 'services' | 'contact', hash?: string) => {
     if (onNavigate) {
       onNavigate(page);
     }
@@ -133,8 +133,12 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleNavClick('home', '#services')}
-                      className="text-neutral-100 hover:text-white transition-colors cursor-pointer"
+                      onClick={() => handleNavClick('services')}
+                      className={`transition-colors cursor-pointer ${
+                        currentPage === 'services'
+                          ? 'text-[#60A5FA] font-extrabold'
+                          : 'text-neutral-100 hover:text-white'
+                      }`}
                     >
                       SERVICE
                     </button>
@@ -147,8 +151,12 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleNavClick('home', '#estimate-cta')}
-                      className="text-neutral-100 hover:text-white transition-colors cursor-pointer"
+                      onClick={() => handleNavClick('contact')}
+                      className={`transition-colors cursor-pointer ${
+                        currentPage === 'contact'
+                          ? 'text-[#60A5FA] font-extrabold'
+                          : 'text-neutral-100 hover:text-white'
+                      }`}
                     >
                       CONTACT
                     </button>
@@ -179,6 +187,8 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                   className="overflow-hidden flex items-center shrink-0"
                 >
                   <button
+                    type="button"
+                    onClick={() => handleNavClick('contact')}
                     className="group bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 pr-2 py-2 rounded-full flex items-center gap-2.5 text-sm transition-colors cursor-pointer shadow-lg font-['Outfit',sans-serif] whitespace-nowrap shrink-0"
                   >
                     <span className="transition-colors">Get Free Estimate</span>
@@ -284,12 +294,14 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                 type="button"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  handleNavClick('home', '#services');
+                  handleNavClick('services');
                 }}
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.13 }}
-                className="w-full text-left py-2 text-neutral-200 hover:text-white text-base border-b border-white/10 transition-colors cursor-pointer"
+                className={`w-full text-left py-2 text-base border-b border-white/10 transition-colors cursor-pointer ${
+                  currentPage === 'services' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
+                }`}
               >
                 SERVICE
               </motion.button>
@@ -310,12 +322,14 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                 type="button"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  handleNavClick('home', '#estimate-cta');
+                  handleNavClick('contact');
                 }}
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.21 }}
-                className="w-full text-left py-2 text-neutral-200 hover:text-white text-base transition-colors cursor-pointer"
+                className={`w-full text-left py-2 text-base transition-colors cursor-pointer ${
+                  currentPage === 'contact' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
+                }`}
               >
                 CONTACT
               </motion.button>
@@ -326,7 +340,11 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                 transition={{ delay: 0.2 }}
               >
                 <button
-                  onClick={() => setMobileMenuOpen(false)}
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    handleNavClick('contact');
+                  }}
                   className="w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold py-3 rounded-full text-center flex items-center justify-center gap-2 text-sm shadow-lg transition-colors cursor-pointer"
                 >
                   <span>Get Free Estimate</span>
