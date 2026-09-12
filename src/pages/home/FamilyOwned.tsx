@@ -1,24 +1,42 @@
-import type { FC } from 'react';
+import { useState, useEffect, type FC } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export const FamilyOwned: FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const features = [
     {
       id: '01',
       title: 'Local and approachable',
       description: 'Talk directly with a team that understands homes, neighborhoods, and outdoor living needs.',
+      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Local family-owned craftsmen discussing outdoor deck plans',
     },
     {
       id: '02',
       title: 'Clear communication',
       description: 'We keep the process simple with honest estimates, project updates, and practical guidance.',
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Planning and blueprint review for outdoor patio space',
     },
     {
       id: '03',
       title: 'Work we stand behind',
       description: 'Every deck, patio, and pergola is built with care, safety, and long-term use in mind.',
+      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Finished durable pergola and deck construction built to last',
     },
   ];
+
+  // Auto-switch tabs every 4 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % features.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [features.length]);
 
   return (
     <section id="family-owned" className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-b border-slate-200/80">
@@ -57,45 +75,75 @@ export const FamilyOwned: FC = () => {
           </div>
         </div>
 
-        {/* Main Content Grid: Image + 3 Feature Cards */}
+        {/* Main Content Grid: Image + 3 Feature Tabs */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          {/* Left Column: Team Showcase Image */}
-          <div className="lg:col-span-6 relative rounded-[28px] sm:rounded-[32px] overflow-hidden min-h-[360px] sm:min-h-[420px] lg:min-h-[460px] shadow-lg border border-slate-200/80 group bg-neutral-100">
-            <img
-              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80"
-              alt="Family-owned outdoor deck builders working carefully on woodwork"
-              className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-700"
-            />
-            {/* Subtle Gradient for depth */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+          {/* Left Column: Clean Image that changes with active tab */}
+          <div className="lg:col-span-6 relative rounded-[28px] sm:rounded-[32px] overflow-hidden min-h-[360px] sm:min-h-[420px] lg:min-h-[480px] shadow-lg border border-slate-200/80 bg-neutral-900">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={features[activeIndex].id}
+                src={features[activeIndex].image}
+                alt={features[activeIndex].alt}
+                initial={{ opacity: 0, scale: 1.02 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
+                className="w-full h-full object-cover object-center absolute inset-0"
+              />
+            </AnimatePresence>
           </div>
 
-          {/* Right Column: 3 Feature Cards Stack */}
+          {/* Right Column: 3 Feature Interactive Tabs Stack */}
           <div className="lg:col-span-6 flex flex-col justify-between gap-4 sm:gap-5">
-            {features.map((feature) => (
-              <div
-                key={feature.id}
-                className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 flex items-start gap-4 sm:gap-6 group"
-              >
-                {/* Circular Number Badge */}
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#f0f6ff] text-[#3B82F6] font-bold text-base sm:text-lg flex items-center justify-center shrink-0 group-hover:bg-[#3B82F6] group-hover:text-white transition-colors duration-300 shadow-sm">
-                  {feature.id}
-                </div>
+            {features.map((feature, idx) => {
+              const isActive = activeIndex === idx;
 
-                {/* Content Block */}
-                <div className="space-y-1.5 pt-0.5">
-                  <h3 className="text-lg sm:text-xl font-bold text-[#0a1532] tracking-tight group-hover:text-[#3B82F6] transition-colors">
-                    {feature.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed font-medium">
-                    {feature.description}
-                  </p>
+              return (
+                <div
+                  key={feature.id}
+                  onClick={() => setActiveIndex(idx)}
+                  className={`relative rounded-2xl sm:rounded-3xl p-6 sm:p-7 border transition-all duration-300 flex items-start gap-4 sm:gap-6 cursor-pointer overflow-hidden ${
+                    isActive
+                      ? 'bg-[#f0f6ff]/90 border-[#3B82F6] ring-2 ring-[#3B82F6]/20 shadow-md transform -translate-y-0.5'
+                      : 'bg-white border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-200 opacity-80 hover:opacity-100'
+                  }`}
+                >
+                  {/* Circular Number Badge */}
+                  <div
+                    className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full font-bold text-base sm:text-lg flex items-center justify-center shrink-0 transition-all duration-300 shadow-sm ${
+                      isActive
+                        ? 'bg-[#3B82F6] text-white shadow-[#3B82F6]/30'
+                        : 'bg-[#f0f6ff] text-[#3B82F6] group-hover:bg-[#3B82F6] group-hover:text-white'
+                    }`}
+                  >
+                    {feature.id}
+                  </div>
+
+                  {/* Content Block */}
+                  <div className="space-y-1.5 pt-0.5">
+                    <h3
+                      className={`text-lg sm:text-xl font-bold tracking-tight transition-colors ${
+                        isActive ? 'text-[#1E40AF]' : 'text-[#0a1532]'
+                      }`}
+                    >
+                      {feature.title}
+                    </h3>
+                    <p
+                      className={`text-sm sm:text-[15px] leading-relaxed font-medium transition-colors ${
+                        isActive ? 'text-slate-700' : 'text-slate-600'
+                      }`}
+                    >
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
     </section>
   );
 };
+
+export default FamilyOwned;

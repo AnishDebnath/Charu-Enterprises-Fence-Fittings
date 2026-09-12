@@ -19,10 +19,10 @@ export const Hero: FC = () => {
         </div>
 
         {/* Hero Body Content */}
-        <div className="relative z-20 w-full flex-1 flex flex-col justify-center my-auto pt-30 sm:pt-34 lg:pt-38 pb-12 sm:pb-14 lg:pb-16">
+        <div className="relative z-20 w-full flex-1 flex flex-col justify-center my-auto pt-32 sm:pt-36 lg:pt-42 pb-14 sm:pb-16 lg:pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end">
             {/* Left Column Content */}
-            <div className="lg:col-span-8 space-y-5 sm:space-y-6">
+            <div className="lg:col-span-8 space-y-6 sm:space-y-7">
               {/* Eyebrow */}
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
@@ -67,31 +67,31 @@ export const Hero: FC = () => {
               </div>
 
               {/* Ratings row */}
-              <div className="pt-2 flex items-center gap-3.5">
-                <div className="flex -space-x-2 overflow-hidden py-1">
+              <div className="pt-2 flex flex-wrap sm:flex-nowrap items-center gap-3.5">
+                <div className="flex items-center -space-x-2.5 shrink-0 px-1 py-1">
                   <img
-                    className="inline-block h-9 w-9 rounded-full ring-2 ring-white border border-white object-cover shadow-sm"
+                    className="inline-block h-9.5 w-9.5 rounded-full ring-2 ring-white object-cover shadow-md shrink-0 relative z-40"
                     src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
                     alt="Customer"
                   />
                   <img
-                    className="inline-block h-9 w-9 rounded-full ring-2 ring-white border border-white object-cover shadow-sm"
+                    className="inline-block h-9.5 w-9.5 rounded-full ring-2 ring-white object-cover shadow-md shrink-0 relative z-30"
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
                     alt="Customer"
                   />
                   <img
-                    className="inline-block h-9 w-9 rounded-full ring-2 ring-white border border-white object-cover shadow-sm"
+                    className="inline-block h-9.5 w-9.5 rounded-full ring-2 ring-white object-cover shadow-md shrink-0 relative z-20"
                     src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80"
                     alt="Customer"
                   />
                   <img
-                    className="inline-block h-9 w-9 rounded-full ring-2 ring-white border border-white object-cover shadow-sm"
+                    className="inline-block h-9.5 w-9.5 rounded-full ring-2 ring-white object-cover shadow-md shrink-0 relative z-10"
                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
                     alt="Customer"
                   />
                 </div>
 
-                <div>
+                <div className="shrink-0">
                   <div className="flex items-center gap-1 text-[#f0c75e]">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-current" />
@@ -103,8 +103,8 @@ export const Hero: FC = () => {
                 </div>
               </div>
 
-              {/* Bottom Feature Key Points in a single line with blue background and white check icons */}
-              <div className="pt-5 border-t border-white/20">
+              {/* Bottom Feature Key Points with increased top gap */}
+              <div className="pt-7 sm:pt-8">
                 <div className="flex flex-wrap lg:flex-nowrap items-center gap-4 sm:gap-6 text-sm sm:text-[15px] text-[#FFFFFF] font-semibold">
                   <div className="flex items-center gap-2 shrink-0">
                     <div className="w-5 h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">

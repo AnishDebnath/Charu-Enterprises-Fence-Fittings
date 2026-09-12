@@ -21,12 +21,33 @@ export const RecentProjects: FC = () => {
       description: 'Shade, seating, and a cleaner space for meals outside.',
       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80',
     },
+    {
+      id: 4,
+      title: 'Modern cedar pergola & stone fire pit',
+      description: 'Warm natural timber pergola with integrated ambient string lighting and stone hearth.',
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80',
+    },
+    {
+      id: 5,
+      title: 'Multi-level poolside composite deck',
+      description: 'Slip-resistant dark walnut composite deck with glass balustrade railing around pool.',
+      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
+    },
+    {
+      id: 6,
+      title: 'Elevated front porch & custom planters',
+      description: 'Covered cedar entryway deck with matching handcrafted timber flower boxes.',
+      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80',
+    },
   ];
+
+  // Duplicate for seamless infinite marquee loop
+  const marqueeProjects = [...projects, ...projects];
 
   return (
     <section
       id="recent-projects"
-      className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-b border-slate-200/80"
+      className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] overflow-hidden border-b border-slate-200/80"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header Row */}
@@ -61,19 +82,21 @@ export const RecentProjects: FC = () => {
             </button>
           </div>
         </div>
+      </div>
 
-        {/* 3 Projects Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7 items-stretch">
-          {projects.map((project) => (
+      {/* Marquee Container moving in seamless infinite loop */}
+      <div className="relative w-full overflow-hidden py-4">
+        <div className="animate-marquee flex gap-6 sm:gap-7 lg:gap-8 cursor-grab active:cursor-grabbing px-4">
+          {marqueeProjects.map((project, index) => (
             <div
-              key={project.id}
-              className="group relative rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] w-full bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 cursor-pointer border border-slate-200/80"
+              key={`${project.id}-${index}`}
+              className="group relative rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-[4/5] sm:aspect-[3/4] w-[300px] sm:w-[350px] md:w-[380px] lg:w-[410px] shrink-0 bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 cursor-pointer border border-slate-200/80 select-none"
             >
               {/* Background Project Photo */}
               <img
                 src={project.image}
                 alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 pointer-events-none"
               />
 
               {/* Gradient Overlay for subtle depth */}
@@ -102,3 +125,5 @@ export const RecentProjects: FC = () => {
     </section>
   );
 };
+
+export default RecentProjects;
