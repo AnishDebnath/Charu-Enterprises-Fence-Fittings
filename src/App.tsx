@@ -5,10 +5,11 @@ import ServicesPage from './pages/services';
 import ProjectsPage from './pages/projects';
 import ProjectDetailPage from './pages/project-detail';
 import ContactPage from './pages/contact';
+import { ComingSoonPage } from './pages/coming-soon';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<
-    'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact'
+    'coming-soon' | 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact'
   >(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash.toLowerCase();
@@ -31,8 +32,11 @@ export default function App() {
       if (hash.startsWith('#/contact') || hash === '#contact-page') {
         return 'contact';
       }
+      if (hash.startsWith('#/home') || hash === '#home-page') {
+        return 'home';
+      }
     }
-    return 'home';
+    return 'coming-soon';
   });
 
   useEffect(() => {
@@ -62,7 +66,7 @@ export default function App() {
   }, []);
 
   const navigateTo = (
-    page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact'
+    page: 'coming-soon' | 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact'
   ) => {
     setCurrentPage(page);
     window.location.hash =
@@ -76,7 +80,9 @@ export default function App() {
         ? '/projects'
         : page === 'contact'
         ? '/contact'
-        : '/home';
+        : page === 'home'
+        ? '/home'
+        : '/';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -100,6 +106,10 @@ export default function App() {
     return <ContactPage onNavigate={navigateTo} />;
   }
 
-  return <HomePage onNavigate={navigateTo} />;
+  if (currentPage === 'home') {
+    return <HomePage onNavigate={navigateTo} />;
+  }
+
+  return <ComingSoonPage />;
 }
 
