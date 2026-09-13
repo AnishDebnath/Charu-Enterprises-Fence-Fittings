@@ -4,15 +4,15 @@ import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import logo from '../../assets/logo.png';
 
 interface NavbarProps {
-  currentPage?: 'home' | 'about' | 'services' | 'projects' | 'contact';
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
+  currentPage?: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact';
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
 }
 
 export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleNavClick = (page: 'home' | 'about' | 'services' | 'projects' | 'contact', hash?: string) => {
+  const handleNavClick = (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact', hash?: string) => {
     if (onNavigate) {
       onNavigate(page);
     }

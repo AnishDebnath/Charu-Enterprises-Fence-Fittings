@@ -8,7 +8,7 @@ import { HomeownerReviews } from '../home/HomeownerReviews';
 import { ContactSection } from '../contact/ContactSection';
 
 interface ServicesPageProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
 }
 
 export const ServicesPage: FC<ServicesPageProps> = ({ onNavigate }) => {

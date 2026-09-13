@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { motion } from 'motion/react';
 
 interface ProjectsHeroProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
 }
 
 export const ProjectsHero: FC<ProjectsHeroProps> = ({ onNavigate }) => {

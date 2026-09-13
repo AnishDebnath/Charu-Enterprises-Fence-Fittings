@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 interface ServicesShowcaseProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
 }
 
 export const ServicesShowcase: FC<ServicesShowcaseProps> = ({ onNavigate }) => {

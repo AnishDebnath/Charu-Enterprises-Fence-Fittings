@@ -3,10 +3,13 @@ import HomePage from './pages/home';
 import AboutPage from './pages/about';
 import ServicesPage from './pages/services';
 import ProjectsPage from './pages/projects';
+import ProjectDetailPage from './pages/project-detail';
 import ContactPage from './pages/contact';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'services' | 'projects' | 'contact'>(() => {
+  const [currentPage, setCurrentPage] = useState<
+    'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact'
+  >(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash.toLowerCase();
       if (hash.startsWith('#/about') || hash === '#about-page') {
@@ -14,6 +17,13 @@ export default function App() {
       }
       if (hash.startsWith('#/services') || hash === '#services-page') {
         return 'services';
+      }
+      if (
+        hash.startsWith('#/project-detail') ||
+        hash.startsWith('#/project-details') ||
+        hash === '#project-detail-page'
+      ) {
+        return 'project-detail';
       }
       if (hash.startsWith('#/projects') || hash === '#projects-page') {
         return 'projects';
@@ -32,6 +42,12 @@ export default function App() {
         setCurrentPage('about');
       } else if (hash.startsWith('#/services') || hash === '#services-page') {
         setCurrentPage('services');
+      } else if (
+        hash.startsWith('#/project-detail') ||
+        hash.startsWith('#/project-details') ||
+        hash === '#project-detail-page'
+      ) {
+        setCurrentPage('project-detail');
       } else if (hash.startsWith('#/projects') || hash === '#projects-page') {
         setCurrentPage('projects');
       } else if (hash.startsWith('#/contact') || hash === '#contact-page') {
@@ -45,13 +61,17 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const navigateTo = (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => {
+  const navigateTo = (
+    page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact'
+  ) => {
     setCurrentPage(page);
     window.location.hash =
       page === 'about'
         ? '/about'
         : page === 'services'
         ? '/services'
+        : page === 'project-detail'
+        ? '/project-detail'
         : page === 'projects'
         ? '/projects'
         : page === 'contact'
@@ -70,6 +90,10 @@ export default function App() {
 
   if (currentPage === 'projects') {
     return <ProjectsPage onNavigate={navigateTo} />;
+  }
+
+  if (currentPage === 'project-detail') {
+    return <ProjectDetailPage onNavigate={navigateTo} />;
   }
 
   if (currentPage === 'contact') {

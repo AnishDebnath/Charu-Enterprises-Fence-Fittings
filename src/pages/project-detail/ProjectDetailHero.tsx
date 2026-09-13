@@ -1,24 +1,25 @@
 import type { FC } from 'react';
 import { motion } from 'motion/react';
 
-interface AboutHeroProps {
+interface ProjectDetailHeroProps {
   onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+  projectTitle?: string;
 }
 
-export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
+export const ProjectDetailHero: FC<ProjectDetailHeroProps> = ({ onNavigate, projectTitle = 'Backyard Deck & Pergola Upgrade' }) => {
   return (
     <div className="w-full bg-white px-2 sm:px-3 md:px-4 pt-2 sm:pt-3 pb-2 font-['Outfit',sans-serif]">
-      {/* Outer Rounded Hero Container Card with Expanded Height */}
+      {/* Outer Rounded Hero Container Card matching About Hero */}
       <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[420px] sm:min-h-[470px] md:min-h-[520px] lg:min-h-[560px] flex flex-col justify-between border border-blue-900/50">
         
-        {/* Background Image with Craftsman Deck Building & Dark Navy Multi-stop Overlay */}
+        {/* Background Image with Craftsman Outdoor Living & Dark Navy Multi-stop Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2560&q=85"
-            alt="Carpenter crafting outdoor deck wood structure"
-            className="w-full h-full object-cover object-[75%_center] lg:object-[80%_center] opacity-85"
+            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2560&q=85"
+            alt="Finished backyard deck, pergola, and outdoor living renovation"
+            className="w-full h-full object-cover object-[center_45%] opacity-85"
           />
-          {/* Multi-stop gradient matching Home Hero aesthetics */}
+          {/* Multi-stop gradient matching website aesthetic */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/95 via-[#071128]/80 via-50% to-[#071128]/35 z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/90 via-transparent to-[#071128]/40 z-10" />
         </div>
@@ -33,16 +34,16 @@ export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              About Us
+              Project Details
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              We build outdoor spaces with custom decks, patios, pergolas, repairs, and backyard upgrades made for everyday living.
+              Explore in-depth specifications, materials, and craftsmanship behind our custom outdoor living transformations.
             </p>
 
-            {/* Breadcrumb Navigation matching design */}
-            <div className="pt-2 flex items-center gap-2 text-sm sm:text-base font-semibold">
+            {/* Breadcrumb Navigation */}
+            <div className="pt-2 flex items-center gap-2 text-sm sm:text-base font-semibold flex-wrap">
               <button
                 type="button"
                 onClick={() => onNavigate?.('home')}
@@ -51,7 +52,15 @@ export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
                 Home
               </button>
               <span className="text-white/50">/</span>
-              <span className="text-[#f0c75e] font-bold">About Us</span>
+              <button
+                type="button"
+                onClick={() => onNavigate?.('projects')}
+                className="text-white/80 hover:text-white transition-colors cursor-pointer"
+              >
+                Our Projects
+              </button>
+              <span className="text-white/50">/</span>
+              <span className="text-[#f0c75e] font-bold line-clamp-1">{projectTitle}</span>
             </div>
           </motion.div>
         </div>
@@ -60,4 +69,4 @@ export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
   );
 };
 
-export default AboutHero;
+export default ProjectDetailHero;

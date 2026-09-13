@@ -7,7 +7,7 @@ import { ProjectFinder } from '../home/ProjectFinder';
 import { FAQSection } from '../home/FAQSection';
 
 interface ContactPageProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
 }
 
 export const ContactPage: FC<ContactPageProps> = ({ onNavigate }) => {

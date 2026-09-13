@@ -1,7 +1,11 @@
 import type { FC } from 'react';
 import { ArrowRight, Phone } from 'lucide-react';
 
-export const BackyardCTA: FC = () => {
+interface BackyardCTAProps {
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+}
+
+export const BackyardCTA: FC<BackyardCTAProps> = ({ onNavigate }) => {
   return (
     <section
       id="estimate-cta"
@@ -35,15 +39,16 @@ export const BackyardCTA: FC = () => {
         {/* Interactive CTA Buttons Row */}
         <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto">
           {/* Primary Action Button: Get a Free Estimate */}
-          <a
-            href="#contact"
+          <button
+            type="button"
+            onClick={() => onNavigate ? onNavigate('contact') : (window.location.hash = '/contact')}
             className="group w-full sm:w-auto bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 sm:pl-6 pr-2 py-2.5 sm:py-3 rounded-full flex items-center justify-center gap-3 text-xs sm:text-sm md:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
           >
             <span className="transition-colors">Get a free estimate</span>
             <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white group-hover:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover:text-white shadow-sm shrink-0 transition-colors">
               <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[2.5]" />
             </div>
-          </a>
+          </button>
 
           {/* Secondary Action Button: Call Direct */}
           <a

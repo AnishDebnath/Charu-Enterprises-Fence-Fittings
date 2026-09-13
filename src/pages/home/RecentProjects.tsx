@@ -1,7 +1,11 @@
 import type { FC } from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
-export const RecentProjects: FC = () => {
+interface RecentProjectsProps {
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+}
+
+export const RecentProjects: FC<RecentProjectsProps> = ({ onNavigate }) => {
   const projects = [
     {
       id: 1,
@@ -73,6 +77,8 @@ export const RecentProjects: FC = () => {
             </p>
 
             <button
+              type="button"
+              onClick={() => onNavigate?.('projects')}
               className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
             >
               <span className="transition-colors">View All Projects</span>
@@ -90,6 +96,7 @@ export const RecentProjects: FC = () => {
           {marqueeProjects.map((project, index) => (
             <div
               key={`${project.id}-${index}`}
+              onClick={() => onNavigate?.('project-detail')}
               className="group relative rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-[4/5] sm:aspect-[3/4] w-[300px] sm:w-[350px] md:w-[380px] lg:w-[410px] shrink-0 bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 cursor-pointer border border-slate-200/80 select-none"
             >
               {/* Background Project Photo */}

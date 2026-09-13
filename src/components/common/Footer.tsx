@@ -2,11 +2,11 @@ import type { FC } from 'react';
 import { Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
 
 interface FooterProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
 }
 
 export const Footer: FC<FooterProps> = ({ onNavigate }) => {
-  const handleNav = (page: 'home' | 'about' | 'services' | 'projects' | 'contact', hash?: string) => {
+  const handleNav = (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact', hash?: string) => {
     if (onNavigate) {
       onNavigate(page);
     }

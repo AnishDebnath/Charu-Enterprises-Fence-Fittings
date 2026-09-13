@@ -2,7 +2,7 @@ import { useState, type FC } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 interface ProjectsSectionProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
 }
 
 type ProjectCategory = 'All' | 'Decks' | 'Patio' | 'Pergola' | 'Porch' | 'Fence';
@@ -151,7 +151,7 @@ export const ProjectsSection: FC<ProjectsSectionProps> = ({ onNavigate }) => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              onClick={() => onNavigate?.('contact')}
+              onClick={() => onNavigate?.('project-detail')}
               className="group relative rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-[4/5] sm:aspect-[3/4] w-full bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between p-4 sm:p-5 cursor-pointer border border-slate-200/80 select-none"
             >
               {/* Background Project Photo */}

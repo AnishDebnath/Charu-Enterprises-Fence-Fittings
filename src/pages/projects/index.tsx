@@ -7,7 +7,7 @@ import { ProjectFinder } from '../home/ProjectFinder';
 import { HomeownerReviews } from '../home/HomeownerReviews';
 
 interface ProjectsPageProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
 }
 
 export const ProjectsPage: FC<ProjectsPageProps> = ({ onNavigate }) => {
