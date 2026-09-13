@@ -7,7 +7,7 @@ import bannerVideo from '../../assets/banner video.mp4';
 export const ComingSoonPage: FC = () => {
   // Target countdown timer (28 days launch window)
   const [timeLeft, setTimeLeft] = useState({
-    days: 5,
+    days: 2,
     hours: 0,
     minutes: 0,
     seconds: 0,
@@ -15,7 +15,7 @@ export const ComingSoonPage: FC = () => {
 
   useEffect(() => {
     const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 5);
+    targetDate.setDate(targetDate.getDate() + 2);
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
