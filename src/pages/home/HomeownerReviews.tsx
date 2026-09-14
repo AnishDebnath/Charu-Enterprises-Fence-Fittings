@@ -8,12 +8,12 @@ export const HomeownerReviews: FC = () => {
   const reviews = [
     {
       id: 1,
-      rating: '4.9+',
-      ratingText: '4.9 rating from local homeowners',
+      rating: '5.0',
+      ratingText: '5.0 rating on FCL Steel Fence Fittings Export',
       quote:
-        'The new deck changed how we use our backyard. The team explained every option and kept the project simple from start to finish.',
-      name: 'Daniel Carter',
-      role: 'Operations Manager',
+        'Charu Enterprises has been supplying our USA distribution centers with pressed steel barbed arms and offset hinges for over 8 years. Their galvanizing thickness and dimensional consistency are unmatched.',
+      name: 'Robert M. Gallagher',
+      role: 'VP Procurement, Regional Fence Supply Corp (Texas, USA)',
       avatar:
         'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
       image:
@@ -22,11 +22,11 @@ export const HomeownerReviews: FC = () => {
     {
       id: 2,
       rating: '5.0',
-      ratingText: '5.0 rating on Pergola & Patio Build',
+      ratingText: '5.0 rating on Custom Tooling & Stamping',
       quote:
-        'From the initial design consultation to the final board installation, the craftmanship exceeded our expectations. Our outdoor dining space is now our favorite spot.',
-      name: 'Sarah Jenkins',
-      role: 'Homeowner in Oakville',
+        'Their in-house tool room engineered our proprietary cantilever roller design with zero flaws. Container shipments always arrive properly palletized, labeled, and on schedule.',
+      name: 'David L. Tremblay',
+      role: 'Director of Sourcing, Canadian Perimeter Solutions (Ontario, Canada)',
       avatar:
         'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
       image:
@@ -35,11 +35,11 @@ export const HomeownerReviews: FC = () => {
     {
       id: 3,
       rating: '4.95',
-      ratingText: '4.95 rating on Deck Restoration',
+      ratingText: '4.95 rating on ISO 9001:2015 Compliance & DDP Delivery',
       quote:
-        'Honest pricing, arrived on time every morning, and finished ahead of schedule. The quality of the carpentry and railings is second to none.',
-      name: 'Marcus Vance',
-      role: 'Residential Client',
+        'Working with Som and the Maskara family gives us complete peace of mind. Transparent communication, competitive FOB/DDP terms, and genuine commitment to zero defects.',
+      name: 'Klaus Richter',
+      role: 'Managing Director, Industrial Security Gates GmbH (Germany)',
       avatar:
         'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
       image:
@@ -70,23 +70,23 @@ export const HomeownerReviews: FC = () => {
             <div className="mb-6 sm:mb-8 space-y-3.5">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-                <span className="text-[#2563EB] text-sm sm:text-base font-bold tracking-tight">
-                  Homeowner reviews
+                <span className="text-[#2563EB] text-sm sm:text-base font-bold tracking-tight uppercase">
+                  Distributor & Client Trust
                 </span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-                Trusted for Clear Planning &amp; <br className="hidden sm:inline" />
-                Finished Outdoor Spaces.
+                Trusted by Fence Distributors <br className="hidden sm:inline" />
+                &amp; Contractors Across 4 Continents.
               </h2>
             </div>
 
-            {/* Patio Sunset Image */}
+            {/* Facility / Warehouse Image */}
             <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden aspect-[16/11] sm:aspect-[4/3] w-full shadow-md bg-neutral-900 border border-blue-200/80">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentReview.image}
                   src={currentReview.image}
-                  alt="Homeowners enjoying outdoor patio space at sunset"
+                  alt="Industrial manufacturing and quality control inspection"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -97,7 +97,7 @@ export const HomeownerReviews: FC = () => {
             </div>
           </div>
 
-            {/* Right Column: Theme Navy Review Card perfectly aligned at the bottom with the left image */}
+          {/* Right Column: Theme Navy Review Card */}
           <div className="lg:col-span-6 flex flex-col justify-end">
             <div className="bg-[#0a1532] rounded-[24px] sm:rounded-[28px] p-8 sm:p-10 lg:p-12 text-white shadow-xl flex flex-col justify-between min-h-[460px] sm:min-h-[500px] lg:min-h-[520px] border border-blue-900/50 relative overflow-hidden">
               {/* Subtle brand glow accent */}
@@ -132,11 +132,11 @@ export const HomeownerReviews: FC = () => {
                     </div>
 
                     {/* Testimonial Quote */}
-                    <h3 className="text-xl sm:text-2xl lg:text-[25px] font-medium leading-[1.35] text-white tracking-tight">
-                      {currentReview.quote}
+                    <h3 className="text-xl sm:text-2xl lg:text-[23px] font-medium leading-[1.35] text-white tracking-tight">
+                      "{currentReview.quote}"
                     </h3>
 
-                    {/* Reviewer Details (Name & Role without profile picture) */}
+                    {/* Reviewer Details */}
                     <div className="pt-1">
                       <h4 className="text-base sm:text-lg font-bold text-white leading-snug">
                         {currentReview.name}
@@ -149,7 +149,7 @@ export const HomeownerReviews: FC = () => {
                 </AnimatePresence>
               </div>
 
-              {/* Bottom Controls Row: Horizontal line on left, navigation buttons on right */}
+              {/* Bottom Controls Row */}
               <div className="pt-6 flex items-center justify-between gap-4 relative z-10">
                 <div className="flex-1 max-w-[240px] sm:max-w-[320px] h-[1.5px] bg-white/30 rounded-full" />
 
@@ -177,4 +177,6 @@ export const HomeownerReviews: FC = () => {
     </section>
   );
 };
+
+export default HomeownerReviews;
 

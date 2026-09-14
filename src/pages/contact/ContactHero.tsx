@@ -33,12 +33,12 @@ export const ContactHero: FC<ContactHeroProps> = ({ onNavigate }) => {
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Contact Us
+              Contact &amp; Export Inquiries
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              Ready to build or upgrade your outdoor living space? Get in touch with our team for honest estimates, design advice, and project planning.
+              Connect with our international trade desk for factory-direct container quotes, custom die manufacturing, and global DDP/CIF logistics.
             </p>
 
             {/* Breadcrumb Navigation matching About Hero */}

@@ -13,14 +13,14 @@ export interface ProjectDetailData {
   description: string;
   image: string;
   alt: string;
-  client: string;
-  location: string;
-  projectType: string;
-  serviceProvided: string;
-  areaSize: string;
-  timeline: string;
-  completionDate: string;
-  materialsUsed: string;
+  itemNumber: string;
+  category: string;
+  materialGrade: string;
+  finishCoating: string;
+  standardPack: string;
+  palletPacking: string;
+  certification: string;
+  exportTerms: string;
   sizeChart?: SizeChartRow[];
 }
 
@@ -37,20 +37,20 @@ export const defaultSizeChart: SizeChartRow[] = [
 ];
 
 export const defaultProjectDetail: ProjectDetailData = {
-  title: 'Backyard Deck & Pergola Upgrade',
+  title: 'Barbed Arm - 14 GA & 16 GA (Item #1)',
   description:
-    'This project focused on turning an underused backyard area into a comfortable outdoor living space for relaxing, dining, and hosting. We added a custom deck layout, improved the seating zone, created better shade with a pergola, and used durable materials for long-term outdoor use.',
+    'Heavy-duty pressed steel 45-degree barbed arm extension engineered for industrial, commercial, and high-security chain link fencing perimeters. Designed with pre-notched wire capture slots for secure holding of 3 barbed wire strands, high tensile load resistance, and uniform ASTM A153 hot-dip galvanizing.',
   image:
-    'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1600&q=85',
-  alt: 'Backyard deck and pergola outdoor living upgrade with paving and wooden fence',
-  client: 'Private Homeowner',
-  location: 'Austin, TX',
-  projectType: 'Deck & Pergola Upgrade',
-  serviceProvided: 'Custom Deck Building',
-  areaSize: 'Approx. 850 sq ft',
-  timeline: '3 Weeks',
-  completionDate: 'April 2026',
-  materialsUsed: 'Composite Decking, Wood Frame, Railing',
+    'https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1600&q=85',
+  alt: 'Pressed steel barbed arm chain link fence fitting component',
+  itemNumber: 'Catalog A25 - Item #1',
+  category: 'Fittings & Arms',
+  materialGrade: 'Pressed Steel (14 Gauge & 16 Gauge)',
+  finishCoating: 'Hot-Dip Galvanized (ASTM A153) / Powder Coated',
+  standardPack: '20 - 25 Pcs / Weatherproof Poly Bag',
+  palletPacking: 'Strapped Wooden Pallets / Export Master Crates',
+  certification: 'ISO 9001:2015 / Certified Mill Test Reports',
+  exportTerms: 'FOB Kolkata Port / CIF Worldwide / DDP Available',
   sizeChart: defaultSizeChart,
 };
 
@@ -58,14 +58,14 @@ export const ProjectDetailContent: FC<ProjectDetailContentProps> = ({
   data = defaultProjectDetail,
 }) => {
   const metaFields = [
-    { label: 'Client', value: data.client },
-    { label: 'Location', value: data.location },
-    { label: 'Project Type', value: data.projectType },
-    { label: 'Service Provided', value: data.serviceProvided },
-    { label: 'Area Size', value: data.areaSize },
-    { label: 'Timeline', value: data.timeline },
-    { label: 'Completion Date', value: data.completionDate },
-    { label: 'Materials Used', value: data.materialsUsed },
+    { label: 'Item Number', value: data.itemNumber },
+    { label: 'Category', value: data.category },
+    { label: 'Material Grade', value: data.materialGrade },
+    { label: 'Finish / Coating', value: data.finishCoating },
+    { label: 'Standard Pack', value: data.standardPack },
+    { label: 'Pallet Packing', value: data.palletPacking },
+    { label: 'Quality Standard', value: data.certification },
+    { label: 'Export Terms', value: data.exportTerms },
   ];
 
   const sizeChartData = data.sizeChart || defaultSizeChart;

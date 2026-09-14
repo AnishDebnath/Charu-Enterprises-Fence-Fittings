@@ -1,37 +1,41 @@
 import type { FC } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-export const ServicesGrid: FC = () => {
+interface ServicesGridProps {
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+}
+
+export const ServicesGrid: FC<ServicesGridProps> = ({ onNavigate }) => {
   const services = [
     {
-      title: 'Custom deck building',
-      description: 'Decks planned around your home, yard, view, and daily outdoor use.',
-      image: 'https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=800&q=80',
-    },
-    {
-      title: 'Deck Repair',
-      description: 'Fix loose boards, weak railings, worn stairs, & damaged framing.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-    },
-    {
-      title: 'Patio Construction',
-      description: 'Comfortable patio areas for seating, dining, grilling, & relaxing.',
+      title: 'Pressed Steel Fence Fittings',
+      description: 'Barbed wire arms, boulevard clamps, gate corners, male hinges, and heavy-duty chainlink hardware.',
       image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
     },
     {
-      title: 'Pergola Installation',
-      description: 'Shade, structure, and style for decks, patios, & backyard spaces.',
+      title: 'Malleable Iron Fittings',
+      description: '180° industrial offset hinges, box hinges, round floor flanges, and industrial gate hardware.',
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      title: 'Aluminum Fittings & Caps',
+      description: 'High-grade bullet caps, loop caps, acorn post caps, tie wires, and hog rings for commercial fences.',
+      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      title: 'Tension Bars & Bands',
+      description: 'Galvanized high-tensile tension bars, 3/4" x 14 GA & 12 GA bands, brace bands, and truss rods.',
       image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
     },
     {
-      title: 'Outdoor Kitchens',
-      description: 'Custom built-in grills, countertops, and luxury alfresco prep spaces.',
-      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
+      title: 'Cantilever & Gate Hardware',
+      description: 'Heavy cantilever rollers with covers, sliding gate hardware kits, and double wheel carriers.',
+      image: 'https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=800&q=80',
     },
     {
-      title: 'Deck Staining & Sealing',
-      description: 'Long-lasting weatherproof coatings and premium wood finish restoration.',
-      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
+      title: 'Custom Sheet Metal Fabrication',
+      description: 'Complete in-house tool & die development for custom metal stampings as per your engineering drawings.',
+      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
     },
   ];
 
@@ -47,26 +51,28 @@ export const ServicesGrid: FC = () => {
           <div className="lg:col-span-7 space-y-3">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-              <span className="text-[#2563EB] text-sm sm:text-base font-bold tracking-tight">
-                Our Services
+              <span className="text-[#2563EB] text-sm sm:text-base font-bold tracking-tight uppercase">
+                Manufacturing Range
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-              Outdoor Spaces Made for <br className="hidden sm:inline" />
-              Everyday Living.
+              Engineered Fence Fittings <br className="hidden sm:inline" />
+              & Custom Fabrications.
             </h2>
           </div>
 
           {/* Right Column: Paragraph + Blue CTA Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-4 pt-1">
             <p className="text-slate-700 text-sm sm:text-base leading-relaxed max-w-md font-medium">
-              From new decks to shaded patios, we help homeowners build, repair, and improve outdoor areas they can use more often.
+              Supplying high-tensile hot-dip galvanized pressed steel, malleable iron, and aluminum fence hardware to master distributors worldwide.
             </p>
 
             <button
+              type="button"
+              onClick={() => onNavigate?.('services')}
               className="group/btn bg-[#3B82F6] hover:bg-[#0a1532] text-white font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
             >
-              <span className="transition-colors">View All Services</span>
+              <span className="transition-colors">View All Products</span>
               <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
                 <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
               </div>
@@ -81,6 +87,7 @@ export const ServicesGrid: FC = () => {
           {marqueeItems.map((service, index) => (
             <div
               key={index}
+              onClick={() => onNavigate?.('services')}
               className="group relative rounded-[32px] sm:rounded-[36px] overflow-hidden aspect-square w-[310px] sm:w-[360px] md:w-[390px] lg:w-[420px] xl:w-[440px] shrink-0 bg-[#071128] flex flex-col justify-between p-6 sm:p-7 transition-all duration-500 hover:-translate-y-1.5 shadow-lg hover:shadow-2xl cursor-pointer select-none border border-slate-200/60"
             >
               {/* Card Image - Clear high visibility */}

@@ -36,9 +36,14 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
             
             {/* Column 1: Tagline & Socials */}
             <div className="lg:col-span-4 space-y-6">
-              <p className="text-neutral-200 text-sm sm:text-base leading-relaxed max-w-sm font-normal">
-                Custom outdoor decks, pergolas, and backyard living spaces built with precision craftsmanship, durable materials, and dedicated service.
-              </p>
+              <div className="space-y-2">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#3B82F6]/20 border border-[#3B82F6]/40 text-[#60A5FA] text-xs font-bold uppercase tracking-wider">
+                  Mfg. Since 1969 • 55+ Years of Growth
+                </span>
+                <p className="text-neutral-200 text-sm sm:text-base leading-relaxed max-w-sm font-normal">
+                  Global leader in pressed steel, malleable iron, and aluminum fence fittings. 150 Million+ pieces exported across 4 continents. ISO 9001:2015 certified & Govt. Export Excellence awardee.
+                </p>
+              </div>
 
               {/* Social Icons Pills with Hover Effects */}
               <div className="flex items-center gap-3 pt-1">
@@ -103,16 +108,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                     onClick={() => handleNav('services')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
                   >
-                    Services
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    onClick={() => handleNav('home', '#reviews')}
-                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
-                  >
-                    Testimonials
+                    Product Range
                   </button>
                 </li>
                 <li>
@@ -121,7 +117,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                     onClick={() => handleNav('projects')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
                   >
-                    Projects
+                    Catalog A25
                   </button>
                 </li>
                 <li>
@@ -136,36 +132,65 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
               </ul>
             </div>
 
-            {/* Column 3: Services */}
+            {/* Column 3: Products */}
             <div className="lg:col-span-3 space-y-4">
               <h4 className="font-bold text-white text-base sm:text-lg tracking-tight">
-                Services
+                Product Categories
               </h4>
               <ul className="space-y-3 text-sm sm:text-base text-neutral-200 font-normal">
                 <li>
-                  <a href="#services" className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200">
-                    Deck building
-                  </a>
+                  <button
+                    type="button"
+                    onClick={() => handleNav('services')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
+                  >
+                    Pressed Steel Fittings
+                  </button>
                 </li>
                 <li>
-                  <a href="#services" className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200">
-                    Deck Repair
-                  </a>
+                  <button
+                    type="button"
+                    onClick={() => handleNav('services')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
+                  >
+                    Malleable Iron Fittings
+                  </button>
                 </li>
                 <li>
-                  <a href="#services" className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200">
-                    Patio Construction
-                  </a>
+                  <button
+                    type="button"
+                    onClick={() => handleNav('services')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
+                  >
+                    Aluminum Fence Fittings
+                  </button>
                 </li>
                 <li>
-                  <a href="#services" className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200">
-                    Pergola Installation
-                  </a>
+                  <button
+                    type="button"
+                    onClick={() => handleNav('services')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
+                  >
+                    Tension Bars & Bands
+                  </button>
                 </li>
                 <li>
-                  <a href="#services" className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200">
-                    Custom Deck
-                  </a>
+                  <button
+                    type="button"
+                    onClick={() => handleNav('services')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
+                  >
+                    Cantilever & Gate Hardware
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => handleNav('services')}
+                    className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
+                  >
+                    Custom Sheet Metal Fabrication
+                  </button>
                 </li>
               </ul>
             </div>
@@ -173,45 +198,69 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
             {/* Column 4: Contact Us */}
             <div className="lg:col-span-3 space-y-4">
               <h4 className="font-bold text-white text-base sm:text-lg tracking-tight">
-                Contact Us
+                Contact & Office
               </h4>
-              <div className="space-y-3 text-sm sm:text-base text-neutral-200 leading-relaxed font-normal">
-                <p className="hover:text-white transition-colors duration-200">
-                  Mon – Sat : 8am to 6pm, Sunday: closed
+              <div className="space-y-2.5 text-xs sm:text-sm text-neutral-200 leading-relaxed font-normal">
+                <p className="text-white font-semibold">
+                  Head Office:
                 </p>
-                <p className="hover:text-white transition-colors duration-200">
-                  123 Deckora Avenue, New York, NY 10001
+                <p className="text-neutral-300">
+                  28B, Shakespeare Sarani, 10B, Neelamber Bldg, Kolkata - 700017, India
                 </p>
-                <p>
-                  <a
-                    href="mailto:hello@Deckora.com"
-                    className="hover:text-[#3B82F6] hover:underline inline-block transition-colors duration-200"
-                  >
-                    hello@Deckora.com
-                  </a>
+                <p className="text-white font-semibold pt-1">
+                  Factory:
                 </p>
-                <p>
-                  <a
-                    href="tel:+123450346"
-                    className="hover:text-[#3B82F6] hover:underline inline-block transition-colors duration-200"
-                  >
-                    +123 450 346
-                  </a>
+                <p className="text-neutral-300">
+                  Saraswati Complex, Bhandardaha, Domjur, Howrah - 711405, West Bengal
                 </p>
+                <div className="pt-1.5 space-y-1">
+                  <p>
+                    <a
+                      href="tel:+919830083777"
+                      className="hover:text-[#3B82F6] hover:underline inline-block transition-colors duration-200"
+                    >
+                      India: +91 9830083777
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="tel:+13464337572"
+                      className="hover:text-[#3B82F6] hover:underline inline-block transition-colors duration-200"
+                    >
+                      USA: +1 (346) 433-7572
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="mailto:opmaskara1008@gmail.com"
+                      className="hover:text-[#3B82F6] hover:underline inline-block transition-colors duration-200"
+                    >
+                      opmaskara1008@gmail.com
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="mailto:som83777@gmail.com"
+                      className="hover:text-[#3B82F6] hover:underline inline-block transition-colors duration-200"
+                    >
+                      som83777@gmail.com
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Huge Metallic Gradient CHARU ENTERPRISE Text Background Banner */}
+          {/* Huge Metallic Gradient CHARU ENTERPRISES-INDIA Text Background Banner */}
           <div className="mt-8 sm:mt-12 lg:mt-14 mb-2 sm:mb-4 select-none pointer-events-none text-center overflow-hidden flex items-center justify-center">
-            <h1 className="text-[28px] xs:text-[36px] sm:text-[54px] md:text-[72px] lg:text-[98px] xl:text-[118px] 2xl:text-[132px] font-black tracking-tight leading-none uppercase whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-b from-white/90 via-white/40 to-white/0 font-['Outfit',sans-serif]">
-              CHARU ENTERPRISE
+            <h1 className="text-[24px] xs:text-[32px] sm:text-[48px] md:text-[64px] lg:text-[88px] xl:text-[104px] 2xl:text-[118px] font-black tracking-tight leading-none uppercase whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-b from-white/90 via-white/40 to-white/0 font-['Outfit',sans-serif]">
+              CHARU ENTERPRISES
             </h1>
           </div>
 
           {/* Bottom Bar Divider & Copyright */}
           <div className="border-t border-white/15 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-neutral-300 font-medium">
-            <p className="hover:text-white transition-colors">© 2026 Charu Enterprise. All Rights Reserved.</p>
+            <p className="hover:text-white transition-colors">© 2026 Charu Enterprises - India (Mfg Since 1969). All Rights Reserved.</p>
             <div className="flex items-center gap-6">
               <a href="#" className="hover:text-[#3B82F6] transition-colors duration-200">
                 Privacy Policy

@@ -2,30 +2,34 @@ import { useState, useEffect, type FC } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-export const FamilyOwned: FC = () => {
+interface FamilyOwnedProps {
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+}
+
+export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const features = [
     {
       id: '01',
-      title: 'Local and approachable',
-      description: 'Talk directly with a team that understands homes, neighborhoods, and outdoor living needs.',
+      title: 'Generational Foundry & Tooling Expertise',
+      description: 'Over 6 decades of metal stamping, malleable casting, and finishing know-how backed by long-standing global partnerships.',
       image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Local family-owned craftsmen discussing outdoor deck plans',
+      alt: 'Precision metal stamping and die tooling at Charu Enterprises',
     },
     {
       id: '02',
-      title: 'Clear communication',
-      description: 'We keep the process simple with honest estimates, project updates, and practical guidance.',
+      title: '100% Zero Defect Quality Assurance',
+      description: 'Every fitting undergoes rigorous tensile strength, galvanization thickness, and dimensional inspections before export.',
       image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Planning and blueprint review for outdoor patio space',
+      alt: 'Quality engineering inspection and dimensional verification',
     },
     {
       id: '03',
-      title: 'Work we stand behind',
-      description: 'Every deck, patio, and pergola is built with care, safety, and long-term use in mind.',
+      title: 'Global Export & Duty-Paid DDP Logistics',
+      description: 'Proven track record delivering full container loads across the USA, Canada, Europe, and Australia with complete documentation.',
       image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Finished durable pergola and deck construction built to last',
+      alt: 'Container logistics and international shipping',
     },
   ];
 
@@ -47,27 +51,29 @@ export const FamilyOwned: FC = () => {
           <div className="lg:col-span-7 space-y-3.5">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-              <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight">
-                Family-owned business
+              <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight uppercase">
+                Leadership & Heritage
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-              Family-owned Outdoor <br className="hidden sm:inline" />
-              Building with a Personal <br className="hidden sm:inline" />
-              Touch.
+              Family-Led Manufacturing <br className="hidden sm:inline" />
+              With 55+ Years of Trust <br className="hidden sm:inline" />
+              & Global Integrity.
             </h2>
           </div>
 
           {/* Right Column: Paragraph + CTA Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-5 pt-1 lg:pt-2">
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-              Deckora is built around honest work, clear communication, and outdoor spaces made for real homes. As a family-run team, we care about every detail from the first visit to the final walkthrough.
+              Founded by Mr. OP Maskara (62+ years export pioneer) and co-led by Mr. Som Maskara, Charu Enterprises combines generational metallurgical engineering with ISO 9001:2015 precision.
             </p>
 
             <button
+              type="button"
+              onClick={() => onNavigate?.('about')}
               className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
             >
-              <span className="transition-colors">Meet the team</span>
+              <span className="transition-colors">Meet Our Leadership</span>
               <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
                 <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
               </div>

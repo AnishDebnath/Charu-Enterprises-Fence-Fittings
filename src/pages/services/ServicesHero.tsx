@@ -33,12 +33,12 @@ export const ServicesHero: FC<ServicesHeroProps> = ({ onNavigate }) => {
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Our Services
+              Products &amp; Capabilities
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              From custom timber decks to shaded pergolas and stone patios, we deliver expert craftsmanship built for everyday outdoor living.
+              Precision pressed steel stampings, ASTM A153 hot-dip galvanizing, malleable iron foundry castings, and custom in-house tooling development.
             </p>
 
             {/* Breadcrumb Navigation */}
@@ -51,7 +51,7 @@ export const ServicesHero: FC<ServicesHeroProps> = ({ onNavigate }) => {
                 Home
               </button>
               <span className="text-white/50">/</span>
-              <span className="text-[#f0c75e] font-bold">Our Services</span>
+              <span className="text-[#f0c75e] font-bold">Products &amp; Capabilities</span>
             </div>
           </motion.div>
         </div>

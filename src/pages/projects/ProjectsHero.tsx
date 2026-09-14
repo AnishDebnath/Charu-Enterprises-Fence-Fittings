@@ -33,12 +33,12 @@ export const ProjectsHero: FC<ProjectsHeroProps> = ({ onNavigate }) => {
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Our Projects
+              Catalog A25 &amp; Products
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              Explore our portfolio of custom decks, shaded pergolas, covered patios, and complete backyard transformations crafted for everyday living.
+              Explore our comprehensive range of certified pressed steel, malleable iron castings, aluminum hardware, and custom-engineered fence fittings exported globally.
             </p>
 
             {/* Breadcrumb Navigation */}
@@ -51,7 +51,7 @@ export const ProjectsHero: FC<ProjectsHeroProps> = ({ onNavigate }) => {
                 Home
               </button>
               <span className="text-white/50">/</span>
-              <span className="text-[#f0c75e] font-bold">Our Projects</span>
+              <span className="text-[#f0c75e] font-bold">Catalog A25</span>
             </div>
           </motion.div>
         </div>

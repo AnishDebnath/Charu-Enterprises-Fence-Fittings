@@ -6,17 +6,17 @@ interface ProjectDetailHeroProps {
   projectTitle?: string;
 }
 
-export const ProjectDetailHero: FC<ProjectDetailHeroProps> = ({ onNavigate, projectTitle = 'Backyard Deck & Pergola Upgrade' }) => {
+export const ProjectDetailHero: FC<ProjectDetailHeroProps> = ({ onNavigate, projectTitle = 'Barbed Arm - 14 GA & 16 GA' }) => {
   return (
     <div className="w-full bg-white px-2 sm:px-3 md:px-4 pt-2 sm:pt-3 pb-2 font-['Outfit',sans-serif]">
       {/* Outer Rounded Hero Container Card matching About Hero */}
       <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[420px] sm:min-h-[470px] md:min-h-[520px] lg:min-h-[560px] flex flex-col justify-between border border-blue-900/50">
         
-        {/* Background Image with Craftsman Outdoor Living & Dark Navy Multi-stop Overlay */}
+        {/* Background Image with Industrial Manufacturing & Dark Navy Multi-stop Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2560&q=85"
-            alt="Finished backyard deck, pergola, and outdoor living renovation"
+            src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=2560&q=85"
+            alt="Charu Enterprises precision stamped fence fitting component manufacturing"
             className="w-full h-full object-cover object-[center_45%] opacity-85"
           />
           {/* Multi-stop gradient matching website aesthetic */}
@@ -34,12 +34,12 @@ export const ProjectDetailHero: FC<ProjectDetailHeroProps> = ({ onNavigate, proj
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Project Details
+              Product Specifications
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              Explore in-depth specifications, materials, and craftsmanship behind our custom outdoor living transformations.
+              In-depth engineering dimensions, size charts, packaging counts, and ASTM A153 hot-dip galvanizing standards for Catalog A25 items.
             </p>
 
             {/* Breadcrumb Navigation */}
@@ -57,7 +57,7 @@ export const ProjectDetailHero: FC<ProjectDetailHeroProps> = ({ onNavigate, proj
                 onClick={() => onNavigate?.('projects')}
                 className="text-white/80 hover:text-white transition-colors cursor-pointer"
               >
-                Our Projects
+                Catalog A25
               </button>
               <span className="text-white/50">/</span>
               <span className="text-[#f0c75e] font-bold line-clamp-1">{projectTitle}</span>

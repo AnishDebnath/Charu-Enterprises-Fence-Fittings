@@ -2,39 +2,43 @@ import { useState, type FC } from 'react';
 import { ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-export const FAQSection: FC = () => {
+interface FAQSectionProps {
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+}
+
+export const FAQSection: FC<FAQSectionProps> = ({ onNavigate }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
     {
       id: '01',
-      question: 'How long does a typical custom deck or patio build take?',
+      question: 'What is your standard production lead time for container orders?',
       answer:
-        'Most standard residential deck or patio builds take between 1 to 3 weeks once on-site construction begins, depending on square footage, complexity, railing systems, and weather conditions.',
+        'Standard full container load (FCL) orders typically ship within 30 to 45 days after CAD approval and purchase order confirmation. Repeat catalog items from our regular production schedule can often be dispatched earlier.',
     },
     {
       id: '02',
-      question: 'Do you handle city building permits and HOA approvals?',
+      question: 'Can Charu Enterprises manufacture custom fittings to proprietary drawings?',
       answer:
-        'Yes, we manage the entire permitting process from drafting 3D architectural plans to submitting documentation with your local township and coordinating HOA architectural reviews.',
+        'Yes. With our comprehensive in-house tool room and tool & die development engineers, we manufacture custom stampings, malleable castings, and aluminum fittings tailored to your exact drawings, specifications, and branded markings.',
     },
     {
       id: '03',
-      question: 'What is the difference between composite and treated timber decking?',
+      question: 'What galvanizing and corrosion resistance standards do you adhere to?',
       answer:
-        'Composite decking offers ultra-low maintenance, superior UV resistance, and 25–50 year stain and fade warranties without requiring annual staining or sanding, whereas pressure-treated lumber offers a classic natural wood aesthetic at a lower initial investment.',
+        'All pressed steel and malleable iron products are hot-dip galvanized strictly in accordance with ASTM A153 / ASTM A123 standards. We verify coating thickness with calibrated magnetic/eddy-current thickness gauges to guarantee long-term outdoor rust resistance.',
     },
     {
       id: '04',
-      question: 'How do you structure estimates and project milestone payments?',
+      question: 'What international shipping terms and destinations do you support?',
       answer:
-        'We provide transparent, fixed-price itemized estimates with no hidden fees. Payments are typically structured in clear project milestones: initial deposit, material arrival/framing start, and final sign-off inspection upon completion.',
+        'We support flexible international commercial terms including FOB (Kolkata/Haldia Ports), CIF, CFR, and hassle-free DDP (Delivered Duty Paid) directly to your warehouse across the United States, Canada, the European Union, Australia, and the Middle East.',
     },
     {
       id: '05',
-      question: 'What warranties do you provide on craftsmanship and materials?',
+      question: 'What quality control and inspection documentation is provided with shipments?',
       answer:
-        'All our installations include our comprehensive 5-year structural craftsmanship warranty in addition to manufacturer warranties ranging from 25 years to lifetime protection on premium composite materials and powder-coated railings.',
+        'As an ISO 9001:2015 certified manufacturer, every container shipment is backed by Material Test Certificates (MTC), hot-dip galvanizing coating thickness reports, tensile strength test data, and detailed dimensional inspection sheets.',
     },
   ];
 
@@ -55,30 +59,31 @@ export const FAQSection: FC = () => {
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
                 <span className="text-[#3B82F6] text-xs sm:text-sm font-bold tracking-tight uppercase">
-                  FAQ
+                  Buyer &amp; Importer FAQ
                 </span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-                Common Questions Before Starting an Outdoor Project.
+                Common Questions for Global Distributors &amp; Importers.
               </h2>
 
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal pt-1">
-                Answer the questions homeowners usually ask before they request a quote.
+                Everything you need to know about our minimum order quantities, custom tooling lead times, ASTM galvanization standards, and shipping terms.
               </p>
             </div>
 
             {/* Let's Talk Button matching website button design and hover effect */}
             <div className="pt-2 lg:pt-8">
-              <a
-                href="#contact"
+              <button
+                type="button"
+                onClick={() => onNavigate?.('contact')}
                 className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full inline-flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
               >
-                <span className="transition-colors">Let&apos;s Talk</span>
+                <span className="transition-colors">Request a Quote</span>
                 <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
                   <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                 </div>
-              </a>
+              </button>
             </div>
           </div>
 

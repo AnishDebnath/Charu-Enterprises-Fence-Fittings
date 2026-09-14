@@ -9,39 +9,39 @@ export const RecentProjects: FC<RecentProjectsProps> = ({ onNavigate }) => {
   const projects = [
     {
       id: 1,
-      title: 'Backyard deck with built-in seating',
-      description: 'Composite decking, railing, stairs, and a simple layout for family gatherings.',
-      image: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=900&q=80',
+      title: 'Barbed Wire Arms (Pressed Steel & Malleable)',
+      description: 'High tensile pressed steel barbed arms with 3-wire notches, hot-dip galvanized for security fencing.',
+      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80',
     },
     {
       id: 2,
-      title: 'Backyard lounge with privacy screen',
-      description: 'Privacy, lighting, and comfort zones for everyday use.',
-      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80',
+      title: 'Industrial Offset Hinges 180° (Malleable Iron)',
+      description: 'Heavy-duty 180-degree offset hinges engineered for commercial security gates and high-cycle use.',
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80',
     },
     {
       id: 3,
-      title: 'Covered patio for outdoor dining',
-      description: 'Shade, seating, and a cleaner space for meals outside.',
-      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80',
+      title: 'Box Hinges (Pressed Steel & Malleable Iron)',
+      description: 'Heavy commercial gate box hinges with grease zerks, precision-formed to fit 2-1/2" to 8-5/8" posts.',
+      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
     },
     {
       id: 4,
-      title: 'Modern cedar pergola & stone fire pit',
-      description: 'Warm natural timber pergola with integrated ambient string lighting and stone hearth.',
+      title: 'Rolling Gate Hardware Track Kits',
+      description: 'Complete pipe track roller assemblies with double wheel carriers, safety track brackets, and heavy latch kits.',
       image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80',
     },
     {
       id: 5,
-      title: 'Multi-level poolside composite deck',
-      description: 'Slip-resistant dark walnut composite deck with glass balustrade railing around pool.',
-      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
+      title: 'Bull Dog Hinges (Heavy Duty Commercial)',
+      description: 'Heavy malleable iron & steel bull dog gate hinges with U-bolt assemblies and hot-dip galvanized coating.',
+      image: 'https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=900&q=80',
     },
     {
       id: 6,
-      title: 'Elevated front porch & custom planters',
-      description: 'Covered cedar entryway deck with matching handcrafted timber flower boxes.',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80',
+      title: 'High-Tensile Galvanized Tension Bars & Bands',
+      description: 'Standard and heavy gauge 3/4" x 14 GA & 12 GA tension bands, brace bands, and continuous tension bars.',
+      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=80',
     },
   ];
 
@@ -60,20 +60,20 @@ export const RecentProjects: FC<RecentProjectsProps> = ({ onNavigate }) => {
           <div className="lg:col-span-7 space-y-3.5">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-              <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight">
-                Recent projects
+              <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight uppercase">
+                Featured Catalog Products
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-              From Worn Backyard to <br className="hidden sm:inline" />
-              Usable Outdoor Space.
+              High-Demand Fence Hardware <br className="hidden sm:inline" />
+              & Catalog A25 Highlights.
             </h2>
           </div>
 
           {/* Right Column: Narrative Subtitle + CTA Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-5 pt-1 lg:pt-2">
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-              Show finished decks, patios, pergolas, railing work, and outdoor living upgrades with clear project details.
+              Explore our most popular precision-engineered fence fittings, trusted by commercial fence contractors and master distributors across 4 continents.
             </p>
 
             <button
@@ -81,7 +81,7 @@ export const RecentProjects: FC<RecentProjectsProps> = ({ onNavigate }) => {
               onClick={() => onNavigate?.('projects')}
               className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
             >
-              <span className="transition-colors">View All Projects</span>
+              <span className="transition-colors">Explore Catalog A25</span>
               <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
                 <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
               </div>
@@ -96,8 +96,8 @@ export const RecentProjects: FC<RecentProjectsProps> = ({ onNavigate }) => {
           {marqueeProjects.map((project, index) => (
             <div
               key={`${project.id}-${index}`}
-              onClick={() => onNavigate?.('project-detail')}
-              className="group relative rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-[4/5] sm:aspect-[3/4] w-[300px] sm:w-[350px] md:w-[380px] lg:w-[410px] shrink-0 bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 cursor-pointer border border-slate-200/80 select-none"
+              onClick={() => onNavigate?.('projects')}
+              className="group relative rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-square w-[300px] sm:w-[350px] md:w-[380px] lg:w-[410px] shrink-0 bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 cursor-pointer border border-slate-200/80 select-none"
             >
               {/* Background Project Photo */}
               <img

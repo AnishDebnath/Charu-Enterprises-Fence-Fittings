@@ -1,27 +1,23 @@
 import type { FC } from 'react';
+import { COMPANY_INFO } from '../../data/companyData';
 
 export const TeamSection: FC = () => {
-  const teamMembers = [
+  const leadership = [
     {
-      name: 'Ethan Brooks',
-      role: 'Project Lead',
-      bio: 'Ethan keeps every outdoor project organized from the first site visit to the final walkthrough.',
-      image: 'https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=800&q=80',
-      alt: 'Ethan Brooks - Project Lead wearing safety vest on site',
+      name: COMPANY_INFO.founders[0].name,
+      role: COMPANY_INFO.founders[0].role,
+      experience: COMPANY_INFO.founders[0].experience,
+      bio: COMPANY_INFO.founders[0].bio,
+      image: COMPANY_INFO.founders[0].image,
+      alt: `${COMPANY_INFO.founders[0].name} - Founder President`,
     },
     {
-      name: 'Daniel Carter',
-      role: 'Construction Specialist',
-      bio: 'Daniel handles custom deck builds with careful measurements, strong structure, and clean finishing.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-      alt: 'Daniel Carter - Construction Specialist holding blueprints',
-    },
-    {
-      name: 'Olivia Hayes',
-      role: 'Design Consultant',
-      bio: 'Olivia helps homeowners choose layouts, materials, and ideas that fit their outdoor space.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
-      alt: 'Olivia Hayes - Design Consultant on outdoor timber site',
+      name: COMPANY_INFO.founders[1].name,
+      role: COMPANY_INFO.founders[1].role,
+      experience: COMPANY_INFO.founders[1].experience,
+      bio: COMPANY_INFO.founders[1].bio,
+      image: COMPANY_INFO.founders[1].image,
+      alt: `${COMPANY_INFO.founders[1].name} - Vice President`,
     },
   ];
 
@@ -35,24 +31,24 @@ export const TeamSection: FC = () => {
           <div className="flex items-center gap-2 mb-2">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
             <span className="text-[#3B82F6] text-xs sm:text-sm font-semibold tracking-wide uppercase">
-              Get to know us
+              Leadership &amp; Heritage
             </span>
           </div>
 
           {/* Headline */}
           <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#0a1532] leading-[1.2] tracking-tight mb-3">
-            Meet the People Behind Every Outdoor Project
+            Meet the Founders &amp; Executive Leadership
           </h2>
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal max-w-2xl">
-            Our team brings planning, building, and installation experience together to help homeowners create decks, patios, pergolas, and outdoor spaces that feel ready to use every day.
+            Over 55+ years of continuous engineering leadership, humanitarian service, and high-precision metallurgical export excellence.
           </p>
         </div>
 
         {/* Team Cards: 1 Card per row with alternating flex direction scaled to full section width */}
         <div className="flex flex-col gap-6 sm:gap-8 max-w-5xl xl:max-w-6xl mx-auto">
-          {teamMembers.map((member, idx) => {
+          {leadership.map((member, idx) => {
             const isReversed = idx % 2 === 1;
             return (
               <div
@@ -80,8 +76,11 @@ export const TeamSection: FC = () => {
                   <h3 className="text-2xl sm:text-3xl font-bold text-[#0a1532] tracking-tight mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-sm sm:text-base font-medium text-slate-500 mb-3 sm:mb-4 tracking-wide">
+                  <p className="text-sm sm:text-base font-semibold text-[#2563EB] mb-1 tracking-wide">
                     {member.role}
+                  </p>
+                  <p className="text-xs sm:text-sm font-medium text-slate-400 mb-3 sm:mb-4">
+                    {member.experience}
                   </p>
                   <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl">
                     {member.bio}

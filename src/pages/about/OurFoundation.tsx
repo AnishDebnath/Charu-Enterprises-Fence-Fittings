@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface OurFoundationProps {
-  onNavigate?: (page: 'home' | 'about') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
 }
 
 export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
@@ -12,11 +12,7 @@ export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
   const handleServicesClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (onNavigate) {
-      onNavigate('home');
-      setTimeout(() => {
-        const el = document.querySelector('#services');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      onNavigate('services');
     }
   };
 
@@ -38,7 +34,7 @@ export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
 
             {/* Headline */}
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.2] tracking-tight">
-              Built on Care, Quality, and Practical Service
+              Built on Precision Metallurgy, Quality, and Global Trust
             </h2>
 
             {/* Interactive Tabs Header */}
@@ -91,10 +87,10 @@ export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
                 }`}
               >
                 <p>
-                  We focus on practical landscaping that improves how outdoor spaces look and function. Every project is handled with care, from planning to final setup, ensuring results that feel natural and easy to maintain.
+                  We focus on engineered metallurgical reliability that ensures structural fencing components withstand high dynamic loads and severe weather. Every production run is strictly controlled from raw steel slit coils to ASTM A153 hot-dip galvanizing.
                 </p>
                 <p>
-                  We believe in clear communication, honest work, and solutions that fit each space without unnecessary complexity.
+                  We believe in building long-term distributor partnerships through transparent pricing, customized packaging, and continuous investment in in-house tool and die precision.
                 </p>
               </div>
 
@@ -107,10 +103,10 @@ export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
                 }`}
               >
                 <p>
-                  We stand behind every deck, pergola, and outdoor living space we build. From transparent estimates and licensed craftsmanship to thorough site cleanup and long-term durability.
+                  We stand behind every stamped brace band, malleable gate hinge, and tension bar that leaves our manufacturing plant. Certified ISO 9001:2015 quality processes govern chemical analysis, tensile load testing, and zinc coating thickness.
                 </p>
                 <p>
-                  Our team works closely with each homeowner from design approval through final inspection, ensuring dependable scheduling, clean job sites, and complete peace of mind.
+                  Our dedicated international export team works closely with commercial importers to provide full container load optimization, palletized weatherproofing, and seamless customs documentation.
                 </p>
               </div>
             </div>
@@ -122,7 +118,7 @@ export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
                 onClick={handleServicesClick}
                 className="group/link inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-[#0a1532] hover:text-[#2563EB] border-b-2 border-[#0a1532] hover:border-[#2563EB] pb-0.5 transition-all cursor-pointer"
               >
-                <span>View Services</span>
+                <span>Explore Catalog &amp; Products</span>
                 <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -133,8 +129,8 @@ export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
           <div className="lg:col-span-6 relative flex items-center justify-center">
             <div className="relative rounded-2xl sm:rounded-3xl lg:rounded-[28px] overflow-hidden aspect-square w-full max-w-[540px] shadow-xl border border-blue-200/80 bg-white group">
               <img
-                src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=80"
-                alt="Backyard patio pavers with covered porch structure and lawn"
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
+                alt="Charu Enterprises heavy industrial manufacturing and metallurgy operations"
                 className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />

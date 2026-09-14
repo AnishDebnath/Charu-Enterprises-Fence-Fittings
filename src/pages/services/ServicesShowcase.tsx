@@ -9,45 +9,45 @@ export const ServicesShowcase: FC<ServicesShowcaseProps> = ({ onNavigate }) => {
   const services = [
     {
       id: 1,
-      title: 'Custom deck building',
-      description: 'Decks planned around your home, yard, view, and daily outdoor use.',
-      image: 'https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Carpenter building custom deck timber framing',
+      title: 'Pressed Steel Fence Fittings',
+      description: 'Heavy-duty brace bands, tension bands, post caps, rail ends, and carriage bolt hardware.',
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Pressed steel fence fittings manufacturing and stamping',
     },
     {
       id: 2,
-      title: 'Deck Repair',
-      description: 'Fix loose boards, weak railings, worn stairs, & damaged framing.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Craftsman repairing outdoor deck with safety helmet and autumn background',
+      title: 'Malleable Iron Gate Hardware',
+      description: 'Industrial 180° offset hinges, malleable box hinges, cantilever rollers, & latch assemblies.',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Malleable iron casting and fence gate hardware',
     },
     {
       id: 3,
-      title: 'Patio Construction',
-      description: 'Comfortable patio areas for seating, dining, grilling, & relaxing.',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Paved outdoor patio construction with terrace seating and plants',
+      title: 'Hot-Dip Galvanizing (ASTM A153)',
+      description: 'Automated zinc kettles delivering heavy 85+ micron protective coatings for extreme durability.',
+      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Hot-dip galvanizing plant and quality inspection',
     },
     {
       id: 4,
-      title: 'Pergola Installation',
-      description: 'Shade, structure, and style for decks, patios, & backyard spaces.',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Modern timber pergola with ambient patio lighting',
+      title: 'In-House Tool & Die Engineering',
+      description: 'Custom progressive stamping dies, CAD/CAM design, and rapid first-article prototype runs.',
+      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
+      alt: 'In-house tool and die engineering workshop',
     },
     {
       id: 5,
-      title: 'Outdoor Kitchens',
-      description: 'Custom built-in grills, countertops, and luxury alfresco prep spaces.',
-      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Outdoor kitchen and backyard dining entertainment space',
+      title: 'Aluminum Fence Fittings',
+      description: 'Corrosion-proof aluminum dome caps, loop caps, and ornamental security bracket assemblies.',
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Aluminum fence fittings and caps',
     },
     {
       id: 6,
-      title: 'Deck Staining & Sealing',
-      description: 'Long-lasting weatherproof coatings and premium wood finish restoration.',
-      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Deck refinishing and protective weather sealant application',
+      title: 'Turnkey Container Export Logistics',
+      description: 'Palletized strapping, barcode tagging, container load optimization, & FOB/CIF/DDP shipping.',
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Container shipment export packaging at dock',
     },
   ];
 
@@ -61,18 +61,18 @@ export const ServicesShowcase: FC<ServicesShowcaseProps> = ({ onNavigate }) => {
           <div className="flex items-center gap-2 mb-2.5">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
             <span className="text-[#3B82F6] text-xs sm:text-sm font-semibold tracking-wide uppercase">
-              Browse Our Services
+              Our Capabilities &amp; Products
             </span>
           </div>
 
           {/* Headline */}
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.15] tracking-tight mb-3 sm:mb-4">
-            Outdoor Spaces Made for Everyday Living.
+            Engineered Fence Fittings &amp; Metallurgy.
           </h2>
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-2xl">
-            From new decks to shaded patios, we help homeowners build, repair, and improve outdoor areas they can use more often.
+            From high-volume commercial chain link hardware to custom progressive tooling, we manufacture dependable hardware for security distributors worldwide.
           </p>
         </div>
 

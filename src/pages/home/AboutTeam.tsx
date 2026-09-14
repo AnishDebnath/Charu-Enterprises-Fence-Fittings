@@ -1,25 +1,29 @@
 import { useState, type FC } from 'react';
 import { Play, Check, ArrowRight } from 'lucide-react';
 
-export const AboutTeam: FC = () => {
+interface AboutTeamProps {
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+}
+
+export const AboutTeam: FC<AboutTeamProps> = ({ onNavigate }) => {
   const [isPlayingVideo, setIsPlayingVideo] = useState(false);
 
   const stats = [
     {
-      value: '12',
-      label: 'Years of deck and patio experience',
+      value: '55+',
+      label: 'Years of manufacturing growth (1969–2025)',
     },
     {
-      value: '320+',
-      label: 'Outdoor projects completed',
+      value: '150M+',
+      label: 'Fence fittings exported globally',
     },
     {
-      value: '500+',
-      label: 'Happy local homeowners',
+      value: '20,000',
+      label: 'SQFT factory & galvanizing facility',
     },
     {
-      value: '4.9',
-      label: 'Average customer rating',
+      value: '100%',
+      label: 'Zero defects satisfaction guarantee',
     },
   ];
 
@@ -32,8 +36,8 @@ export const AboutTeam: FC = () => {
           <div className="lg:col-span-3 flex items-start pt-2">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-              <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight">
-                Get to know us
+              <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight uppercase">
+                About Charu Enterprises
               </span>
             </div>
           </div>
@@ -42,10 +46,10 @@ export const AboutTeam: FC = () => {
           <div className="lg:col-span-9">
             <h2 className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-medium leading-[1.28] text-slate-500 tracking-tight">
               <span className="font-bold text-[#0a1532]">
-                Meet your local team for decks, patios, and outdoor living spaces. With years of hands-on building experience, We helps homeowners
+                Manufacturing Excellence Since 1969. With over 55+ years of growth and in-house engineering capabilities, Charu Enterprises leads India in fence fittings exports.
               </span>{' '}
               <span className="text-slate-600 font-normal">
-                turn unused yards into better spaces for relaxing, dining, hosting, and spending more time outside.
+                Specializing in pressed steel, malleable iron, and aluminum fence hardware with full in-house tooling, high-tensile galvanizing, and strict quality control.
               </span>
             </h2>
           </div>
@@ -56,12 +60,12 @@ export const AboutTeam: FC = () => {
           {/* Left Large Showcase Image Card with Centered Play Button (16:9 ratio) */}
           <div className="lg:col-span-8 relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/9] w-full shadow-lg group border border-blue-100 bg-neutral-900">
             <img
-              src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1600&q=80"
-              alt="Outdoor backyard patio with lawn and wooden slat fence"
+              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80"
+              alt="Charu Enterprises precision manufacturing workshop"
               className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-700"
             />
             {/* Subtle Overlay */}
-            <div className="absolute inset-0 bg-black/15 group-hover:bg-black/10 transition-colors duration-300" />
+            <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition-colors duration-300" />
 
             {/* Centered Circular Play Button */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-auto">
@@ -81,16 +85,16 @@ export const AboutTeam: FC = () => {
             <div className="absolute inset-0 z-0">
               <img
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80"
-                alt="Contractor constructing outdoor deck"
+                alt="Precision tool and die room"
                 className="w-full h-full object-cover object-center opacity-90 group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/90 via-[#071128]/50 to-[#071128]/25" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/95 via-[#071128]/60 to-[#071128]/30" />
             </div>
 
             {/* Top Content */}
             <div className="relative z-10">
               <h3 className="text-xl sm:text-2xl lg:text-[28px] font-bold text-white leading-tight tracking-tight">
-                A clear path from idea <br /> to build
+                Custom Sheet Metal & <br /> Die Fabrication
               </h3>
             </div>
 
@@ -101,20 +105,22 @@ export const AboutTeam: FC = () => {
                 <div className="w-5 h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
                   <Check className="w-3 h-3 stroke-[3.5]" />
                 </div>
-                <span>Consult Plan Build</span>
+                <span>ISO 9001:2015 Quality</span>
               </div>
 
               {/* Subtext description */}
               <p className="text-neutral-100 text-sm sm:text-base leading-relaxed font-normal">
-                Share your outdoor goals, review material options, and get a clear plan for your deck, patio, pergola, or backyard upgrade.
+                We manufacture custom sheet metal stampings, clamps, and malleable castings directly from your CAD drawings with in-house tooling.
               </p>
 
               {/* Bottom Button matching hero CTA */}
               <div className="pt-2">
                 <button
+                  type="button"
+                  onClick={() => onNavigate?.('services')}
                   className="group/btn w-full sm:w-auto bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 pr-2.5 py-3 rounded-full flex items-center justify-between sm:justify-start gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
                 >
-                  <span className="transition-colors">Schedule Service</span>
+                  <span className="transition-colors">Explore Product Range</span>
                   <div className="w-6 h-6 rounded-full bg-white group-hover/btn:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover/btn:text-white shadow-sm shrink-0 transition-colors">
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                   </div>
@@ -157,22 +163,20 @@ export const AboutTeam: FC = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
-              <h4 className="font-bold text-base text-white">Deckora Craftsmanship Video Tour</h4>
+              <h4 className="font-bold text-base text-white">Charu Enterprises Facility Tour</h4>
               <button
                 onClick={() => setIsPlayingVideo(false)}
-                className="text-neutral-400 hover:text-white p-1 cursor-pointer"
+                className="text-neutral-400 hover:text-white p-1 rounded-lg hover:bg-neutral-800 cursor-pointer"
               >
                 ✕
               </button>
             </div>
-            <div className="aspect-video w-full rounded-xl overflow-hidden mt-3 bg-black">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1"
-                title="Deckora Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <div className="aspect-video mt-3 rounded-xl overflow-hidden bg-black flex items-center justify-center">
+              <div className="text-center p-6 space-y-2">
+                <p className="font-semibold text-lg text-white">Charu Enterprises Manufacturing Plant</p>
+                <p className="text-sm text-neutral-400">20,000 SQFT Facility • Domjur, Howrah, West Bengal, India</p>
+                <p className="text-xs text-[#60A5FA]">In-House Tool Room • Galvanizing Plant • Tensile Testing</p>
+              </div>
             </div>
           </div>
         </div>

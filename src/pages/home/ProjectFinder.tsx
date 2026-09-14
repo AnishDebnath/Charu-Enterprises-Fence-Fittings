@@ -1,31 +1,35 @@
 import type { FC } from 'react';
 import { Layers, Umbrella, Sun, Wrench, ArrowUpRight } from 'lucide-react';
 
-export const ProjectFinder: FC = () => {
+interface ProjectFinderProps {
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+}
+
+export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {
   const steps = [
     {
       step: 'Step 01',
-      title: 'New deck',
-      description: 'For more usable space connected to the home and ready for daily outdoor living.',
+      title: 'Drawing & Specs Review',
+      description: 'Submit your CAD blueprints, sample fittings, or standard Catalog A25 part numbers for verification.',
       icon: Layers,
     },
     {
       step: 'Step 02',
-      title: 'Patio Upgrade',
-      description: 'For dining, seating, grilling, relaxing, and creating a clean backyard zone.',
-      icon: Umbrella,
-    },
-    {
-      step: 'Step 03',
-      title: 'Pergola or Shade',
-      description: 'For more comfort, privacy, structure, and better outdoor use through the day.',
+      title: 'In-House Tooling & Dies',
+      description: 'Our in-house tool room develops custom dies, molds, and stampings with zero-defect pre-production samples.',
       icon: Sun,
     },
     {
-      step: 'Step 04',
-      title: 'Deck Repair',
-      description: 'For loose boards, weak railings, cracked stairs, and worn outdoor surfaces.',
+      step: 'Step 03',
+      title: 'Galvanizing & ISO QC',
+      description: 'Hot-dip galvanizing, tensile strength verification, and 100% strict dimensional quality assurance.',
       icon: Wrench,
+    },
+    {
+      step: 'Step 04',
+      title: 'Duty-Paid DDP Delivery',
+      description: 'Palletized ocean container stuffing, international shipping, and duty-paid direct delivery to your door.',
+      icon: Umbrella,
     },
   ];
 
@@ -38,11 +42,11 @@ export const ProjectFinder: FC = () => {
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2400&q=85"
-          alt="Outdoor backyard deck and patio"
+          alt="Charu Enterprises precision manufacturing facility"
           className="w-full h-full object-cover object-center"
         />
         {/* Dark overlay matching website aesthetic */}
-        <div className="absolute inset-0 bg-[#071128]/80 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-[#071128]/85 backdrop-blur-[2px]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#071128] via-transparent to-[#071128]/90" />
       </div>
 
@@ -52,15 +56,15 @@ export const ProjectFinder: FC = () => {
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 justify-center">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-            <span className="text-[#60A5FA] text-sm sm:text-base font-bold tracking-tight">
-              Project finder
+            <span className="text-[#60A5FA] text-sm sm:text-base font-bold tracking-tight uppercase">
+              Procurement & Export Workflow
             </span>
           </div>
 
           {/* Headline */}
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-[1.2]">
-            Choose the Right Outdoor Project <br className="hidden sm:inline" />
-            for Your Backyard.
+            From Engineering Drawings <br className="hidden sm:inline" />
+            to Delivered Containers.
           </h2>
         </div>
 
@@ -71,7 +75,8 @@ export const ProjectFinder: FC = () => {
             return (
               <div
                 key={index}
-                className="bg-white rounded-[20px] sm:rounded-[24px] p-5 sm:p-6 flex flex-col justify-between shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 group border border-slate-100 min-h-[200px] sm:min-h-[220px]"
+                onClick={() => onNavigate?.('contact')}
+                className="bg-white rounded-[20px] sm:rounded-[24px] p-5 sm:p-6 flex flex-col justify-between shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 group border border-slate-100 min-h-[200px] sm:min-h-[220px] cursor-pointer"
               >
                 {/* Top Row: Icon container on left, Step label on right */}
                 <div className="flex items-center justify-between">

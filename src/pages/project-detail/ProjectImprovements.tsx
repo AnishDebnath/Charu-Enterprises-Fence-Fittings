@@ -13,39 +13,39 @@ interface ProjectImprovementsProps {
 export const defaultImprovements: ImprovementItem[] = [
   {
     number: '01',
-    title: 'Custom Deck Layout',
+    title: 'Raw Steel Gauge Verification',
     description:
-      'The deck was planned to improve movement, seating space, and daily outdoor use.',
+      'High-grade carbon steel slit coils tested for yield strength and accurate gauge thickness prior to stamping.',
   },
   {
     number: '02',
-    title: 'Pergola Installation',
+    title: 'Progressive Die Stamping',
     description:
-      'A pergola was added to provide shade, structure, and a more finished outdoor feel.',
+      'In-house CAD/CAM tooling produces burr-free edges, clean wire slots, and consistent carriage bolt holes.',
   },
   {
     number: '03',
-    title: 'Outdoor Seating Zone',
+    title: 'Pre-Galvanizing Surface Pickling',
     description:
-      'The space was arranged for relaxing, dining, hosting, and family gatherings.',
+      'Acid cleaning and flux treatment removes all mill scale, ensuring optimal metallurgical zinc adhesion.',
   },
   {
     number: '04',
-    title: 'Railing & Safety Details',
+    title: 'ASTM A153 Hot-Dip Galvanizing',
     description:
-      'New railing and edge details were included for better safety and a cleaner look.',
+      'Automated zinc kettle bath delivers heavy 85+ micron protective zinc coating for maximum corrosion defense.',
   },
   {
     number: '05',
-    title: 'Material Upgrade',
+    title: 'Tensile & Fitment Inspection',
     description:
-      'Durable decking materials were used to reduce maintenance and improve long-term use.',
+      'Batch testing ensures perfect pipe OD fitment and high mechanical load resistance without fracture.',
   },
   {
     number: '06',
-    title: 'Final Finishing',
+    title: 'Export Container Packaging',
     description:
-      'The project was completed with clean details, smooth transitions, and ready-to-use outdoor areas.',
+      'Weatherproof poly-bagging, wooden crate strapping, and barcode labels optimized for container unloading.',
   },
 ];
 
@@ -62,18 +62,18 @@ export const ProjectImprovements: FC<ProjectImprovementsProps> = ({
           <div className="inline-flex items-center gap-2">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
             <span className="text-[#2563EB] text-sm sm:text-base font-bold tracking-tight">
-              Project Scope
+              Quality Assurance
             </span>
           </div>
 
           {/* Heading */}
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0a1532] tracking-tight leading-[1.18]">
-            What We Improved in This Outdoor Space
+            Manufacturing Standards &amp; Quality Control
           </h2>
 
           {/* Subtitle */}
           <p className="text-slate-700 text-sm sm:text-base md:text-[17px] leading-relaxed font-normal">
-            A quick look at the main upgrades that helped make this backyard more useful, comfortable, and ready for everyday living.
+            Every batch of Charu Enterprises fence fittings undergoes strict ISO 9001:2015 inspection from raw coil slitting to seaport loading.
           </p>
         </div>
 

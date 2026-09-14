@@ -2,49 +2,49 @@ import type { FC } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 interface GetToKnowUsProps {
-  onNavigate?: (page: 'home' | 'about') => void;
+  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
 }
 
-export const GetToKnowUs: FC<GetToKnowUsProps> = () => {
+export const GetToKnowUs: FC<GetToKnowUsProps> = ({ onNavigate }) => {
   const images = [
     {
-      src: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80',
-      alt: 'Elevated backyard timber deck with dining table and pergola',
+      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
+      alt: 'Charu Enterprises precision stamping & power press facility',
       isUpper: true, // Left side image: upper position
     },
     {
-      src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
-      alt: 'Modern wood pergola over garden lawn with ambient lanterns',
+      src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+      alt: 'Hot-dip galvanizing zinc kettle operations per ASTM A153',
       isUpper: false, // Middle left image: lower position
     },
     {
-      src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
-      alt: 'Spacious backyard deck with sun umbrellas and lounge sofas',
+      src: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+      alt: 'In-house tool and die design engineering room',
       isUpper: false, // Middle right image: lower position
     },
     {
-      src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
-      alt: 'Covered patio outdoor lounge with wooden trellis and woven lamps',
+      src: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+      alt: 'Palletized container export packaging ready for seaport loading',
       isUpper: true, // Right side image: upper position
     },
   ];
 
   const stats = [
     {
-      value: '12',
-      label: 'Years of deck and patio experience',
+      value: '35+',
+      label: 'Years of manufacturing & export excellence',
     },
     {
-      value: '320+',
-      label: 'Outdoor projects completed',
+      value: '12,000+',
+      label: 'Metric tons annual production capacity',
     },
     {
-      value: '500+',
-      label: 'Happy local homeowners',
+      value: '40+',
+      label: 'Global export destination countries',
     },
     {
-      value: '4.9',
-      label: 'Average customer rating',
+      value: '100%',
+      label: 'ASTM A153 compliant hot-dip galvanizing',
     },
   ];
 
@@ -65,24 +65,25 @@ export const GetToKnowUs: FC<GetToKnowUsProps> = () => {
           {/* Full section width headline with refined, harmonious font weights */}
           <h2 className="w-full text-xl sm:text-2xl md:text-3xl lg:text-[32px] xl:text-[34px] font-normal leading-[1.35] tracking-tight">
             <span className="font-semibold text-[#0a1532]">
-              Meet your local team for decks, patios, and outdoor living spaces. With years of hands-on building experience, We helps homeowners
+              Meet your dependable manufacturing partner for industrial fence fittings and hardware. With over three decades of engineering excellence, Charu Enterprises delivers
             </span>{' '}
             <span className="text-slate-500 font-light sm:font-normal">
-              turn unused yards into better spaces for relaxing, dining, hosting, and spending more time outside.
+              precision pressed steel, malleable iron castings, and custom tooling directly to international distributors.
             </span>
           </h2>
 
           {/* Centered CTA Pill Button matching Home page size with reduced space to images */}
           <div className="mt-3.5 sm:mt-4">
-            <a
-              href="#estimate-cta"
+            <button
+              type="button"
+              onClick={() => onNavigate?.('contact')}
               className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-semibold pl-6 pr-2.5 py-3 rounded-full inline-flex items-center gap-3 text-sm sm:text-base shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer font-['Outfit',sans-serif]"
             >
-              <span className="transition-colors">Get Free Estimate</span>
+              <span className="transition-colors">Request Factory Direct Quote</span>
               <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover/btn:text-white shadow-sm shrink-0 transition-colors">
                 <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
               </div>
-            </a>
+            </button>
           </div>
         </div>
 

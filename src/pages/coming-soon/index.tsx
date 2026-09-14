@@ -43,12 +43,15 @@ export const ComingSoonPage: FC = () => {
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
           <video
             src={bannerVideo}
+            poster="/charu poster.jpeg"
             autoPlay
             loop
             muted
             playsInline
             className="w-full h-full object-cover object-[70%_center] lg:object-[80%_center] opacity-75 sm:opacity-80"
-          />
+          >
+            <source src={bannerVideo} type="video/mp4" />
+          </video>
           {/* Multi-stop cinematic gradient matching Home Hero */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/95 via-[#071128]/85 via-50% to-[#071128]/50 z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/95 via-transparent to-[#071128]/40 z-10" />

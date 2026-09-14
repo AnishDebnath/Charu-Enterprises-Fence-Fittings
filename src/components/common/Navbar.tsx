@@ -92,7 +92,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
               onClick={() => handleNavClick('home')}
               className="flex items-center cursor-pointer"
             >
-              <img src={logo} alt="Deckora" className="h-6 sm:h-7 md:h-8 w-auto" />
+              <img src={logo} alt="Charu Enterprises" className="h-6 sm:h-7 md:h-8 w-auto" />
             </button>
           </div>
 
@@ -140,18 +140,18 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                           : 'text-neutral-100 hover:text-white'
                       }`}
                     >
-                      SERVICE
+                      PRODUCTS
                     </button>
                     <button
                       type="button"
                       onClick={() => handleNavClick('projects')}
                       className={`transition-colors cursor-pointer ${
-                        currentPage === 'projects'
+                        currentPage === 'projects' || currentPage === 'project-detail'
                           ? 'text-[#60A5FA] font-extrabold'
                           : 'text-neutral-100 hover:text-white'
                       }`}
                     >
-                      PROJECTS
+                      CATALOG A25
                     </button>
                     <button
                       type="button"
@@ -173,11 +173,11 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
           {/* Right: Phone + CTA with zero unmount shift */}
           <div className="hidden sm:flex items-center shrink-0">
             <a
-              href="tel:+123450346"
+              href="tel:+919830083777"
               className="flex items-center gap-2 text-white text-sm font-semibold hover:text-[#60A5FA] transition-colors py-1 px-2 rounded-full hover:bg-white/5 shrink-0"
             >
               <Phone className="w-4 h-4 text-[#60A5FA]" />
-              <span className="whitespace-nowrap">+1 234 503 46</span>
+              <span className="whitespace-nowrap">+91 9830083777</span>
             </a>
 
             <AnimatePresence initial={false}>
@@ -195,7 +195,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                     onClick={() => handleNavClick('contact')}
                     className="group bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 pr-2 py-2 rounded-full flex items-center gap-2.5 text-sm transition-colors cursor-pointer shadow-lg font-['Outfit',sans-serif] whitespace-nowrap shrink-0"
                   >
-                    <span className="transition-colors">Get Free Estimate</span>
+                    <span className="transition-colors">Request Quote</span>
                     <div className="w-6 h-6 rounded-full bg-white group-hover:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover:text-white shadow-sm shrink-0 transition-colors">
                       <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                     </div>
@@ -208,16 +208,17 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
           {/* Mobile Menu Toggle */}
           <div className="flex lg:hidden items-center gap-2 shrink-0">
             <a
-              href="tel:+123450346"
+              href="tel:+919830083777"
               className="text-neutral-200 hover:text-white p-2 cursor-pointer bg-black/40 hover:bg-black/60 rounded-full border border-white/20 shadow-sm transition-colors"
               aria-label="Call Us"
             >
               <Phone className="w-4 h-4 text-[#60A5FA]" />
             </a>
             <button
+              onClick={() => handleNavClick('contact')}
               className="group sm:hidden bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold px-3 py-1.5 rounded-full text-xs shadow-sm transition-colors"
             >
-              Estimate
+              Quote
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -307,7 +308,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                   currentPage === 'services' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
                 }`}
               >
-                SERVICE
+                PRODUCTS
               </motion.button>
               <motion.button
                 type="button"
@@ -319,10 +320,10 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.17 }}
                 className={`w-full text-left py-2 text-base border-b border-white/10 transition-colors cursor-pointer ${
-                  currentPage === 'projects' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
+                  currentPage === 'projects' || currentPage === 'project-detail' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
                 }`}
               >
-                PROJECTS
+                CATALOG A25
               </motion.button>
               <motion.button
                 type="button"
@@ -353,7 +354,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                   }}
                   className="w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold py-3 rounded-full text-center flex items-center justify-center gap-2 text-sm shadow-lg transition-colors cursor-pointer"
                 >
-                  <span>Get Free Estimate</span>
+                  <span>Request Product Quote</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
