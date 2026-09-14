@@ -2,11 +2,11 @@ import type { FC } from 'react';
 import { Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
 
 interface FooterProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
 export const Footer: FC<FooterProps> = ({ onNavigate }) => {
-  const handleNav = (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact', hash?: string) => {
+  const handleNav = (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', hash?: string) => {
     if (onNavigate) {
       onNavigate(page);
     }
@@ -105,7 +105,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => handleNav('services')}
+                    onClick={() => handleNav('products')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
                   >
                     Product Range
@@ -114,7 +114,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => handleNav('projects')}
+                    onClick={() => handleNav('case-study')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
                   >
                     Catalog A25
@@ -141,7 +141,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => handleNav('services')}
+                    onClick={() => handleNav('products')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
                   >
                     Pressed Steel Fittings
@@ -150,7 +150,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => handleNav('services')}
+                    onClick={() => handleNav('products')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
                   >
                     Malleable Iron Fittings
@@ -159,7 +159,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => handleNav('services')}
+                    onClick={() => handleNav('products')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
                   >
                     Aluminum Fence Fittings
@@ -168,7 +168,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => handleNav('services')}
+                    onClick={() => handleNav('products')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
                   >
                     Tension Bars & Bands
@@ -177,7 +177,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => handleNav('services')}
+                    onClick={() => handleNav('products')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
                   >
                     Cantilever & Gate Hardware
@@ -186,7 +186,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => handleNav('services')}
+                    onClick={() => handleNav('products')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
                   >
                     Custom Sheet Metal Fabrication

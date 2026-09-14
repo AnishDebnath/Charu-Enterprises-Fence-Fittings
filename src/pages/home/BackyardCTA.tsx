@@ -3,7 +3,7 @@ import { ArrowRight, Phone } from 'lucide-react';
 import { COMPANY_INFO } from '../../data/companyData';
 
 interface BackyardCTAProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
 export const BackyardCTA: FC<BackyardCTAProps> = ({ onNavigate }) => {

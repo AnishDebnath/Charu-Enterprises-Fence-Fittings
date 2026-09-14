@@ -1,52 +1,28 @@
 import type { FC } from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
+const supplyImages = import.meta.glob('../../assets/supply in action/*.{jpg,jpeg,png,webp}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>;
+
+const supplyImageList = Object.values(supplyImages);
+
+const caseStudyCards = [
+  { title: 'Commercial Chain Link Gate Hardware' },
+  { title: 'Commercial Fence Gate and Hardware' },
+  { title: 'Galvanized Fence Fittings Macro' },
+  { title: 'Industrial Fence Hardware Manufacturing' },
+  { title: 'Installing Commercial Chain Link' },
+  { title: 'Warehouse Inventory of Fence Hardware' },
+];
+
 interface RecentProjectsProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
 export const RecentProjects: FC<RecentProjectsProps> = ({ onNavigate }) => {
-  const projects = [
-    {
-      id: 1,
-      title: 'Barbed Wire Arms (Pressed Steel & Malleable)',
-      description: 'High tensile pressed steel barbed arms with 3-wire notches, hot-dip galvanized for security fencing.',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80',
-    },
-    {
-      id: 2,
-      title: 'Industrial Offset Hinges 180° (Malleable Iron)',
-      description: 'Heavy-duty 180-degree offset hinges engineered for commercial security gates and high-cycle use.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80',
-    },
-    {
-      id: 3,
-      title: 'Box Hinges (Pressed Steel & Malleable Iron)',
-      description: 'Heavy commercial gate box hinges with grease zerks, precision-formed to fit 2-1/2" to 8-5/8" posts.',
-      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
-    },
-    {
-      id: 4,
-      title: 'Rolling Gate Hardware Track Kits',
-      description: 'Complete pipe track roller assemblies with double wheel carriers, safety track brackets, and heavy latch kits.',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80',
-    },
-    {
-      id: 5,
-      title: 'Bull Dog Hinges (Heavy Duty Commercial)',
-      description: 'Heavy malleable iron & steel bull dog gate hinges with U-bolt assemblies and hot-dip galvanized coating.',
-      image: 'https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=900&q=80',
-    },
-    {
-      id: 6,
-      title: 'High-Tensile Galvanized Tension Bars & Bands',
-      description: 'Standard and heavy gauge 3/4" x 14 GA & 12 GA tension bands, brace bands, and continuous tension bars.',
-      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=80',
-    },
-  ];
-
-  // Duplicate for seamless infinite marquee loop
-  const marqueeProjects = [...projects, ...projects];
+  const marqueeCards = [...caseStudyCards, ...caseStudyCards];
 
   return (
     <section
@@ -78,10 +54,10 @@ export const RecentProjects: FC<RecentProjectsProps> = ({ onNavigate }) => {
 
             <button
               type="button"
-              onClick={() => onNavigate?.('projects')}
+              onClick={() => onNavigate?.('case-study')}
               className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
             >
-              <span className="transition-colors">Explore Catalog A25</span>
+              <span className="transition-colors">Explore Case Study</span>
               <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
                 <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
               </div>
@@ -90,43 +66,43 @@ export const RecentProjects: FC<RecentProjectsProps> = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* Marquee Container moving in seamless infinite loop */}
+      {/* Marquee Container */}
       <div className="relative w-full overflow-hidden py-4">
         <div className="animate-marquee flex gap-6 sm:gap-7 lg:gap-8 cursor-grab active:cursor-grabbing px-4">
-          {marqueeProjects.map((project, index) => (
-            <div
-              key={`${project.id}-${index}`}
-              onClick={() => onNavigate?.('projects')}
-              className="group relative rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-square w-[300px] sm:w-[350px] md:w-[380px] lg:w-[410px] shrink-0 bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 cursor-pointer border border-slate-200/80 select-none"
-            >
-              {/* Background Project Photo */}
-              <img
-                src={project.image}
-                alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 pointer-events-none"
-              />
+          {marqueeCards.map((card, index) => {
+            const imgSrc = supplyImageList[index % supplyImageList.length];
+            return (
+              <div
+                key={index}
+                onClick={() => onNavigate?.('case-study')}
+                className="group relative rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-square w-[300px] sm:w-[350px] md:w-[380px] lg:w-[410px] shrink-0 bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 cursor-pointer border border-slate-200/80 select-none"
+              >
+                {/* Background Supply Image */}
+                <img
+                  src={imgSrc}
+                  alt={card.title}
+                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                />
 
-              {/* Gradient Overlay for subtle depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 group-hover:from-black/50 transition-colors duration-500 pointer-events-none" />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 group-hover:from-black/50 transition-colors duration-500 pointer-events-none" />
 
-              {/* Top Row: Floating Theme Action Badge */}
-              <div className="relative z-10 flex justify-end">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md text-[#0a1532] flex items-center justify-center shadow-xl border border-white/80 group-hover:scale-110 group-hover:bg-[#3B82F6] group-hover:text-white group-hover:border-[#3B82F6] transition-all duration-300">
-                  <ArrowUpRight className="w-5 h-5 stroke-[2.5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                {/* Top Row: Floating Arrow */}
+                <div className="relative z-10 flex justify-end">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md text-[#0a1532] flex items-center justify-center shadow-xl border border-white/80 group-hover:scale-110 group-hover:bg-[#3B82F6] group-hover:text-white group-hover:border-[#3B82F6] transition-all duration-300">
+                    <ArrowUpRight className="w-5 h-5 stroke-[2.5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </div>
+                </div>
+
+                {/* Bottom Floating Info Card */}
+                <div className="relative z-10 bg-white rounded-[20px] sm:rounded-[22px] p-4 sm:p-5 shadow-xl border border-white/90 space-y-1.5 transform transition-all duration-300 group-hover:-translate-y-1">
+                  <h3 className="text-base sm:text-[17px] font-bold text-[#0a1532] tracking-tight leading-snug group-hover:text-[#3B82F6] transition-colors">
+                    {card.title}
+                  </h3>
                 </div>
               </div>
-
-              {/* Bottom Floating White Information Card */}
-              <div className="relative z-10 bg-white rounded-[20px] sm:rounded-[22px] p-4 sm:p-5 shadow-xl border border-white/90 space-y-1.5 transform transition-all duration-300 group-hover:-translate-y-1">
-                <h3 className="text-base sm:text-[17px] font-bold text-[#0a1532] tracking-tight leading-snug group-hover:text-[#3B82F6] transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed font-medium">
-                  {project.description}
-                </p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

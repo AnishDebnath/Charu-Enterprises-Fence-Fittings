@@ -8,7 +8,7 @@ export interface SizeChartRow {
   pcsPerPallet: number | string;
 }
 
-export interface ProjectDetailData {
+export interface ProductDetailData {
   title: string;
   description: string;
   image: string;
@@ -24,9 +24,9 @@ export interface ProjectDetailData {
   sizeChart?: SizeChartRow[];
 }
 
-interface ProjectDetailContentProps {
-  data?: ProjectDetailData;
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+interface ProductDetailContentProps {
+  data?: ProductDetailData;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
 export const defaultSizeChart: SizeChartRow[] = [
@@ -36,7 +36,7 @@ export const defaultSizeChart: SizeChartRow[] = [
   { code: '410', size: '3"', pcsPerBag: 20, bagPerPallet: 32, pcsPerPallet: 640 },
 ];
 
-export const defaultProjectDetail: ProjectDetailData = {
+export const defaultProductDetail: ProductDetailData = {
   title: 'Barbed Arm - 14 GA & 16 GA (Item #1)',
   description:
     'Heavy-duty pressed steel 45-degree barbed arm extension engineered for industrial, commercial, and high-security chain link fencing perimeters. Designed with pre-notched wire capture slots for secure holding of 3 barbed wire strands, high tensile load resistance, and uniform ASTM A153 hot-dip galvanizing.',
@@ -54,8 +54,8 @@ export const defaultProjectDetail: ProjectDetailData = {
   sizeChart: defaultSizeChart,
 };
 
-export const ProjectDetailContent: FC<ProjectDetailContentProps> = ({
-  data = defaultProjectDetail,
+export const ProductDetailContent: FC<ProductDetailContentProps> = ({
+  data = defaultProductDetail,
 }) => {
   const metaFields = [
     { label: 'Item Number', value: data.itemNumber },
@@ -207,4 +207,4 @@ export const ProjectDetailContent: FC<ProjectDetailContentProps> = ({
   );
 };
 
-export default ProjectDetailContent;
+export default ProductDetailContent;

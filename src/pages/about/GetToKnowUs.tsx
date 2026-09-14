@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 interface GetToKnowUsProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
 export const GetToKnowUs: FC<GetToKnowUsProps> = ({ onNavigate }) => {

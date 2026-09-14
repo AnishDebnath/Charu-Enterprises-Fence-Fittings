@@ -6,7 +6,7 @@ interface ImprovementItem {
   description: string;
 }
 
-interface ProjectImprovementsProps {
+interface ProductImprovementsProps {
   items?: ImprovementItem[];
 }
 
@@ -49,7 +49,7 @@ export const defaultImprovements: ImprovementItem[] = [
   },
 ];
 
-export const ProjectImprovements: FC<ProjectImprovementsProps> = ({
+export const ProductImprovements: FC<ProductImprovementsProps> = ({
   items = defaultImprovements,
 }) => {
   return (
@@ -107,4 +107,4 @@ export const ProjectImprovements: FC<ProjectImprovementsProps> = ({
   );
 };
 
-export default ProjectImprovements;
+export default ProductImprovements;

@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import { motion } from 'motion/react';
 
-interface ProjectDetailHeroProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
-  projectTitle?: string;
+interface ProductDetailHeroProps {
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
+  productTitle?: string;
 }
 
-export const ProjectDetailHero: FC<ProjectDetailHeroProps> = ({ onNavigate, projectTitle = 'Barbed Arm - 14 GA & 16 GA' }) => {
+export const ProductDetailHero: FC<ProductDetailHeroProps> = ({ onNavigate, productTitle = 'Barbed Arm - 14 GA & 16 GA' }) => {
   return (
     <div className="w-full bg-white px-2 sm:px-3 md:px-4 pt-2 sm:pt-3 pb-2 font-['Outfit',sans-serif]">
       {/* Outer Rounded Hero Container Card matching About Hero */}
@@ -54,13 +54,13 @@ export const ProjectDetailHero: FC<ProjectDetailHeroProps> = ({ onNavigate, proj
               <span className="text-white/50">/</span>
               <button
                 type="button"
-                onClick={() => onNavigate?.('projects')}
+                onClick={() => onNavigate?.('case-study')}
                 className="text-white/80 hover:text-white transition-colors cursor-pointer"
               >
                 Catalog A25
               </button>
               <span className="text-white/50">/</span>
-              <span className="text-[#f0c75e] font-bold line-clamp-1">{projectTitle}</span>
+              <span className="text-[#f0c75e] font-bold line-clamp-1">{productTitle}</span>
             </div>
           </motion.div>
         </div>
@@ -69,4 +69,4 @@ export const ProjectDetailHero: FC<ProjectDetailHeroProps> = ({ onNavigate, proj
   );
 };
 
-export default ProjectDetailHero;
+export default ProductDetailHero;

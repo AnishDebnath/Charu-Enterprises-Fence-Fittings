@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface OurFoundationProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
 export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
@@ -12,7 +12,7 @@ export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
   const handleServicesClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (onNavigate) {
-      onNavigate('services');
+      onNavigate('products');
     }
   };
 

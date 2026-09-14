@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import { Phone, ArrowRight, Star, Check, ArrowUpRight } from 'lucide-react';
-import bannerVideo from '../../assets/banner video.mp4';
+import bannerVideo from '../../assets/banner-video.mp4';
 
 interface HeroProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
 export const Hero: FC<HeroProps> = ({ onNavigate }) => {
@@ -58,7 +58,7 @@ export const Hero: FC<HeroProps> = ({ onNavigate }) => {
                 {/* Explore Catalog Pill */}
                 <button
                   type="button"
-                  onClick={() => onNavigate?.('projects')}
+                  onClick={() => onNavigate?.('case-study')}
                   className="group bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
                 >
                   <span className="transition-colors">Explore Catalog A25</span>
@@ -150,7 +150,7 @@ export const Hero: FC<HeroProps> = ({ onNavigate }) => {
             {/* Right Column: Floating 150M+ Pieces Card */}
             <div className="lg:col-span-4 flex justify-end items-end w-full">
               <div
-                onClick={() => onNavigate?.('projects')}
+                onClick={() => onNavigate?.('case-study')}
                 className="bg-white rounded-[22px] p-2.5 sm:p-3 shadow-2xl border border-white/80 max-w-[300px] sm:max-w-[330px] w-full transform transition-all hover:-translate-y-1 group cursor-pointer"
               >
                 {/* Thumbnail of industrial fence fittings catalog */}

@@ -2,7 +2,7 @@ import { useState, useEffect, type FC } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail } from 'lucide-react';
 import logo from '../../assets/logo.png';
-import bannerVideo from '../../assets/banner video.mp4';
+import bannerVideo from '../../assets/banner-video.mp4';
 
 export const ComingSoonPage: FC = () => {
   // Target countdown timer (28 days launch window)

@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import { motion } from 'motion/react';
 
-interface ServicesHeroProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+interface ProductsHeroProps {
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
-export const ServicesHero: FC<ServicesHeroProps> = ({ onNavigate }) => {
+export const ProductsHero: FC<ProductsHeroProps> = ({ onNavigate }) => {
   return (
     <div className="w-full bg-white px-2 sm:px-3 md:px-4 pt-2 sm:pt-3 pb-2 font-['Outfit',sans-serif]">
       {/* Outer Rounded Hero Container Card matching About & Contact Hero Design */}
@@ -60,4 +60,4 @@ export const ServicesHero: FC<ServicesHeroProps> = ({ onNavigate }) => {
   );
 };
 
-export default ServicesHero;
+export default ProductsHero;

@@ -10,8 +10,8 @@ interface ProjectCard {
   alt: string;
 }
 
-interface OtherProjectsProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+interface OtherProductsProps {
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
 const otherProjectsList: ProjectCard[] = [
@@ -81,7 +81,7 @@ const otherProjectsList: ProjectCard[] = [
   },
 ];
 
-export const ProjectStoryTransformation: FC<OtherProjectsProps> = ({ onNavigate }) => {
+export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -157,7 +157,7 @@ export const ProjectStoryTransformation: FC<OtherProjectsProps> = ({ onNavigate 
 
   const handleCardClick = () => {
     if (onNavigate) {
-      onNavigate('project-detail');
+      onNavigate('product-detail');
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -291,4 +291,4 @@ export const ProjectStoryTransformation: FC<OtherProjectsProps> = ({ onNavigate 
   );
 };
 
-export default ProjectStoryTransformation;
+export default ProductStoryTransformation;

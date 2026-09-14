@@ -2,7 +2,7 @@ import { useState, type FC } from 'react';
 import { Play, Check, ArrowRight } from 'lucide-react';
 
 interface AboutTeamProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'projects' | 'project-detail' | 'contact') => void;
 }
 
 export const AboutTeam: FC<AboutTeamProps> = ({ onNavigate }) => {
@@ -117,7 +117,7 @@ export const AboutTeam: FC<AboutTeamProps> = ({ onNavigate }) => {
               <div className="pt-2">
                 <button
                   type="button"
-                  onClick={() => onNavigate?.('services')}
+                  onClick={() => onNavigate?.('products')}
                   className="group/btn w-full sm:w-auto bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 pr-2.5 py-3 rounded-full flex items-center justify-between sm:justify-start gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
                 >
                   <span className="transition-colors">Explore Product Range</span>

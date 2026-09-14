@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { Layers, Umbrella, Sun, Wrench, ArrowUpRight } from 'lucide-react';
 
 interface ProjectFinderProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
 export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {

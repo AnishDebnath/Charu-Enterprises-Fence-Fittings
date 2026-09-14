@@ -4,15 +4,15 @@ import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import logo from '../../assets/logo.png';
 
 interface NavbarProps {
-  currentPage?: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact';
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+  currentPage?: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact';
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
 export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleNavClick = (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact', hash?: string) => {
+  const handleNavClick = (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', hash?: string) => {
     if (onNavigate) {
       onNavigate(page);
     }
@@ -133,9 +133,9 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleNavClick('services')}
+                      onClick={() => handleNavClick('products')}
                       className={`transition-colors cursor-pointer ${
-                        currentPage === 'services'
+                        currentPage === 'products'
                           ? 'text-[#60A5FA] font-extrabold'
                           : 'text-neutral-100 hover:text-white'
                       }`}
@@ -144,14 +144,14 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleNavClick('projects')}
+                      onClick={() => handleNavClick('case-study')}
                       className={`transition-colors cursor-pointer ${
-                        currentPage === 'projects' || currentPage === 'project-detail'
+                        currentPage === 'case-study' || currentPage === 'product-detail'
                           ? 'text-[#60A5FA] font-extrabold'
                           : 'text-neutral-100 hover:text-white'
                       }`}
                     >
-                      CATALOG A25
+                      CASE STUDY
                     </button>
                     <button
                       type="button"
@@ -299,13 +299,13 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                 type="button"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  handleNavClick('services');
+                  handleNavClick('products');
                 }}
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.13 }}
                 className={`w-full text-left py-2 text-base border-b border-white/10 transition-colors cursor-pointer ${
-                  currentPage === 'services' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
+                  currentPage === 'products' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
                 }`}
               >
                 PRODUCTS
@@ -314,16 +314,16 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                 type="button"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  handleNavClick('projects');
+                  handleNavClick('case-study');
                 }}
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.17 }}
                 className={`w-full text-left py-2 text-base border-b border-white/10 transition-colors cursor-pointer ${
-                  currentPage === 'projects' || currentPage === 'project-detail' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
+                  currentPage === 'case-study' || currentPage === 'product-detail' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
                 }`}
               >
-                CATALOG A25
+                CASE STUDY
               </motion.button>
               <motion.button
                 type="button"

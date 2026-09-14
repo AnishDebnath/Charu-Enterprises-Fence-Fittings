@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import { motion } from 'motion/react';
 
-interface ProjectsHeroProps {
-  onNavigate?: (page: 'home' | 'about' | 'services' | 'projects' | 'project-detail' | 'contact') => void;
+interface CaseStudyHeroProps {
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
-export const ProjectsHero: FC<ProjectsHeroProps> = ({ onNavigate }) => {
+export const CaseStudyHero: FC<CaseStudyHeroProps> = ({ onNavigate }) => {
   return (
     <div className="w-full bg-white px-2 sm:px-3 md:px-4 pt-2 sm:pt-3 pb-2 font-['Outfit',sans-serif]">
       {/* Outer Rounded Hero Container matching About/Services Hero */}
@@ -60,4 +60,4 @@ export const ProjectsHero: FC<ProjectsHeroProps> = ({ onNavigate }) => {
   );
 };
 
-export default ProjectsHero;
+export default CaseStudyHero;
