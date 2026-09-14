@@ -93,17 +93,17 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
 
         {/* Main Content Grid: 1:1 Aspect Image on Left + 4 Feature Tabs on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          {/* Left Column: 1:1 Square Ratio Image */}
+          {/* Left Column: 1:1 Square Ratio Image with seamless zero-delay crossfade */}
           <div className="lg:col-span-6 flex justify-center items-center">
-            <div className="relative w-full max-w-[460px] lg:max-w-none aspect-square rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-lg border border-slate-200/80 bg-neutral-900">
-              <AnimatePresence mode="wait">
+            <div className="relative w-full max-w-[460px] lg:max-w-none aspect-square rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-lg border border-slate-200/80 bg-slate-900">
+              <AnimatePresence initial={false}>
                 <motion.img
                   key={steps[activeIndex].id}
                   src={steps[activeIndex].image}
                   alt={steps[activeIndex].alt}
-                  initial={{ opacity: 0, scale: 1.02 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.4, ease: 'easeInOut' }}
                   className="w-full h-full object-cover object-center absolute inset-0"
                 />

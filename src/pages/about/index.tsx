@@ -23,9 +23,9 @@ export const AboutPage: FC<AboutPageProps> = ({ onNavigate }) => {
         <AboutHero onNavigate={onNavigate} />
         <GetToKnowUs onNavigate={onNavigate} />
         <OurFoundation onNavigate={onNavigate} />
-        <FamilyOwned />
-        <ProjectFinder />
         <TeamSection />
+        <ProjectFinder onNavigate={onNavigate} />
+        <FamilyOwned onNavigate={onNavigate} />
       </main>
 
       {/* Footer */}

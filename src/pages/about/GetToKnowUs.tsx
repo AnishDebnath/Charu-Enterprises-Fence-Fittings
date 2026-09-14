@@ -87,12 +87,12 @@ export const GetToKnowUs: FC<GetToKnowUsProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* 4 Image Cards Grid: 3/4 ratio, outer upper / middle lower, reduced spacing to button */}
+        {/* 4 Image Cards Grid: 1:1 ratio, outer upper / middle lower stagger */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mb-14 sm:mb-18 lg:mb-20 pt-1 lg:pt-2">
           {images.map((img, idx) => (
             <div
               key={idx}
-              className={`group relative rounded-2xl sm:rounded-3xl lg:rounded-[26px] overflow-hidden aspect-[3/4] w-full shadow-md hover:shadow-xl transition-all duration-500 border border-slate-200/80 bg-slate-100 ${
+              className={`group relative rounded-2xl sm:rounded-3xl lg:rounded-[26px] overflow-hidden aspect-square w-full shadow-md hover:shadow-xl transition-all duration-500 border border-slate-200/80 bg-slate-100 ${
                 img.isUpper
                   ? 'lg:-translate-y-5 xl:-translate-y-7'
                   : 'lg:translate-y-5 xl:translate-y-7'

@@ -1,42 +1,47 @@
 import type { FC } from 'react';
-import { Layers, Umbrella, Sun, Wrench, ArrowUpRight } from 'lucide-react';
+import yearBadge from '../../assets/badge/year.png';
+import isoBadge from '../../assets/badge/iso.png';
+import zeroDefectBadge from '../../assets/badge/zero-defect.png';
 
 interface ProjectFinderProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
 export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {
-  const steps = [
+  const badges = [
     {
-      step: 'Step 01',
-      title: 'Drawing & Specs Review',
-      description: 'Submit your CAD blueprints, sample fittings, or standard Catalog A25 part numbers for verification.',
-      icon: Layers,
+      id: 'heritage',
+      image: yearBadge,
+      tag: 'Generational Trust',
+      title: '55+ Years of Industry Trust',
+      description:
+        'Over 6 decades of continuous manufacturing excellence, proprietary tooling, and trusted global supply partnerships.',
+      alt: '55+ Years of Trust and Manufacturing Heritage Badge',
     },
     {
-      step: 'Step 02',
-      title: 'In-House Tooling & Dies',
-      description: 'Our in-house tool room develops custom dies, molds, and stampings with zero-defect pre-production samples.',
-      icon: Sun,
+      id: 'iso',
+      image: isoBadge,
+      tag: 'Global Standards',
+      title: 'ISO 9001:2015 Certified',
+      description:
+        'Strictly audited quality management ensuring metallurgical integrity, ASTM A153 galvanizing, and batch traceability.',
+      alt: 'ISO 9001:2015 Quality Management System Certification Badge',
     },
     {
-      step: 'Step 03',
-      title: 'Galvanizing & ISO QC',
-      description: 'Hot-dip galvanizing, tensile strength verification, and 100% strict dimensional quality assurance.',
-      icon: Wrench,
-    },
-    {
-      step: 'Step 04',
-      title: 'Duty-Paid DDP Delivery',
-      description: 'Palletized ocean container stuffing, international shipping, and duty-paid direct delivery to your door.',
-      icon: Umbrella,
+      id: 'zero-defect',
+      image: zeroDefectBadge,
+      tag: '100% Inspected',
+      title: 'Zero-Defect Quality Assurance',
+      description:
+        'Multi-stage pre-shipment inspections including Go/No-Go thread gauging, tensile stress testing, and Mill Test Certificates.',
+      alt: '100% Zero-Defect Quality Assurance Guarantee Badge',
     },
   ];
 
   return (
     <section
-      id="project-finder"
-      className="w-full relative py-10 sm:py-12 lg:py-16 font-['Outfit',sans-serif] overflow-hidden border-t border-b border-slate-900/60"
+      id="procurement-assurance"
+      className="w-full relative py-12 sm:py-14 lg:py-16 font-['Outfit',sans-serif] overflow-hidden border-t border-b border-slate-900/60"
     >
       {/* Background Image with Dark Vignette & Gradient Overlay */}
       <div className="absolute inset-0 z-0">
@@ -46,63 +51,61 @@ export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {
           className="w-full h-full object-cover object-center"
         />
         {/* Dark overlay matching website aesthetic */}
-        <div className="absolute inset-0 bg-[#071128]/85 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071128] via-transparent to-[#071128]/90" />
+        <div className="absolute inset-0 bg-[#071128]/90 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#071128] via-[#071128]/80 to-[#071128]/95" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Center Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12 space-y-2.5">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-2">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 justify-center">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-            <span className="text-[#60A5FA] text-sm sm:text-base font-bold tracking-tight uppercase">
-              Procurement & Export Workflow
+            <span className="text-[#60A5FA] text-xs sm:text-sm font-bold tracking-tight uppercase">
+              Procurement &amp; Quality Credentials
             </span>
           </div>
 
           {/* Headline */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-[1.2]">
-            From Engineering Drawings <br className="hidden sm:inline" />
-            to Delivered Containers.
+          <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-white tracking-tight leading-[1.2]">
+            Certified Manufacturing &amp; Reliability <br className="hidden sm:inline" />
+            for High-Volume Global Procurement.
           </h2>
         </div>
 
-        {/* 4 Feature Step Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch">
-          {steps.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={index}
-                onClick={() => onNavigate?.('contact')}
-                className="bg-white rounded-[20px] sm:rounded-[24px] p-5 sm:p-6 flex flex-col justify-between shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 group border border-slate-100 min-h-[200px] sm:min-h-[220px] cursor-pointer"
-              >
-                {/* Top Row: Icon container on left, Step label on right */}
-                <div className="flex items-center justify-between">
-                  <div className="w-11 h-11 rounded-xl bg-slate-100/90 text-slate-700 flex items-center justify-center group-hover:bg-[#3B82F6] group-hover:text-white transition-colors duration-300 shadow-xs">
-                    <Icon className="w-5 h-5 stroke-[2]" />
-                  </div>
-                  <span className="text-xs sm:text-sm font-semibold text-slate-400 group-hover:text-slate-600 transition-colors tracking-wide">
-                    {item.step}
-                  </span>
-                </div>
-
-                {/* Bottom Content Area */}
-                <div className="space-y-1.5 pt-5 sm:pt-6">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg sm:text-xl font-bold text-[#0a1532] tracking-tight group-hover:text-[#3B82F6] transition-colors">
-                      {item.title}
-                    </h3>
-                    <ArrowUpRight className="w-4 h-4 text-slate-300 opacity-0 group-hover:opacity-100 group-hover:text-[#3B82F6] transition-all transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </div>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
-                    {item.description}
-                  </p>
-                </div>
+        {/* Compact Centered 3 Badges Grid */}
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 items-stretch">
+          {badges.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => onNavigate?.('contact')}
+              className="bg-white rounded-[20px] sm:rounded-[22px] p-4 sm:p-5 flex flex-col items-center text-center shadow-xl hover:shadow-[0_16px_40px_rgba(59,130,246,0.18)] transition-all duration-300 transform hover:-translate-y-1 group border border-slate-100/90 cursor-pointer"
+            >
+              {/* Badge Visual Container */}
+              <div className="relative w-20 h-20 sm:w-22 sm:h-22 mb-3.5 flex items-center justify-center p-2 rounded-2xl bg-slate-50 border border-slate-100 group-hover:bg-[#f0f6ff] transition-colors duration-300">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="w-full h-full object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
-            );
-          })}
+
+              {/* Tag Pill */}
+              <span className="inline-block px-2.5 py-0.5 bg-[#f0f6ff] text-[#1E40AF] text-[11px] font-bold rounded-full mb-2 border border-blue-100">
+                {item.tag}
+              </span>
+
+              {/* Title */}
+              <h3 className="text-sm sm:text-[15px] font-bold text-[#0a1532] tracking-tight group-hover:text-[#3B82F6] transition-colors mb-1.5">
+                {item.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-slate-600 text-[11px] sm:text-xs leading-relaxed font-normal">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

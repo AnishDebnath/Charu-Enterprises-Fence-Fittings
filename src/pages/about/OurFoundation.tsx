@@ -1,6 +1,6 @@
 import { useState, type FC } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface OurFoundationProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
@@ -8,6 +8,17 @@ interface OurFoundationProps {
 
 export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
   const [activeTab, setActiveTab] = useState<'values' | 'commitment'>('values');
+
+  const tabData = {
+    values: {
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Charu Enterprises foundry metallurgical precision and heavy manufacturing operations',
+    },
+    commitment: {
+      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Quality control laboratory, ISO inspection, and global distributor commitment',
+    },
+  };
 
   const handleServicesClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -125,14 +136,21 @@ export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
 
           </div>
 
-          {/* Right Column: 1:1 Aspect Ratio Showcase Image Card */}
+          {/* Right Column: 1:1 Aspect Ratio Showcase Image Card with smooth instant crossfade animation */}
           <div className="lg:col-span-6 relative flex items-center justify-center">
-            <div className="relative rounded-2xl sm:rounded-3xl lg:rounded-[28px] overflow-hidden aspect-square w-full max-w-[540px] shadow-xl border border-blue-200/80 bg-white group">
-              <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
-                alt="Charu Enterprises heavy industrial manufacturing and metallurgy operations"
-                className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-700"
-              />
+            <div className="relative rounded-2xl sm:rounded-3xl lg:rounded-[28px] overflow-hidden aspect-square w-full max-w-[540px] shadow-xl border border-blue-200/80 bg-slate-100 group">
+              <AnimatePresence initial={false}>
+                <motion.img
+                  key={activeTab}
+                  src={tabData[activeTab].image}
+                  alt={tabData[activeTab].alt}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.35, ease: 'easeInOut' }}
+                  className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-103 transition-transform duration-700"
+                />
+              </AnimatePresence>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>

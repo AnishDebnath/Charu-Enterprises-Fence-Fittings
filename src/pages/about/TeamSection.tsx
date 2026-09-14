@@ -1,5 +1,7 @@
 import type { FC } from 'react';
 import { COMPANY_INFO } from '../../data/companyData';
+import opMaskaraImg from '../../assets/founders/Mr.-OP-Maskara.jpg';
+import somMaskaraImg from '../../assets/founders/Mr.-Som-Maskara.jpg';
 
 export const TeamSection: FC = () => {
   const leadership = [
@@ -8,7 +10,7 @@ export const TeamSection: FC = () => {
       role: COMPANY_INFO.founders[0].role,
       experience: COMPANY_INFO.founders[0].experience,
       bio: COMPANY_INFO.founders[0].bio,
-      image: COMPANY_INFO.founders[0].image,
+      image: opMaskaraImg,
       alt: `${COMPANY_INFO.founders[0].name} - Founder President`,
     },
     {
@@ -16,7 +18,7 @@ export const TeamSection: FC = () => {
       role: COMPANY_INFO.founders[1].role,
       experience: COMPANY_INFO.founders[1].experience,
       bio: COMPANY_INFO.founders[1].bio,
-      image: COMPANY_INFO.founders[1].image,
+      image: somMaskaraImg,
       alt: `${COMPANY_INFO.founders[1].name} - Vice President`,
     },
   ];

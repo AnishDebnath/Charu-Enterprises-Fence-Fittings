@@ -1,3 +1,6 @@
+import opMaskaraImg from '../assets/founders/Mr.-OP-Maskara.jpg';
+import somMaskaraImg from '../assets/founders/Mr.-Som-Maskara.jpg';
+
 export interface ProductSizeVariant {
   code?: string;
   size: string;
@@ -75,14 +78,14 @@ export const COMPANY_INFO = {
       role: 'Founder President',
       experience: '62+ Years in Exports & Engineering Goods',
       bio: 'Renowned Yoga Guru who has taught yoga to 300,000+ people across India for free over two decades. With 62 years in engineering exports, he served as Deputy Regional Chairman (ER) of the Government Engineering Export Promotion Council (EEPC). A Lions Clubs International member for 57 years and former Deputy District Governor, appearing regularly on national television.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85',
+      image: opMaskaraImg,
     },
     {
       name: 'Mr. Som Maskara',
       role: 'Vice President',
       experience: 'Global Trade & Operations Leader',
       bio: 'Dedicated humanitarian and former President of Leo Club International, actively contributing to projects providing meals to millions of underprivileged children. Passionate sports practitioner in competitive badminton and rifle shooting, reflecting utmost discipline and precision alongside advanced mindfulness practices.',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=85',
+      image: somMaskaraImg,
     },
   ],
 };
