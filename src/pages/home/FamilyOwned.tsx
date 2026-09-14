@@ -9,41 +9,52 @@ interface FamilyOwnedProps {
 export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const features = [
+  const steps = [
     {
       id: '01',
-      title: 'Generational Foundry & Tooling Expertise',
-      description: 'Over 6 decades of metal stamping, malleable casting, and finishing know-how backed by long-standing global partnerships.',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Precision metal stamping and die tooling at Charu Enterprises',
+      title: 'Precision Packaging & Palletization',
+      description:
+        'Anti-corrosion rust-inhibiting wrapping, heavy-duty 5-ply corrugated export cartons, and heat-treated ISPM-15 certified wooden pallets with high-tensile steel banding.',
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80',
+      alt: 'Export-grade packaging and wooden palletization of fence fittings',
     },
     {
       id: '02',
-      title: '100% Zero Defect Quality Assurance',
-      description: 'Every fitting undergoes rigorous tensile strength, galvanization thickness, and dimensional inspections before export.',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Quality engineering inspection and dimensional verification',
+      title: 'Pre-Shipment Inspection & QA Certification',
+      description:
+        'Every batch undergoes 100% tensile verification, ASTM A153 galvanizing thickness testing, and Go/No-Go thread gauging with official Mill Test Certificates (MTC).',
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=80',
+      alt: 'Pre-shipment quality verification and dimensional inspection',
     },
     {
       id: '03',
-      title: 'Global Export & Duty-Paid DDP Logistics',
-      description: 'Proven track record delivering full container loads across the USA, Canada, Europe, and Australia with complete documentation.',
-      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Container logistics and international shipping',
+      title: 'Container Stuffing & Port Customs Clearance',
+      description:
+        'Direct moisture-controlled container loading at our factory, expedited transit to Kolkata & Haldia ports, and comprehensive customs compliance documentation.',
+      image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1000&q=80',
+      alt: 'Container freight stuffing and maritime port dispatch',
+    },
+    {
+      id: '04',
+      title: 'Ocean Freight & Doorstep DDP Delivery',
+      description:
+        'Fast-track ocean freight to the USA, Canada, Europe, and Australia with live tracking, duty-paid clearance (DDP/CIF), and direct delivery to distributor yards.',
+      image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1000&q=80',
+      alt: 'Global maritime container shipping and doorstep delivery',
     },
   ];
 
-  // Auto-switch tabs every 4 seconds
+  // Auto-switch tabs every 4.5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % features.length);
-    }, 4000);
+      setActiveIndex((prev) => (prev + 1) % steps.length);
+    }, 4500);
 
     return () => clearInterval(timer);
-  }, [features.length]);
+  }, [steps.length]);
 
   return (
-    <section id="family-owned" className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-b border-slate-200/80">
+    <section id="shipment-process" className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header Row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-12 sm:mb-14 lg:mb-16 items-start">
@@ -56,24 +67,23 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-              Family-Led Manufacturing <br className="hidden sm:inline" />
-              With 55+ Years of Trust <br className="hidden sm:inline" />
-              & Global Integrity.
+              Seamless 4-Step Global Shipment <br className="hidden sm:inline" />
+              &amp; Doorstep Export Logistics.
             </h2>
           </div>
 
           {/* Right Column: Paragraph + CTA Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-5 pt-1 lg:pt-2">
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-              Founded by Mr. OP Maskara (62+ years export pioneer) and co-led by Mr. Som Maskara, Charu Enterprises combines generational metallurgical engineering with ISO 9001:2015 precision.
+              Backed by 55+ years of export heritage, Charu Enterprises delivers full container loads (FCL &amp; LCL) worldwide with zero-transit-damage packaging, duty-paid DDP shipping, and 100% on-time logistics.
             </p>
 
             <button
               type="button"
-              onClick={() => onNavigate?.('about')}
+              onClick={() => onNavigate?.('contact')}
               className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
             >
-              <span className="transition-colors">Meet Our Leadership</span>
+              <span className="transition-colors">Request Shipping Quote</span>
               <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
                 <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
               </div>
@@ -81,34 +91,36 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* Main Content Grid: Image + 3 Feature Tabs */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          {/* Left Column: Clean Image that changes with active tab */}
-          <div className="lg:col-span-6 relative rounded-[28px] sm:rounded-[32px] overflow-hidden min-h-[360px] sm:min-h-[420px] lg:min-h-[480px] shadow-lg border border-slate-200/80 bg-neutral-900">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={features[activeIndex].id}
-                src={features[activeIndex].image}
-                alt={features[activeIndex].alt}
-                initial={{ opacity: 0, scale: 1.02 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.4, ease: 'easeInOut' }}
-                className="w-full h-full object-cover object-center absolute inset-0"
-              />
-            </AnimatePresence>
+        {/* Main Content Grid: 1:1 Aspect Image on Left + 4 Feature Tabs on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          {/* Left Column: 1:1 Square Ratio Image */}
+          <div className="lg:col-span-6 flex justify-center items-center">
+            <div className="relative w-full max-w-[460px] lg:max-w-none aspect-square rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-lg border border-slate-200/80 bg-neutral-900">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={steps[activeIndex].id}
+                  src={steps[activeIndex].image}
+                  alt={steps[activeIndex].alt}
+                  initial={{ opacity: 0, scale: 1.02 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.4, ease: 'easeInOut' }}
+                  className="w-full h-full object-cover object-center absolute inset-0"
+                />
+              </AnimatePresence>
+            </div>
           </div>
 
-          {/* Right Column: 3 Feature Interactive Tabs Stack */}
-          <div className="lg:col-span-6 flex flex-col justify-between gap-4 sm:gap-5">
-            {features.map((feature, idx) => {
+          {/* Right Column: 4 Feature Interactive Tabs Stack */}
+          <div className="lg:col-span-6 flex flex-col justify-between gap-3 sm:gap-3.5">
+            {steps.map((step, idx) => {
               const isActive = activeIndex === idx;
 
               return (
                 <div
-                  key={feature.id}
+                  key={step.id}
                   onClick={() => setActiveIndex(idx)}
-                  className={`relative rounded-2xl sm:rounded-3xl p-6 sm:p-7 border transition-all duration-300 flex items-start gap-4 sm:gap-6 cursor-pointer overflow-hidden ${
+                  className={`relative rounded-2xl sm:rounded-3xl p-4 sm:p-5 border transition-all duration-300 flex items-start gap-3.5 sm:gap-5 cursor-pointer overflow-hidden ${
                     isActive
                       ? 'bg-[#f0f6ff]/90 border-[#3B82F6] ring-2 ring-[#3B82F6]/20 shadow-md transform -translate-y-0.5'
                       : 'bg-white border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-200 opacity-80 hover:opacity-100'
@@ -116,30 +128,30 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
                 >
                   {/* Circular Number Badge */}
                   <div
-                    className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full font-bold text-base sm:text-lg flex items-center justify-center shrink-0 transition-all duration-300 shadow-sm ${
+                    className={`w-11 h-11 sm:w-12 sm:h-12 rounded-full font-bold text-sm sm:text-base flex items-center justify-center shrink-0 transition-all duration-300 shadow-sm ${
                       isActive
                         ? 'bg-[#3B82F6] text-white shadow-[#3B82F6]/30'
                         : 'bg-[#f0f6ff] text-[#3B82F6] group-hover:bg-[#3B82F6] group-hover:text-white'
                     }`}
                   >
-                    {feature.id}
+                    {step.id}
                   </div>
 
                   {/* Content Block */}
-                  <div className="space-y-1.5 pt-0.5">
+                  <div className="space-y-1 pt-0.5 min-w-0">
                     <h3
-                      className={`text-lg sm:text-xl font-bold tracking-tight transition-colors ${
+                      className={`text-base sm:text-lg font-bold tracking-tight transition-colors ${
                         isActive ? 'text-[#1E40AF]' : 'text-[#0a1532]'
                       }`}
                     >
-                      {feature.title}
+                      {step.title}
                     </h3>
                     <p
-                      className={`text-sm sm:text-[15px] leading-relaxed font-medium transition-colors ${
+                      className={`text-xs sm:text-sm leading-relaxed font-medium transition-colors ${
                         isActive ? 'text-slate-700' : 'text-slate-600'
                       }`}
                     >
-                      {feature.description}
+                      {step.description}
                     </p>
                   </div>
                 </div>
@@ -153,3 +165,4 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
 };
 
 export default FamilyOwned;
+
