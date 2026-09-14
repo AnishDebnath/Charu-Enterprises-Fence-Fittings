@@ -11,16 +11,17 @@ import { HomeownerReviews } from './HomeownerReviews';
 import { FAQSection } from './FAQSection';
 import { BackyardCTA } from './BackyardCTA';
 import { OutdoorTips } from './OutdoorTips';
+import type { CatalogProduct } from '../../data/companyData';
 
 interface HomePageProps {
-  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
 }
 
 export default function HomePage({ onNavigate }: HomePageProps) {
   return (
     <>
       <Navbar currentPage="home" onNavigate={onNavigate} />
-      <Hero />
+      <Hero onNavigate={onNavigate} />
       <Partners />
       <AboutTeam />
       <ServicesGrid />

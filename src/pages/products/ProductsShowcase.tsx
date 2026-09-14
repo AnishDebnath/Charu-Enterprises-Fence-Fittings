@@ -1,5 +1,5 @@
 import { useState, type FC } from 'react';
-import { Search, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { Search, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { CATALOG_PRODUCTS, type CatalogProduct } from '../../data/companyData';
 
 const productImages = import.meta.glob('../../assets/product-images/*.{jpg,jpeg,png,webp}', {
@@ -101,7 +101,7 @@ export const ProductsShowcase: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
           </div>
 
           {/* Category Filter Pills Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.value;
               return (
@@ -109,10 +109,10 @@ export const ProductsShowcase: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
                   key={cat.value}
                   type="button"
                   onClick={() => setActiveCategory(cat.value)}
-                  className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                  className={`px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? 'bg-[#0a1532] text-white shadow-md shadow-[#0a1532]/20 scale-102 ring-2 ring-[#0a1532]/20'
-                      : 'bg-white hover:bg-slate-100 text-slate-700 hover:text-[#0a1532] border border-slate-200/80'
+                      ? 'bg-[#3B82F6] text-white shadow-lg shadow-blue-500/25 scale-105 ring-2 ring-[#3B82F6]/30'
+                      : 'bg-[#EEF2F6] hover:bg-[#DBEAFE]/70 text-slate-700 hover:text-[#0a1532]'
                   }`}
                 >
                   {cat.label}
@@ -219,28 +219,6 @@ export const ProductsShowcase: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
             })}
           </div>
         )}
-
-        {/* Bottom Banner / Custom Inquiries Banner */}
-        <div className="mt-16 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center md:text-left">
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#2563EB] mb-1">
-              <Sparkles className="w-3.5 h-3.5 text-[#f0c75e]" />
-              Custom Tooling &amp; OEM Fabrication
-            </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-[#0a1532]">Need a custom size, gauge, or finish?</h3>
-            <p className="text-slate-600 text-sm max-w-xl">
-              We fabricate custom pressed steel and malleable iron fittings as per your technical drawings with in-house tooling and die development.
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => onNavigate?.('contact')}
-            className="shrink-0 px-7 py-3.5 rounded-full bg-[#0a1532] hover:bg-[#2563EB] text-white text-sm font-bold tracking-tight shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer flex items-center gap-2"
-          >
-            <span>Request Factory Quote</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
 
       </div>
     </section>

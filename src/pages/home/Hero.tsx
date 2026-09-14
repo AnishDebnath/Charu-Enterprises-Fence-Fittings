@@ -1,11 +1,45 @@
-import type { FC } from 'react';
+import { useState, useEffect, useMemo, type FC } from 'react';
 import { Phone, ArrowRight, Star, Check, ArrowUpRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { CATALOG_PRODUCTS, type CatalogProduct } from '../../data/companyData';
+
+const productImages = import.meta.glob('../../assets/product-images/*.{jpg,jpeg,png,webp}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>;
+
+function getProductImage(itemNumber: number): string {
+  const num = String(itemNumber);
+  for (const [path, url] of Object.entries(productImages)) {
+    const fileName = path.split('/').pop()?.toLowerCase() || '';
+    if (fileName.startsWith(num + '.') || fileName.startsWith(num + ' ') || fileName.startsWith(num + '  ')) {
+      return url as string;
+    }
+  }
+  return '';
+}
 
 interface HeroProps {
-  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
 }
 
 export const Hero: FC<HeroProps> = ({ onNavigate }) => {
+  const showcaseProducts = useMemo(() => {
+    return CATALOG_PRODUCTS.filter((p) => getProductImage(p.itemNumber) || p.image);
+  }, []);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (showcaseProducts.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % showcaseProducts.length);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, [showcaseProducts.length]);
+
+  const currentProduct = showcaseProducts[currentIndex] || CATALOG_PRODUCTS[0];
+  const currentImgSrc = getProductImage(currentProduct.itemNumber) || currentProduct.image;
   return (
     <div className="w-full bg-white px-2 sm:px-3 md:px-4 pt-2 sm:pt-3 pb-2">
       {/* Outer Rounded Hero Container Card with slightly increased height */}
@@ -140,32 +174,53 @@ export const Hero: FC<HeroProps> = ({ onNavigate }) => {
               </div>
             </div>
 
-            {/* Right Column: Floating 150M+ Pieces Card */}
+            {/* Right Column: Floating Product Showcase Card */}
             <div className="lg:col-span-4 flex justify-end items-end w-full">
               <div
-                onClick={() => onNavigate?.('case-study')}
-                className="bg-white rounded-[22px] p-2.5 sm:p-3 shadow-2xl border border-white/80 max-w-[300px] sm:max-w-[330px] w-full transform transition-all hover:-translate-y-1 group cursor-pointer"
+                onClick={() => onNavigate?.('product-detail', currentProduct)}
+                className="bg-white rounded-[22px] sm:rounded-[24px] p-2.5 sm:p-3 shadow-2xl border border-white/80 max-w-[280px] sm:max-w-[310px] w-full transform transition-all hover:-translate-y-1 group cursor-pointer select-none"
               >
-                {/* Thumbnail of industrial fence fittings catalog */}
-                <div className="h-44 sm:h-50 rounded-[16px] overflow-hidden mb-2.5 relative bg-neutral-100">
-                  <img
-                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=700&q=80"
-                    alt="Charu Enterprises Fence Fittings"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-2.5 left-2.5 bg-[#0a1532]/90 backdrop-blur-sm text-white px-2.5 py-1 rounded-full text-xs font-bold">
-                    Catalog A25
-                  </div>
+                {/* 1:1 Aspect Ratio Image Container with smooth transition */}
+                <div className="relative w-full aspect-square bg-[#f1f4f8] rounded-[16px] sm:rounded-[18px] overflow-hidden mb-2.5 border border-slate-100 flex items-center justify-center">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={currentProduct.id}
+                      src={currentImgSrc}
+                      alt={currentProduct.name}
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 1.03 }}
+                      transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
+                      className="w-full h-full object-cover"
+                    />
+                  </AnimatePresence>
                 </div>
                 
-                {/* Bottom row matching user screenshot */}
-                <div className="px-1.5 py-1 flex items-center justify-between">
-                  <span className="text-base sm:text-[17px] font-semibold text-neutral-900 tracking-tight">
-                    150M+ Pieces Exported
-                  </span>
-                  <div className="flex flex-col items-center justify-center shrink-0 pl-2 text-neutral-900 group-hover:text-[#3B82F6] transition-colors">
-                    <ArrowUpRight className="w-4.5 h-4.5 stroke-[2.2] -mb-0.5" />
-                    <span className="w-3.5 h-[1.5px] bg-current rounded-full"></span>
+                {/* Bottom row with restored vertical fade animation for text */}
+                <div className="px-1.5 py-1 flex items-center justify-between gap-2">
+                  <div className="flex flex-col min-w-0 pr-1 overflow-hidden">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={currentProduct.id}
+                        initial={{ opacity: 0, y: 5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
+                        className="flex flex-col min-w-0"
+                      >
+                        <span className="text-sm sm:text-[15px] font-bold text-neutral-900 tracking-tight truncate group-hover:text-[#3B82F6] transition-colors">
+                          {currentProduct.name}
+                        </span>
+                        <span className="text-xs font-semibold text-slate-500 truncate">
+                          {currentProduct.variants.length > 0
+                            ? `${currentProduct.variants.length} Sizes Available`
+                            : '1 Standard Size'}
+                        </span>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+                  <div className="w-7 h-7 rounded-full bg-slate-100 group-hover:bg-[#3B82F6] flex items-center justify-center text-neutral-900 group-hover:text-white transition-colors shrink-0 shadow-xs">
+                    <ArrowUpRight className="w-3.8 h-3.8 stroke-[2.2]" />
                   </div>
                 </div>
               </div>
