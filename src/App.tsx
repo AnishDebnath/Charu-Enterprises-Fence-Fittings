@@ -37,7 +37,7 @@ export default function App() {
         return 'home';
       }
     }
-    return 'home';
+    return 'coming-soon';
   });
 
   const [selectedProduct, setSelectedProduct] = useState<CatalogProduct | null>(null);
@@ -82,16 +82,16 @@ export default function App() {
       page === 'about'
         ? '/about'
         : page === 'products'
-        ? '/products'
-        : page === 'product-detail'
-        ? '/product-detail'
-        : page === 'case-study'
-        ? '/case-study'
-        : page === 'contact'
-        ? '/contact'
-        : page === 'home'
-        ? '/home'
-        : '/';
+          ? '/products'
+          : page === 'product-detail'
+            ? '/product-detail'
+            : page === 'case-study'
+              ? '/case-study'
+              : page === 'contact'
+                ? '/contact'
+                : page === 'home'
+                  ? '/home'
+                  : '/';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

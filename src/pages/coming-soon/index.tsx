@@ -2,6 +2,7 @@ import { useState, useEffect, type FC } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail } from 'lucide-react';
 import logo from '../../assets/logo.png';
+import bannerVideo from '../../assets/banner video.mp4';
 
 export const ComingSoonPage: FC = () => {
   // Target countdown timer (28 days launch window)
@@ -40,9 +41,12 @@ export const ComingSoonPage: FC = () => {
 
         {/* Background Image with Precision Industrial Aesthetics */}
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
-          <img
-            src="/charu poster.jpeg"
-            alt="Charu Enterprises"
+          <video
+            src={bannerVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover object-[70%_center] lg:object-[80%_center] opacity-75 sm:opacity-80"
           />
           {/* Multi-stop cinematic gradient matching Home Hero */}
