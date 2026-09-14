@@ -2,7 +2,6 @@ import { useState, useEffect, type FC } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail } from 'lucide-react';
 import logo from '../../assets/logo.png';
-import bannerVideo from '../../assets/banner-video.mp4';
 
 export const ComingSoonPage: FC = () => {
   // Target countdown timer (28 days launch window)
@@ -39,14 +38,11 @@ export const ComingSoonPage: FC = () => {
       {/* Outer Container Card */}
       <div className="w-full flex-1 h-full bg-[#0a1532] rounded-xl sm:rounded-2xl md:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl flex flex-col justify-between border border-blue-900/50 text-white px-3 sm:px-6 lg:px-8 py-3.5 sm:py-5 lg:py-6">
 
-        {/* Background Video with Precision Industrial Aesthetics */}
+        {/* Background Image with Precision Industrial Aesthetics */}
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
-          <video
-            src={bannerVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
+          <img
+            src="/charu poster.jpeg"
+            alt="Charu Enterprises"
             className="w-full h-full object-cover object-[70%_center] lg:object-[80%_center] opacity-75 sm:opacity-80"
           />
           {/* Multi-stop cinematic gradient matching Home Hero */}

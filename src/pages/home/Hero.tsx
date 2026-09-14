@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { Phone, ArrowRight, Star, Check, ArrowUpRight } from 'lucide-react';
-import bannerVideo from '../../assets/banner-video.mp4';
 
 interface HeroProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
@@ -11,19 +10,13 @@ export const Hero: FC<HeroProps> = ({ onNavigate }) => {
     <div className="w-full bg-white px-2 sm:px-3 md:px-4 pt-2 sm:pt-3 pb-2">
       {/* Outer Rounded Hero Container Card with slightly increased height */}
       <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[700px] md:min-h-[760px] lg:min-h-[800px] xl:min-h-[830px] flex flex-col justify-between border border-blue-900/50 font-['Outfit',sans-serif]">
-        {/* Background Video spanning full screen size card with industrial metallurgy texture */}
+        {/* Background Image spanning full screen size card with industrial metallurgy texture */}
         <div className="absolute inset-0 z-0">
-          <video
-            src={bannerVideo}
-            poster="/charu poster.jpeg"
-            autoPlay
-            loop
-            muted
-            playsInline
+          <img
+            src="/charu poster.jpeg"
+            alt="Charu Enterprises Fence Fittings"
             className="w-full h-full object-cover object-[70%_center] lg:object-[80%_center] opacity-85"
-          >
-            <source src={bannerVideo} type="video/mp4" />
-          </video>
+          />
           {/* Reduced multi-stop gradient overlay so image clearly shows */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/90 via-[#071128]/65 via-50% to-[#071128]/25 z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/95 via-transparent to-[#071128]/35 z-10" />
