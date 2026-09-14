@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, type FC } from 'react';
 import { Phone, ArrowRight, Star, Check, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CATALOG_PRODUCTS, type CatalogProduct } from '../../data/companyData';
+import bannerVideo from '../../assets/banner video.mp4';
 
 const productImages = import.meta.glob('../../assets/product-images/*.{jpg,jpeg,png,webp}', {
   eager: true,
@@ -46,9 +47,12 @@ export const Hero: FC<HeroProps> = ({ onNavigate }) => {
       <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[700px] md:min-h-[760px] lg:min-h-[800px] xl:min-h-[830px] flex flex-col justify-between border border-blue-900/50 font-['Outfit',sans-serif]">
         {/* Background Image spanning full screen size card with industrial metallurgy texture */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="/charu poster.jpeg"
-            alt="Charu Enterprises Fence Fittings"
+          <video
+            src={bannerVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover object-[70%_center] lg:object-[80%_center] opacity-85"
           />
           {/* Reduced multi-stop gradient overlay so image clearly shows */}

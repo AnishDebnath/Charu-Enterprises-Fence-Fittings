@@ -11,34 +11,13 @@ import type { CatalogProduct } from './data/companyData';
 export default function App() {
   const [currentPage, setCurrentPage] = useState<
     'coming-soon' | 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact'
-  >(() => {
-    if (typeof window !== 'undefined') {
-      const hash = window.location.hash.toLowerCase();
-      if (hash.startsWith('#/about') || hash === '#about-page') {
-        return 'about';
-      }
-      if (hash.startsWith('#/products') || hash === '#products-page') {
-        return 'products';
-      }
-      if (
-        hash.startsWith('#/product-detail') ||
-        hash.startsWith('#/product-details') ||
-        hash === '#product-detail-page'
-      ) {
-        return 'product-detail';
-      }
-      if (hash.startsWith('#/case-study') || hash === '#case-study-page') {
-        return 'case-study';
-      }
-      if (hash.startsWith('#/contact') || hash === '#contact-page') {
-        return 'contact';
-      }
-      if (hash.startsWith('#/home') || hash === '#home-page') {
-        return 'home';
-      }
+  >('home');
+
+  useEffect(() => {
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname);
     }
-    return 'coming-soon';
-  });
+  }, []);
 
   const [selectedProduct, setSelectedProduct] = useState<CatalogProduct | null>(null);
 
