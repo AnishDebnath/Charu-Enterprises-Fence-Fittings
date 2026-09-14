@@ -36,7 +36,7 @@ export default function App() {
         return 'home';
       }
     }
-    return 'coming-soon';
+    return 'home';
   });
 
   useEffect(() => {
