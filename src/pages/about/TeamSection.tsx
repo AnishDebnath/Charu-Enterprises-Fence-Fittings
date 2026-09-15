@@ -48,19 +48,19 @@ export const TeamSection: FC = () => {
           </p>
         </div>
 
-        {/* Team Cards: 1 Card per row with alternating flex direction scaled to full section width */}
-        <div className="flex flex-col gap-6 sm:gap-8 max-w-5xl xl:max-w-6xl mx-auto">
+        {/* Team Cards: 1 Card per row with alternating flex direction with balanced medium proportions */}
+        <div className="flex flex-col gap-6 sm:gap-7 max-w-4xl xl:max-w-5xl mx-auto">
           {leadership.map((member, idx) => {
             const isReversed = idx % 2 === 1;
             return (
               <div
                 key={idx}
-                className={`group bg-white rounded-2xl sm:rounded-3xl lg:rounded-[32px] border border-slate-200/80 p-4 sm:p-6 lg:p-7 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center gap-6 sm:gap-8 lg:gap-10 transform hover:-translate-y-1 ${
+                className={`group bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 p-5 sm:p-6 lg:p-7 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center gap-5 sm:gap-7 lg:gap-9 transform hover:-translate-y-1 ${
                   isReversed ? 'sm:flex-row-reverse' : 'sm:flex-row'
                 }`}
               >
-                {/* 1:1 Square Ratio Large Showcase Image */}
-                <div className="w-full sm:w-[220px] md:w-[260px] lg:w-[300px] xl:w-[320px] shrink-0 aspect-square rounded-xl sm:rounded-2xl lg:rounded-[24px] overflow-hidden bg-slate-100 relative border border-slate-100 shadow-sm">
+                {/* 1:1 Square Ratio Ideal Proportion Showcase Image */}
+                <div className="w-full sm:w-[190px] md:w-[210px] lg:w-[230px] shrink-0 aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 relative border border-slate-100 shadow-sm">
                   <img
                     src={member.image}
                     alt={member.alt}
@@ -72,19 +72,19 @@ export const TeamSection: FC = () => {
                 {/* Details on the side of the card strictly matching original card design */}
                 <div
                   className={`flex-1 flex flex-col justify-center text-center py-1 sm:py-2 ${
-                    isReversed ? 'sm:pl-4 lg:pl-6 sm:text-right' : 'sm:pr-4 lg:pr-6 sm:text-left'
+                    isReversed ? 'sm:pl-3 lg:pl-5 sm:text-right' : 'sm:pr-3 lg:pr-5 sm:text-left'
                   }`}
                 >
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#0a1532] tracking-tight mb-1">
+                  <h3 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-[#0a1532] tracking-tight mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-sm sm:text-base font-semibold text-[#2563EB] mb-1 tracking-wide">
+                  <p className="text-sm font-semibold text-[#2563EB] mb-1 tracking-wide">
                     {member.role}
                   </p>
-                  <p className="text-xs sm:text-sm font-medium text-slate-400 mb-3 sm:mb-4">
+                  <p className="text-xs sm:text-sm font-medium text-slate-400 mb-2.5 sm:mb-3">
                     {member.experience}
                   </p>
-                  <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                     {member.bio}
                   </p>
                 </div>

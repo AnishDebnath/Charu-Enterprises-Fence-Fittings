@@ -6,6 +6,8 @@ import { GetToKnowUs } from './GetToKnowUs';
 import { OurFoundation } from './OurFoundation';
 import { FamilyOwned } from '../home/FamilyOwned';
 import { ProjectFinder } from '../home/ProjectFinder';
+import { CertificationsSection } from './CertificationsSection';
+import { PlantAndTeamSection } from './PlantAndTeamSection';
 import { TeamSection } from './TeamSection';
 
 interface AboutPageProps {
@@ -25,7 +27,9 @@ export const AboutPage: FC<AboutPageProps> = ({ onNavigate }) => {
         <OurFoundation onNavigate={onNavigate} />
         <TeamSection />
         <ProjectFinder onNavigate={onNavigate} />
+        <CertificationsSection />
         <FamilyOwned onNavigate={onNavigate} />
+        <PlantAndTeamSection />
       </main>
 
       {/* Footer */}

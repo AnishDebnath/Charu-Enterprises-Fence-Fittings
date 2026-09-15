@@ -12,16 +12,16 @@ export const ProductDetailHero: FC<ProductDetailHeroProps> = ({ onNavigate, prod
       {/* Outer Rounded Hero Container Card matching About Hero */}
       <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[420px] sm:min-h-[470px] md:min-h-[520px] lg:min-h-[560px] flex flex-col justify-between border border-blue-900/50">
         
-        {/* Background Image with Industrial Manufacturing & Dark Navy Multi-stop Overlay */}
+        {/* Background Image with Industrial Manufacturing & Soft Overlay */}
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=2560&q=85"
             alt="Charu Enterprises precision stamped fence fitting component manufacturing"
-            className="w-full h-full object-cover object-[center_45%] opacity-85"
+            className="w-full h-full object-cover object-[center_45%] opacity-90"
           />
-          {/* Multi-stop gradient matching website aesthetic */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/95 via-[#071128]/80 via-50% to-[#071128]/35 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/90 via-transparent to-[#071128]/40 z-10" />
+          {/* Balanced gradient overlay allowing photography to show clearly */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/85 via-[#071128]/55 via-50% to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/80 via-transparent to-[#071128]/25 z-10" />
         </div>
 
         {/* Hero Content - Centered vertically with top spacing for floating navbar */}

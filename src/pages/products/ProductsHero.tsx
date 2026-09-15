@@ -16,11 +16,11 @@ export const ProductsHero: FC<ProductsHeroProps> = ({ onNavigate }) => {
           <img
             src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=2560&q=85"
             alt="Custom timber deck and backyard outdoor living area"
-            className="w-full h-full object-cover object-[center_40%] opacity-80"
+            className="w-full h-full object-cover object-[center_40%] opacity-90"
           />
-          {/* Multi-stop gradient matching website aesthetic */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/95 via-[#071128]/80 via-50% to-[#071128]/35 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/90 via-transparent to-[#071128]/40 z-10" />
+          {/* Balanced gradient overlay allowing photography to show clearly */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/85 via-[#071128]/55 via-50% to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/80 via-transparent to-[#071128]/25 z-10" />
         </div>
 
         {/* Hero Content - Centered vertically with top spacing for floating navbar */}

@@ -119,7 +119,7 @@ export const OutdoorTips: FC = () => {
   return (
     <section
       id="outdoor-tips"
-      className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-b border-slate-200/80"
+      className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

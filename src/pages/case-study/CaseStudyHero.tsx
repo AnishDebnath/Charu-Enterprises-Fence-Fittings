@@ -16,11 +16,11 @@ export const CaseStudyHero: FC<CaseStudyHeroProps> = ({ onNavigate }) => {
           <img
             src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2560&q=85"
             alt="Finished backyard deck, pergola, and outdoor living renovation"
-            className="w-full h-full object-cover object-[center_45%] opacity-85"
+            className="w-full h-full object-cover object-[center_45%] opacity-90"
           />
-          {/* Multi-stop gradient matching website aesthetic */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/95 via-[#071128]/80 via-50% to-[#071128]/35 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/90 via-transparent to-[#071128]/40 z-10" />
+          {/* Balanced gradient overlay allowing photography to show clearly */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/85 via-[#071128]/55 via-50% to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/80 via-transparent to-[#071128]/25 z-10" />
         </div>
 
         {/* Hero Content */}

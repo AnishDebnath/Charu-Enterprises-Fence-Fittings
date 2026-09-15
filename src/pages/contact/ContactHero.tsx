@@ -11,16 +11,16 @@ export const ContactHero: FC<ContactHeroProps> = ({ onNavigate }) => {
       {/* Outer Rounded Hero Container Card matching About Hero Design */}
       <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[420px] sm:min-h-[470px] md:min-h-[520px] lg:min-h-[560px] flex flex-col justify-between border border-blue-900/50">
         
-        {/* Background Image with Outdoor Patio/Deck & Dark Navy Multi-stop Overlay */}
+        {/* Background Image with Outdoor Patio/Deck & Soft Overlay */}
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2560&q=85"
             alt="Outdoor pergola and backyard patio living space"
-            className="w-full h-full object-cover object-[75%_center] lg:object-[80%_center] opacity-80"
+            className="w-full h-full object-cover object-[75%_center] lg:object-[80%_center] opacity-90"
           />
-          {/* Multi-stop gradient matching Home & About Hero aesthetics */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/95 via-[#071128]/80 via-50% to-[#071128]/35 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/90 via-transparent to-[#071128]/40 z-10" />
+          {/* Balanced gradient overlay allowing photography to show clearly */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071128]/85 via-[#071128]/55 via-50% to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/80 via-transparent to-[#071128]/25 z-10" />
         </div>
 
         {/* Hero Content - Centered vertically with top spacing for floating navbar */}
