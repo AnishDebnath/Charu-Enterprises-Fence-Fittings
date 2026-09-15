@@ -297,7 +297,7 @@ export const ProductDetailContent: FC<ProductDetailContentProps> = ({
                         <span className={`text-[11px] px-1.5 py-0.5 rounded font-mono ${
                           isSelected ? 'bg-[#1D4ED8] text-white' : 'bg-slate-100 text-slate-500'
                         }`}>
-                          #{row.code}
+                          {row.code}
                         </span>
                       )}
                     </button>

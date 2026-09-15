@@ -25,17 +25,17 @@ const featuredProducts = FEATURED_IDS
   .filter(Boolean) as CatalogProduct[];
 
 interface ServicesGridProps {
-  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
 }
 
 export const ServicesGrid: FC<ServicesGridProps> = ({ onNavigate }) => {
-  const marqueeItems = [...featuredProducts, ...featuredProducts];
+  const marqueeItems = [...featuredProducts, ...featuredProducts, ...featuredProducts];
 
   return (
     <section id="products" className="w-full bg-[#DBEAFE] py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] overflow-hidden border-b border-blue-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mb-12 sm:mb-14 lg:mb-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mb-10 sm:mb-12 lg:mb-14 items-start">
           {/* Left Column: Eyebrow + Big Headline */}
           <div className="lg:col-span-7 space-y-3">
             <div className="flex items-center gap-2">
@@ -71,15 +71,15 @@ export const ServicesGrid: FC<ServicesGridProps> = ({ onNavigate }) => {
       </div>
 
       {/* Marquee Container */}
-      <div className="relative w-full overflow-hidden py-4">
-        <div className="animate-marquee-ltr flex gap-6 sm:gap-7 lg:gap-8 cursor-grab active:cursor-grabbing px-4">
+      <div className="relative w-full overflow-hidden py-3">
+        <div className="animate-marquee-ltr flex gap-5 sm:gap-6 lg:gap-6 cursor-grab active:cursor-grabbing px-4">
           {marqueeItems.map((product, index) => {
             const imgSrc = get_product_image(product.itemNumber) || product.image;
             return (
               <div
                 key={index}
-                onClick={() => onNavigate?.('products')}
-                className="group relative rounded-[32px] sm:rounded-[36px] overflow-hidden aspect-square w-[310px] sm:w-[360px] md:w-[390px] lg:w-[420px] xl:w-[440px] shrink-0 bg-[#071128] flex flex-col justify-between p-6 sm:p-7 transition-all duration-500 hover:-translate-y-1.5 shadow-lg hover:shadow-2xl cursor-pointer select-none border border-slate-200/60"
+                onClick={() => onNavigate?.('product-detail', product)}
+                className="group relative rounded-[26px] sm:rounded-[30px] overflow-hidden aspect-square w-[260px] sm:w-[300px] md:w-[340px] lg:w-[370px] xl:w-[380px] shrink-0 bg-[#071128] flex flex-col justify-between p-5 sm:p-6 transition-all duration-500 hover:-translate-y-1.5 shadow-lg hover:shadow-2xl cursor-pointer select-none border border-slate-200/60"
               >
                 {/* Card Image */}
                 <img
@@ -92,15 +92,15 @@ export const ServicesGrid: FC<ServicesGridProps> = ({ onNavigate }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/95 via-[#071128]/40 via-50% to-[#071128]/10" />
 
                 {/* Top-Right Cutout Notch with Concave Fillets */}
-                <div className="absolute top-0 right-0 w-[74px] h-[74px] sm:w-[82px] sm:h-[82px] bg-[#DBEAFE] rounded-bl-[28px] sm:rounded-bl-[32px] pointer-events-none z-20 flex items-center justify-center">
-                  <div className="absolute top-0 -left-5 w-5 h-5 overflow-hidden pointer-events-none">
-                    <div className="w-10 h-10 rounded-tr-[22px] shadow-[10px_-10px_0_0_#DBEAFE]" />
+                <div className="absolute top-0 right-0 w-[64px] h-[64px] sm:w-[72px] sm:h-[72px] bg-[#DBEAFE] rounded-bl-[22px] sm:rounded-bl-[26px] pointer-events-none z-20 flex items-center justify-center">
+                  <div className="absolute top-0 -left-4 w-4 h-4 overflow-hidden pointer-events-none">
+                    <div className="w-8 h-8 rounded-tr-[18px] shadow-[8px_-8px_0_0_#DBEAFE]" />
                   </div>
-                  <div className="absolute -bottom-5 right-0 w-5 h-5 overflow-hidden pointer-events-none">
-                    <div className="w-10 h-10 rounded-tr-[22px] shadow-[10px_-10px_0_0_#DBEAFE]" />
+                  <div className="absolute -bottom-4 right-0 w-4 h-4 overflow-hidden pointer-events-none">
+                    <div className="w-8 h-8 rounded-tr-[18px] shadow-[8px_-8px_0_0_#DBEAFE]" />
                   </div>
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white group-hover:bg-[#3B82F6] text-[#0a1532] group-hover:text-white flex items-center justify-center shadow-md transition-all duration-300 group-hover:scale-105 pointer-events-auto border border-blue-200">
-                    <ArrowRight className="w-5 h-5 stroke-[2] group-hover:translate-x-0.5 transition-transform" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white group-hover:bg-[#3B82F6] text-[#0a1532] group-hover:text-white flex items-center justify-center shadow-md transition-all duration-300 group-hover:scale-105 pointer-events-auto border border-blue-200">
+                    <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[2] group-hover:translate-x-0.5 transition-transform" />
                   </div>
                 </div>
 
@@ -108,10 +108,10 @@ export const ServicesGrid: FC<ServicesGridProps> = ({ onNavigate }) => {
                 <div />
 
                 {/* Bottom Content Area */}
-                <div className="relative z-10 space-y-2.5">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shadow-sm mb-2.5">
+                <div className="relative z-10 space-y-1.5">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shadow-sm mb-2">
                     <svg
-                      className="w-5 h-5 text-white"
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-white"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -125,12 +125,14 @@ export const ServicesGrid: FC<ServicesGridProps> = ({ onNavigate }) => {
                     </svg>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug drop-shadow-sm">
+                  <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight leading-snug drop-shadow-sm">
                     {product.name}
                   </h3>
 
                   <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-medium max-w-sm drop-shadow-sm">
-                    {product.category} • {product.material}
+                    {product.category} • {product.variants && product.variants.length > 0
+                      ? `${product.variants.length} ${product.variants.length === 1 ? 'Size' : 'Sizes'} Available`
+                      : '1 Standard Size'}
                   </p>
                 </div>
               </div>

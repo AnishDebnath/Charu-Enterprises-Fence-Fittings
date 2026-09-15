@@ -24,7 +24,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       <Hero onNavigate={onNavigate} />
       <Partners />
       <AboutTeam />
-      <ServicesGrid />
+      <ServicesGrid onNavigate={onNavigate} />
       <FamilyOwned />
       <ProjectFinder />
       <RecentProjects onNavigate={onNavigate} />
