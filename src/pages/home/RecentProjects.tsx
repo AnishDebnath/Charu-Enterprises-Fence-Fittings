@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const supplyImages = import.meta.glob('../../assets/supply in action/*.{jpg,jpeg,png,webp}', {
   eager: true,
@@ -75,28 +75,24 @@ export const RecentProjects: FC<RecentProjectsProps> = ({ onNavigate }) => {
               <div
                 key={index}
                 onClick={() => onNavigate?.('case-study')}
-                className="group relative rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-square w-[300px] sm:w-[350px] md:w-[380px] lg:w-[410px] shrink-0 bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 cursor-pointer border border-slate-200/80 select-none"
+                className="group relative rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-square w-[300px] sm:w-[350px] md:w-[380px] lg:w-[410px] shrink-0 bg-[#071128] shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between p-6 sm:p-7 cursor-pointer border border-slate-200/60 select-none"
               >
                 {/* Background Supply Image */}
                 <img
                   src={imgSrc}
                   alt={card.title}
-                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                  className="absolute inset-0 w-full h-full object-cover object-center opacity-100 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
                 />
 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 group-hover:from-black/50 transition-colors duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/95 via-[#071128]/40 via-50% to-[#071128]/10 pointer-events-none" />
 
-                {/* Top Row: Floating Arrow */}
-                <div className="relative z-10 flex justify-end">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md text-[#0a1532] flex items-center justify-center shadow-xl border border-white/80 group-hover:scale-110 group-hover:bg-[#3B82F6] group-hover:text-white group-hover:border-[#3B82F6] transition-all duration-300">
-                    <ArrowUpRight className="w-5 h-5 stroke-[2.5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
-                </div>
+                {/* Top spacer */}
+                <div />
 
-                {/* Bottom Floating Info Card */}
-                <div className="relative z-10 bg-white rounded-[20px] sm:rounded-[22px] p-4 sm:p-5 shadow-xl border border-white/90 space-y-1.5 transform transition-all duration-300 group-hover:-translate-y-1">
-                  <h3 className="text-base sm:text-[17px] font-bold text-[#0a1532] tracking-tight leading-snug group-hover:text-[#3B82F6] transition-colors">
+                {/* Bottom Content Area */}
+                <div className="relative z-10">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug drop-shadow-sm">
                     {card.title}
                   </h3>
                 </div>

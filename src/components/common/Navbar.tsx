@@ -135,7 +135,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                       type="button"
                       onClick={() => handleNavClick('products')}
                       className={`transition-colors cursor-pointer ${
-                        currentPage === 'products'
+                        currentPage === 'products' || currentPage === 'product-detail'
                           ? 'text-[#60A5FA] font-extrabold'
                           : 'text-neutral-100 hover:text-white'
                       }`}
@@ -146,7 +146,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                       type="button"
                       onClick={() => handleNavClick('case-study')}
                       className={`transition-colors cursor-pointer ${
-                        currentPage === 'case-study' || currentPage === 'product-detail'
+                        currentPage === 'case-study'
                           ? 'text-[#60A5FA] font-extrabold'
                           : 'text-neutral-100 hover:text-white'
                       }`}
@@ -305,7 +305,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.13 }}
                 className={`w-full text-left py-2 text-base border-b border-white/10 transition-colors cursor-pointer ${
-                  currentPage === 'products' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
+                  currentPage === 'products' || currentPage === 'product-detail' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
                 }`}
               >
                 PRODUCTS
@@ -320,7 +320,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.17 }}
                 className={`w-full text-left py-2 text-base border-b border-white/10 transition-colors cursor-pointer ${
-                  currentPage === 'case-study' || currentPage === 'product-detail' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
+                  currentPage === 'case-study' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
                 }`}
               >
                 CASE STUDY

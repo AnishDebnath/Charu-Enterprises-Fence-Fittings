@@ -1,5 +1,4 @@
 import { type FC } from 'react';
-import { ArrowRight } from 'lucide-react';
 
 const supplyImages = import.meta.glob('../../assets/supply in action/*.{jpg,jpeg,png,webp}', {
   eager: true,
@@ -64,40 +63,11 @@ export const CaseStudySection: FC = () => {
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/95 via-[#071128]/40 via-50% to-[#071128]/10" />
 
-                {/* Top-Right Cutout Notch with Concave Fillets */}
-                <div className="absolute top-0 right-0 w-[74px] h-[74px] sm:w-[82px] sm:h-[82px] bg-white rounded-bl-[28px] sm:rounded-bl-[32px] pointer-events-none z-20 flex items-center justify-center">
-                  <div className="absolute top-0 -left-5 w-5 h-5 overflow-hidden pointer-events-none">
-                    <div className="w-10 h-10 rounded-tr-[22px] shadow-[10px_-10px_0_0_#ffffff]" />
-                  </div>
-                  <div className="absolute -bottom-5 right-0 w-5 h-5 overflow-hidden pointer-events-none">
-                    <div className="w-10 h-10 rounded-tr-[22px] shadow-[10px_-10px_0_0_#ffffff]" />
-                  </div>
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-100 group-hover:bg-[#3B82F6] text-[#0a1532] group-hover:text-white flex items-center justify-center shadow-md transition-all duration-300 group-hover:scale-105 pointer-events-auto border border-slate-200">
-                    <ArrowRight className="w-5 h-5 stroke-[2] group-hover:translate-x-0.5 transition-transform" />
-                  </div>
-                </div>
-
                 {/* Top spacer */}
                 <div />
 
                 {/* Bottom Content Area */}
-                <div className="relative z-10 space-y-2.5">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shadow-sm mb-2.5">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                      <path d="m3 21 6.5-6.5" />
-                      <path d="M18.5 5.5 21 3" />
-                    </svg>
-                  </div>
-
+                <div className="relative z-10">
                   <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug drop-shadow-sm">
                     {study.title}
                   </h3>

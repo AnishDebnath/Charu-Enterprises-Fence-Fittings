@@ -5,6 +5,7 @@ import { CaseStudyHero } from './CaseStudyHero';
 import { CaseStudySection } from './CaseStudySection';
 import { ProjectFinder } from '../home/ProjectFinder';
 import { HomeownerReviews } from '../home/HomeownerReviews';
+import { FAQSection } from '../home/FAQSection';
 
 import type { CatalogProduct } from '../../data/companyData';
 
@@ -31,6 +32,9 @@ export const CaseStudyPage: FC<CaseStudyPageProps> = ({ onNavigate }) => {
 
         {/* 4. Testimonial / Homeowner Reviews Section */}
         <HomeownerReviews />
+
+        {/* 5. Frequently Asked Questions Section */}
+        <FAQSection onNavigate={onNavigate} />
       </main>
 
       {/* Footer */}
