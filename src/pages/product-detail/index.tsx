@@ -1,10 +1,9 @@
 import type { FC } from 'react';
 import { Navbar } from '../../components/common/Navbar';
 import { Footer } from '../../components/common/Footer';
-import { BackyardCTA } from '../home/BackyardCTA';
-import { ProductDetailHero } from './ProductDetailHero';
 import { ProductDetailContent, defaultProductDetail, type ProductDetailData } from './ProductDetailContent';
 import { ProductImprovements } from './ProductImprovements';
+import { BackyardCTA } from '../home/BackyardCTA';
 import { ProductStoryTransformation } from './ProductStoryTransformation';
 import type { CatalogProduct } from '../../data/companyData';
 
@@ -64,21 +63,18 @@ export const ProductDetailPage: FC<ProductDetailPageProps> = ({ product, data, o
       <Navbar currentPage="product-detail" onNavigate={onNavigate} />
 
       {/* Main Content Sections */}
-      <main className="flex-1 flex flex-col">
-        {/* 2. Hero section */}
-        <ProductDetailHero onNavigate={onNavigate} productTitle={detailData.title} />
+      <main className="flex-1 flex flex-col pt-24 sm:pt-28 lg:pt-32 bg-white">
+        {/* Exact Product Detail Showcase matching the design layout */}
+        <ProductDetailContent data={detailData} product={product} onNavigate={onNavigate} />
 
-        {/* 3. Product Detail Section with specifications and size chart */}
-        <ProductDetailContent data={detailData} onNavigate={onNavigate} />
-
-        {/* 4. Product Improvements Section */}
+        {/* Quality Assurance / Manufacturing Standards */}
         <ProductImprovements />
 
-        {/* 5. CTA Section */}
+        {/* Call to Action for Factory Direct RFQ */}
         <BackyardCTA onNavigate={onNavigate} />
 
-        {/* 6. Product Story Section */}
-        <ProductStoryTransformation onNavigate={onNavigate} />
+        {/* Other Products Section / Interactive Carousel */}
+        <ProductStoryTransformation onNavigate={onNavigate} currentProductId={product?.itemNumber || 1} />
       </main>
 
       {/* 7. Footer */}

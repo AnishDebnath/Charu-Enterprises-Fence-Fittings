@@ -1,92 +1,35 @@
 import { useState, useEffect, useRef, useCallback, type FC } from 'react';
-import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { CATALOG_PRODUCTS, type CatalogProduct } from '../../data/companyData';
 
-interface ProjectCard {
-  id: number;
-  category: string;
-  title: string;
-  description: string;
-  image: string;
-  alt: string;
+const productImages = import.meta.glob('../../assets/product-images/*.{jpg,jpeg,png,webp}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>;
+
+function get_product_image(itemNumber: number): string {
+  const num = String(itemNumber);
+  for (const [path, url] of Object.entries(productImages)) {
+    const fileName = path.split('/').pop()?.toLowerCase() || '';
+    if (fileName.startsWith(num + '.') || fileName.startsWith(num + ' ') || fileName.startsWith(num + '  ')) {
+      return url as string;
+    }
+  }
+  return '';
 }
 
 interface OtherProductsProps {
-  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
+  currentProductId?: number;
 }
 
-const otherProjectsList: ProjectCard[] = [
-  {
-    id: 1,
-    category: 'Bands & Clamps',
-    title: 'Boulevard Line Rail Clamp 14 GA & 16 GA',
-    description: 'Two-piece clamp connector connecting intermediate horizontal line rails to line posts.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Boulevard line rail clamp pressed steel fitting',
-  },
-  {
-    id: 2,
-    category: 'Bands & Clamps',
-    title: 'Brace Band - Heavy Duty Pressed Steel',
-    description: 'Secures horizontal rail end cups, truss rods, and barb wire arms to terminal corner posts.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Brace band heavy duty pressed steel fitting',
-  },
-  {
-    id: 3,
-    category: 'Hinges & Hardware',
-    title: 'Industrial 180° Offset Malleable Gate Hinge',
-    description: 'Heavy duty malleable iron gate hinge providing complete 180-degree swing clearance.',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Industrial offset gate hinge malleable iron',
-  },
-  {
-    id: 4,
-    category: 'Caps & Closures',
-    title: 'Pressed Steel & Aluminum Post Caps',
-    description: 'Weatherproof dome and eye top caps shielding pipe interiors from rust and debris.',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Post caps and terminal closures',
-  },
-  {
-    id: 5,
-    category: 'Gate & Track',
-    title: 'Cantilever Gate Roller Assemblies',
-    description: 'Heavy duty steel rolling hardware designed for smooth automated sliding gate operation.',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Cantilever gate roller assembly hardware',
-  },
-  {
-    id: 6,
-    category: 'Bands & Clamps',
-    title: 'Tension Bands & Heavy Duty Tension Bars',
-    description: 'Evenly distributes tension across chain link fabric on terminal and gate frame posts.',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Tension bands and tension bars pressed steel',
-  },
-  {
-    id: 7,
-    category: 'Fittings & Arms',
-    title: 'Barbed Y-Arm Dual Extension 14 GA & 16 GA',
-    description: 'Dual-extension V/Y-shaped arms designed for prison and high-security perimeter wire.',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Barbed Y arm dual extension pressed steel',
-  },
-  {
-    id: 8,
-    category: 'Gate & Track',
-    title: 'Heavy Duty Commercial Bulldog Gate Latch',
-    description: 'Malleable iron padlockable latch assembly for commercial double swing security gates.',
-    image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Bulldog commercial gate latch assembly',
-  },
-];
-
-export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate }) => {
+export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate, currentProductId }) => {
+  const displayProducts = CATALOG_PRODUCTS.filter((p) => p.itemNumber !== currentProductId);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const totalProjects = otherProjectsList.length;
+  const totalProducts = displayProducts.length;
 
   const scrollToCard = useCallback((index: number) => {
     const container = scrollContainerRef.current;
@@ -105,19 +48,19 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate 
 
   const handleNext = useCallback(() => {
     setCurrentIndex((prev) => {
-      const nextIndex = (prev + 1) % totalProjects;
+      const nextIndex = (prev + 1) % totalProducts;
       scrollToCard(nextIndex);
       return nextIndex;
     });
-  }, [totalProjects, scrollToCard]);
+  }, [totalProducts, scrollToCard]);
 
   const handlePrev = useCallback(() => {
     setCurrentIndex((prev) => {
-      const prevIndex = (prev - 1 + totalProjects) % totalProjects;
+      const prevIndex = (prev - 1 + totalProducts) % totalProducts;
       scrollToCard(prevIndex);
       return prevIndex;
     });
-  }, [totalProjects, scrollToCard]);
+  }, [totalProducts, scrollToCard]);
 
   const handleSelectIndex = (index: number) => {
     setCurrentIndex(index);
@@ -139,7 +82,6 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate 
     if (!container) return;
     const scrollLeft = container.scrollLeft;
     
-    // Find closest card index
     let closestIndex = 0;
     let minDiff = Infinity;
     cardRefs.current.forEach((card, idx) => {
@@ -155,9 +97,9 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate 
     }
   };
 
-  const handleCardClick = () => {
+  const handleCardClick = (product: CatalogProduct) => {
     if (onNavigate) {
-      onNavigate('product-detail');
+      onNavigate('product-detail', product);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -166,24 +108,24 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate 
     <section className="w-full bg-[#F4F7FB]/70 py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] border-t border-slate-200/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header matching website theme & screenshot */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+        {/* Section Header matching website theme */}
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-3 sm:space-y-4">
           {/* Eyebrow badge matching website style */}
           <div className="inline-flex items-center gap-2">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
             <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight">
-              Other Projects
+              Other Products
             </span>
           </div>
 
           {/* Heading */}
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0a1532] tracking-tight leading-[1.18]">
-            A Closer Look at Other Backyard Transformations
+            Explore Other Products in Our Catalog
           </h2>
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base md:text-[17px] leading-relaxed font-normal">
-            From custom deck layouts to pergola installations, explore other outdoor spaces built for comfort, flow, and everyday living.
+            From heavy-duty pressed steel bands and line rail clamps to malleable industrial gate hinges, explore our full manufacturing range.
           </p>
         </div>
 
@@ -193,53 +135,82 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate 
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Smooth Scrollable Sliding Track: moving cards one by one */}
+          {/* Smooth Scrollable Sliding Track */}
           <div
             ref={scrollContainerRef}
             onScroll={handleScroll}
-            className="flex gap-6 sm:gap-7 lg:gap-8 overflow-x-auto scroll-smooth py-4 no-scrollbar px-1"
+            className="flex gap-4 sm:gap-5 lg:gap-6 overflow-x-auto scroll-smooth py-3 no-scrollbar px-1"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
             }}
           >
-            {otherProjectsList.map((project, index) => (
-              <div
-                key={project.id}
-                ref={(el) => {
-                  cardRefs.current[index] = el;
-                }}
-                onClick={handleCardClick}
-                className="group relative rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-square w-[82vw] sm:w-[350px] md:w-[360px] lg:w-[380px] shrink-0 bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between p-4 sm:p-5 cursor-pointer border border-slate-200/80 select-none hover:-translate-y-1"
-              >
-                {/* Background Project Photo */}
-                <img
-                  src={project.image}
-                  alt={project.alt}
-                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 pointer-events-none"
-                />
+            {displayProducts.map((product, index) => {
+              const imgSrc = get_product_image(product.itemNumber) || product.image;
 
-                {/* Gradient Overlay for subtle depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 group-hover:from-black/50 transition-colors duration-300 pointer-events-none" />
+              return (
+                <div
+                  key={product.id}
+                  ref={(el) => {
+                    cardRefs.current[index] = el;
+                  }}
+                  onClick={() => handleCardClick(product)}
+                  className="group bg-white rounded-[22px] sm:rounded-[24px] p-2.5 sm:p-3 border border-slate-200/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_24px_rgba(10,21,50,0.1)] transition-all duration-300 flex flex-col justify-between cursor-pointer select-none relative hover:-translate-y-1 w-[260px] sm:w-[280px] md:w-[300px] shrink-0"
+                >
+                  {/* Clean 1:1 Aspect Ratio Image Container */}
+                  <div className="relative w-full aspect-square bg-[#f1f4f8] rounded-[16px] sm:rounded-[18px] overflow-hidden border border-slate-100">
+                    <img
+                      src={imgSrc}
+                      alt={product.name}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
+                  </div>
 
-                {/* Top Row: Floating Theme Action Badge matching Home & Projects Page */}
-                <div className="relative z-10 flex justify-end">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md text-[#0a1532] flex items-center justify-center shadow-xl border border-white/80 group-hover:scale-110 group-hover:bg-[#3B82F6] group-hover:text-white group-hover:border-[#3B82F6] transition-all duration-300">
-                    <ArrowUpRight className="w-5 h-5 stroke-[2.5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  {/* Product Details Section matching exact product card design */}
+                  <div className="pt-2.5 px-0.5 flex flex-col flex-1 justify-between">
+                    <div>
+                      {/* Category / Item # Label */}
+                      <div className="flex items-center justify-between gap-1 mb-0.5">
+                        <span className="text-[11px] font-bold text-[#2563EB] tracking-wider uppercase truncate">
+                          {product.category}
+                        </span>
+                        <span className="text-[11px] font-semibold text-slate-400 shrink-0">
+                          #{product.itemNumber}
+                        </span>
+                      </div>
+
+                      {/* Product Name Title */}
+                      <h3 className="text-sm sm:text-[15px] font-bold text-[#0a1532] leading-snug line-clamp-1 group-hover:text-[#2563EB] transition-colors mb-1">
+                        {product.name}
+                      </h3>
+
+                      {/* Number of Sizes Available */}
+                      <p className="text-xs sm:text-sm font-semibold text-slate-600 line-clamp-1 mb-3">
+                        {product.variants && product.variants.length > 0
+                          ? `${product.variants.length} ${product.variants.length === 1 ? 'Size' : 'Sizes'} Available`
+                          : '1 Standard Size'}
+                      </p>
+                    </div>
+
+                    {/* Action Button matching Website Buttons */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleCardClick(product);
+                      }}
+                      className="group/btn w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-4 pr-1.5 py-2 rounded-full flex items-center justify-between text-xs sm:text-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98] cursor-pointer"
+                    >
+                      <span className="transition-colors">View Details</span>
+                      <div className="w-6 h-6 rounded-full bg-white group-hover/btn:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover/btn:text-white shadow-sm shrink-0 transition-colors">
+                        <ArrowRight className="w-3.5 h-3.5 stroke-[2.5] group-hover/btn:translate-x-0.5 transition-transform" />
+                      </div>
+                    </button>
                   </div>
                 </div>
-
-                {/* Bottom Floating White Information Card matching Home & Projects Page */}
-                <div className="relative z-10 bg-white rounded-[20px] sm:rounded-[22px] p-4 sm:p-5 shadow-xl border border-white/90 space-y-1.5 transform transition-all duration-300 group-hover:-translate-y-1">
-                  <h3 className="text-base sm:text-[17px] font-bold text-[#0a1532] tracking-tight leading-snug group-hover:text-[#3B82F6] transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed font-medium line-clamp-2">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -249,22 +220,22 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate 
           <button
             type="button"
             onClick={handlePrev}
-            aria-label="Previous project"
+            aria-label="Previous product"
             className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-[#0a1532] hover:bg-[#3B82F6] hover:text-white shadow-md hover:shadow-xl border border-slate-200/90 flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer shrink-0"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
           </button>
 
-          {/* Carousel Pagination Indicator Dots */}
+          {/* Carousel Pagination Indicator Dots (show max 8 dots) */}
           <div className="flex items-center gap-2">
-            {otherProjectsList.map((_, index) => {
-              const isActive = currentIndex === index;
+            {displayProducts.slice(0, Math.min(8, displayProducts.length)).map((_, index) => {
+              const isActive = (currentIndex % Math.min(8, displayProducts.length)) === index;
               return (
                 <button
                   key={index}
                   type="button"
                   onClick={() => handleSelectIndex(index)}
-                  aria-label={`Go to project slide ${index + 1}`}
+                  aria-label={`Go to product slide ${index + 1}`}
                   className={`transition-all duration-300 rounded-full cursor-pointer ${
                     isActive
                       ? 'w-7 h-2.5 bg-[#3B82F6] shadow-sm'
@@ -279,7 +250,7 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate 
           <button
             type="button"
             onClick={handleNext}
-            aria-label="Next project"
+            aria-label="Next product"
             className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-[#0a1532] hover:bg-[#3B82F6] hover:text-white shadow-md hover:shadow-xl border border-slate-200/90 flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer shrink-0"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
