@@ -33,12 +33,12 @@ export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              About Charu Enterprises
+              About Our Company
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              Pioneering high-precision fence fittings, pressed steel components, and malleable iron hardware for global security distributors since 1989.
+              55+ years of manufacturing excellence and certified fence hardware production.
             </p>
 
             {/* Breadcrumb Navigation matching design */}

@@ -41,19 +41,19 @@ export const ServicesGrid: FC<ServicesGridProps> = ({ onNavigate }) => {
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
               <span className="text-[#2563EB] text-sm sm:text-base font-bold tracking-tight uppercase">
-                Manufacturing Range
+                Product Range
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
               Engineered Fence Fittings <br className="hidden sm:inline" />
-              & Custom Fabrications.
+              &amp; Sheet Metal Fabrication.
             </h2>
           </div>
 
           {/* Right Column: Paragraph + Blue CTA Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-4 pt-1">
             <p className="text-slate-700 text-sm sm:text-base leading-relaxed max-w-md font-medium">
-              Supplying high-tensile hot-dip galvanized pressed steel, malleable iron, and aluminum fence hardware to master distributors worldwide.
+              We make and supply galvanized pressed steel, malleable iron, and aluminum fence hardware, and can manufacture any sheet metal fabrication item as per your required product specifications.
             </p>
 
             <button

@@ -12,33 +12,33 @@ export const FAQSection: FC<FAQSectionProps> = ({ onNavigate }) => {
   const faqs = [
     {
       id: '01',
-      question: 'What is your standard production lead time for container orders?',
+      question: 'What is your standard production time for container orders?',
       answer:
-        'Standard full container load (FCL) orders typically ship within 30 to 45 days after CAD approval and purchase order confirmation. Repeat catalog items from our regular production schedule can often be dispatched earlier.',
+        'Full container load (FCL) orders typically ship in 30 to 45 days after order confirmation. Standard catalog items can often be dispatched sooner.',
     },
     {
       id: '02',
-      question: 'Can Charu Enterprises manufacture custom fittings to proprietary drawings?',
+      question: 'Can Charu Enterprises make sheet metal fabrication items as per our product specifications?',
       answer:
-        'Yes. With our comprehensive in-house tool room and tool & die development engineers, we manufacture custom stampings, malleable castings, and aluminum fittings tailored to your exact drawings, specifications, and branded markings.',
+        'Yes. While we do not provide custom design services, we can manufacture and fabricate any sheet metal item as per your required product specifications, dimensions, technical drawings, or physical samples using our advanced power presses and tooling.',
     },
     {
       id: '03',
-      question: 'What galvanizing and corrosion resistance standards do you adhere to?',
+      question: 'What galvanizing and rust protection standards do you follow?',
       answer:
-        'All pressed steel and malleable iron products are hot-dip galvanized strictly in accordance with ASTM A153 / ASTM A123 standards. We verify coating thickness with calibrated magnetic/eddy-current thickness gauges to guarantee long-term outdoor rust resistance.',
+        'All steel and malleable iron parts are hot-dip galvanized to ASTM A153 / ASTM A123 standards. We test coating thickness with digital gauges to ensure 30+ years of rust defense.',
     },
     {
       id: '04',
-      question: 'What international shipping terms and destinations do you support?',
+      question: 'What shipping terms and countries do you deliver to?',
       answer:
-        'We support flexible international commercial terms including FOB (Kolkata/Haldia Ports), CIF, CFR, and hassle-free DDP (Delivered Duty Paid) directly to your warehouse across the United States, Canada, the European Union, Australia, and the Middle East.',
+        'We offer FOB, CIF, CFR, and door-to-door DDP (duty-paid) delivery across the USA, Canada, Europe, Australia, and the Middle East.',
     },
     {
       id: '05',
-      question: 'What quality control and inspection documentation is provided with shipments?',
+      question: 'What quality inspection papers come with each shipment?',
       answer:
-        'As an ISO 9001:2015 certified manufacturer, every container shipment is backed by Material Test Certificates (MTC), hot-dip galvanizing coating thickness reports, tensile strength test data, and detailed dimensional inspection sheets.',
+        'Every shipment comes with ISO 9001:2015 inspection reports, Mill Test Certificates (MTC), galvanizing thickness data, and dimensional check sheets.',
     },
   ];
 
@@ -59,7 +59,7 @@ export const FAQSection: FC<FAQSectionProps> = ({ onNavigate }) => {
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
                 <span className="text-[#3B82F6] text-xs sm:text-sm font-bold tracking-tight uppercase">
-                  Buyer &amp; Importer FAQ
+                  Frequently Asked Questions
                 </span>
               </div>
 

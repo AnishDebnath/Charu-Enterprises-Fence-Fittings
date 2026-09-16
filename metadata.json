@@ -1,11 +1,11 @@
 {
   "name": "Charu Enterprises Fence Fittings",
-  "description": "Official website for Charu Enterprises - India's leading manufacturer of pressed steel, malleable iron, and aluminum fence fittings with 50+ years of experience.",
+  "description": "Leading manufacturer & global exporter of pressed steel, malleable iron, and aluminum fence fittings since 1969 with 55+ years experience and 150M+ exported pieces.",
   "version": "1.0.0",
   "author": "Charu Enterprises",
-  "url": "https://charuenterprises.com",
+  "url": "https://charufence.in",
   "industry": "Fence Fittings Manufacturing",
-  "location": "India",
+  "location": "Kolkata, India",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

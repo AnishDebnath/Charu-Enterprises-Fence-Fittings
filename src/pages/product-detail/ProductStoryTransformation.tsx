@@ -113,8 +113,8 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate,
           {/* Eyebrow badge matching website style */}
           <div className="inline-flex items-center gap-2">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-            <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight">
-              Other Products
+            <span className="text-[#3B82F6] text-xs sm:text-sm font-bold tracking-wide uppercase">
+              Explore More Products
             </span>
           </div>
 
@@ -125,7 +125,7 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate,
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base md:text-[17px] leading-relaxed font-normal">
-            From heavy-duty pressed steel bands and line rail clamps to malleable industrial gate hinges, explore our full manufacturing range.
+            From steel bands and rail clamps to gate hinges and post caps, explore our full product range.
           </p>
         </div>
 

@@ -1,75 +1,146 @@
-import opMaskaraImg from '../assets/founders/Mr.-OP-Maskara.jpg';
-import somMaskaraImg from '../assets/founders/Mr.-Som-Maskara.jpg';
+import { PRODUCTS_PART_1, type CatalogProduct, type ProductSizeVariant } from './productsPart1';
+import { PRODUCTS_PART_2 } from './productsPart2';
+import { getProductImage } from './productImages';
 
-export interface ProductSizeVariant {
-  code?: string;
-  size: string;
-  pcsPerBag?: number | string;
-  bagPerPallet?: number | string;
-  pcsPerPallet?: number | string;
-  pcsPerCarton?: number | string;
-  cartonPerCrate?: number | string;
-  pcsPerCrate?: number | string;
-}
+export type { CatalogProduct, ProductSizeVariant };
 
-export interface CatalogProduct {
-  id: number;
-  itemNumber: number;
+export interface CompanyInfo {
   name: string;
-  category: 'Fittings & Arms' | 'Hinges & Hardware' | 'Bands & Clamps' | 'Caps & Closures' | 'Gate & Track' | 'Tension & Fasteners';
-  material: 'Pressed Steel' | 'Malleable Iron' | 'Aluminum' | 'Mild / Stainless Steel' | 'Composite / Assembly' | string;
-  finish: 'Hot-Dip Galvanized / Powder Coated' | 'Hot-Dip Galvanized' | 'Mill / Powder Coated Aluminum' | 'Electro-Galvanized' | 'Hot-Dip Galvanized / Nylon' | 'Hot-Dip Galvanized / Solid Rubber' | string;
-  description: string;
-  image: string;
-  variants: ProductSizeVariant[];
-  promoted?: boolean;
+  tagline: string;
+  established: number;
+  yearsOfExperience: string;
+  totalPiecesExported: string;
+  globalReach: string;
+  satisfactionRate: string;
+  fencetechHistory: string;
+  certifications: {
+    iso: string;
+    isoCertNo: string;
+    msmeUdyam: string;
+    gstin: string;
+    eepc: string;
+  };
+  facility: {
+    area: string;
+    features: string[];
+  };
+  contact: {
+    phoneIndia: string;
+    phoneIndiaLandline: string;
+    phoneUSA: string;
+    phoneUSAAlt: string;
+    emailPrimary: string;
+    emailSecondary: string;
+    emailGeneral: string;
+    websitePrimary: string;
+    websiteSecondary: string;
+    addressOffice: string;
+    addressFactory: string;
+  };
+  phones: {
+    india: string;
+    indiaPrimary: string;
+    indiaAlt: string;
+    usa: string;
+    usaPrimary: string;
+    usaAlt: string;
+  };
+  emails: {
+    primary: string;
+    sales: string;
+    official: string;
+  };
+  addresses: {
+    office: {
+      full: string;
+      line1: string;
+      line2: string;
+      city: string;
+      pincode: string;
+    };
+    factory: {
+      full: string;
+      line1: string;
+      line2: string;
+      city: string;
+      pincode: string;
+    };
+  };
+  founders: {
+    name: string;
+    role: string;
+    experience: string;
+    bio: string;
+  }[];
 }
 
-export const COMPANY_INFO = {
-  name: 'CHARU ENTERPRISES - INDIA',
-  shortName: 'Charu Enterprises',
-  tagline: 'Leading Manufacturer & Exporter of Fence Fittings & Engineering Products Since 1969',
-  legacyYears: '55+',
-  establishedYear: 1969,
-  piecesExported: '150 Million+',
-  continentsServed: '4 Continents',
+export const COMPANY_INFO: CompanyInfo = {
+  name: 'Charu Enterprises',
+  tagline: 'Leading Manufacturer & Global Exporter of Pressed Steel Fence Fittings & Hardware Since 1969',
+  established: 1969,
+  yearsOfExperience: '55+ Years of Growth (1969 - 2025)',
+  totalPiecesExported: '150+ Million Pieces Exported Across 4 Continents',
+  globalReach: 'USA, Canada, Australia, Europe, South America & Middle East',
   satisfactionRate: '100% Satisfaction - Zero Defects',
-  fencetechExhibitor: '30+ Years Exhibiting at FENCETECH',
-  isoCertification: 'ISO 9001:2015 Certified (Certificate No. QDL691222)',
-  udyamRegistration: 'UDYAM-WB-10-0019534',
-  gstRegistration: '19AABFC7920J1ZC',
-  factoryArea: '20,000 SQFT. Factory with In-House Galvanizing, Die & Mold Development, and Testing Lab',
-  deliveryPromise: 'Ocean Freight and Duty Paid, Delivered to Your Warehouse (DDP Worldwide)',
-  customFabrication: 'We can manufacture any sheet metal fabrication & custom fitting item as per your drawings & requirements',
+  fencetechHistory: '30+ Years Exhibiting at FENCETECH (USA)',
+  certifications: {
+    iso: 'ISO 9001:2015 Certified Manufacturer',
+    isoCertNo: 'QDL691222',
+    msmeUdyam: 'UDYAM-WB-10-0019534',
+    gstin: '19AABFC7920J1ZC',
+    eepc: 'EEPC Certificate of Export Excellence - Govt. of India',
+  },
+  facility: {
+    area: '20,000 SQ. FT. State-of-the-Art Plant',
+    features: [
+      'In-House Hot-Dip Galvanizing & Electro-Plating',
+      'Advanced Tool Room & In-House Die/Mold Development',
+      'High-Tonnage Hydraulic & Mechanical Power Presses',
+      'Sheet Metal Fabrication & Stamping as per Product Specifications',
+      'Complete Metallurgical Testing & Quality Control Lab',
+      'Worldwide Direct Shipping (FOB / CIF / DDP Delivery to Warehouse)',
+    ],
+  },
+  contact: {
+    phoneIndia: '+91 98300 83777',
+    phoneIndiaLandline: '+91 (33) 2287 3027 / 28 / 31 / 32',
+    phoneUSA: '+1 (346) 433-7572',
+    phoneUSAAlt: '+1 (832) 749-9118',
+    emailPrimary: 'som83777@gmail.com',
+    emailSecondary: 'opmaskara1008@gmail.com',
+    emailGeneral: 'info@charufence.com',
+    websitePrimary: 'www.charufence.in',
+    websiteSecondary: 'www.charuenterprises.com',
+    addressOffice: '28B, Shakespeare Sarani, 10B, Neelamber Building, 10th Floor, Kolkata - 700017, West Bengal, India',
+    addressFactory: 'Saraswati Complex, Bhandardaha, Domjur, Howrah - 711405 (Near Srijon Industrial Park), West Bengal, India',
+  },
   phones: {
-    indiaPrimary: '+91 9830083777',
-    indiaLandline: '+91 (33) 2287 3027 / 28 / 31 / 32',
+    india: '+91 98300 83777',
+    indiaPrimary: '+91 98300 83777',
+    indiaAlt: '+91 (33) 2287 3027 / 28 / 31 / 32',
+    usa: '+1 (346) 433-7572',
     usaPrimary: '+1 (346) 433-7572',
-    usaSecondary: '+1 (832) 749-9118',
+    usaAlt: '+1 (832) 749-9118',
   },
   emails: {
-    primary: 'opmaskara1008@gmail.com',
-    secondary: 'som83777@gmail.com',
+    primary: 'som83777@gmail.com',
+    sales: 'opmaskara1008@gmail.com',
     official: 'info@charufence.com',
   },
   addresses: {
     office: {
-      title: 'Head / Registered Office',
-      street: '28B, Shakespeare Sarani, 10B, Neelamber Building, 10th Floor',
-      city: 'Kolkata',
-      state: 'West Bengal',
-      pincode: '700017',
-      country: 'India',
       full: '28B, Shakespeare Sarani, 10B, Neelamber Building, 10th Floor, Kolkata - 700017, West Bengal, India',
+      line1: '28B, Shakespeare Sarani, 10B, Neelamber Building, 10th Floor',
+      line2: 'Kolkata - 700017',
+      city: 'Kolkata',
+      pincode: '700017',
     },
     factory: {
-      title: 'Manufacturing Plant & Warehouse',
-      street: 'Saraswati Complex, Bhandardaha, Domjur (Near Srijon Industrial Park)',
-      city: 'Howrah',
-      state: 'West Bengal',
-      pincode: '711405',
-      country: 'India',
       full: 'Saraswati Complex, Bhandardaha, Domjur, Howrah - 711405 (Near Srijon Industrial Park), West Bengal, India',
+      line1: 'Saraswati Complex, Bhandardaha, Domjur',
+      line2: 'Near Srijon Industrial Park, Howrah - 711405',
+      city: 'Howrah',
+      pincode: '711405',
     },
   },
   founders: [
@@ -77,839 +148,70 @@ export const COMPANY_INFO = {
       name: 'Mr. OP Maskara',
       role: 'Founder President',
       experience: '62+ Years in Exports & Engineering Goods',
-      bio: 'Renowned Yoga Guru who has taught yoga to 300,000+ people across India for free over two decades. With 62 years in engineering exports, he served as Deputy Regional Chairman (ER) of the Government Engineering Export Promotion Council (EEPC). A Lions Clubs International member for 57 years and former Deputy District Governor, appearing regularly on national television.',
-      image: opMaskaraImg,
+      bio: 'Our Founder President, a renowned Yoga Guru, has taught yoga to 300,000 people across India for free over two decades. With 62 years in exports and engineering goods, he also served as Deputy Regional Chairman (ER) of the Government Engineering Export Promotion Council. A Lions Clubs International member for 57 years, he was Deputy District Governor. He has also appeared on TV shows regularly.',
     },
     {
       name: 'Mr. Som Maskara',
       role: 'Vice President',
-      experience: 'Global Trade & Operations Leader',
-      bio: 'Dedicated humanitarian and former President of Leo Club International, actively contributing to projects providing meals to millions of underprivileged children. Passionate sports practitioner in competitive badminton and rifle shooting, reflecting utmost discipline and precision alongside advanced mindfulness practices.',
-      image: somMaskaraImg,
+      experience: 'Humanitarian & Global Trade Leader',
+      bio: 'Our Vice President is a dedicated humanitarian and former President of Leo Club International, actively contributing to projects that provide meals to millions of underprivileged children. With a strong passion for sports, he participates in competitive badminton and rifle shooting, demonstrating discipline and precision. As an advanced yoga practitioner, he combines physical fitness with mindfulness and personal excellence.',
     },
   ],
 };
 
-export const CATALOG_PRODUCTS: CatalogProduct[] = [
+const RAW_PRODUCTS: CatalogProduct[] = [...PRODUCTS_PART_1, ...PRODUCTS_PART_2];
+
+export const CATALOG_PRODUCTS: CatalogProduct[] = RAW_PRODUCTS.map((prod) => ({
+  ...prod,
+  image: getProductImage(prod.itemNumber),
+}));
+
+export const CATEGORIES = [
+  'All Products',
+  'Fittings & Arms',
+  'Hinges & Hardware',
+  'Bands & Clamps',
+  'Caps & Closures',
+  'Gate & Track',
+  'Tension & Fasteners',
+] as const;
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  company: string;
+  location: string;
+  comment: string;
+  rating: number;
+}
+
+export const TESTIMONIALS: Testimonial[] = [
   {
-    id: 1,
-    itemNumber: 1,
-    name: 'Barbed Arm - 14 GA & 16 GA',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized / Powder Coated',
-    description: 'Heavy duty pressed steel 45-degree barbed arm extension for perimeter security chain link fencing systems.',
-    image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1000&q=85',
-    promoted: true,
-    variants: [
-      { code: '350', size: '1 5/8"', pcsPerBag: 25, bagPerPallet: 48, pcsPerPallet: 1200 },
-      { code: '370', size: '2"', pcsPerBag: 25, bagPerPallet: 40, pcsPerPallet: 1000 },
-      { code: '390', size: '2 1/2"', pcsPerBag: 25, bagPerPallet: 32, pcsPerPallet: 800 },
-      { code: '410', size: '3"', pcsPerBag: 20, bagPerPallet: 32, pcsPerPallet: 640 },
-    ],
+    id: '1',
+    name: 'David Miller',
+    role: 'Procurement Director',
+    company: 'Apex Perimeter Solutions',
+    location: 'Houston, Texas, USA',
+    comment: 'We have bought full container loads of pressed steel fence fittings from Charu Enterprises for over 15 years. Their galvanizing quality is clean and durable, their size tolerances are spot on, and every shipment arrives on schedule.',
+    rating: 5,
   },
   {
-    id: 2,
-    itemNumber: 2,
-    name: 'Barbed Arm Vertical 16 GA',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized / Powder Coated',
-    description: 'Vertical extension barbed arm 16 gauge pressed steel for upright top strand fence lines.',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '580', size: '1 5/8"', pcsPerBag: 25, bagPerPallet: 42, pcsPerPallet: 1050 },
-      { code: '590', size: '2"', pcsPerBag: 25, bagPerPallet: 42, pcsPerPallet: 1050 },
-      { code: '610', size: '2 1/2"', pcsPerBag: 25, bagPerPallet: 32, pcsPerPallet: 800 },
-    ],
+    id: '2',
+    name: 'Robert Jenkins',
+    role: 'Operations Head',
+    company: 'Great Northern Fence Supply',
+    location: 'Ontario, Canada',
+    comment: 'Charu Enterprises delivers top quality pressed steel barbed arms, brace bands, and hinges. Their direct factory pricing and seamless DDP warehouse delivery make them our primary international manufacturing partner.',
+    rating: 5,
   },
   {
-    id: 3,
-    itemNumber: 3,
-    name: 'Barbed Arm - Cup Type',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized / Powder Coated',
-    description: 'Cup type socket design barbed arm for smooth integration on top rail lines.',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { size: '2"', pcsPerBag: 25, bagPerPallet: 42, pcsPerPallet: 1050 },
-      { size: '2 1/2"', pcsPerBag: 25, bagPerPallet: 32, pcsPerPallet: 800 },
-    ],
-  },
-  {
-    id: 4,
-    itemNumber: 4,
-    name: 'Barbed Y Arm 14 GA & 16 GA',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized / Powder Coated',
-    description: 'Dual-extension V/Y-shaped barbed wire arm for maximum commercial and high-security installations.',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '700', size: '1 5/8"', pcsPerCrate: 400 },
-      { code: '710', size: '2"', pcsPerCrate: 400 },
-      { code: '720', size: '2 1/2"', pcsPerCrate: 350 },
-      { code: '750', size: '3"', pcsPerCrate: 324 },
-    ],
-  },
-  {
-    id: 5,
-    itemNumber: 5,
-    name: 'Boulevard Clamp 14 GA & 16 GA (Line Rail Clamp)',
-    category: 'Bands & Clamps',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Two-piece clamp connector used for connecting intermediate horizontal line rails to line posts.',
-    image: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '1320', size: '1 3/8" x 1 3/8"', pcsPerBag: 100, bagPerPallet: 50, pcsPerPallet: 5000 },
-      { code: '1330', size: '1 5/8" x 1 5/8"', pcsPerBag: 100, bagPerPallet: 50, pcsPerPallet: 5000 },
-      { code: '1340', size: '1 5/8" x 1 3/8"', pcsPerBag: 100, bagPerPallet: 50, pcsPerPallet: 5000 },
-      { code: '1350', size: '2" x 1 3/8"', pcsPerBag: 100, bagPerPallet: 50, pcsPerPallet: 5000 },
-      { code: '1360', size: '2" x 1 5/8"', pcsPerBag: 100, bagPerPallet: 50, pcsPerPallet: 5000 },
-      { code: '1380', size: '2" x 2"', pcsPerBag: 100, bagPerPallet: 40, pcsPerPallet: 4000 },
-      { code: '1390', size: '2 1/2" x 1 3/8"', pcsPerBag: 100, bagPerPallet: 50, pcsPerPallet: 5000 },
-      { code: '1400', size: '2 1/2" x 1 5/8"', pcsPerBag: 100, bagPerPallet: 40, pcsPerPallet: 4000 },
-      { code: '1460', size: '3" x 1 5/8"', pcsPerBag: 50, bagPerPallet: 60, pcsPerPallet: 3000 },
-    ],
-  },
-  {
-    id: 6,
-    itemNumber: 6,
-    name: 'Box Hinge - Malleable',
-    category: 'Hinges & Hardware',
-    material: 'Malleable Iron',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Heavy duty malleable cast iron industrial box hinge with robust clamping collar.',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85',
-    promoted: true,
-    variants: [
-      { code: '1640', size: '2 1/2"', pcsPerBag: 12, bagPerPallet: 48, pcsPerPallet: 576 },
-      { code: '1660', size: '3"', pcsPerBag: 10, bagPerPallet: 48, pcsPerPallet: 480 },
-      { code: '1680', size: '3 1/2"', pcsPerBag: 10, bagPerPallet: 48, pcsPerPallet: 480 },
-      { code: '1690', size: '4"', pcsPerBag: 10, bagPerPallet: 48, pcsPerPallet: 480 },
-      { code: '1710', size: '4 1/2"', pcsPerBag: 10, bagPerPallet: 48, pcsPerPallet: 480 },
-      { code: '1720', size: '6 5/8"', pcsPerBag: 5, bagPerPallet: 40, pcsPerPallet: 200 },
-      { size: '8 5/8"', pcsPerBag: 3, bagPerPallet: 48, pcsPerPallet: 144 },
-    ],
-  },
-  {
-    id: 7,
-    itemNumber: 7,
-    name: 'Box Hinge - Pressed Steel',
-    category: 'Hinges & Hardware',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'High tensile pressed steel box hinge engineered for commercial gate swing operation.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
-    promoted: true,
-    variants: [
-      { code: '1540', size: '2 1/2"', pcsPerBag: 10, bagPerPallet: 48, pcsPerPallet: 480 },
-      { code: '1560', size: '3"', pcsPerBag: 10, bagPerPallet: 48, pcsPerPallet: 480 },
-      { code: '1590', size: '4"', pcsPerBag: 10, bagPerPallet: 48, pcsPerPallet: 480 },
-      { code: '1620', size: '6 5/8"', pcsPerBag: 10, bagPerPallet: 48, pcsPerPallet: 480 },
-    ],
-  },
-  {
-    id: 8,
-    itemNumber: 8,
-    name: 'Brace Band - Regular 3/4" x 12 GA',
-    category: 'Bands & Clamps',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized / Powder Coated',
-    description: 'Standard 12 gauge 3/4" wide brace bands for attaching rail ends, barbed wire arms, and truss rod tighteners.',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '910', size: '1 3/8"', pcsPerBag: 250, bagPerPallet: 60, pcsPerPallet: 15000 },
-      { code: '930', size: '1 5/8"', pcsPerBag: 250, bagPerPallet: 54, pcsPerPallet: 13500 },
-      { code: '950', size: '2"', pcsPerBag: 250, bagPerPallet: 48, pcsPerPallet: 12000 },
-      { code: '970', size: '2 1/2"', pcsPerBag: 250, bagPerPallet: 48, pcsPerPallet: 12000 },
-      { code: '990', size: '3"', pcsPerBag: 200, bagPerPallet: 40, pcsPerPallet: 8000 },
-      { code: '1020', size: '3 1/2"', pcsPerBag: 100, bagPerPallet: 54, pcsPerPallet: 5400 },
-      { code: '1030', size: '4"', pcsPerBag: 100, bagPerPallet: 54, pcsPerPallet: 5400 },
-      { code: '1050', size: '4 1/2"', pcsPerBag: 100, bagPerPallet: 36, pcsPerPallet: 3600 },
-      { code: '1060', size: '6 5/8"', pcsPerBag: 50, bagPerPallet: 80, pcsPerPallet: 4000 },
-    ],
-  },
-  {
-    id: 9,
-    itemNumber: 9,
-    name: 'Bull Dog Hinge - Pressed Steel',
-    category: 'Hinges & Hardware',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Heavy duty strap-clamp style bulldog hinge for chain link pedestrian and drive gates.',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85',
-    promoted: true,
-    variants: [
-      { code: '1740', size: '2 1/2"', pcsPerBag: 12, bagPerPallet: 72, pcsPerPallet: 864 },
-      { code: '1760', size: '3"', pcsPerBag: 10, bagPerPallet: 72, pcsPerPallet: 720 },
-      { code: '1780', size: '4"', pcsPerBag: 10, bagPerPallet: 81, pcsPerPallet: 810 },
-      { code: '1800', size: '6 5/8"', pcsPerBag: 5, bagPerPallet: 80, pcsPerPallet: 400 },
-    ],
-  },
-  {
-    id: 10,
-    itemNumber: 10,
-    name: 'Bullet Cap - Aluminium',
-    category: 'Caps & Closures',
-    material: 'Aluminum',
-    finish: 'Mill / Powder Coated Aluminum',
-    description: 'Die-cast bullet style aluminum decorative post end protective cap.',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '10', size: '1-Way 2"', pcsPerBag: 100, bagPerPallet: 42, pcsPerPallet: 4200 },
-      { code: '20', size: '2-Way 2"', pcsPerBag: 100, bagPerPallet: 42, pcsPerPallet: 4200 },
-      { code: '30', size: '1-Way 2 1/2"', pcsPerBag: 100, bagPerPallet: 36, pcsPerPallet: 3600 },
-      { code: '40', size: '2-Way 2 1/2"', pcsPerBag: 100, bagPerPallet: 36, pcsPerPallet: 3600 },
-    ],
-  },
-  {
-    id: 11,
-    itemNumber: 11,
-    name: 'Carriage Bolt & Nut',
-    category: 'Tension & Fasteners',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Hot dip galvanized grade carriage bolts with square neck and matching hex nuts for all fence hardware assemblies.',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '2030', size: '3/4 x 1/4"', pcsPerCarton: 2000, cartonPerCrate: 48, pcsPerCrate: 96000 },
-      { code: '2040', size: '5/16 x 1 1/4"', pcsPerCarton: 1000, cartonPerCrate: 48, pcsPerCrate: 48000 },
-      { size: '5/16 x 1 1/2"', pcsPerCarton: 1000, cartonPerCrate: 48, pcsPerCrate: 48000 },
-      { code: '2070', size: '5/16 x 2"', pcsPerCarton: 500, cartonPerCrate: 48, pcsPerCrate: 24000 },
-      { code: '2080', size: '5/16 x 2 1/2"', pcsPerCarton: 500, cartonPerCrate: 48, pcsPerCrate: 24000 },
-      { code: '2090', size: '5/16 x 3"', pcsPerCarton: 500, cartonPerCrate: 48, pcsPerCrate: 24000 },
-      { code: '2100', size: '3/8 x 1 1/4"', pcsPerCarton: 500, cartonPerCrate: 48, pcsPerCrate: 24000 },
-      { size: '3/8 x 1 1/2"', pcsPerCarton: 500, cartonPerCrate: 48, pcsPerCrate: 24000 },
-      { code: '2110', size: '3/8 x 2"', pcsPerCarton: 500, cartonPerCrate: 48, pcsPerCrate: 24000 },
-      { code: '2130', size: '3/8 x 2 1/2"', pcsPerCarton: 500, cartonPerCrate: 48, pcsPerCrate: 24000 },
-      { code: '2150', size: '3/8 x 3"', pcsPerCarton: 500, cartonPerCrate: 48, pcsPerCrate: 24000 },
-      { code: '2170', size: '3/8 x 3 1/2"', pcsPerCarton: 500, cartonPerCrate: 48, pcsPerCrate: 24000 },
-    ],
-  },
-  {
-    id: 12,
-    itemNumber: 12,
-    name: 'Cantilever Roller Nylon Pressed Steel with Cover',
-    category: 'Gate & Track',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized / Nylon',
-    description: 'Precision engineered sliding cantilever roller with safety protective steel cover and smooth-rolling heavy duty nylon wheel.',
-    image: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1000&q=85',
-    promoted: true,
-    variants: [
-      { code: '1890', size: '3" x 2 1/2"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-      { size: '3 1/2" x 2 1/2"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-      { code: '1900', size: '4" x 2 1/2"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-      { code: '1910', size: '6 5/8" x 2 1/2"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-    ],
-  },
-  {
-    id: 13,
-    itemNumber: 13,
-    name: 'Cantilever Roller Nylon Pressed Steel without Cover',
-    category: 'Gate & Track',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized / Nylon',
-    description: 'Open frame heavy duty cantilever roller assembly with low-friction nylon wheels for sliding gate systems.',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '1890', size: '3" x 2 1/2"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-      { size: '3 1/2" x 2 1/2"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-      { code: '1900', size: '4" x 2 1/2"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-      { code: '1910', size: '6 5/8" x 2 1/2"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-    ],
-  },
-  {
-    id: 14,
-    itemNumber: 14,
-    name: 'Cantilever - Malleable',
-    category: 'Gate & Track',
-    material: 'Malleable Iron',
-    finish: 'Hot-Dip Galvanized',
-    description: 'High impact strength malleable iron cantilever roller assembly for extreme cycle automated gates.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { size: '2 1/2"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-      { size: '3"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-      { size: '3 1/2"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-      { size: '4"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-      { size: '4 1/2"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-      { code: '1880', size: '6.625"', pcsPerCarton: 2, cartonPerCrate: 42, pcsPerCrate: 84 },
-    ],
-  },
-  {
-    id: 15,
-    itemNumber: 15,
-    name: 'Collar',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Pressed steel gate post pipe collars for secure latching and pivot locking mechanisms.',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '2190', size: '1 3/8"', pcsPerBag: 100, bagPerPallet: 96, pcsPerPallet: 9600 },
-      { code: '2210', size: '1 5/8"', pcsPerBag: 100, bagPerPallet: 80, pcsPerPallet: 8000 },
-      { code: '2230', size: '2"', pcsPerBag: 100, bagPerPallet: 72, pcsPerPallet: 7200 },
-    ],
-  },
-  {
-    id: 16,
-    itemNumber: 16,
-    name: 'Drop Rod',
-    category: 'Gate & Track',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Heavy duty drop rods / cane bolts for securing single and double swing chain link gates in ground center stop.',
-    image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '2330', size: '30"', pcsPerBag: 25, bagPerPallet: 48, pcsPerPallet: 1200 },
-      { code: '2350', size: '36"', pcsPerBag: 25, bagPerPallet: 48, pcsPerPallet: 1200 },
-      { size: '40"', pcsPerBag: 25, bagPerPallet: 48, pcsPerPallet: 1200 },
-    ],
-  },
-  {
-    id: 17,
-    itemNumber: 17,
-    name: 'End Clamp',
-    category: 'Bands & Clamps',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Two piece end rail clamp for securing line rail termination at end posts without welding.',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '2440', size: '1 3/8" x 1 3/8"', pcsPerBag: 100, bagPerPallet: 80, pcsPerPallet: 8000 },
-      { code: '2470', size: '1 5/8" x 1 3/8"', pcsPerBag: 100, bagPerPallet: 60, pcsPerPallet: 6000 },
-      { code: '2480', size: '1 5/8" x 1 5/8"', pcsPerBag: 100, bagPerPallet: 60, pcsPerPallet: 6000 },
-      { code: '2500', size: '2" x 1 3/8"', pcsPerBag: 100, bagPerPallet: 60, pcsPerPallet: 6000 },
-      { code: '2510', size: '2" x 1 5/8"', pcsPerBag: 100, bagPerPallet: 60, pcsPerPallet: 6000 },
-      { code: '2520', size: '2" x 2"', pcsPerBag: 100, bagPerPallet: 60, pcsPerPallet: 6000 },
-      { code: '2530', size: '2 1/2" x 1 3/8"', pcsPerBag: 100, bagPerPallet: 60, pcsPerPallet: 6000 },
-      { code: '2540', size: '2 1/2" x 1 5/8"', pcsPerBag: 100, bagPerPallet: 50, pcsPerPallet: 5000 },
-      { code: '2570', size: '3" x 1 5/8"', pcsPerBag: 50, bagPerPallet: 70, pcsPerPallet: 3500 },
-    ],
-  },
-  {
-    id: 18,
-    itemNumber: 18,
-    name: 'Female Hinge',
-    category: 'Hinges & Hardware',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized / Powder Coated',
-    description: 'Pressed steel female hinge socket attached to gate frame with pin engagement hole.',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '2640', size: '1 3/8" x 1"', pcsPerBag: 100, bagPerPallet: 96, pcsPerPallet: 9600 },
-      { code: '2660', size: '1 5/8" x 1"', pcsPerBag: 100, bagPerPallet: 54, pcsPerPallet: 5400 },
-      { code: '2680', size: '2" x 1"', pcsPerBag: 100, bagPerPallet: 50, pcsPerPallet: 5000 },
-    ],
-  },
-  {
-    id: 19,
-    itemNumber: 19,
-    name: 'Flange Plate',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Precision punched base anchor plates for bolting fence posts directly onto concrete slabs or retaining walls.',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '2710', size: '1/4 x 4 x 4" - 4H', pcsPerBag: 40, bagPerPallet: 50, pcsPerPallet: 2000 },
-      { code: '2720', size: '1/4 x 3 x 6" - 2H', pcsPerBag: 50, bagPerPallet: 40, pcsPerPallet: 2000 },
-      { code: '2730', size: '1/4 x 4 x 6" - 4H', pcsPerBag: 20, bagPerPallet: 75, pcsPerPallet: 1500 },
-      { size: '1/4 x 5 x 5" - 4H', pcsPerBag: 40, bagPerPallet: 50, pcsPerPallet: 2000 },
-      { code: '2740', size: '1/4 x 6 x 6" - 4H', pcsPerBag: 20, bagPerPallet: 50, pcsPerPallet: 1000 },
-      { code: '2760', size: '1/4 x 8 x 8" - 4H', pcsPerBag: 10, bagPerPallet: 50, pcsPerPallet: 500 },
-      { code: '2832', size: '1/4 x 10 x 10" - 4H', pcsPerBag: 9, bagPerPallet: 50, pcsPerPallet: 450 },
-      { code: '2834', size: '1/4 x 12 x 12" - 4H', pcsPerBag: 8, bagPerPallet: 50, pcsPerPallet: 400 },
-      { code: '2770', size: '3/8 x 6 x 6" - 4H', pcsPerBag: 10, bagPerPallet: 50, pcsPerPallet: 500 },
-      { code: '2790', size: '3/8 x 8 x 8" - 4H', pcsPerBag: 10, bagPerPallet: 50, pcsPerPallet: 500 },
-      { code: '2838', size: '3/8 x 10 x 10" - 4H', pcsPerBag: 8, bagPerPallet: 50, pcsPerPallet: 400 },
-      { code: '2839', size: '3/8 x 12 x 12" - 4H', pcsPerBag: 8, bagPerPallet: 50, pcsPerPallet: 400 },
-      { code: '2810', size: '1/2 x 6 x 6" - 4H', pcsPerBag: 8, bagPerPallet: 50, pcsPerPallet: 400 },
-      { code: '2820', size: '1/2 x 8 x 8" - 4H', pcsPerBag: 8, bagPerPallet: 50, pcsPerPallet: 400 },
-      { code: '2836', size: '1/2 x 10 x 10" - 4H', pcsPerBag: 8, bagPerPallet: 50, pcsPerPallet: 400 },
-      { code: '2830', size: '1/2 x 12 x 12" - 4H', pcsPerBag: 8, bagPerPallet: 50, pcsPerPallet: 400 },
-    ],
-  },
-  {
-    id: 20,
-    itemNumber: 20,
-    name: 'Floor Flange - Malleable',
-    category: 'Fittings & Arms',
-    material: 'Malleable Iron',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Heavy duty malleable iron floor surface mounting post socket flange.',
-    image: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '2840', size: '2"', pcsPerBag: 12, bagPerPallet: 40, pcsPerPallet: 480 },
-      { code: '2850', size: '2 1/2"', pcsPerBag: 12, bagPerPallet: 40, pcsPerPallet: 480 },
-    ],
-  },
-  {
-    id: 27,
-    itemNumber: 27,
-    name: 'Industrial Offset Hinge Malleable 180°',
-    category: 'Hinges & Hardware',
-    material: 'Malleable Iron',
-    finish: 'Hot-Dip Galvanized',
-    description: '180-degree swing full perimeter opening offset hinge cast from high strength malleable iron.',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85',
-    promoted: true,
-    variants: [
-      { code: '3310', size: '2 1/2"', pcsPerBag: 5, bagPerPallet: 60, pcsPerPallet: 300 },
-      { size: '3"', pcsPerBag: 5, bagPerPallet: 60, pcsPerPallet: 300 },
-      { size: '3 1/2"', pcsPerBag: 5, bagPerPallet: 60, pcsPerPallet: 300 },
-      { size: '4"', pcsPerBag: 5, bagPerPallet: 60, pcsPerPallet: 300 },
-      { size: '4 1/2"', pcsPerBag: 5, bagPerPallet: 60, pcsPerPallet: 300 },
-    ],
-  },
-  {
-    id: 28,
-    itemNumber: 28,
-    name: 'Industrial Offset Hinge Pressed Steel 180°',
-    category: 'Hinges & Hardware',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: '180-degree heavy duty pressed steel offset gate hinge for uninterrupted driveway and security access.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85',
-    promoted: true,
-    variants: [
-      { code: '3340', size: '2 1/2"', pcsPerBag: 12, bagPerPallet: 50, pcsPerPallet: 600 },
-      { code: '3350', size: '3"', pcsPerBag: 12, bagPerPallet: 50, pcsPerPallet: 600 },
-      { size: '3 1/2"', pcsPerBag: 12, bagPerPallet: 50, pcsPerPallet: 600 },
-    ],
-  },
-  {
-    id: 42,
-    itemNumber: 42,
-    name: 'Rolling Gate Hardware Kit for Chain Link Sliding Gates',
-    category: 'Gate & Track',
-    material: 'Composite / Assembly',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Complete commercial rolling gate installation hardware kit: 1pc 6" double carrier wheel, 2pc track wheels, 6pc track brackets, 1pc rolon bracket, 2pc adjustable brackets.',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85',
-    promoted: true,
-    variants: [
-      { code: '4170', size: 'Standard Commercial Rolling Gate Set' },
-    ],
-  },
-  {
-    id: 46,
-    itemNumber: 46,
-    name: 'Tension Band Regular 3/4" x 14 GA',
-    category: 'Bands & Clamps',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized / Powder Coated',
-    description: 'Precision roll-formed tension bands used to secure chain link fabric tension bars tightly against terminal posts.',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { code: '4460', size: '1 3/8"', pcsPerBag: 250, bagPerPallet: 72, pcsPerPallet: 18000 },
-      { code: '4480', size: '1 5/8"', pcsPerBag: 250, bagPerPallet: 54, pcsPerPallet: 13500 },
-      { code: '4500', size: '2"', pcsPerBag: 250, bagPerPallet: 48, pcsPerPallet: 12000 },
-      { code: '4520', size: '2 1/2"', pcsPerBag: 250, bagPerPallet: 48, pcsPerPallet: 12000 },
-      { code: '4550', size: '3"', pcsPerBag: 200, bagPerPallet: 40, pcsPerPallet: 8000 },
-      { code: '4570', size: '3 1/2"', pcsPerBag: 100, bagPerPallet: 63, pcsPerPallet: 6300 },
-      { code: '4580', size: '4"', pcsPerBag: 100, bagPerPallet: 63, pcsPerPallet: 6300 },
-      { code: '4600', size: '4 1/2"', pcsPerBag: 100, bagPerPallet: 63, pcsPerPallet: 6300 },
-      { code: '4610', size: '6 5/8"', pcsPerBag: 50, bagPerPallet: 80, pcsPerPallet: 4000 },
-      { size: '8 5/8"', pcsPerBag: 50, bagPerPallet: 120, pcsPerPallet: 6000 },
-    ],
-  },
-  {
-    id: 47,
-    itemNumber: 47,
-    name: 'Tension Bar',
-    category: 'Tension & Fasteners',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized / Powder Coated',
-    description: 'High strength flat vertical steel tension bar woven through chain link mesh ends to evenly distribute tension load across posts.',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=85',
-    promoted: true,
-    variants: [
-      { code: '4810', size: '5/8 x 3/4" / 3\'', pcsPerBag: '25 pcs/bundle', bagPerPallet: 80, pcsPerPallet: 2000 },
-      { code: '4830', size: '5/8 x 46" / 4\'', pcsPerBag: 25, bagPerPallet: 80, pcsPerPallet: 2000 },
-      { code: '4860', size: '5/8 x 58" / 5\'', pcsPerBag: 25, bagPerPallet: 80, pcsPerPallet: 2000 },
-      { code: '4880', size: '5/8 x 70" / 6\'', pcsPerBag: 25, bagPerPallet: 80, pcsPerPallet: 2000 },
-      { code: '4910', size: '5/8 x 82" / 7\'', pcsPerBag: 25, bagPerPallet: 40, pcsPerPallet: 1000 },
-      { code: '4920', size: '5/8 x 94" / 8\'', pcsPerBag: 25, bagPerPallet: 40, pcsPerPallet: 1000 },
-      { code: '4940', size: '5/8 x 118"', pcsPerBag: 25, bagPerPallet: 30, pcsPerPallet: 750 },
-      { code: '4961', size: '5/8 x 214"', pcsPerBag: 25, bagPerPallet: 20, pcsPerPallet: 500 },
-      { code: '4980', size: '3/4 x 46"', pcsPerBag: 25, bagPerPallet: 80, pcsPerPallet: 2000 },
-      { code: '4990', size: '3/4 x 58"', pcsPerBag: 25, bagPerPallet: 80, pcsPerPallet: 2000 },
-      { code: '5000', size: '3/4 x 70"', pcsPerBag: 25, bagPerPallet: 80, pcsPerPallet: 2000 },
-      { code: '5020', size: '3/4 x 82"', pcsPerBag: 25, bagPerPallet: 40, pcsPerPallet: 1000 },
-      { code: '5040', size: '3/4 x 94"', pcsPerBag: 25, bagPerPallet: 40, pcsPerPallet: 1000 },
-      { code: '5060', size: '3/4 x 118"', pcsPerBag: 25, bagPerPallet: 30, pcsPerPallet: 750 },
-      { code: '5080', size: '3/4 x 142"', pcsPerBag: 25, bagPerPallet: 30, pcsPerPallet: 750 },
-      { code: '5100', size: '3/4 x 216"', pcsPerBag: 25, bagPerPallet: 20, pcsPerPallet: 500 },
-    ],
-  },
-  {
-    id: 58,
-    itemNumber: 58,
-    name: 'Wheels for Sliding Gates Double Wheel Gate Carrier w/ 6" Solid Rubber',
-    category: 'Gate & Track',
-    material: 'Composite / Assembly',
-    finish: 'Hot-Dip Galvanized / Solid Rubber',
-    description: 'Heavy duty dual 6-inch solid rubber wheel carrier assembly for commercial pipe track sliding gate support.',
-    image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1000&q=85',
-    variants: [
-      { size: '6" Double Solid Rubber Wheels' },
-    ],
-  },
-  {
-    id: 21,
-    itemNumber: 21,
-    name: 'Fork',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Pressed steel fork fitting for gate frame connections.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 22,
-    itemNumber: 22,
-    name: 'Fork & Collar Assembly',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Pre-assembled fork and collar fitting for gate installations.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 23,
-    itemNumber: 23,
-    name: 'Gate Clip',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Gate clip for securing chain link fabric to gate frames.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 24,
-    itemNumber: 24,
-    name: 'Gate Corner - Pressed Steel',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Pressed steel gate corner fitting for right-angle frame connections.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 25,
-    itemNumber: 25,
-    name: 'Gate Corner - Aluminium',
-    category: 'Fittings & Arms',
-    material: 'Aluminum',
-    finish: 'Mill / Powder Coated Aluminum',
-    description: 'Aluminum gate corner fitting for lightweight ornamental frames.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 26,
-    itemNumber: 26,
-    name: 'Hog Ring - Aluminium',
-    category: 'Tension & Fasteners',
-    material: 'Aluminum',
-    finish: 'Mill Aluminum',
-    description: 'Aluminum hog rings for securing chain link fabric to tension wire.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 29,
-    itemNumber: 29,
-    name: 'Kennel Clamp',
-    category: 'Bands & Clamps',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Multi-purpose kennel clamp for chain link kennel and enclosure assembly.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 30,
-    itemNumber: 30,
-    name: 'Loop Cap - Aluminium',
-    category: 'Caps & Closures',
-    material: 'Aluminum',
-    finish: 'Mill / Powder Coated Aluminum',
-    description: 'Aluminum loop cap for decorative post top protection.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 31,
-    itemNumber: 31,
-    name: 'Loop Cap - Pressed Steel',
-    category: 'Caps & Closures',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Pressed steel loop cap for post top protection and rail integration.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 32,
-    itemNumber: 32,
-    name: 'Male Hinge',
-    category: 'Hinges & Hardware',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized / Powder Coated',
-    description: 'Pressed steel male hinge pin for gate frame pivot connections.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 33,
-    itemNumber: 33,
-    name: 'Post Cap - Pressed Steel',
-    category: 'Caps & Closures',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Pressed steel dome post cap for terminal and line post protection.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 34,
-    itemNumber: 34,
-    name: 'Post Cap - Aluminium',
-    category: 'Caps & Closures',
-    material: 'Aluminum',
-    finish: 'Mill / Powder Coated Aluminum',
-    description: 'Aluminum decorative post cap for ornamental fence post tops.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 35,
-    itemNumber: 35,
-    name: 'Purlin Bracket',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Pressed steel purlin bracket for connecting purlins to structural posts.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 36,
-    itemNumber: 36,
-    name: 'Rail End - Aluminium',
-    category: 'Fittings & Arms',
-    material: 'Aluminum',
-    finish: 'Mill / Powder Coated Aluminum',
-    description: 'Aluminum rail end cap for finishing top rail ends on ornamental fencing.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 37,
-    itemNumber: 37,
-    name: 'Rail End (1 Hole) - Pressed Steel',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Single hole pressed steel rail end for post-to-rail connections.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 38,
-    itemNumber: 38,
-    name: 'Rail End (2 Hole) - Pressed Steel',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Double hole pressed steel rail end for secure post-to-rail connections.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 39,
-    itemNumber: 39,
-    name: 'Rail End (Half Moon) - Pressed Steel',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Half moon pressed steel rail end for rounded post connections.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 40,
-    itemNumber: 40,
-    name: 'Rail End - Malleable',
-    category: 'Fittings & Arms',
-    material: 'Malleable Iron',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Heavy duty malleable iron rail end for high-strength post connections.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 41,
-    itemNumber: 41,
-    name: 'Ratchet Winder with Malleable Shaft',
-    category: 'Gate & Track',
-    material: 'Malleable Iron',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Ratchet winder with malleable iron shaft for tensioning chain link fabric.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 43,
-    itemNumber: 43,
-    name: 'Saddle Clamp',
-    category: 'Bands & Clamps',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Two-piece saddle clamp for connecting pipe sections and rail joints.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 44,
-    itemNumber: 44,
-    name: 'Sleeve Top Rail',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Pressed steel sleeve for joining top rail sections end to end.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 45,
-    itemNumber: 45,
-    name: 'Single Wheel',
-    category: 'Gate & Track',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Single gate wheel for sliding gate track support.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 48,
-    itemNumber: 48,
-    name: 'Tie Wire - Aluminium',
-    category: 'Tension & Fasteners',
-    material: 'Aluminum',
-    finish: 'Mill Aluminum',
-    description: 'Aluminum tie wire for securing chain link mesh to line posts.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 49,
-    itemNumber: 49,
-    name: 'Track 10',
-    category: 'Gate & Track',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Heavy duty 10-foot galvanized gate track for sliding gate systems.',
-    image: '',
-    variants: [{ size: '10"' }],
-  },
-  {
-    id: 50,
-    itemNumber: 50,
-    name: 'Truss Rod',
-    category: 'Tension & Fasteners',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Steel truss rod for bracing terminal posts and maintaining fence line tension.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 51,
-    itemNumber: 51,
-    name: 'Truss Rod Tightener',
-    category: 'Tension & Fasteners',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Threaded truss rod tightener for adjusting tension on brace rods.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 52,
-    itemNumber: 52,
-    name: 'Universal Line Track Bracket',
-    category: 'Gate & Track',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Universal bracket for mounting gate track to posts and columns.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 53,
-    itemNumber: 53,
-    name: 'Wall Spike - 740mm',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: '740mm galvanized wall spike for perimeter security topping.',
-    image: '',
-    variants: [{ size: '740mm' }],
-  },
-  {
-    id: 54,
-    itemNumber: 54,
-    name: 'Wire Winder',
-    category: 'Gate & Track',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Wire winder for tensioning and securing chain link fence fabric.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 55,
-    itemNumber: 55,
-    name: 'Wood Steel Adapter',
-    category: 'Fittings & Arms',
-    material: 'Pressed Steel',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Adapter fitting for connecting steel fence components to wooden posts.',
-    image: '',
-    variants: [{ size: 'Standard' }],
-  },
-  {
-    id: 56,
-    itemNumber: 56,
-    name: 'Walk Gate Set - Single',
-    category: 'Gate & Track',
-    material: 'Composite / Assembly',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Complete single walk gate hardware set: 2 collars, 1 fork, 2 female, 2 male, bolts, 1 drop rod.',
-    image: '',
-    variants: [{ size: 'Single Gate Set' }],
-  },
-  {
-    id: 57,
-    itemNumber: 57,
-    name: 'Walk Gate Set - Double',
-    category: 'Gate & Track',
-    material: 'Composite / Assembly',
-    finish: 'Hot-Dip Galvanized',
-    description: 'Complete double walk gate hardware set: 2 collars, 1 fork, 6 female, 4 male, bolts, 1 drop rod.',
-    image: '',
-    variants: [{ size: 'Double Gate Set' }],
+    id: '3',
+    name: 'Michael Evans',
+    role: 'Managing Director',
+    company: 'Southern Cross Fencing Pty Ltd',
+    location: 'Melbourne, Australia',
+    comment: 'Sheet metal fabrication according to our product specifications was handled effortlessly. The team at Charu has world-class tooling expertise and their zero-defect guarantee has held true across hundreds of thousands of parts.',
+    rating: 5,
   },
 ];

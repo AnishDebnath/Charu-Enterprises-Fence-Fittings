@@ -98,10 +98,10 @@ export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
                 }`}
               >
                 <p>
-                  We focus on engineered metallurgical reliability that ensures structural fencing components withstand high dynamic loads and severe weather. Every production run is strictly controlled from raw steel slit coils to ASTM A153 hot-dip galvanizing.
+                  We make strong, durable fence parts that withstand heavy wind, high loads, and rough weather. Every part is carefully checked from raw steel coils to hot-dip galvanizing.
                 </p>
                 <p>
-                  We believe in building long-term distributor partnerships through transparent pricing, customized packaging, and continuous investment in in-house tool and die precision.
+                  We build lasting relationships with fence distributors through fair factory prices, custom packaging, and continuous investment in our in-house tool room.
                 </p>
               </div>
 
@@ -114,10 +114,10 @@ export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
                 }`}
               >
                 <p>
-                  We stand behind every stamped brace band, malleable gate hinge, and tension bar that leaves our manufacturing plant. Certified ISO 9001:2015 quality processes govern chemical analysis, tensile load testing, and zinc coating thickness.
+                  We stand behind every brace band, gate hinge, post cap, and tension bar we make. Our ISO 9001:2015 certified team tests steel strength, dimensions, and zinc thickness.
                 </p>
                 <p>
-                  Our dedicated international export team works closely with commercial importers to provide full container load optimization, palletized weatherproofing, and seamless customs documentation.
+                  Our international export team works closely with importers to pack full containers securely, provide fast shipping, and clear customs smoothly.
                 </p>
               </div>
             </div>

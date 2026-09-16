@@ -46,7 +46,7 @@ export const ContactSection: FC = () => {
                     Inquiry Submitted Successfully!
                   </h3>
                   <p className="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">
-                    Thank you for contacting Charu Enterprises. Our international export and sales team will review your specifications and reply promptly.
+                    Thank you for reaching out to Charu Enterprises. Our sales and export team will review your requirements and send a quote quickly.
                   </p>
                   <button
                     type="button"
@@ -167,7 +167,7 @@ export const ContactSection: FC = () => {
                       id="contact-form-message"
                       rows={4}
                       required
-                      placeholder="Please specify target discharge port (e.g. Houston, Los Angeles, Felixstowe), estimated quantity, or custom drawing requirements..."
+                      placeholder="Please specify target discharge port (e.g. Houston, Los Angeles, Felixstowe), estimated quantity, item numbers, or sheet metal fabrication specifications..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 outline-none transition-all text-slate-800 text-sm sm:text-base resize-none bg-white"
@@ -202,7 +202,7 @@ export const ContactSection: FC = () => {
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
               <span className="text-[#3B82F6] text-xs sm:text-sm font-semibold tracking-wide uppercase">
-                Direct Contact
+                Contact Information
               </span>
             </div>
 
@@ -213,7 +213,7 @@ export const ContactSection: FC = () => {
 
             {/* Subtitle / Paragraph */}
             <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed font-normal">
-              Manufacturer &amp; Exporter of Chain Link Fence Fittings, Post Caps, Brace Bands, Gate Hardware, and Custom Pressed Steel Components since 1985.
+              Manufacturer &amp; Exporter of Chain Link Fence Fittings, Post Caps, Brace Bands, Gate Hardware, and Sheet Metal Fabrication Items as per product specifications since 1969.
             </p>
 
             {/* Contact Details List */}

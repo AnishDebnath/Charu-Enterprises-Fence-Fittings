@@ -15,7 +15,7 @@ export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {
       tag: 'Generational Trust',
       title: '55+ Years of Industry Trust',
       description:
-        'Over 6 decades of continuous manufacturing excellence, proprietary tooling, and trusted global supply partnerships.',
+        'Over 55 years of manufacturing experience, high-precision tooling, and trusted global supply partnerships.',
       alt: '55+ Years of Trust and Manufacturing Heritage Badge',
     },
     {
@@ -24,7 +24,7 @@ export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {
       tag: 'Global Standards',
       title: 'ISO 9001:2015 Certified',
       description:
-        'Strictly audited quality management ensuring metallurgical integrity, ASTM A153 galvanizing, and batch traceability.',
+        'Strict quality system ensuring strong steel, ASTM A153 hot-dip galvanizing, and full batch traceability.',
       alt: 'ISO 9001:2015 Quality Management System Certification Badge',
     },
     {
@@ -33,7 +33,7 @@ export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {
       tag: '100% Inspected',
       title: 'Zero-Defect Quality Assurance',
       description:
-        'Multi-stage pre-shipment inspections including Go/No-Go thread gauging, tensile stress testing, and Mill Test Certificates.',
+        'Multi-stage inspections including thread gauging, tensile stress testing, and official Mill Test Certificates.',
       alt: '100% Zero-Defect Quality Assurance Guarantee Badge',
     },
   ];
@@ -68,8 +68,8 @@ export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {
 
           {/* Headline */}
           <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-white tracking-tight leading-[1.2]">
-            Certified Manufacturing &amp; Reliability <br className="hidden sm:inline" />
-            for High-Volume Global Procurement.
+            Certified Quality &amp; Reliable Supply <br className="hidden sm:inline" />
+            for Global Fence Distributors.
           </h2>
         </div>
 

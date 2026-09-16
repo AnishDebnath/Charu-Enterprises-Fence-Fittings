@@ -27,14 +27,22 @@ export const BackyardCTA: FC<BackyardCTAProps> = ({ onNavigate }) => {
 
       {/* Main Content Container with Compact Slim Height */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-14 text-center flex flex-col items-center justify-center">
+        {/* Eyebrow Tag */}
+        <div className="inline-flex items-center gap-2 justify-center mb-3">
+          <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
+          <span className="text-[#60A5FA] text-xs sm:text-sm font-bold tracking-wider uppercase">
+            Direct Factory Quotation
+          </span>
+        </div>
+
         {/* Headline */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-white tracking-tight leading-[1.2] max-w-3xl drop-shadow-md">
-          Ready to source ASTM-certified fence fittings for your distribution network?
+          Ready to Order Certified Fence Fittings for Your Business?
         </h2>
 
         {/* Supporting Description */}
         <p className="mt-2.5 sm:mt-3 text-slate-100 text-xs sm:text-sm md:text-base max-w-2xl font-medium leading-relaxed drop-shadow-sm">
-          Send your RFQ, proprietary CAD drawings, or container requirements. Our Kolkata export desk provides factory-direct container pricing and turnkey international shipping.
+          Send your product list, specifications, or samples. We can manufacture any sheet metal fabrication item from our product lines with direct factory prices and reliable global shipping.
         </p>
 
         {/* Interactive CTA Buttons Row */}

@@ -71,7 +71,7 @@ export const HomeownerReviews: FC = () => {
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
                 <span className="text-[#2563EB] text-sm sm:text-base font-bold tracking-tight uppercase">
-                  Distributor & Client Trust
+                  Client Reviews
                 </span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">

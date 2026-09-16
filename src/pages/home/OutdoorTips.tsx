@@ -23,9 +23,9 @@ export const OutdoorTips: FC = () => {
   const articles: TipArticle[] = [
     {
       id: 'astm-galvanizing',
-      title: 'ASTM A153 Hot-Dip Galvanizing vs Electro-Galvanized Hardware',
+      title: 'ASTM A153 Hot-Dip Galvanizing vs Electro-Plating',
       description:
-        'Why hot-dip galvanizing per ASTM A153 standard is critical for outdoor commercial fence longevity and rust resistance.',
+        'Why hot-dip galvanizing per ASTM A153 protects commercial fences from rust for over 30 years.',
       image:
         'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80',
       readTime: '5 min read',
@@ -33,30 +33,30 @@ export const OutdoorTips: FC = () => {
       category: 'Metallurgy & Coatings',
       content: {
         intro:
-          'In outdoor perimeter security, environmental corrosion is the number one cause of premature hardware failure. Understanding the difference between thin electro-plating and metallurgical hot-dip galvanizing is essential for specifiers.',
+          'Rust is the biggest cause of fence hardware damage. Understanding hot-dip galvanizing helps you choose fittings that last.',
         points: [
           {
-            title: 'Intermetallic Metallurgical Bond',
-            desc: 'Hot-dip galvanizing immerses steel in molten zinc at 450°C, forming iron-zinc alloy layers that are physically harder than the underlying steel base.',
+            title: 'Molten Zinc Bond',
+            desc: 'Hot-dip galvanizing dips clean steel into 450°C molten zinc. This forms a hard alloy layer that does not peel or chip.',
           },
           {
-            title: 'ASTM A153 Coating Thickness Requirements',
-            desc: 'Specifying ASTM A153 guarantees a minimum coating weight of 2.00 oz/sq ft (over 85 microns), providing 30+ years of rust protection even in industrial and coastal zones.',
+            title: 'ASTM A153 Thickness',
+            desc: 'ASTM A153 requires a thick zinc coat (over 85 microns), giving 30+ years of rust protection in harsh outdoor weather.',
           },
           {
-            title: 'Cathodic Self-Healing Protection',
-            desc: 'Even if scratched during field installation, zinc sacrificed itself cathodically to protect the exposed steel substrate from red rust oxidation.',
+            title: 'Self-Healing Action',
+            desc: 'If scratched during installation, zinc naturally protects the exposed steel from rust.',
           },
         ],
         conclusion:
-          'Charu Enterprises operates in-house hot-dip galvanizing lines with automated temperature control and digital thickness gauge verification on every production batch.',
+          'Charu Enterprises runs in-house galvanizing lines with automated heat control and thickness testing for every batch.',
       },
     },
     {
       id: 'gate-hinge-selection',
-      title: 'Selecting the Right Hinges for Industrial Security Gates',
+      title: 'Choosing the Right Hinges for Industrial Gates',
       description:
-        'A comprehensive sizing and load guide for 180° offset hinges, malleable box hinges, and commercial bull dog hardware.',
+        'A simple guide to picking 180° offset hinges, box hinges, and heavy-duty gate hardware.',
       image:
         'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80',
       readTime: '4 min read',
@@ -64,54 +64,54 @@ export const OutdoorTips: FC = () => {
       category: 'Hardware Sizing',
       content: {
         intro:
-          'Commercial and industrial security gates experience high opening cycles and dynamic wind loads. Choosing the appropriate malleable iron or pressed steel hinge configuration prevents gate sag and latch misalignment.',
+          'Industrial gates open often and face strong winds. Picking the right malleable iron or pressed steel hinges stops gate sagging.',
         points: [
           {
-            title: '180° Industrial Offset Hinges',
-            desc: 'Engineered for full swing access around adjacent fence lines without binding. Cast from malleable iron for maximum shock absorbency under high torque.',
+            title: '180° Offset Hinges',
+            desc: 'Allows gates to swing fully open flat against the fence line without getting stuck.',
           },
           {
-            title: 'Box Hinges with Grease Zerks',
-            desc: 'Designed for heavy automated swing gates. Integrated zerk fittings allow routine lubrication to prevent internal pin wear over decades of operation.',
+            title: 'Box Hinges with Grease Fittings',
+            desc: 'Built for heavy automated gates. Easy to lubricate for smooth swinging and long life.',
           },
           {
-            title: 'Matching Post & Frame OD Specifications',
-            desc: 'Ensure precise sizing match between gate frame OD (typically 1-5/8" to 2") and post OD (2-3/8" to 8-5/8") to distribute mechanical clamping pressure evenly.',
+            title: 'Matching Pipe Sizes',
+            desc: 'Match gate frame pipe size (1-5/8" to 2") with post size (2-3/8" to 8-5/8") for strong, tight clamping.',
           },
         ],
         conclusion:
-          'Download Catalog A25 from Charu Enterprises for complete dimensional diagrams, hole centers, and load ratings for our complete hinge range.',
+          'Check Catalog A25 from Charu Enterprises for full size charts, diagrams, and load ratings.',
       },
     },
     {
       id: 'tool-and-die-speed',
-      title: 'How In-House Tool & Die Engineering Accelerates Custom Fittings',
+      title: 'Sheet Metal Fabrication as per Product Specifications',
       description:
-        'From 3D CAD modeling to stamped prototypes: how our in-house tool room cuts lead times and guarantees zero defects.',
+        'How we manufacture and fabricate any sheet metal item according to your technical drawings, samples, and product specifications.',
       image:
         'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80',
       readTime: '6 min read',
       date: 'Manufacturing Insights',
-      category: 'Custom Stamping',
+      category: 'Sheet Metal Fabrication',
       content: {
         intro:
-          'When distributors or fence OEMs require proprietary bracket geometries or custom-embossed markings, third-party tooling often causes months of delays. In-house tool rooms eliminate bottlenecks.',
+          'While we do not provide custom design work, our factory can manufacture and fabricate any sheet metal item as per your required product specifications, samples, or drawings.',
         points: [
           {
-            title: 'CAD/CAM Precision Die Design',
-            desc: 'Our metallurgical tooling team designs progressive stamping and blanking dies directly from your 2D blueprints or 3D STEP models.',
+            title: 'Sheet Metal Stamping & Forming',
+            desc: 'Our high-tonnage mechanical power presses and tooling fabricate any sheet metal item across our fence hardware and fittings range.',
           },
           {
-            title: 'Rapid Pilot Run Verification',
-            desc: 'First-article pilot samples are stamped, galvanized, and dimensionally inspected using digital calipers and optical comparators before mass production.',
+            title: 'Manufacture as per Samples & Drawings',
+            desc: 'Provide your dimensions, physical samples, or technical specifications, and we fabricate the exact sheet metal parts with uniform precision.',
           },
           {
-            title: 'Tool Maintenance & Lifecycle Guarantee',
-            desc: 'Because we maintain and resharpen dies in-house, your custom parts maintain consistent dimensional tolerances across millions of stamped units.',
+            title: 'In-House Hot-Dip Galvanizing & Coating',
+            desc: 'Every sheet metal fabrication item is hot-dip galvanized to ASTM A153 or powder coated for maximum rust defense and long outdoor durability.',
           },
         ],
         conclusion:
-          'Contact Charu Enterprises with your proprietary sketches or custom specifications for a complimentary tooling feasibility assessment and quotation.',
+          'Send your product specifications, sample parts, or required dimensions to Charu Enterprises for direct factory pricing.',
       },
     },
   ];

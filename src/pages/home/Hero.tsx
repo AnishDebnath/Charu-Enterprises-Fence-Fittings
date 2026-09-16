@@ -78,7 +78,7 @@ export const Hero: FC<HeroProps> = ({ onNavigate }) => {
 
               {/* Subtitle */}
               <p className="text-neutral-100 text-base sm:text-lg max-w-xl leading-relaxed font-normal">
-                Manufacturers & exporters of Pressed Steel, Malleable Iron, and Aluminum Fence Fittings & Tension Bars. 150 Million+ pieces exported across 4 continents with 100% Zero Defects and duty-paid warehouse delivery.
+                We manufacture and export high-quality pressed steel, malleable iron, and aluminum fence fittings. Over 150 million pieces exported to 4 continents with zero defects and direct warehouse delivery.
               </p>
 
               {/* Action Buttons Row */}

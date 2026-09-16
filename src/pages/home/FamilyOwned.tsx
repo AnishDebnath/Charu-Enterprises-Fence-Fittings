@@ -14,7 +14,7 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
       id: '01',
       title: 'Precision Packaging & Palletization',
       description:
-        'Anti-corrosion rust-inhibiting wrapping, heavy-duty 5-ply corrugated export cartons, and heat-treated ISPM-15 certified wooden pallets with high-tensile steel banding.',
+        'Anti-rust packaging, strong 5-ply export boxes, and heat-treated wooden pallets with heavy steel strapping.',
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80',
       alt: 'Export-grade packaging and wooden palletization of fence fittings',
     },
@@ -22,7 +22,7 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
       id: '02',
       title: 'Pre-Shipment Inspection & QA Certification',
       description:
-        'Every batch undergoes 100% tensile verification, ASTM A153 galvanizing thickness testing, and Go/No-Go thread gauging with official Mill Test Certificates (MTC).',
+        'Every batch is tested for steel strength, galvanizing thickness (ASTM A153), and screw fit with Mill Test Certificates.',
       image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=80',
       alt: 'Pre-shipment quality verification and dimensional inspection',
     },
@@ -30,7 +30,7 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
       id: '03',
       title: 'Container Stuffing & Port Customs Clearance',
       description:
-        'Direct moisture-controlled container loading at our factory, expedited transit to Kolkata & Haldia ports, and comprehensive customs compliance documentation.',
+        'Careful factory container loading, quick transport to Kolkata and Haldia ports, and full export customs clearance.',
       image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1000&q=80',
       alt: 'Container freight stuffing and maritime port dispatch',
     },
@@ -38,7 +38,7 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
       id: '04',
       title: 'Ocean Freight & Doorstep DDP Delivery',
       description:
-        'Fast-track ocean freight to the USA, Canada, Europe, and Australia with live tracking, duty-paid clearance (DDP/CIF), and direct delivery to distributor yards.',
+        'Fast ocean shipping to USA, Canada, Europe, and Australia with live tracking, customs clearance, and direct delivery.',
       image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1000&q=80',
       alt: 'Global maritime container shipping and doorstep delivery',
     },
@@ -63,7 +63,7 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
               <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight uppercase">
-                Leadership & Heritage
+                Global Shipping Process
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
@@ -75,7 +75,7 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
           {/* Right Column: Paragraph + CTA Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-5 pt-1 lg:pt-2">
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-              Backed by 55+ years of export heritage, Charu Enterprises delivers full container loads (FCL &amp; LCL) worldwide with zero-transit-damage packaging, duty-paid DDP shipping, and 100% on-time logistics.
+              Backed by 55+ years of export experience, Charu Enterprises ships full containers worldwide with secure packaging, duty-paid delivery, and 100% on-time logistics.
             </p>
 
             <button

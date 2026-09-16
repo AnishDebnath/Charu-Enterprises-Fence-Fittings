@@ -24,7 +24,7 @@ const certifications: CertificationItem[] = [
     category: 'International Standards',
     image: isoCert,
     alt: 'ISO 9001:2015 Quality Management System Certificate - Charu Enterprises',
-    details: 'Certified compliance covering manufacturing, hot-dip galvanizing, and global supply of fence fittings & precision hardware.',
+    details: 'Certified quality standards for manufacturing, hot-dip galvanizing, and global supply of fence fittings.',
   },
   {
     id: 'award',
@@ -33,7 +33,7 @@ const certifications: CertificationItem[] = [
     category: 'Government Recognition',
     image: awardCert,
     alt: 'Export Excellence and Outstanding Performance Award - Charu Enterprises',
-    details: 'Honored for exceptional contribution to international engineering trade, overseas shipments, and metallurgical export growth.',
+    details: 'Awarded for outstanding performance in engineering exports and global shipments.',
   },
   {
     id: 'gst',
@@ -42,7 +42,7 @@ const certifications: CertificationItem[] = [
     category: 'Tax & Regulatory Compliance',
     image: gstCert,
     alt: 'Government of India GST Registration Certificate - Charu Enterprises',
-    details: 'Registered under the Goods and Services Tax Network (19AABFC7920J1ZC) for authorized domestic and international commerce.',
+    details: 'Registered under Goods and Services Tax (GSTIN: 19AABFC7920J1ZC) for compliant trade.',
   },
   {
     id: 'msme',
@@ -51,7 +51,7 @@ const certifications: CertificationItem[] = [
     category: 'Ministry of MSME, Govt of India',
     image: msmeCert,
     alt: 'Ministry of MSME Industrial Registration Certificate - Charu Enterprises',
-    details: 'Official MSME enterprise registration (UDYAM-WB-10-0019534) recognized under the Ministry of Micro, Small and Medium Enterprises.',
+    details: 'Registered MSME enterprise (UDYAM-WB-10-0019534) recognized by the Government of India.',
   },
 ];
 
@@ -70,7 +70,7 @@ export const CertificationsSection: FC = () => {
           <div className="inline-flex items-center gap-2 justify-center mb-2">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
             <span className="text-[#2563EB] text-xs sm:text-sm font-bold tracking-wider uppercase">
-              Accreditations
+              Certifications &amp; Awards
             </span>
           </div>
 
@@ -81,7 +81,7 @@ export const CertificationsSection: FC = () => {
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal mt-2.5 max-w-2xl mx-auto">
-            Recognized for our adherence to international quality standards and excellence in export performance.
+            Certified for strict international quality standards and recognized for excellence in global exports.
           </p>
         </div>
 

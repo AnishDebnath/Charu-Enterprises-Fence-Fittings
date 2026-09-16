@@ -31,20 +31,20 @@ export const GetToKnowUs: FC<GetToKnowUsProps> = ({ onNavigate }) => {
 
   const stats = [
     {
-      value: '35+',
-      label: 'Years of manufacturing & export excellence',
+      value: '55+',
+      label: 'Years of manufacturing & export growth',
     },
     {
-      value: '12,000+',
-      label: 'Metric tons annual production capacity',
+      value: '150M+',
+      label: 'Fittings exported across 4 continents',
     },
     {
-      value: '40+',
-      label: 'Global export destination countries',
+      value: '20,000',
+      label: 'SQ. FT. factory plant in Howrah, India',
     },
     {
       value: '100%',
-      label: 'ASTM A153 compliant hot-dip galvanizing',
+      label: 'Zero Defects & ASTM A153 galvanizing',
     },
   ];
 
@@ -58,17 +58,17 @@ export const GetToKnowUs: FC<GetToKnowUsProps> = ({ onNavigate }) => {
           <div className="flex items-center gap-2 mb-2">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
             <span className="text-[#3B82F6] text-xs sm:text-sm font-semibold tracking-wide uppercase">
-              Get to know us
+              Who We Are
             </span>
           </div>
 
           {/* Full section width headline with refined, harmonious font weights */}
           <h2 className="w-full text-xl sm:text-2xl md:text-3xl lg:text-[32px] xl:text-[34px] font-normal leading-[1.35] tracking-tight">
             <span className="font-semibold text-[#0a1532]">
-              Meet your dependable manufacturing partner for industrial fence fittings and hardware. With over three decades of engineering excellence, Charu Enterprises delivers
+              Your trusted manufacturing partner for industrial fence fittings and sheet metal fabrication. With over 55+ years of growth, Charu Enterprises can manufacture
             </span>{' '}
             <span className="text-slate-500 font-light sm:font-normal">
-              precision pressed steel, malleable iron castings, and custom tooling directly to international distributors.
+              any sheet metal fabrication item as per your required product specifications, pressed steel stampings, and malleable iron castings.
             </span>
           </h2>
 

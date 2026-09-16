@@ -1,42 +1,50 @@
 export const Partners = () => {
   const partners = [
     {
-      name: 'PRANDAJANG',
+      name: 'FENCETECH (30+ YEARS)',
       icon: (
-        <span className="font-extrabold text-xl sm:text-2xl tracking-tighter text-neutral-600 flex items-center gap-1 hover:text-neutral-950 transition-colors uppercase font-['Outfit',sans-serif]">
-          <span className="text-neutral-700 font-black text-2xl">「</span>PRANDAJANG
+        <span className="font-extrabold text-lg sm:text-xl tracking-wider text-slate-700 flex items-center gap-1.5 hover:text-[#2563EB] transition-colors uppercase font-['Outfit',sans-serif]">
+          <span className="text-[#3B82F6] font-black text-xl">★</span>FENCETECH (30+ YRS)
         </span>
       ),
     },
     {
-      name: 'MONDA',
+      name: 'ISO 9001:2015',
       icon: (
-        <span className="font-extrabold text-xl sm:text-2xl tracking-wider text-neutral-600 flex items-center gap-1 hover:text-neutral-950 transition-colors uppercase font-['Outfit',sans-serif]">
-          <span className="text-neutral-700 text-base font-black">✤</span>MONDA_
+        <span className="font-extrabold text-lg sm:text-xl tracking-wider text-slate-700 flex items-center gap-1.5 hover:text-[#2563EB] transition-colors uppercase font-['Outfit',sans-serif]">
+          <span className="text-[#3B82F6] text-base font-black">✔</span>ISO 9001:2015
         </span>
       ),
     },
     {
-      name: 'SALINDRA',
+      name: 'EEPC INDIA',
       icon: (
-        <span className="font-extrabold text-xl sm:text-2xl tracking-wider text-neutral-600 flex items-center gap-2 hover:text-neutral-950 transition-colors uppercase font-['Outfit',sans-serif]">
-          <span className="w-4 h-4 rounded-full bg-neutral-600 inline-block"></span>SALINDRA
+        <span className="font-extrabold text-lg sm:text-xl tracking-wider text-slate-700 flex items-center gap-1.5 hover:text-[#2563EB] transition-colors uppercase font-['Outfit',sans-serif]">
+          <span className="w-3.5 h-3.5 rounded-full bg-[#f0c75e] inline-block"></span>EEPC GOVT. OF INDIA
         </span>
       ),
     },
     {
-      name: 'DUNDAI LOCK',
+      name: 'MSME UDYAM',
       icon: (
-        <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-neutral-600 flex items-center gap-1 hover:text-neutral-950 transition-colors uppercase font-['Outfit',sans-serif]">
-          <span className="text-neutral-700 font-serif italic text-lg">Ω</span>DUNDAI LOCK
+        <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-700 flex items-center gap-1.5 hover:text-[#2563EB] transition-colors uppercase font-['Outfit',sans-serif]">
+          <span className="text-[#3B82F6] font-black text-lg">◆</span>MINISTRY OF MSME
         </span>
       ),
     },
     {
-      name: 'HAUNERTEAM',
+      name: '150M+ PIECES EXPORTED',
       icon: (
-        <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-neutral-600 flex items-center gap-1.5 hover:text-neutral-950 transition-colors uppercase font-['Outfit',sans-serif]">
-          <span className="font-black text-neutral-700 text-xl">❙❙</span>HAUNERTEAM
+        <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-700 flex items-center gap-1.5 hover:text-[#2563EB] transition-colors uppercase font-['Outfit',sans-serif]">
+          <span className="text-[#3B82F6] font-black text-xl">❖</span>150M+ EXPORTED
+        </span>
+      ),
+    },
+    {
+      name: '4 CONTINENTS',
+      icon: (
+        <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-700 flex items-center gap-1.5 hover:text-[#2563EB] transition-colors uppercase font-['Outfit',sans-serif]">
+          <span className="text-[#f0c75e] font-black text-lg">●</span>4 CONTINENTS
         </span>
       ),
     },

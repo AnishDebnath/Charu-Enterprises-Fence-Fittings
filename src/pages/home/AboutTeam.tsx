@@ -46,10 +46,10 @@ export const AboutTeam: FC<AboutTeamProps> = ({ onNavigate }) => {
           <div className="lg:col-span-9">
             <h2 className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-medium leading-[1.28] text-slate-500 tracking-tight">
               <span className="font-bold text-[#0a1532]">
-                Manufacturing Excellence Since 1969. With over 55+ years of growth and in-house engineering capabilities, Charu Enterprises leads India in fence fittings exports.
+                Manufacturing Excellence Since 1969. With over 55+ years of growth, Charu Enterprises is India's leading maker of fence fittings.
               </span>{' '}
               <span className="text-slate-600 font-normal">
-                Specializing in pressed steel, malleable iron, and aluminum fence hardware with full in-house tooling, high-tensile galvanizing, and strict quality control.
+                We specialize in pressed steel, malleable iron, and aluminum fence hardware with in-house tooling, hot-dip galvanizing, and strict quality checks.
               </span>
             </h2>
           </div>
@@ -94,7 +94,7 @@ export const AboutTeam: FC<AboutTeamProps> = ({ onNavigate }) => {
             {/* Top Content */}
             <div className="relative z-10">
               <h3 className="text-xl sm:text-2xl lg:text-[28px] font-bold text-white leading-tight tracking-tight">
-                Custom Sheet Metal & <br /> Die Fabrication
+                Sheet Metal Fabrication <br /> &amp; Stamping
               </h3>
             </div>
 
@@ -110,7 +110,7 @@ export const AboutTeam: FC<AboutTeamProps> = ({ onNavigate }) => {
 
               {/* Subtext description */}
               <p className="text-neutral-100 text-sm sm:text-base leading-relaxed font-normal">
-                We manufacture custom sheet metal stampings, clamps, and malleable castings directly from your CAD drawings with in-house tooling.
+                We make any sheet metal fabrication item as per your product specifications, samples, or drawings.
               </p>
 
               {/* Bottom Button matching hero CTA */}

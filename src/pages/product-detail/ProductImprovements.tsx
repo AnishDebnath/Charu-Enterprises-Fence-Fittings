@@ -15,37 +15,37 @@ export const defaultImprovements: ImprovementItem[] = [
     number: '01',
     title: 'Raw Steel Gauge Verification',
     description:
-      'High-grade carbon steel slit coils tested for yield strength and accurate gauge thickness prior to stamping.',
+      'High-grade carbon steel slit coils tested for strength and accurate thickness before stamping.',
   },
   {
     number: '02',
     title: 'Progressive Die Stamping',
     description:
-      'In-house CAD/CAM tooling produces burr-free edges, clean wire slots, and consistent carriage bolt holes.',
+      'In-house tooling makes clean, smooth edges, precise wire slots, and accurate bolt holes.',
   },
   {
     number: '03',
     title: 'Pre-Galvanizing Surface Pickling',
     description:
-      'Acid cleaning and flux treatment removes all mill scale, ensuring optimal metallurgical zinc adhesion.',
+      'Acid cleaning and flux treatment remove all surface dirt so zinc sticks firmly to the steel.',
   },
   {
     number: '04',
     title: 'ASTM A153 Hot-Dip Galvanizing',
     description:
-      'Automated zinc kettle bath delivers heavy 85+ micron protective zinc coating for maximum corrosion defense.',
+      'Automated molten zinc bath gives a thick 85+ micron coating for maximum rust defense.',
   },
   {
     number: '05',
     title: 'Tensile & Fitment Inspection',
     description:
-      'Batch testing ensures perfect pipe OD fitment and high mechanical load resistance without fracture.',
+      'Testing ensures exact pipe fit and high mechanical strength without cracking.',
   },
   {
     number: '06',
     title: 'Export Container Packaging',
     description:
-      'Weatherproof poly-bagging, wooden crate strapping, and barcode labels optimized for container unloading.',
+      'Weather-tight bags, strong wooden pallets, and clear labels ready for safe ocean shipping.',
   },
 ];
 
@@ -61,8 +61,8 @@ export const ProductImprovements: FC<ProductImprovementsProps> = ({
           {/* Eyebrow badge matching testimonial & website style */}
           <div className="inline-flex items-center gap-2">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-            <span className="text-[#2563EB] text-sm sm:text-base font-bold tracking-tight">
-              Quality Assurance
+            <span className="text-[#2563EB] text-xs sm:text-sm font-bold tracking-wide uppercase">
+              Quality Assurance &amp; Standards
             </span>
           </div>
 

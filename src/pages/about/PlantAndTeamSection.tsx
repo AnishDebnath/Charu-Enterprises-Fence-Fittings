@@ -51,7 +51,7 @@ export const PlantAndTeamSection: FC = () => {
           <div className="inline-flex items-center gap-2 justify-center mb-2.5">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
             <span className="text-[#2563EB] text-xs sm:text-sm font-bold tracking-wider uppercase">
-              Our Facilities
+              Our Plant &amp; Team
             </span>
           </div>
 
@@ -62,7 +62,7 @@ export const PlantAndTeamSection: FC = () => {
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal mt-3 max-w-2xl mx-auto">
-            State-of-the-art manufacturing facility with a dedicated team committed to excellence and quality.
+            Our 20,000 sq. ft. factory in Howrah, India has modern stamping presses, in-house galvanizing, and an expert testing team.
           </p>
         </div>
 

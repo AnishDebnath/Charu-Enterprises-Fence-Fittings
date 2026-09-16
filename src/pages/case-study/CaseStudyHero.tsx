@@ -15,7 +15,7 @@ export const CaseStudyHero: FC<CaseStudyHeroProps> = ({ onNavigate }) => {
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2560&q=85"
-            alt="Finished backyard deck, pergola, and outdoor living renovation"
+            alt="Commercial and industrial fence fittings and hardware"
             className="w-full h-full object-cover object-[center_45%] opacity-90"
           />
           {/* Balanced gradient overlay allowing photography to show clearly */}
@@ -33,12 +33,12 @@ export const CaseStudyHero: FC<CaseStudyHeroProps> = ({ onNavigate }) => {
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Catalog A25 &amp; Products
+              Supply in Action
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              Explore our comprehensive range of certified pressed steel, malleable iron castings, aluminum hardware, and custom-engineered fence fittings exported globally.
+              Commercial fence installations, factory quality inspections, and project supply.
             </p>
 
             {/* Breadcrumb Navigation */}
@@ -51,7 +51,7 @@ export const CaseStudyHero: FC<CaseStudyHeroProps> = ({ onNavigate }) => {
                 Home
               </button>
               <span className="text-white/50">/</span>
-              <span className="text-[#f0c75e] font-bold">Catalog A25</span>
+              <span className="text-[#f0c75e] font-bold">Supply in Action</span>
             </div>
           </motion.div>
         </div>

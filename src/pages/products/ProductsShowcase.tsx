@@ -60,7 +60,7 @@ export const ProductsShowcase: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
           <div className="flex items-center gap-2 mb-2.5">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
             <span className="text-[#2563EB] text-xs sm:text-sm font-bold tracking-wide uppercase">
-              Factory Catalog &amp; Range
+              Product Catalog
             </span>
           </div>
 
@@ -71,7 +71,7 @@ export const ProductsShowcase: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-2xl">
-            High-tensile hot-dip galvanized, malleable iron, and pressed steel hardware manufactured to ASTM specifications for master distributors worldwide.
+            Hot-dip galvanized pressed steel, malleable iron castings, and sheet metal fabrication items manufactured as per product specifications for fence distributors worldwide.
           </p>
         </div>
 

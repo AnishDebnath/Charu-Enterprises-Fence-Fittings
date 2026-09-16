@@ -33,12 +33,12 @@ export const ProductsHero: FC<ProductsHeroProps> = ({ onNavigate }) => {
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Products &amp; Capabilities
+              Product Catalog
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              Precision pressed steel stampings, ASTM A153 hot-dip galvanizing, malleable iron foundry castings, and custom in-house tooling development.
+              Engineered fence fittings, pressed steel parts, and sheet metal fabrication items.
             </p>
 
             {/* Breadcrumb Navigation */}
@@ -51,7 +51,7 @@ export const ProductsHero: FC<ProductsHeroProps> = ({ onNavigate }) => {
                 Home
               </button>
               <span className="text-white/50">/</span>
-              <span className="text-[#f0c75e] font-bold">Products &amp; Capabilities</span>
+              <span className="text-[#f0c75e] font-bold">Products</span>
             </div>
           </motion.div>
         </div>

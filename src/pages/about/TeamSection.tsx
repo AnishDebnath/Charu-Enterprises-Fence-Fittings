@@ -33,7 +33,7 @@ export const TeamSection: FC = () => {
           <div className="flex items-center gap-2 mb-2">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
             <span className="text-[#3B82F6] text-xs sm:text-sm font-semibold tracking-wide uppercase">
-              Leadership &amp; Heritage
+              Our Founders
             </span>
           </div>
 
@@ -44,7 +44,7 @@ export const TeamSection: FC = () => {
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal max-w-2xl">
-            Over 55+ years of continuous engineering leadership, humanitarian service, and high-precision metallurgical export excellence.
+            Over 55 years of manufacturing leadership, dedicated community service, and trusted export excellence.
           </p>
         </div>
 

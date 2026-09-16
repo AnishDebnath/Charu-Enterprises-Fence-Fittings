@@ -40,7 +40,7 @@ export const CaseStudySection: FC = () => {
           </h2>
 
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-2xl">
-            Real-world installations showcasing our galvanized and powder-coated fence fittings across commercial and industrial projects worldwide.
+            See how our hot-dip galvanized and powder-coated fence fittings perform in real commercial and industrial projects worldwide.
           </p>
         </div>
 

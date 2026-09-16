@@ -39,7 +39,7 @@ export const ProductDetailHero: FC<ProductDetailHeroProps> = ({ onNavigate, prod
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              In-depth engineering dimensions, size charts, packaging counts, and ASTM A153 hot-dip galvanizing standards for Catalog A25 items.
+              Detailed dimensions, exact size charts, box counts, and ASTM A153 galvanizing standards for Catalog A25 items.
             </p>
 
             {/* Breadcrumb Navigation */}

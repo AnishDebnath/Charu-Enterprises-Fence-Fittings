@@ -37,7 +37,7 @@ export const RecentProjects: FC<RecentProjectsProps> = ({ onNavigate }) => {
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
               <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight uppercase">
-                Featured Catalog Products
+                Supply in Action
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
@@ -49,7 +49,7 @@ export const RecentProjects: FC<RecentProjectsProps> = ({ onNavigate }) => {
           {/* Right Column: Narrative Subtitle + CTA Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-5 pt-1 lg:pt-2">
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-              Explore our most popular precision-engineered fence fittings, trusted by commercial fence contractors and master distributors across 4 continents.
+              See our most popular fence fittings, trusted by commercial fence suppliers and distributors across 4 continents.
             </p>
 
             <button
