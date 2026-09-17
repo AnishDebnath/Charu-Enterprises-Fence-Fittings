@@ -10,7 +10,7 @@ import { RecentProjects } from './RecentProjects';
 import { HomeownerReviews } from './HomeownerReviews';
 import { FAQSection } from './FAQSection';
 import { BackyardCTA } from './BackyardCTA';
-import { OutdoorTips } from './OutdoorTips';
+
 import type { CatalogProduct } from '../../data/companyData';
 
 interface HomePageProps {
@@ -29,9 +29,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       <ProjectFinder />
       <RecentProjects onNavigate={onNavigate} />
       <HomeownerReviews />
-      <FAQSection />
       <BackyardCTA />
-      <OutdoorTips />
+      <FAQSection />
+      {/* <OutdoorTips /> */}
       <Footer onNavigate={onNavigate} />
     </>
   );

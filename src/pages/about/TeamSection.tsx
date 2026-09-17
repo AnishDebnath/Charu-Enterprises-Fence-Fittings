@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { COMPANY_INFO } from '../../data/companyData';
-import opMaskaraImg from '../../assets/founders/Mr.-OP-Maskara.jpg';
-import somMaskaraImg from '../../assets/founders/Mr.-Som-Maskara.jpg';
+import opMaskaraImg from '../../assets/founders/mr-op-maskara.jpg';
+import somMaskaraImg from '../../assets/founders/mr-som-maskara.jpg';
 
 export const TeamSection: FC = () => {
   const leadership = [
@@ -60,7 +60,7 @@ export const TeamSection: FC = () => {
                 }`}
               >
                 {/* 1:1 Square Ratio Ideal Proportion Showcase Image */}
-                <div className="w-full sm:w-[190px] md:w-[210px] lg:w-[230px] shrink-0 aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 relative border border-slate-100 shadow-sm">
+                <div className="w-full sm:w-[190px] md:w-[210px] lg:w-[230px] shrink-0 aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 relative border border-slate-100 shadow-sm">
                   <img
                     src={member.image}
                     alt={member.alt}

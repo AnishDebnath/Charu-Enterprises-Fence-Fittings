@@ -1,22 +1,8 @@
 import type { FC } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { CATALOG_PRODUCTS, type CatalogProduct } from '../../data/companyData';
-
-const productImages = import.meta.glob('../../assets/product-images/*.{jpg,jpeg,png,webp}', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>;
-
-function get_product_image(itemNumber: number): string {
-  const num = String(itemNumber);
-  for (const [path, url] of Object.entries(productImages)) {
-    const fileName = path.split('/').pop()?.toLowerCase() || '';
-    if (fileName.startsWith(num + '.') || fileName.startsWith(num + ' ') || fileName.startsWith(num + '  ')) {
-      return url as string;
-    }
-  }
-  return '';
-}
+import { getProductImage } from '../../data/productImages';
+import { productSlug } from '../../App';
 
 const FEATURED_IDS = [1, 5, 6, 10, 12, 47];
 
@@ -59,7 +45,7 @@ export const ServicesGrid: FC<ServicesGridProps> = ({ onNavigate }) => {
             <button
               type="button"
               onClick={() => onNavigate?.('products')}
-              className="group/btn bg-[#3B82F6] hover:bg-[#0a1532] text-white font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+              className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
             >
               <span className="transition-colors">View All Products</span>
               <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
@@ -70,15 +56,19 @@ export const ServicesGrid: FC<ServicesGridProps> = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* Marquee Container */}
+      {/* Marquee Container - Full Width */}
       <div className="relative w-full overflow-hidden py-3">
         <div className="animate-marquee-ltr flex gap-5 sm:gap-6 lg:gap-6 cursor-grab active:cursor-grabbing px-4">
           {marqueeItems.map((product, index) => {
-            const imgSrc = get_product_image(product.itemNumber) || product.image;
+            const imgSrc = getProductImage(product.itemNumber) || product.image;
             return (
-              <div
+              <a
                 key={index}
-                onClick={() => onNavigate?.('product-detail', product)}
+                href={`/products/${productSlug(product)}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate?.('product-detail', product);
+                }}
                 className="group relative rounded-[26px] sm:rounded-[30px] overflow-hidden aspect-square w-[260px] sm:w-[300px] md:w-[340px] lg:w-[370px] xl:w-[380px] shrink-0 bg-[#071128] flex flex-col justify-between p-5 sm:p-6 transition-all duration-500 hover:-translate-y-1.5 shadow-lg hover:shadow-2xl cursor-pointer select-none border border-slate-200/60"
               >
                 {/* Card Image */}
@@ -135,7 +125,7 @@ export const ServicesGrid: FC<ServicesGridProps> = ({ onNavigate }) => {
                       : '1 Standard Size'}
                   </p>
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>

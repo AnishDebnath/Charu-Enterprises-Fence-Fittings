@@ -1,5 +1,7 @@
 import { useState, type FC } from 'react';
 import { Play, Check, ArrowRight } from 'lucide-react';
+import introVideo from '../../assets/intro-video.mp4';
+import aboutDetail from '../../assets/about-us/about-detail.jpg';
 
 interface AboutTeamProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'projects' | 'project-detail' | 'contact') => void;
@@ -59,9 +61,12 @@ export const AboutTeam: FC<AboutTeamProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 mb-14 sm:mb-16 lg:mb-20 items-stretch">
           {/* Left Large Showcase Image Card with Centered Play Button (16:9 ratio) */}
           <div className="lg:col-span-8 relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/9] w-full shadow-lg group border border-blue-100 bg-neutral-900">
-            <img
-              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80"
-              alt="Charu Enterprises precision manufacturing workshop"
+            <video
+              src={introVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-700"
             />
             {/* Subtle Overlay */}
@@ -84,7 +89,7 @@ export const AboutTeam: FC<AboutTeamProps> = ({ onNavigate }) => {
             {/* Background builder image with reduced gradient overlay for clear visibility */}
             <div className="absolute inset-0 z-0">
               <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80"
+                src={aboutDetail}
                 alt="Precision tool and die room"
                 className="w-full h-full object-cover object-center opacity-90 group-hover:scale-105 transition-transform duration-700"
               />

@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { ArrowRight, Phone } from 'lucide-react';
 import { COMPANY_INFO } from '../../data/companyData';
+import bannerAbout from '../../assets/banner/about.jpg';
 
 interface BackyardCTAProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
@@ -15,7 +16,7 @@ export const BackyardCTA: FC<BackyardCTAProps> = ({ onNavigate }) => {
       {/* Background Image of Industrial Manufacturing & Craftsmanship */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=80"
+          src={bannerAbout}
           alt="Charu Enterprises fence fittings manufacturing & hot-dip galvanizing"
           className="w-full h-full object-cover object-[center_35%]"
         />
@@ -50,7 +51,7 @@ export const BackyardCTA: FC<BackyardCTAProps> = ({ onNavigate }) => {
           {/* Primary Action Button: Get a Free Estimate */}
           <button
             type="button"
-            onClick={() => (onNavigate ? onNavigate('contact') : (window.location.hash = '/contact'))}
+            onClick={() => (onNavigate ? onNavigate('contact') : (window.history.pushState(null, '', '/contact'), window.dispatchEvent(new PopStateEvent('popstate'))))}
             className="group w-full sm:w-auto bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 sm:pl-6 pr-2 py-2.5 sm:py-3 rounded-full flex items-center justify-center gap-3 text-xs sm:text-sm md:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
           >
             <span className="transition-colors">Request Factory Direct Quote</span>

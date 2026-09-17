@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { motion } from 'motion/react';
+import bannerProducts from '../../assets/banner/products.jpg';
 
 interface ProductsHeroProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
@@ -14,7 +15,7 @@ export const ProductsHero: FC<ProductsHeroProps> = ({ onNavigate }) => {
         {/* Background Image with Outdoor Wooden Decking, Patio & Pergola */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=2560&q=85"
+            src={bannerProducts}
             alt="Custom timber deck and backyard outdoor living area"
             className="w-full h-full object-cover object-[center_40%] opacity-90"
           />

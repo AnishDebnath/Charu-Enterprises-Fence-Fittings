@@ -1,6 +1,8 @@
 import { useState, type FC } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import companyValue from '../../assets/about-us/company-value.jpg';
+import commitmentImg from '../../assets/about-us/commitment.jpg';
 
 interface OurFoundationProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
@@ -11,11 +13,11 @@ export const OurFoundation: FC<OurFoundationProps> = ({ onNavigate }) => {
 
   const tabData = {
     values: {
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Charu Enterprises foundry metallurgical precision and heavy manufacturing operations',
+      image: companyValue,
+      alt: 'Charu Enterprises company values and manufacturing excellence',
     },
     commitment: {
-      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
+      image: commitmentImg,
       alt: 'Quality control laboratory, ISO inspection, and global distributor commitment',
     },
   };

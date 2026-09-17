@@ -2,6 +2,7 @@ import { useState, type FC, type FormEvent } from 'react';
 import { MapPin, Phone, Mail, CheckCircle2, ArrowRight, Building2, Globe2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { COMPANY_INFO } from '../../data/companyData';
+import contactUsImg from '../../assets/contact-us.jpg';
 
 export const ContactSection: FC = () => {
   const [formData, setFormData] = useState({
@@ -287,7 +288,7 @@ export const ContactSection: FC = () => {
             <div className="pt-2">
               <div className="relative rounded-2xl sm:rounded-3xl lg:rounded-[24px] overflow-hidden aspect-[16/9] w-full shadow-md border border-slate-200/80 bg-slate-100 group">
                 <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80"
+                  src={contactUsImg}
                   alt="Charu Enterprises precision manufacturing facility and container loading"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />

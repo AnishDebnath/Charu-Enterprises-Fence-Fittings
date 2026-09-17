@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { motion } from 'motion/react';
+import bannerCaseStudy from '../../assets/banner/case-study.jpg';
 
 interface CaseStudyHeroProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
@@ -14,7 +15,7 @@ export const CaseStudyHero: FC<CaseStudyHeroProps> = ({ onNavigate }) => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2560&q=85"
+            src={bannerCaseStudy}
             alt="Commercial and industrial fence fittings and hardware"
             className="w-full h-full object-cover object-[center_45%] opacity-90"
           />

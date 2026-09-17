@@ -2,6 +2,12 @@ import { useState, type FC } from 'react';
 import { Star, ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
+import clientImg1 from '../../assets/testimonial/client-1.jpg';
+import clientImg2 from '../../assets/testimonial/client-2.jpg';
+import clientImg3 from '../../assets/testimonial/client-3.jpg';
+import clientImg4 from '../../assets/testimonial/client-4.jpg';
+import clientImg5 from '../../assets/testimonial/client-5.jpg';
+
 export const HomeownerReviews: FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -14,10 +20,8 @@ export const HomeownerReviews: FC = () => {
         'Charu Enterprises has been supplying our USA distribution centers with pressed steel barbed arms and offset hinges for over 8 years. Their galvanizing thickness and dimensional consistency are unmatched.',
       name: 'Robert M. Gallagher',
       role: 'VP Procurement, Regional Fence Supply Corp (Texas, USA)',
-      avatar:
-        'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
-      image:
-        'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80',
+      avatar: clientImg1,
+      image: '',
     },
     {
       id: 2,
@@ -27,10 +31,8 @@ export const HomeownerReviews: FC = () => {
         'Their in-house tool room engineered our proprietary cantilever roller design with zero flaws. Container shipments always arrive properly palletized, labeled, and on schedule.',
       name: 'David L. Tremblay',
       role: 'Director of Sourcing, Canadian Perimeter Solutions (Ontario, Canada)',
-      avatar:
-        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
-      image:
-        'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=80',
+      avatar: clientImg2,
+      image: '',
     },
     {
       id: 3,
@@ -40,10 +42,30 @@ export const HomeownerReviews: FC = () => {
         'Working with Som and the Maskara family gives us complete peace of mind. Transparent communication, competitive FOB/DDP terms, and genuine commitment to zero defects.',
       name: 'Klaus Richter',
       role: 'Managing Director, Industrial Security Gates GmbH (Germany)',
-      avatar:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-      image:
-        'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1400&q=80',
+      avatar: clientImg3,
+      image: '',
+    },
+    {
+      id: 4,
+      rating: '5.0',
+      ratingText: '5.0 rating on Powder-Coated Fence Hardware Export',
+      quote:
+        'We switched to Charu Enterprises for our Australian chain-link gate hardware. The powder coating finish and galvanizing quality exceeded our expectations. Reliable partner for large container orders.',
+      name: 'James Whitfield',
+      role: 'Supply Chain Manager, Aussie Fencing Pty Ltd (Melbourne, Australia)',
+      avatar: clientImg4,
+      image: '',
+    },
+    {
+      id: 5,
+      rating: '4.98',
+      ratingText: '4.98 rating on Malleable Iron Castings & Fast Delivery',
+      quote:
+        'Charu Enterprises delivers consistent quality malleable iron fittings every order. Their team handles export documentation smoothly and meetings are always punctual. Highly recommended for European distributors.',
+      name: 'Marco Bianchi',
+      role: 'Procurement Director, Sicurezza Recinzioni SRL (Milan, Italy)',
+      avatar: clientImg5,
+      image: '',
     },
   ];
 
@@ -81,12 +103,12 @@ export const HomeownerReviews: FC = () => {
             </div>
 
             {/* Facility / Warehouse Image */}
-            <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden aspect-[16/11] sm:aspect-[4/3] w-full shadow-md bg-neutral-900 border border-blue-200/80">
+            <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden aspect-video w-full shadow-md bg-neutral-900 border border-blue-200/80">
               <AnimatePresence mode="wait">
                 <motion.img
-                  key={currentReview.image}
-                  src={currentReview.image}
-                  alt="Industrial manufacturing and quality control inspection"
+                  key={currentReview.avatar}
+                  src={currentReview.avatar}
+                  alt={currentReview.name}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}

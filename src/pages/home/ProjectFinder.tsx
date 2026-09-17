@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import yearBadge from '../../assets/badge/year.png';
 import isoBadge from '../../assets/badge/iso.png';
 import zeroDefectBadge from '../../assets/badge/zero-defect.png';
+import bannerAbout from '../../assets/banner/about.jpg';
 
 interface ProjectFinderProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
@@ -46,13 +47,12 @@ export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {
       {/* Background Image with Dark Vignette & Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2400&q=85"
+          src={bannerAbout}
           alt="Charu Enterprises precision manufacturing facility"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-[center_35%]"
         />
-        {/* Dark overlay matching website aesthetic */}
-        <div className="absolute inset-0 bg-[#071128]/90 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071128] via-[#071128]/80 to-[#071128]/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070e24]/90 via-[#0a1532]/80 to-[#070e24]/90" />
+        <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#3B82F6]/20 rounded-full blur-3xl pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

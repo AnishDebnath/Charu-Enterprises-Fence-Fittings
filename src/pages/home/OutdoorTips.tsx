@@ -26,8 +26,7 @@ export const OutdoorTips: FC = () => {
       title: 'ASTM A153 Hot-Dip Galvanizing vs Electro-Plating',
       description:
         'Why hot-dip galvanizing per ASTM A153 protects commercial fences from rust for over 30 years.',
-      image:
-        'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80',
+      image: '',
       readTime: '5 min read',
       date: 'Engineering Guide',
       category: 'Metallurgy & Coatings',
@@ -57,8 +56,7 @@ export const OutdoorTips: FC = () => {
       title: 'Choosing the Right Hinges for Industrial Gates',
       description:
         'A simple guide to picking 180° offset hinges, box hinges, and heavy-duty gate hardware.',
-      image:
-        'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80',
+      image: '',
       readTime: '4 min read',
       date: 'Specification Guide',
       category: 'Hardware Sizing',
@@ -88,8 +86,7 @@ export const OutdoorTips: FC = () => {
       title: 'Sheet Metal Fabrication as per Product Specifications',
       description:
         'How we manufacture and fabricate any sheet metal item according to your technical drawings, samples, and product specifications.',
-      image:
-        'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80',
+      image: '',
       readTime: '6 min read',
       date: 'Manufacturing Insights',
       category: 'Sheet Metal Fabrication',

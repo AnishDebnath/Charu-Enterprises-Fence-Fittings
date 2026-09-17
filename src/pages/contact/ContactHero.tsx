@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { motion } from 'motion/react';
+import bannerContact from '../../assets/banner/contact.jpg';
 
 interface ContactHeroProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
@@ -14,7 +15,7 @@ export const ContactHero: FC<ContactHeroProps> = ({ onNavigate }) => {
         {/* Background Image with Outdoor Patio/Deck & Soft Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2560&q=85"
+            src={bannerContact}
             alt="Outdoor pergola and backyard patio living space"
             className="w-full h-full object-cover object-[75%_center] lg:object-[80%_center] opacity-90"
           />

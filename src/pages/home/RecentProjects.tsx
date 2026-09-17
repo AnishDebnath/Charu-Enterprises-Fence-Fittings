@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-const supplyImages = import.meta.glob('../../assets/supply in action/*.{jpg,jpeg,png,webp}', {
+const supplyImages = import.meta.glob('../../assets/case-study/*.{jpg,jpeg,png,webp}', {
   eager: true,
   import: 'default',
 }) as Record<string, string>;

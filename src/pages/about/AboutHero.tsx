@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { motion } from 'motion/react';
+import bannerAbout from '../../assets/banner/about.jpg';
 
 interface AboutHeroProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
@@ -14,7 +15,7 @@ export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
         {/* Background Image with Craftsman Deck Building & Soft Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2560&q=85"
+            src={bannerAbout}
             alt="Carpenter crafting outdoor deck wood structure"
             className="w-full h-full object-cover object-[75%_center] lg:object-[80%_center] opacity-90"
           />

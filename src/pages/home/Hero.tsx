@@ -2,23 +2,9 @@ import { useState, useEffect, useMemo, type FC } from 'react';
 import { Phone, ArrowRight, Star, Check, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CATALOG_PRODUCTS, type CatalogProduct } from '../../data/companyData';
-import bannerPoster from '../../assets/charu poster.jpeg';
-
-const productImages = import.meta.glob('../../assets/product-images/*.{jpg,jpeg,png,webp}', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>;
-
-function getProductImage(itemNumber: number): string {
-  const num = String(itemNumber);
-  for (const [path, url] of Object.entries(productImages)) {
-    const fileName = path.split('/').pop()?.toLowerCase() || '';
-    if (fileName.startsWith(num + '.') || fileName.startsWith(num + ' ') || fileName.startsWith(num + '  ')) {
-      return url as string;
-    }
-  }
-  return '';
-}
+import { getProductImage } from '../../data/productImages';
+import { productSlug } from '../../App';
+import bannerVideo from '../../assets/banner-video.mp4';
 
 interface HeroProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
@@ -47,9 +33,12 @@ export const Hero: FC<HeroProps> = ({ onNavigate }) => {
       <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[700px] md:min-h-[760px] lg:min-h-[800px] xl:min-h-[830px] flex flex-col justify-between border border-blue-900/50 font-['Outfit',sans-serif]">
         {/* Background Image spanning full screen size card with industrial metallurgy texture */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={bannerPoster}
-            alt="Charu Enterprises Fence Fittings"
+          <video
+            src={bannerVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover object-[70%_center] lg:object-[80%_center] opacity-85"
           />
           {/* Reduced multi-stop gradient overlay so image clearly shows */}
@@ -110,26 +99,18 @@ export const Hero: FC<HeroProps> = ({ onNavigate }) => {
               {/* Ratings row */}
               <div className="pt-2 flex flex-wrap sm:flex-nowrap items-center gap-3.5">
                 <div className="flex items-center -space-x-2.5 shrink-0 px-1 py-1">
-                  <img
-                    className="inline-block h-9.5 w-9.5 rounded-full ring-2 ring-white object-cover shadow-md shrink-0 relative z-40"
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
-                    alt="International Client"
-                  />
-                  <img
-                    className="inline-block h-9.5 w-9.5 rounded-full ring-2 ring-white object-cover shadow-md shrink-0 relative z-30"
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
-                    alt="International Client"
-                  />
-                  <img
-                    className="inline-block h-9.5 w-9.5 rounded-full ring-2 ring-white object-cover shadow-md shrink-0 relative z-20"
-                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80"
-                    alt="International Client"
-                  />
-                  <img
-                    className="inline-block h-9.5 w-9.5 rounded-full ring-2 ring-white object-cover shadow-md shrink-0 relative z-10"
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
-                    alt="International Client"
-                  />
+                  <div className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-40 items-center justify-center bg-[#3B82F6] text-white text-xs font-bold">
+                    JD
+                  </div>
+                  <div className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-30 items-center justify-center bg-[#2563EB] text-white text-xs font-bold">
+                    RK
+                  </div>
+                  <div className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-20 items-center justify-center bg-[#1E40AF] text-white text-xs font-bold">
+                    SM
+                  </div>
+                  <div className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-10 items-center justify-center bg-[#1E3A8A] text-white text-xs font-bold">
+                    AK
+                  </div>
                 </div>
 
                 <div className="shrink-0">
@@ -177,8 +158,12 @@ export const Hero: FC<HeroProps> = ({ onNavigate }) => {
 
             {/* Right Column: Floating Product Showcase Card */}
             <div className="lg:col-span-4 flex justify-end items-end w-full">
-              <div
-                onClick={() => onNavigate?.('product-detail', currentProduct)}
+              <a
+                href={`/products/${productSlug(currentProduct)}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate?.('product-detail', currentProduct);
+                }}
                 className="bg-white rounded-[22px] sm:rounded-[24px] p-2.5 sm:p-3 shadow-2xl border border-white/80 max-w-[280px] sm:max-w-[310px] w-full transform transition-all hover:-translate-y-1 group cursor-pointer select-none"
               >
                 {/* 1:1 Aspect Ratio Image Container with smooth transition */}
@@ -224,7 +209,7 @@ export const Hero: FC<HeroProps> = ({ onNavigate }) => {
                     <ArrowUpRight className="w-3.8 h-3.8 stroke-[2.2]" />
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>

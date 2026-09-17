@@ -1,5 +1,9 @@
 import type { FC } from 'react';
 import { ArrowRight } from 'lucide-react';
+import factory1 from '../../assets/about-us/charu-factory-1.jpg';
+import factory2 from '../../assets/about-us/charu-factory-2.jpg';
+import factory3 from '../../assets/about-us/charu-factory-3.jpg';
+import factory4 from '../../assets/about-us/charu-factory-4.jpg';
 
 interface GetToKnowUsProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
@@ -8,22 +12,22 @@ interface GetToKnowUsProps {
 export const GetToKnowUs: FC<GetToKnowUsProps> = ({ onNavigate }) => {
   const images = [
     {
-      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
+      src: factory1,
       alt: 'Charu Enterprises precision stamping & power press facility',
       isUpper: true, // Left side image: upper position
     },
     {
-      src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+      src: factory2,
       alt: 'Hot-dip galvanizing zinc kettle operations per ASTM A153',
       isUpper: false, // Middle left image: lower position
     },
     {
-      src: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+      src: factory3,
       alt: 'In-house tool and die design engineering room',
       isUpper: false, // Middle right image: lower position
     },
     {
-      src: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+      src: factory4,
       alt: 'Palletized container export packaging ready for seaport loading',
       isUpper: true, // Right side image: upper position
     },

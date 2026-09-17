@@ -6,71 +6,87 @@ import CaseStudyPage from './pages/case-study';
 import ProductDetailPage from './pages/product-detail';
 import ContactPage from './pages/contact';
 import { ComingSoonPage } from './pages/coming-soon';
-import type { CatalogProduct } from './data/companyData';
+import { CATALOG_PRODUCTS, type CatalogProduct } from './data/companyData';
+
+type Page = 'coming-soon' | 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact';
+
+export function slugify(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+export function productSlug(product: CatalogProduct): string {
+  return slugify(product.name);
+}
+
+function productFromSlug(slug: string): CatalogProduct | null {
+  return CATALOG_PRODUCTS.find((p) => productSlug(p) === slug) || null;
+}
+
+function getProductBySlug(pathname: string): CatalogProduct | null {
+  const match = pathname.match(/^\/products\/([^/]+)\/?$/i);
+  if (!match) return null;
+  return productFromSlug(match[1]);
+}
+
+function pageFromPath(pathname: string): Page {
+  const path = pathname.toLowerCase().replace(/\/+$/, '') || '/';
+  if (path === '/about') return 'about';
+  if (path === '/products') return 'products';
+  if (/^\/products\/[^/]+\/?$/.test(path)) return 'product-detail';
+  if (path === '/case-study') return 'case-study';
+  if (path === '/contact') return 'contact';
+  return 'home';
+}
+
+function pathFromPage(page: Page, product?: CatalogProduct | null): string {
+  switch (page) {
+    case 'about': return '/about';
+    case 'products': return '/products';
+    case 'product-detail': return product ? `/products/${productSlug(product)}` : '/products';
+    case 'case-study': return '/case-study';
+    case 'contact': return '/contact';
+    default: return '/';
+  }
+}
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<
-    'coming-soon' | 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact'
-  >('home');
+  const [currentPage, setCurrentPage] = useState<Page>(() =>
+    pageFromPath(window.location.pathname)
+  );
+
+  const [selectedProduct, setSelectedProduct] = useState<CatalogProduct | null>(() =>
+    getProductBySlug(window.location.pathname)
+  );
 
   useEffect(() => {
-    if (window.location.hash) {
-      window.history.replaceState(null, '', window.location.pathname);
-    }
-  }, []);
-
-  const [selectedProduct, setSelectedProduct] = useState<CatalogProduct | null>(null);
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.toLowerCase();
-      if (hash.startsWith('#/about') || hash === '#about-page') {
-        setCurrentPage('about');
-      } else if (hash.startsWith('#/products') || hash === '#products-page') {
-        setCurrentPage('products');
-      } else if (
-        hash.startsWith('#/product-detail') ||
-        hash.startsWith('#/product-details') ||
-        hash === '#product-detail-page'
-      ) {
-        setCurrentPage('product-detail');
-      } else if (hash.startsWith('#/case-study') || hash === '#case-study-page') {
-        setCurrentPage('case-study');
-      } else if (hash.startsWith('#/contact') || hash === '#contact-page') {
-        setCurrentPage('contact');
-      } else if (hash.startsWith('#/home') || hash === '#home-page') {
-        setCurrentPage('home');
+    const handlePopState = () => {
+      const path = window.location.pathname;
+      const page = pageFromPath(path);
+      setCurrentPage(page);
+      if (page === 'product-detail') {
+        setSelectedProduct(getProductBySlug(path));
       }
     };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  const navigateTo = (
-    page: 'coming-soon' | 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact',
-    product?: CatalogProduct
-  ) => {
-    if (product) {
-      console.log('navigateTo: setting product', product.name);
+  const navigateTo = (page: Page, product?: CatalogProduct) => {
+    if (page === 'product-detail' && product) {
       setSelectedProduct(product);
+    } else if (page !== 'product-detail') {
+      setSelectedProduct(null);
     }
-    console.log('navigateTo: setting page', page);
+    const targetPath = pathFromPage(page, product);
+    if (window.location.pathname !== targetPath) {
+      window.history.pushState(null, '', targetPath);
+    }
     setCurrentPage(page);
-    window.location.hash =
-      page === 'about'
-        ? '/about'
-        : page === 'products'
-          ? '/products'
-          : page === 'product-detail'
-            ? '/product-detail'
-            : page === 'case-study'
-              ? '/case-study'
-              : page === 'contact'
-                ? '/contact'
-                : page === 'home'
-                  ? '/home'
-                  : '/';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

@@ -49,8 +49,7 @@ export const defaultProductDetail: ProductDetailData = {
   title: 'Barbed Arm - 14 GA & 16 GA',
   description:
     'Heavy-duty pressed steel 45-degree barbed arm extension engineered for industrial, commercial, and high-security chain link fencing perimeters. Designed with pre-notched wire capture slots for secure holding of 3 barbed wire strands, high tensile load resistance, and uniform ASTM A153 hot-dip galvanizing.',
-  image:
-    'https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1600&q=85',
+  image: '',
   alt: 'Pressed steel barbed arm chain link fence fitting component',
   itemNumber: 'Catalog A25 - Item #1',
   category: 'FITTINGS & ARMS',

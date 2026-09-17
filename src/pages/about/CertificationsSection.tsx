@@ -5,6 +5,7 @@ import isoCert from '../../assets/certificate-awards/ISO.jpg';
 import awardCert from '../../assets/certificate-awards/Award.jpg';
 import gstCert from '../../assets/certificate-awards/GST.jpg';
 import msmeCert from '../../assets/certificate-awards/MSME.jpg';
+import bannerAbout from '../../assets/banner/about.jpg';
 
 interface CertificationItem {
   id: string;
@@ -61,9 +62,19 @@ export const CertificationsSection: FC = () => {
   return (
     <section
       id="certifications-awards"
-      className="w-full bg-[#DBEAFE] py-14 sm:py-18 lg:py-20 font-['Outfit',sans-serif] border-b border-blue-200/80"
+      className="relative w-full py-14 sm:py-18 lg:py-20 font-['Outfit',sans-serif] border-b border-blue-200/80 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={bannerAbout}
+          alt=""
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-[#DBEAFE]/92" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-14">
           {/* Eyebrow */}

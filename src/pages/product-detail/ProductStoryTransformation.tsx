@@ -1,22 +1,8 @@
 import { useState, useEffect, useRef, useCallback, type FC } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { CATALOG_PRODUCTS, type CatalogProduct } from '../../data/companyData';
-
-const productImages = import.meta.glob('../../assets/product-images/*.{jpg,jpeg,png,webp}', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>;
-
-function get_product_image(itemNumber: number): string {
-  const num = String(itemNumber);
-  for (const [path, url] of Object.entries(productImages)) {
-    const fileName = path.split('/').pop()?.toLowerCase() || '';
-    if (fileName.startsWith(num + '.') || fileName.startsWith(num + ' ') || fileName.startsWith(num + '  ')) {
-      return url as string;
-    }
-  }
-  return '';
-}
+import { getProductImage } from '../../data/productImages';
+import { productSlug } from '../../App';
 
 interface OtherProductsProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
@@ -28,7 +14,7 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate,
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const totalProducts = displayProducts.length;
 
   const scrollToCard = useCallback((index: number) => {
@@ -146,15 +132,19 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate,
             }}
           >
             {displayProducts.map((product, index) => {
-              const imgSrc = get_product_image(product.itemNumber) || product.image;
+              const imgSrc = getProductImage(product.itemNumber) || product.image;
 
               return (
-                <div
+                <a
                   key={product.id}
                   ref={(el) => {
                     cardRefs.current[index] = el;
                   }}
-                  onClick={() => handleCardClick(product)}
+                  href={`/products/${productSlug(product)}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleCardClick(product);
+                  }}
                   className="group bg-white rounded-[22px] sm:rounded-[24px] p-2.5 sm:p-3 border border-slate-200/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_24px_rgba(10,21,50,0.1)] transition-all duration-300 flex flex-col justify-between cursor-pointer select-none relative hover:-translate-y-1 w-[260px] sm:w-[280px] md:w-[300px] shrink-0"
                 >
                   {/* Clean 1:1 Aspect Ratio Image Container */}
@@ -197,6 +187,7 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate,
                     <button
                       type="button"
                       onClick={(e) => {
+                        e.preventDefault();
                         e.stopPropagation();
                         handleCardClick(product);
                       }}
@@ -208,7 +199,7 @@ export const ProductStoryTransformation: FC<OtherProductsProps> = ({ onNavigate,
                       </div>
                     </button>
                   </div>
-                </div>
+                </a>
               );
             })}
           </div>

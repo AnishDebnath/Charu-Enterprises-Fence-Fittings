@@ -1,22 +1,8 @@
 import { useState, type FC } from 'react';
 import { Search, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { CATALOG_PRODUCTS, type CatalogProduct } from '../../data/companyData';
-
-const productImages = import.meta.glob('../../assets/product-images/*.{jpg,jpeg,png,webp}', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>;
-
-function get_product_image(itemNumber: number): string {
-  const num = String(itemNumber);
-  for (const [path, url] of Object.entries(productImages)) {
-    const fileName = path.split('/').pop()?.toLowerCase() || '';
-    if (fileName.startsWith(num + '.') || fileName.startsWith(num + ' ') || fileName.startsWith(num + '  ')) {
-      return url as string;
-    }
-  }
-  return '';
-}
+import { getProductImage } from '../../data/productImages';
+import { productSlug } from '../../App';
 
 interface ProductsShowcaseProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
@@ -155,12 +141,16 @@ export const ProductsShowcase: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
             {filteredProducts.map((product: CatalogProduct) => {
-              const imgSrc = get_product_image(product.itemNumber) || product.image;
+              const imgSrc = getProductImage(product.itemNumber) || product.image;
 
               return (
-                <div
+                <a
                   key={product.id}
-                  onClick={() => onNavigate?.('product-detail', product)}
+                  href={`/products/${productSlug(product)}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate?.('product-detail', product);
+                  }}
                   className="group bg-white rounded-[22px] sm:rounded-[24px] p-2.5 sm:p-3 border border-slate-200/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_24px_rgba(10,21,50,0.1)] transition-all duration-300 flex flex-col justify-between cursor-pointer select-none relative hover:-translate-y-1"
                 >
                   {/* Clean 1:1 Aspect Ratio Image Container filling the frame */}
@@ -203,6 +193,7 @@ export const ProductsShowcase: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
                     <button
                       type="button"
                       onClick={(e) => {
+                        e.preventDefault();
                         e.stopPropagation();
                         onNavigate?.('product-detail', product);
                       }}
@@ -214,7 +205,7 @@ export const ProductsShowcase: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
                       </div>
                     </button>
                   </div>
-                </div>
+                </a>
               );
             })}
           </div>

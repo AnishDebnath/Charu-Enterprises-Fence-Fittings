@@ -5,26 +5,11 @@ import { ProductDetailContent, defaultProductDetail, type ProductDetailData } fr
 import { ProductImprovements } from './ProductImprovements';
 import { BackyardCTA } from '../home/BackyardCTA';
 import { ProductStoryTransformation } from './ProductStoryTransformation';
+import { getProductImage } from '../../data/productImages';
 import type { CatalogProduct } from '../../data/companyData';
 
-const productImages = import.meta.glob('../../assets/product-images/*.{jpg,jpeg,png,webp}', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>;
-
-function get_product_image(itemNumber: number): string {
-  const num = String(itemNumber);
-  for (const [path, url] of Object.entries(productImages)) {
-    const fileName = path.split('/').pop()?.toLowerCase() || '';
-    if (fileName.startsWith(num + '.') || fileName.startsWith(num + ' ') || fileName.startsWith(num + '  ')) {
-      return url as string;
-    }
-  }
-  return '';
-}
-
 function catalogToDetail(product: CatalogProduct): ProductDetailData {
-  const imgSrc = get_product_image(product.itemNumber) || product.image;
+  const imgSrc = getProductImage(product.itemNumber) || product.image;
   return {
     title: product.name,
     description: product.description,

@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 
-const supplyImages = import.meta.glob('../../assets/supply in action/*.{jpg,jpeg,png,webp}', {
+const supplyImages = import.meta.glob('../../assets/case-study/*.{jpg,jpeg,png,webp}', {
   eager: true,
   import: 'default',
 }) as Record<string, string>;
@@ -8,17 +8,26 @@ const supplyImages = import.meta.glob('../../assets/supply in action/*.{jpg,jpeg
 const supplyImageList = Object.values(supplyImages);
 
 const caseStudies = [
-  { title: 'Commercial Chain Link Gate Hardware', description: 'Heavy-duty gate hardware installed for commercial perimeter security.' },
-  { title: 'Commercial Fence Gate and Hardware', description: 'Full gate system with galvanized fittings for industrial complex.' },
-  { title: 'Commercial Fence Hardware Installation', description: 'Large-scale fence hardware deployment across commercial property.' },
-  { title: 'Commercial Security Gate and Fence', description: 'High-security gate and fence system with anti-climb fittings.' },
-  { title: 'Galvanized Fence Fittings Macro', description: 'Close-up of precision hot-dip galvanized fence fittings.' },
-  { title: 'Galvanized Fence Hardware System', description: 'Complete galvanized hardware system for long-term durability.' },
-  { title: 'Industrial Fence Hardware Manufacturing', description: 'Factory-floor view of fence hardware production line.' },
-  { title: 'Industrial Security Fence Hardware', description: 'Heavy industrial security fence with malleable iron fittings.' },
-  { title: 'Installing Commercial Chain Link', description: 'On-site installation of commercial chain link fence system.' },
-  { title: 'Technician Inspecting Fence Hardware', description: 'Quality inspection of galvanized fence fittings before export.' },
-  { title: 'Warehouse Inventory of Fence Hardware', description: 'Warehouse stocked with container-ready fence hardware.' },
+  { title: 'Arrange Fence Fittings on Surface', description: 'Fence fittings arranged for product photography showcase.' },
+  { title: 'Chain-Link Fence Surrounding Complex', description: 'Chain-link fence installation surrounding commercial complex.' },
+  { title: 'Chain-Link Security Gate System', description: 'High-security chain-link gate system with heavy-duty fittings.' },
+  { title: 'Commercial Chain Link Fence Installation', description: 'Large-scale commercial chain-link fence deployment.' },
+  { title: 'Commercial Chain-Link Gate System', description: 'Commercial-grade chain-link gate with galvanized hardware.' },
+  { title: 'Create Hero Photograph for Website', description: 'Hero product photography for marketing collateral.' },
+  { title: 'Create Industrial Engineering', description: 'Industrial engineering fence hardware production.' },
+  { title: 'Creating Engineering Product Flange', description: 'Engineering product flange fabrication and assembly.' },
+  { title: 'Fence Fitting Installed on Fence', description: 'Fence fitting installed on commercial perimeter fence.' },
+  { title: 'Fence Fitting Installed on Fence Variant', description: 'Alternate view of fence fitting installation on site.' },
+  { title: 'Fence Fittings Product Photograph', description: 'Professional product photography of fence fittings range.' },
+  { title: 'Fence Hardware Product Photograph', description: 'Detailed product shot of fence hardware catalog items.' },
+  { title: 'Fence Hardware Quality Testing', description: 'Quality inspection and testing of fence hardware components.' },
+  { title: 'Galvanized Chain-Link Fence Installation', description: 'Hot-dip galvanized chain-link fence installed on site.' },
+  { title: 'Galvanized Fence Hardware', description: 'Complete range of galvanized fence hardware products.' },
+  { title: 'Galvanized Steel Fence Hardware', description: 'Galvanized steel fence hardware for heavy-duty applications.' },
+  { title: 'Galvanized Steel Fence Hardware Variant', description: 'Alternate view of galvanized steel fence hardware range.' },
+  { title: 'Photograph Fence Fittings', description: 'Studio photography of fence fittings product line.' },
+  { title: 'Powder-Coated Fence Hardware Inspection', description: 'Quality inspection of powder-coated fence hardware finish.' },
+  { title: 'Powder-Coated Fence Hardware', description: 'Powder-coated fence hardware for corrosion resistance.' },
 ];
 
 export const CaseStudySection: FC = () => {
