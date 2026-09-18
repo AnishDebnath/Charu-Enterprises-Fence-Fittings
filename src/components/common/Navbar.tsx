@@ -1,4 +1,4 @@
-import { useState, useEffect, type FC } from 'react';
+import { useState, useEffect, useRef, type FC } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import logo from '../../assets/logo.png';
@@ -11,6 +11,7 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
 
   const handleNavClick = (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', hash?: string) => {
     if (onNavigate) {
@@ -25,6 +26,31 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
+
+  // Close mobile menu on click outside and on Escape key
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const handleClickOutside = (event: MouseEvent | TouchEvent | PointerEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('pointerdown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -75,7 +101,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
       }`}
     >
       {/* Outer Flex Wrapper for Centered Shrinking */}
-      <div className="w-full flex flex-col items-center px-2 sm:px-4 md:px-6 pointer-events-auto">
+      <div ref={navRef} className="w-full flex flex-col items-center px-2 sm:px-4 md:px-6 pointer-events-auto">
         {/* Transparent Glassmorphism Navbar Container */}
         <div
           id="glass-navbar"

@@ -260,12 +260,15 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           {/* Bottom Bar Divider & Copyright */}
-          <div className="border-t border-white/15 pt-5 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-neutral-300 font-medium">
-            <p className="hover:text-white transition-colors">© 2026 Charu Enterprises - India (Mfg Since 1969). All Rights Reserved.</p>
-            <div className="flex items-center gap-4 sm:gap-6">
+          <div className="border-t border-white/15 pt-5 sm:pt-6 flex flex-col items-center justify-center text-center gap-2.5 text-xs sm:text-sm text-neutral-300 font-medium">
+            <p className="hover:text-white transition-colors text-center">
+              © 2026 Charu Enterprises - India (Mfg Since 1969). All Rights Reserved.
+            </p>
+            <div className="flex items-center justify-center gap-3 sm:gap-5 text-neutral-400 text-[11px] sm:text-xs">
               <a href="#" className="hover:text-[#3B82F6] transition-colors duration-200">
                 Privacy Policy
               </a>
+              <span className="text-white/20">•</span>
               <a href="#" className="hover:text-[#3B82F6] transition-colors duration-200">
                 Terms &amp; Conditions
               </a>

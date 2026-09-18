@@ -125,7 +125,7 @@ export const ProductCarousel: FC<OtherProductsProps> = ({ onNavigate, currentPro
           <div
             ref={scrollContainerRef}
             onScroll={handleScroll}
-            className="flex gap-4 sm:gap-5 lg:gap-6 overflow-x-auto scroll-smooth py-3 no-scrollbar px-1"
+            className="flex gap-3 sm:gap-4 md:gap-5 lg:gap-6 overflow-x-auto scroll-smooth py-3 no-scrollbar px-1"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -145,10 +145,10 @@ export const ProductCarousel: FC<OtherProductsProps> = ({ onNavigate, currentPro
                     e.preventDefault();
                     handleCardClick(product);
                   }}
-                  className="group bg-white rounded-[22px] sm:rounded-[24px] p-2.5 sm:p-3 border border-slate-200/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_24px_rgba(10,21,50,0.1)] transition-all duration-300 flex flex-col justify-between cursor-pointer select-none relative hover:-translate-y-1 w-[260px] sm:w-[280px] md:w-[300px] shrink-0"
+                  className="group bg-white rounded-xl sm:rounded-[22px] lg:rounded-[24px] p-2 sm:p-3 border border-slate-200/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_24px_rgba(10,21,50,0.1)] transition-all duration-300 flex flex-col justify-between cursor-pointer select-none relative hover:-translate-y-1 w-[calc(50%-6px)] sm:w-[calc(50%-8px)] md:w-[280px] lg:w-[300px] shrink-0 min-w-[145px]"
                 >
                   {/* Clean 1:1 Aspect Ratio Image Container */}
-                  <div className="relative w-full aspect-square bg-[#f1f4f8] rounded-[16px] sm:rounded-[18px] overflow-hidden border border-slate-100">
+                  <div className="relative w-full aspect-square bg-[#f1f4f8] rounded-lg sm:rounded-[16px] lg:rounded-[18px] overflow-hidden border border-slate-100">
                     <img
                       src={imgSrc}
                       alt={product.name}
@@ -158,25 +158,25 @@ export const ProductCarousel: FC<OtherProductsProps> = ({ onNavigate, currentPro
                   </div>
 
                   {/* Product Details Section matching exact product card design */}
-                  <div className="pt-2.5 px-0.5 flex flex-col flex-1 justify-between">
+                  <div className="pt-2 sm:pt-2.5 px-0.5 flex flex-col flex-1 justify-between">
                     <div>
                       {/* Category / Item # Label */}
                       <div className="flex items-center justify-between gap-1 mb-0.5">
-                        <span className="text-[11px] font-bold text-[#2563EB] tracking-wider uppercase truncate">
+                        <span className="text-[10px] sm:text-[11px] font-bold text-[#2563EB] tracking-wider uppercase truncate">
                           {product.category}
                         </span>
-                        <span className="text-[11px] font-semibold text-slate-400 shrink-0">
+                        <span className="text-[10px] sm:text-[11px] font-semibold text-slate-400 shrink-0">
                           #{product.itemNumber}
                         </span>
                       </div>
 
                       {/* Product Name Title */}
-                      <h3 className="text-sm sm:text-[15px] font-bold text-[#0a1532] leading-snug line-clamp-1 group-hover:text-[#2563EB] transition-colors mb-1">
+                      <h3 className="text-xs sm:text-sm md:text-[15px] font-bold text-[#0a1532] leading-snug line-clamp-1 group-hover:text-[#2563EB] transition-colors mb-0.5 sm:mb-1">
                         {product.name}
                       </h3>
 
                       {/* Number of Sizes Available */}
-                      <p className="text-xs sm:text-sm font-semibold text-slate-600 line-clamp-1 mb-3">
+                      <p className="text-[11px] sm:text-xs md:text-sm font-semibold text-slate-600 line-clamp-1 mb-2 sm:mb-3">
                         {product.variants && product.variants.length > 0
                           ? `${product.variants.length} ${product.variants.length === 1 ? 'Size' : 'Sizes'} Available`
                           : '1 Standard Size'}
@@ -191,11 +191,11 @@ export const ProductCarousel: FC<OtherProductsProps> = ({ onNavigate, currentPro
                         e.stopPropagation();
                         handleCardClick(product);
                       }}
-                      className="group/btn w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-4 pr-1.5 py-2 rounded-full flex items-center justify-between text-xs sm:text-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98] cursor-pointer"
+                      className="group/btn w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-2.5 sm:pl-4 pr-1.5 py-1.5 sm:py-2 rounded-full flex items-center justify-between gap-1 text-[11px] sm:text-xs md:text-sm transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.98] cursor-pointer whitespace-nowrap"
                     >
-                      <span className="transition-colors">View Details</span>
-                      <div className="w-6 h-6 rounded-full bg-white group-hover/btn:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover/btn:text-white shadow-sm shrink-0 transition-colors">
-                        <ArrowRight className="w-3.5 h-3.5 stroke-[2.5] group-hover/btn:translate-x-0.5 transition-transform" />
+                      <span className="transition-colors truncate">View Details</span>
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white group-hover/btn:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover/btn:text-white shadow-sm shrink-0 transition-colors">
+                        <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[2.5] group-hover/btn:translate-x-0.5 transition-transform" />
                       </div>
                     </button>
                   </div>

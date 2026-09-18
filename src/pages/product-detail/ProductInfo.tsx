@@ -110,12 +110,12 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
           <span className="text-[#0a1532] font-semibold truncate max-w-[240px] sm:max-w-[360px]">{data.title}</span>
         </nav>
 
-        {/* Main Two-Column Layout */}
+        {/* Top Product Overview: Left & Right Columns on Desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-start">
           
-          {/* LEFT COLUMN: 1:1 Aspect Ratio Edge-to-Edge Image + Bottom Navigation Tabs & Details */}
+          {/* LEFT COLUMN (Desktop: Image + Tabs; Mobile: Image only) */}
           <div className="lg:col-span-6 xl:col-span-6 space-y-8">
-            {/* 1:1 Aspect Ratio Square Image - Edge-to-Edge with NO overlay tags */}
+            {/* 1:1 Aspect Ratio Square Image */}
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8FAFC] border border-slate-200 overflow-hidden shadow-xs">
               <img
                 src={data.image}
@@ -125,9 +125,8 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
               />
             </div>
 
-            {/* Bottom Tabs & Details (Directly under Left 1:1 Image) */}
-            <div className="pt-2 space-y-6">
-              
+            {/* Desktop Tabs (Directly under Image on lg+ screens only) */}
+            <div className="hidden lg:block pt-2 space-y-6">
               {/* Clean Underline Tabs Bar */}
               <div className="flex items-center gap-6 sm:gap-8 border-b border-slate-200 pb-0 text-sm sm:text-base">
                 <button
@@ -232,11 +231,11 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
                   </p>
                 </div>
               )}
-
             </div>
+
           </div>
 
-          {/* RIGHT COLUMN: Follows the exact design from the screenshot */}
+          {/* DETAILS COLUMN: Title, Specs, Sizes, Matrix Table, CTA */}
           <div className="lg:col-span-6 xl:col-span-6 space-y-6">
             
             {/* Product Title & Subtitle */}
@@ -249,19 +248,26 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
               </p>
             </div>
 
-            {/* 3-Column Key Spec Header Row */}
-            <div className="grid grid-cols-3 gap-4 py-3.5 border-y border-slate-100">
+            {/* Key Spec Header: 2-1 Grid on Mobile (<lg), 3 Columns on Desktop (lg+) */}
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 py-3 sm:py-3.5 border-y border-slate-100">
               <div className="space-y-1">
                 <span className="text-xs text-slate-400 block font-normal">Product ID</span>
-                <span className="text-sm font-bold text-[#0a1532] block truncate">{data.itemNumber}</span>
+                <span className="text-xs sm:text-sm font-bold text-[#0a1532] block truncate">
+                  {data.itemNumber}
+                </span>
               </div>
               <div className="space-y-1">
                 <span className="text-xs text-slate-400 block font-normal">Category</span>
-                <span className="text-sm font-bold text-[#2563EB] block truncate">{data.category || 'Fittings & Arms'}</span>
+                <span className="text-xs sm:text-sm font-bold text-[#2563EB] block truncate">
+                  {data.category || 'Fittings & Arms'}
+                </span>
               </div>
-              <div className="space-y-1">
+              <div className="col-span-2 lg:col-span-1 space-y-1 pt-2 sm:pt-2.5 lg:pt-0 border-t border-slate-100/70 lg:border-t-0">
                 <span className="text-xs text-slate-400 block font-normal">Total Sizes</span>
-                <span className="text-sm font-bold text-[#059669] block truncate">{totalSizesCount} Standard Sizes</span>
+                <span className="text-xs sm:text-sm font-bold text-[#059669] block truncate">
+                  <span className="lg:hidden">{totalSizesCount} Standard Sizes Available</span>
+                  <span className="hidden lg:inline">{totalSizesCount} Standard Sizes</span>
+                </span>
               </div>
             </div>
 
@@ -274,7 +280,7 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
                     Available Sizes ({totalSizesCount} Options)
                   </h3>
                 </div>
-               </div>
+              </div>
 
               {/* Size Selectable Pills */}
               <div className="flex flex-wrap gap-2.5">
@@ -396,6 +402,119 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
 
           </div>
 
+        </div>
+
+        {/* MOBILE ONLY: Tabs Section appearing after details in 4-column fit */}
+        <div className="block lg:hidden mt-10 pt-6 border-t border-slate-200">
+          <div className="space-y-6">
+            
+            {/* Clean Underline Tabs Bar - 4 columns fitting perfectly on mobile */}
+            <div className="grid grid-cols-4 border-b border-slate-200 text-center w-full">
+              <button
+                type="button"
+                onClick={() => setActiveTab('description')}
+                className={`pb-2.5 text-xs sm:text-sm font-semibold transition-all relative cursor-pointer px-1 truncate ${
+                  activeTab === 'description'
+                    ? 'text-[#2563EB] border-b-2 border-[#2563EB]'
+                    : 'text-slate-500 hover:text-slate-800 border-b-2 border-transparent'
+                }`}
+              >
+                Description
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveTab('reviews')}
+                className={`pb-2.5 text-xs sm:text-sm font-semibold transition-all relative cursor-pointer px-1 truncate ${
+                  activeTab === 'reviews'
+                    ? 'text-[#2563EB] border-b-2 border-[#2563EB]'
+                    : 'text-slate-500 hover:text-slate-800 border-b-2 border-transparent'
+                }`}
+              >
+                Reviews
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveTab('company')}
+                className={`pb-2.5 text-xs sm:text-sm font-semibold transition-all relative cursor-pointer px-1 truncate ${
+                  activeTab === 'company'
+                    ? 'text-[#2563EB] border-b-2 border-[#2563EB]'
+                    : 'text-slate-500 hover:text-slate-800 border-b-2 border-transparent'
+                }`}
+              >
+                Company
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveTab('usage')}
+                className={`pb-2.5 text-xs sm:text-sm font-semibold transition-all relative cursor-pointer px-1 truncate ${
+                  activeTab === 'usage'
+                    ? 'text-[#2563EB] border-b-2 border-[#2563EB]'
+                    : 'text-slate-500 hover:text-slate-800 border-b-2 border-transparent'
+                }`}
+              >
+                <span className="inline sm:hidden">Usage</span>
+                <span className="hidden sm:inline">Usage guide</span>
+              </button>
+            </div>
+
+            {/* Tab 1: Description Content */}
+            {activeTab === 'description' && (
+              <div className="space-y-4 text-slate-600 text-xs sm:text-sm leading-relaxed">
+                <p>
+                  {data.description}
+                </p>
+                <p>
+                  Made from high-grade structural carbon steel in Kolkata. Every batch is tested for steel strength, ASTM A153 galvanizing thickness, and exact dimensions.
+                </p>
+              </div>
+            )}
+
+            {/* Tab 2: Reviews */}
+            {activeTab === 'reviews' && (
+              <div className="space-y-4 text-slate-600 text-xs sm:text-sm leading-relaxed">
+                <p>
+                  Trusted by distributors across North America, Europe, and Australia with a 99.4% quality approval rate.
+                </p>
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1.5">
+                  <div className="flex items-center gap-1 text-amber-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <p className="font-semibold text-xs text-slate-800">Reliable quality and on-time shipment</p>
+                  <p className="text-xs text-slate-500">Fence Distributor, USA</p>
+                </div>
+              </div>
+            )}
+
+            {/* Tab 3: Company */}
+            {activeTab === 'company' && (
+              <div className="space-y-3 text-slate-600 text-xs sm:text-sm leading-relaxed">
+                <p>
+                  Charu Enterprises is an ISO 9001:2015 certified manufacturer and exporter of fence fittings and security hardware in Kolkata, India.
+                </p>
+                <p>
+                  Equipped with power stamping presses and an in-house hot-dip galvanizing plant for dependable quality.
+                </p>
+              </div>
+            )}
+
+            {/* Tab 4: Usage guide */}
+            {activeTab === 'usage' && (
+              <div className="space-y-3 text-slate-600 text-xs sm:text-sm leading-relaxed">
+                <p>
+                  Place fitting over the post pipe. Fasten tightly using carriage bolts.
+                </p>
+                <p>
+                  Ensure uniform torque for strong, secure fence connections.
+                </p>
+              </div>
+            )}
+
+          </div>
         </div>
 
       </div>

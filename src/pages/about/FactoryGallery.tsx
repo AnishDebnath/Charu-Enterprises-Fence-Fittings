@@ -92,12 +92,12 @@ export const FactoryGallery: FC<GetToKnowUsProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* 4 Image Cards Grid: 1:1 ratio, outer upper / middle lower stagger */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mb-14 sm:mb-18 lg:mb-20 pt-1 lg:pt-2">
+        {/* 4 Image Cards Grid: 2x2 on mobile, 4-col on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-12 sm:mb-16 lg:mb-20 pt-1 lg:pt-2">
           {images.map((img, idx) => (
             <div
               key={idx}
-              className={`group relative rounded-2xl sm:rounded-3xl lg:rounded-[26px] overflow-hidden aspect-square w-full shadow-md hover:shadow-xl transition-all duration-500 border border-slate-200/80 bg-slate-100 ${
+              className={`group relative rounded-xl sm:rounded-2xl lg:rounded-[26px] overflow-hidden aspect-square w-full shadow-md hover:shadow-xl transition-all duration-500 border border-slate-200/80 bg-slate-100 ${
                 img.isUpper
                   ? 'lg:-translate-y-5 xl:-translate-y-7'
                   : 'lg:translate-y-5 xl:translate-y-7'
@@ -114,20 +114,20 @@ export const FactoryGallery: FC<GetToKnowUsProps> = ({ onNavigate }) => {
           ))}
         </div>
 
-        {/* Bottom 4-Column Stats Row with refined typographic weights */}
+        {/* Bottom 4-Column Stats Row with centered alignment */}
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 pt-2">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className={`flex flex-col justify-start ${
+                className={`flex flex-col items-center justify-center text-center ${
                   index !== 0 ? 'md:border-l md:border-blue-200/70 md:pl-8' : ''
                 }`}
               >
                 <span className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0a1532] tracking-tight mb-1.5 font-['Outfit',sans-serif]">
                   {stat.value}
                 </span>
-                <p className="text-sm sm:text-base text-slate-500 leading-snug font-normal max-w-[190px]">
+                <p className="text-sm sm:text-base text-slate-500 leading-snug font-normal max-w-[190px] text-center">
                   {stat.label}
                 </p>
               </div>

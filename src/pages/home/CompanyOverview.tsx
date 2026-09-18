@@ -168,14 +168,14 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col justify-start ${
+                  className={`flex flex-col items-center justify-center text-center ${
                     index !== 0 ? 'border-l border-blue-200/70 pl-6 xl:pl-8' : ''
                   }`}
                 >
                   <span className="text-3xl xl:text-[46px] font-extrabold text-[#0a1532] tracking-tight mb-1.5 font-['Outfit',sans-serif]">
                     {stat.value}
                   </span>
-                  <p className="text-sm xl:text-base text-slate-600 leading-snug font-medium max-w-[200px]">
+                  <p className="text-sm xl:text-base text-slate-600 leading-snug font-medium max-w-[200px] text-center">
                     {stat.label}
                   </p>
                 </div>
@@ -356,14 +356,14 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* Stats in 2x2 Grid Below Card on Mobile (not squeezed on card side) */}
-          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200/80">
+          {/* Stats in 2x2 Grid Below Card on Mobile (centered) */}
+          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200/80 text-center">
             {stats.map((stat, index) => (
-              <div key={index} className="flex flex-col justify-start">
+              <div key={index} className="flex flex-col items-center justify-center text-center">
                 <span className="text-2xl font-extrabold text-[#0a1532] tracking-tight mb-1 font-['Outfit',sans-serif]">
                   {stat.value}
                 </span>
-                <p className="text-xs text-slate-600 leading-snug font-medium">
+                <p className="text-xs text-slate-600 leading-snug font-medium text-center">
                   {stat.label}
                 </p>
               </div>

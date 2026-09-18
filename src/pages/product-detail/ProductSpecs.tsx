@@ -83,31 +83,36 @@ export const ProductSpecs: FC<ProductImprovementsProps> = ({
           </p>
         </div>
 
-        {/* Compact 6-Card Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-5">
+        {/* 2 in a row Grid on Mobile, 3 columns on Desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4 lg:gap-5">
           {items.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.number}
-                className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-blue-100 shadow-sm hover:shadow-md hover:border-[#3B82F6]/60 transition-all duration-200 flex items-start gap-3.5 group"
+                className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-5 border border-blue-100 shadow-sm hover:shadow-md hover:border-[#3B82F6]/60 transition-all duration-200 flex flex-col sm:flex-row items-start gap-2.5 sm:gap-3.5 group"
               >
-                {/* Compact Icon / Number Badge */}
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-50 text-[#3B82F6] group-hover:bg-[#3B82F6] group-hover:text-white transition-colors duration-200 flex items-center justify-center shrink-0 shadow-xs">
-                  <Icon className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
+                {/* Icon & Number Badge (Row on mobile, side by side on desktop) */}
+                <div className="flex items-center justify-between w-full sm:w-auto sm:justify-start">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-blue-50 text-[#3B82F6] group-hover:bg-[#3B82F6] group-hover:text-white transition-colors duration-200 flex items-center justify-center shrink-0 shadow-xs">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
+                  </div>
+                  <span className="sm:hidden text-[10px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">
+                    {item.number}
+                  </span>
                 </div>
 
                 {/* Content */}
-                <div className="space-y-1 flex-1 min-w-0">
+                <div className="space-y-1 flex-1 min-w-0 w-full">
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-sm sm:text-base font-bold text-[#0a1532] tracking-tight truncate group-hover:text-[#3B82F6] transition-colors">
+                    <h3 className="text-xs sm:text-base font-bold text-[#0a1532] tracking-tight line-clamp-2 sm:line-clamp-1 group-hover:text-[#3B82F6] transition-colors">
                       {item.title}
                     </h3>
-                    <span className="text-[11px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">
+                    <span className="hidden sm:inline-block text-[11px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded shrink-0">
                       {item.number}
                     </span>
                   </div>
-                  <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed font-normal">
+                  <p className="text-slate-600 text-[11px] sm:text-[13px] leading-relaxed font-normal line-clamp-3 sm:line-clamp-none">
                     {item.description}
                   </p>
                 </div>

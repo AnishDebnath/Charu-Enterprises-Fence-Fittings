@@ -31,7 +31,113 @@ export const ContactForm: FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-stretch">
           
-          {/* Left Column: Form Card with rounded border & inputs */}
+          {/* Left Column: Information & Showcase Image (Details Side) */}
+          <div className="lg:col-span-6 flex flex-col justify-between space-y-5 sm:space-y-6">
+            
+            {/* Header Section */}
+            <div className="space-y-2 sm:space-y-2.5">
+              {/* Eyebrow */}
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
+                <span className="text-[#3B82F6] text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                  Contact Information
+                </span>
+              </div>
+
+              {/* Heading */}
+              <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#0a1532] tracking-tight leading-[1.15]">
+                Charu Enterprises
+              </h2>
+
+              {/* Subtitle / Paragraph */}
+              <p className="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed font-normal">
+                Manufacturer and exporter of chain link fence fittings, post caps, brace bands, gate hardware, and custom sheet metal parts since 1969.
+              </p>
+            </div>
+
+            {/* Contact Details List */}
+            <div className="space-y-3.5 text-xs sm:text-sm lg:text-base text-slate-700">
+              {/* Registered Office */}
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Registered Office:</div>
+                  <div className="text-slate-600 text-xs sm:text-sm leading-relaxed">{COMPANY_INFO.addresses.office.full}</div>
+                </div>
+              </div>
+
+              {/* Works & Factory */}
+              <div className="flex items-start gap-3">
+                <Building2 className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Works &amp; Factory:</div>
+                  <div className="text-slate-600 text-xs sm:text-sm leading-relaxed">{COMPANY_INFO.addresses.factory.full}</div>
+                </div>
+              </div>
+
+              {/* Phone Contacts */}
+              <div className="flex items-start gap-3">
+                <Phone className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Direct Phone &amp; WhatsApp:</div>
+                  <div className="flex flex-wrap gap-x-4 gap-y-0.5 text-slate-600 text-xs sm:text-sm">
+                    <a href={`tel:${COMPANY_INFO.phones.indiaPrimary.replace(/\s+/g, '')}`} className="hover:text-[#3B82F6] transition-colors font-medium">
+                      🇮🇳 India: {COMPANY_INFO.phones.indiaPrimary}
+                    </a>
+                    <a href={`tel:${COMPANY_INFO.phones.usaPrimary.replace(/[^0-9+]/g, '')}`} className="hover:text-[#3B82F6] transition-colors font-medium">
+                      🇺🇸 USA Desk: {COMPANY_INFO.phones.usaPrimary}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-start gap-3">
+                <Mail className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Official Email:</div>
+                  <div className="flex flex-wrap gap-x-4 text-slate-600 text-xs sm:text-sm">
+                    <a
+                      href={`mailto:${COMPANY_INFO.emails.primary}`}
+                      className="hover:text-[#3B82F6] transition-colors font-medium"
+                    >
+                      {COMPANY_INFO.emails.primary}
+                    </a>
+                    <a
+                      href={`mailto:${COMPANY_INFO.emails.official}`}
+                      className="hover:text-[#3B82F6] transition-colors font-medium"
+                    >
+                      {COMPANY_INFO.emails.official}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Badges / Registration */}
+              <div className="flex items-center gap-2.5 pt-0.5">
+                <Globe2 className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0" />
+                <div className="text-[11px] sm:text-xs font-semibold text-slate-700">
+                  ISO 9001:2015 Certified • ASTM A153 Galvanizing • Port: Kolkata Sea
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Showcase Image */}
+            <div className="pt-1">
+              <div className="relative rounded-2xl sm:rounded-3xl lg:rounded-[24px] overflow-hidden aspect-[16/8.2] sm:aspect-[16/8] lg:aspect-[16/8] w-full shadow-md border border-slate-200/80 bg-slate-100 group">
+                <img
+                  src={contactUsImg}
+                  alt="Charu Enterprises precision manufacturing facility and container loading"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+              </div>
+            </div>
+
+          </div>
+
+          {/* Right Column: Form Card with rounded border & inputs */}
           <div className="lg:col-span-6 flex flex-col">
             <div className="bg-white rounded-2xl sm:rounded-3xl lg:rounded-[28px] border border-slate-200/90 p-6 sm:p-7 lg:p-8 xl:p-9 shadow-sm h-full flex flex-col justify-between">
               
@@ -195,112 +301,6 @@ export const ContactForm: FC = () => {
               )}
 
             </div>
-          </div>
-
-          {/* Right Column: Information & Showcase Image */}
-          <div className="lg:col-span-6 flex flex-col justify-between space-y-5 sm:space-y-6">
-            
-            {/* Header Section */}
-            <div className="space-y-2 sm:space-y-2.5">
-              {/* Eyebrow */}
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-                <span className="text-[#3B82F6] text-xs sm:text-sm font-semibold tracking-wide uppercase">
-                  Contact Information
-                </span>
-              </div>
-
-              {/* Heading */}
-              <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#0a1532] tracking-tight leading-[1.15]">
-                Charu Enterprises
-              </h2>
-
-              {/* Subtitle / Paragraph */}
-              <p className="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed font-normal">
-                Manufacturer and exporter of chain link fence fittings, post caps, brace bands, gate hardware, and custom sheet metal parts since 1969.
-              </p>
-            </div>
-
-            {/* Contact Details List */}
-            <div className="space-y-3.5 text-xs sm:text-sm lg:text-base text-slate-700">
-              {/* Registered Office */}
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Registered Office:</div>
-                  <div className="text-slate-600 text-xs sm:text-sm leading-relaxed">{COMPANY_INFO.addresses.office.full}</div>
-                </div>
-              </div>
-
-              {/* Works & Factory */}
-              <div className="flex items-start gap-3">
-                <Building2 className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Works &amp; Factory:</div>
-                  <div className="text-slate-600 text-xs sm:text-sm leading-relaxed">{COMPANY_INFO.addresses.factory.full}</div>
-                </div>
-              </div>
-
-              {/* Phone Contacts */}
-              <div className="flex items-start gap-3">
-                <Phone className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Direct Phone &amp; WhatsApp:</div>
-                  <div className="flex flex-wrap gap-x-4 gap-y-0.5 text-slate-600 text-xs sm:text-sm">
-                    <a href={`tel:${COMPANY_INFO.phones.indiaPrimary.replace(/\s+/g, '')}`} className="hover:text-[#3B82F6] transition-colors font-medium">
-                      🇮🇳 India: {COMPANY_INFO.phones.indiaPrimary}
-                    </a>
-                    <a href={`tel:${COMPANY_INFO.phones.usaPrimary.replace(/[^0-9+]/g, '')}`} className="hover:text-[#3B82F6] transition-colors font-medium">
-                      🇺🇸 USA Desk: {COMPANY_INFO.phones.usaPrimary}
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="flex items-start gap-3">
-                <Mail className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Official Email:</div>
-                  <div className="flex flex-wrap gap-x-4 text-slate-600 text-xs sm:text-sm">
-                    <a
-                      href={`mailto:${COMPANY_INFO.emails.primary}`}
-                      className="hover:text-[#3B82F6] transition-colors font-medium"
-                    >
-                      {COMPANY_INFO.emails.primary}
-                    </a>
-                    <a
-                      href={`mailto:${COMPANY_INFO.emails.official}`}
-                      className="hover:text-[#3B82F6] transition-colors font-medium"
-                    >
-                      {COMPANY_INFO.emails.official}
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Badges / Registration */}
-              <div className="flex items-center gap-2.5 pt-0.5">
-                <Globe2 className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0" />
-                <div className="text-[11px] sm:text-xs font-semibold text-slate-700">
-                  ISO 9001:2015 Certified • ASTM A153 Galvanizing • Port: Kolkata Sea
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Showcase Image */}
-            <div className="pt-1">
-              <div className="relative rounded-2xl sm:rounded-3xl lg:rounded-[24px] overflow-hidden aspect-[16/8.2] sm:aspect-[16/8] lg:aspect-[16/8] w-full shadow-md border border-slate-200/80 bg-slate-100 group">
-                <img
-                  src={contactUsImg}
-                  alt="Charu Enterprises precision manufacturing facility and container loading"
-                  loading="lazy"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
-              </div>
-            </div>
-
           </div>
 
         </div>
