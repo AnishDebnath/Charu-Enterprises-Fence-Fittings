@@ -151,7 +151,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                           : 'text-neutral-100 hover:text-white'
                       }`}
                     >
-                      CASE STUDY
+                      APPLICATIONS
                     </button>
                     <button
                       type="button"
@@ -195,7 +195,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                     onClick={() => handleNavClick('contact')}
                     className="group bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 pr-2 py-2 rounded-full flex items-center gap-2.5 text-sm transition-colors cursor-pointer shadow-lg font-['Outfit',sans-serif] whitespace-nowrap shrink-0"
                   >
-                    <span className="transition-colors">Request Quote</span>
+                    <span className="transition-colors">Get Quote</span>
                     <div className="w-6 h-6 rounded-full bg-white group-hover:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover:text-white shadow-sm shrink-0 transition-colors">
                       <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                     </div>
@@ -265,9 +265,9 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
               <div className="space-y-1">
                 {[
                   { id: 'home', label: 'Home' },
-                  { id: 'products', label: 'Products Catalog' },
+                  { id: 'products', label: 'Products' },
                   { id: 'about', label: 'About' },
-                  { id: 'case-study', label: 'Case Studies' },
+                  { id: 'case-study', label: 'Applications' },
                   { id: 'contact', label: 'Contact' },
                 ].map((item, idx) => {
                   const isActive = currentPage === item.id || (item.id === 'products' && currentPage === 'product-detail');
@@ -313,7 +313,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                   </div>
                   <div className="leading-tight">
                     <span className="text-[10px] font-bold text-blue-300 uppercase tracking-wider block">
-                      Wholesale Trade Desk
+                      Sales Desk
                     </span>
                     <span className="text-xs sm:text-sm font-bold text-white group-hover:text-blue-200 transition-colors tracking-tight block">
                       +91 98300 83777
@@ -336,7 +336,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                   }}
                   className="group w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 pr-2 py-2.5 rounded-full flex items-center justify-between text-sm transition-all cursor-pointer shadow-lg font-['Outfit',sans-serif]"
                 >
-                  <span className="transition-colors">Request Quote</span>
+                  <span className="transition-colors">Get Quote</span>
                   <div className="w-6 h-6 rounded-full bg-white group-hover:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover:text-white shadow-sm shrink-0 transition-colors">
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                   </div>

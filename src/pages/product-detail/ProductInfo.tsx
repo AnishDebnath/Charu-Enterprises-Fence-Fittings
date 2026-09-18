@@ -186,8 +186,7 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
                     {data.description}
                   </p>
                   <p>
-                    Manufactured from high-grade structural carbon steel at our Kolkata manufacturing facilities.
-                    Each batch undergoes multi-stage inspection including tensile load testing, hot-dip galvanizing coating thickness verification (ASTM A153), and dimensional precision checks.
+                    Made from high-grade structural carbon steel in Kolkata. Every batch is tested for steel strength, ASTM A153 galvanizing thickness, and exact dimensions.
                   </p>
                 </div>
               )}
@@ -196,7 +195,7 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
               {activeTab === 'reviews' && (
                 <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
                   <p>
-                    Verified global distributor ratings indicate a 99.4% dimensional compliance rate across 458 container shipments dispatched to North America, Europe, and Australia.
+                    Trusted by distributors across North America, Europe, and Australia with a 99.4% quality approval rate.
                   </p>
                   <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
                     <div className="flex items-center gap-1 text-amber-400">
@@ -204,8 +203,8 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
                         <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                       ))}
                     </div>
-                    <p className="font-semibold text-xs text-slate-800">Reliable batch galvanizing &amp; prompt delivery</p>
-                    <p className="text-xs text-slate-500">Wholesale Fence Supply Partner, Houston TX</p>
+                    <p className="font-semibold text-xs text-slate-800">Reliable quality and on-time shipment</p>
+                    <p className="text-xs text-slate-500">Fence Distributor, USA</p>
                   </div>
                 </div>
               )}
@@ -214,10 +213,10 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
               {activeTab === 'company' && (
                 <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
                   <p>
-                    Charu Enterprises is an ISO 9001:2015 certified manufacturer &amp; exporter of chain link fence hardware, pressed steel fittings, and industrial security components based in Kolkata, India.
+                    Charu Enterprises is an ISO 9001:2015 certified manufacturer and exporter of fence fittings and security hardware in Kolkata, India.
                   </p>
                   <p>
-                    Equipped with automated continuous power presses, progressive stamping tools, and an integrated hot-dip galvanizing plant ensuring complete quality traceability.
+                    Equipped with power stamping presses and an in-house hot-dip galvanizing plant for dependable quality.
                   </p>
                 </div>
               )}
@@ -226,10 +225,10 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
               {activeTab === 'usage' && (
                 <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
                   <p>
-                    Slide the barbed arm base securely over the top of the line post or terminal pipe. Secure the top rail through the center hole opening.
+                    Place fitting over the post pipe. Fasten tightly using carriage bolts.
                   </p>
                   <p>
-                    Thread 3 strands of barbed wire through the outer slots and crimp the retaining ears securely to prevent strand slippage under high tensile strain.
+                    Ensure uniform torque for strong, secure fence connections.
                   </p>
                 </div>
               )}
@@ -246,7 +245,7 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
                 {data.title}
               </h1>
               <p className="text-sm text-slate-500 leading-relaxed">
-                Precision cold-formed &amp; hot-dip galvanized fence hardware manufactured by Charu Enterprises, Kolkata.
+                Precision hot-dip galvanized fence hardware made by Charu Enterprises.
               </p>
             </div>
 

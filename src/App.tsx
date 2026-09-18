@@ -38,7 +38,7 @@ function pageFromPath(pathname: string): Page {
   if (path === '/about') return 'about';
   if (path === '/products') return 'products';
   if (/^\/products\/[^/]+\/?$/.test(path)) return 'product-detail';
-  if (path === '/case-study') return 'case-study';
+  if (path === '/applications' || path === '/case-study') return 'case-study';
   if (path === '/contact') return 'contact';
   return 'home';
 }
@@ -48,7 +48,7 @@ function pathFromPage(page: Page, product?: CatalogProduct | null): string {
     case 'about': return '/about';
     case 'products': return '/products';
     case 'product-detail': return product ? `/products/${productSlug(product)}` : '/products';
-    case 'case-study': return '/case-study';
+    case 'case-study': return '/applications';
     case 'contact': return '/contact';
     default: return '/';
   }

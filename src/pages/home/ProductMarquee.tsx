@@ -31,21 +31,20 @@ export const ProductMarquee: FC<ServicesGridProps> = ({ onNavigate }) => {
               </span>
             </div>
             <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-[40px] lg:text-[44px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-              Engineered Fence Fittings <br className="hidden sm:inline" />
-              &amp; Sheet Metal Fabrication.
+              Fittings &amp; Fabrication
             </h2>
           </div>
 
           {/* Right Column: Paragraph + Blue CTA Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-3.5 sm:space-y-4 pt-1">
             <p className="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed max-w-md font-medium">
-              We make and supply galvanized pressed steel, malleable iron, and aluminum fence hardware, and can manufacture any sheet metal fabrication item as per your required product specifications.
+              Galvanized steel, malleable iron, and custom sheet metal fabrication made to your exact specifications.
             </p>
 
             <button
               type="button"
               onClick={() => onNavigate?.('products')}
-              className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 sm:pl-6 pr-2.5 py-2.5 sm:py-3 rounded-full flex items-center gap-3 text-xs sm:text-sm md:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+              className="group/btn w-fit bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 sm:pl-6 pr-2.5 py-2.5 sm:py-3 rounded-full inline-flex items-center gap-3 text-xs sm:text-sm md:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer whitespace-nowrap"
             >
               <span className="transition-colors">View All Products</span>
               <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">

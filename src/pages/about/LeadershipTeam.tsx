@@ -40,12 +40,12 @@ export const LeadershipTeam: FC = () => {
 
           {/* Headline */}
           <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#0a1532] leading-[1.2] tracking-tight mb-3">
-            Meet the Founders &amp; Executive Leadership
+            Company Leadership
           </h2>
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal max-w-2xl">
-            Over 55 years of manufacturing leadership, dedicated community service, and trusted export excellence.
+            Over 55 years of manufacturing leadership, quality focus, and global export excellence.
           </p>
         </div>
 

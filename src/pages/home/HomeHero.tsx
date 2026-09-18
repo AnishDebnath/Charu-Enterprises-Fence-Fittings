@@ -61,19 +61,18 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
               <div className="flex items-start gap-2">
                 <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block shrink-0 self-start mt-0.5 sm:mt-1" />
                 <span className="text-[#60A5FA] text-xs sm:text-sm md:text-base font-semibold tracking-wide uppercase">
-                  Mfg Since 1969 • Celebrating 55+ Years of Growth
+                  Mfg. Since 1969 • 55+ Years
                 </span>
               </div>
 
               {/* Headline */}
               <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-[50px] lg:text-[54px] xl:text-[62px] font-bold tracking-tight text-[#FFFFFF] leading-[1.12]">
-                Global Leader in <br />
-                Fence Fittings &amp; Hardware
+                Quality Fence Fittings &amp; Hardware
               </h1>
 
               {/* Subtitle */}
               <p className="text-neutral-100 text-sm sm:text-base md:text-base lg:text-lg max-w-xl md:max-w-2xl leading-relaxed font-normal">
-                We manufacture and export high-quality pressed steel, malleable iron, and aluminum fence fittings. Over 150 million pieces exported to 4 continents with zero defects and direct warehouse delivery.
+                We make and export pressed steel, malleable iron, and aluminum fence fittings. Over 150 million pieces exported worldwide.
               </p>
 
               {/* Action Buttons Row */}
@@ -81,10 +80,10 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
                 {/* Explore Catalog Pill */}
                 <button
                   type="button"
-                  onClick={() => onNavigate?.('case-study')}
-                  className="group bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 sm:pl-6 pr-2.5 py-2.5 sm:py-3 md:py-3.5 rounded-full flex items-center gap-3 text-xs sm:text-sm md:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+                  onClick={() => onNavigate?.('products')}
+                  className="group w-fit bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 sm:pl-6 pr-2.5 py-2.5 sm:py-3 md:py-3.5 rounded-full inline-flex items-center gap-3 text-xs sm:text-sm md:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer whitespace-nowrap"
                 >
-                  <span className="transition-colors">Explore Catalog A25</span>
+                  <span className="transition-colors">View Catalog</span>
                   <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white group-hover:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover:text-white shadow-sm shrink-0 transition-colors">
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                   </div>
@@ -93,12 +92,12 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
                 {/* Call Now Pill */}
                 <a
                   href="tel:+919830083777"
-                  className="group bg-transparent hover:bg-[#DBEAFE] text-white hover:text-black font-semibold pl-3 sm:pl-3.5 pr-5 sm:pr-6 py-2.5 sm:py-3 md:py-3.5 rounded-full flex items-center gap-2.5 border border-white hover:border-[#DBEAFE] backdrop-blur-sm text-xs sm:text-sm md:text-base transition-all transform hover:scale-105 shadow-lg"
+                  className="group w-fit bg-transparent hover:bg-[#DBEAFE] text-white hover:text-black font-semibold pl-3 sm:pl-3.5 pr-5 sm:pr-6 py-2.5 sm:py-3 md:py-3.5 rounded-full inline-flex items-center gap-2.5 border border-white hover:border-[#DBEAFE] backdrop-blur-sm text-xs sm:text-sm md:text-base transition-all transform hover:scale-105 shadow-lg whitespace-nowrap"
                 >
                   <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white group-hover:bg-[#22C55E] text-[#0a1532] group-hover:text-white flex items-center justify-center shadow-sm shrink-0 transition-colors">
                     <Phone className="w-3.5 h-3.5 fill-current" />
                   </div>
-                  <span className="transition-colors">Call: +91 9830083777</span>
+                  <span className="transition-colors">Call Now</span>
                 </a>
               </div>
 
@@ -118,7 +117,7 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
                     ))}
                   </div>
                   <p className="text-xs sm:text-sm md:text-sm text-[#FFFFFF] font-semibold mt-0.5">
-                    100% Satisfaction • 150M+ Pieces Exported Globally
+                    100% Quality • 150M+ Exported
                   </p>
                 </div>
               </div>

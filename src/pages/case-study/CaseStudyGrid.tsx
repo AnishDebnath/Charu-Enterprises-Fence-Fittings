@@ -27,26 +27,26 @@ const caseStudyFiles = [
 const supplyImageList = caseStudyFiles.map((f) => getCloudinaryUrl(`${f}.jpg`));
 
 const caseStudies = [
-  { title: 'Arrange Fence Fittings on Surface', description: 'Fence fittings arranged for product photography showcase.' },
-  { title: 'Chain-Link Fence Surrounding Complex', description: 'Chain-link fence installation surrounding commercial complex.' },
-  { title: 'Chain-Link Security Gate System', description: 'High-security chain-link gate system with heavy-duty fittings.' },
-  { title: 'Commercial Chain Link Fence Installation', description: 'Large-scale commercial chain-link fence deployment.' },
-  { title: 'Commercial Chain-Link Gate System', description: 'Commercial-grade chain-link gate with galvanized hardware.' },
-  { title: 'Create Hero Photograph for Website', description: 'Hero product photography for marketing collateral.' },
-  { title: 'Create Industrial Engineering', description: 'Industrial engineering fence hardware production.' },
-  { title: 'Creating Engineering Product Flange', description: 'Engineering product flange fabrication and assembly.' },
-  { title: 'Fence Fitting Installed on Fence', description: 'Fence fitting installed on commercial perimeter fence.' },
-  { title: 'Fence Fitting Installed on Fence Variant', description: 'Alternate view of fence fitting installation on site.' },
-  { title: 'Fence Fittings Product Photograph', description: 'Professional product photography of fence fittings range.' },
-  { title: 'Fence Hardware Product Photograph', description: 'Detailed product shot of fence hardware catalog items.' },
-  { title: 'Fence Hardware Quality Testing', description: 'Quality inspection and testing of fence hardware components.' },
-  { title: 'Galvanized Chain-Link Fence Installation', description: 'Hot-dip galvanized chain-link fence installed on site.' },
-  { title: 'Galvanized Fence Hardware', description: 'Complete range of galvanized fence hardware products.' },
-  { title: 'Galvanized Steel Fence Hardware', description: 'Galvanized steel fence hardware for heavy-duty applications.' },
-  { title: 'Galvanized Steel Fence Hardware Variant', description: 'Alternate view of galvanized steel fence hardware range.' },
-  { title: 'Photograph Fence Fittings', description: 'Studio photography of fence fittings product line.' },
-  { title: 'Powder-Coated Fence Hardware Inspection', description: 'Quality inspection of powder-coated fence hardware finish.' },
-  { title: 'Powder-Coated Fence Hardware', description: 'Powder-coated fence hardware for corrosion resistance.' },
+  { title: 'Commercial Chain-Link Fencing', description: 'Pressed steel fittings, tension bands, and post caps for commercial perimeter enclosures.' },
+  { title: 'Industrial Security Perimeters', description: 'Heavy-gauge galvanized fittings and 3-wire barbed arms for industrial facility security.' },
+  { title: 'High-Security Gate Systems', description: 'Heavy-duty industrial gate hinges, drop rods, and locking latches for high-traffic access.' },
+  { title: 'Commercial Gate Hardware', description: 'Pressed steel and malleable iron hinges engineered for commercial gate frames.' },
+  { title: 'Highways & Infrastructure Barriers', description: 'High-durability galvanized steel fittings meeting international ASTM specifications.' },
+  { title: 'Export-Grade Fence Hardware', description: 'Certified pressed steel fence components manufactured for international distributors.' },
+  { title: 'Industrial Facility Security', description: 'Custom formed brackets and heavy steel fittings for industrial perimeter protection.' },
+  { title: 'Custom Sheet Metal Fabrications', description: 'Precision stamped steel flanges and custom hardware manufactured to client drawings.' },
+  { title: 'Substation & Utility Enclosures', description: 'Galvanized tension bands, brace bands, and rail ends on utility perimeters.' },
+  { title: 'Heavy Cantilever & Slide Gates', description: 'Steel cantilever rollers, guide brackets, and gate hardware for automated industrial gates.' },
+  { title: 'Complete Fence Hardware Range', description: 'Comprehensive line of galvanized and powder-coated fittings for fence wholesalers.' },
+  { title: 'Galvanized Post Caps & Fittings', description: 'Hot-dip galvanized post caps, loop caps, and rail ends for chain-link fencing.' },
+  { title: 'Quality Tested Fence Hardware', description: 'Rigorous factory testing of galvanizing thickness and tensile strength.' },
+  { title: 'Barbed Wire Anti-Intrusion Systems', description: 'Heavy-duty 45-degree and vertical barbed wire arms on high-security fence lines.' },
+  { title: 'Corrosion-Resistant Hardware', description: 'Corrosion-resistant galvanized dome caps, eye tops, and sleeve connectors.' },
+  { title: 'High-Traffic Gate Assemblies', description: 'Heavy-gauge steel hardware manufactured for continuous-operation gate systems.' },
+  { title: 'OEM & Custom Metal Components', description: 'Precision stamped and formed metal components manufactured per client specifications.' },
+  { title: 'Standard Chain-Link Fittings', description: 'Full selection of hot-dip galvanized fence fittings and gate hardware.' },
+  { title: 'Architectural Powder-Coated Systems', description: 'Black and green powder-coated fittings for commercial and architectural fencing.' },
+  { title: 'Coastal & Extreme Climate Hardware', description: 'Durable polyester powder coating over heavy zinc galvanizing for high-salinity environments.' },
 ];
 
 export const CaseStudyGrid: FC = () => {
@@ -59,23 +59,23 @@ export const CaseStudyGrid: FC = () => {
           <div className="flex items-center gap-2 mb-2.5">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
             <span className="text-[#3B82F6] text-xs sm:text-sm font-bold tracking-tight uppercase">
-              Supply In Action
+              Applications &amp; Uses
             </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.15] tracking-tight mb-3 sm:mb-4">
-            Our Supply Case Studies.
+            Common Fence &amp; Gate Uses
           </h2>
 
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-2xl">
-            See how our hot-dip galvanized and powder-coated fence fittings perform in real commercial and industrial projects worldwide.
+            See how our factory-made fence fittings, post caps, hinges, and bands are used in real fencing and gate projects.
           </p>
         </div>
 
         {/* 3-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
           {supplyImageList.map((imgSrc, index) => {
-            const study = caseStudies[index] || { title: `Case Study ${index + 1}`, description: 'Supply in action showcase.' };
+            const study = caseStudies[index] || { title: `Application ${index + 1}`, description: 'Applications in action showcase.' };
             return (
               <div
                 key={index}

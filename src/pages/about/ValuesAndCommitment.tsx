@@ -48,7 +48,7 @@ export const ValuesAndCommitment: FC<OurFoundationProps> = ({ onNavigate }) => {
 
             {/* Headline */}
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.2] tracking-tight">
-              Built on Precision Metallurgy, Quality, and Global Trust
+              Quality, Precision &amp; Trust
             </h2>
 
             {/* Interactive Tabs Header */}
@@ -101,10 +101,10 @@ export const ValuesAndCommitment: FC<OurFoundationProps> = ({ onNavigate }) => {
                 }`}
               >
                 <p>
-                  We make strong, durable fence parts that withstand heavy wind, high loads, and rough weather. Every part is carefully checked from raw steel coils to hot-dip galvanizing.
+                  We make strong, durable fence fittings built to last in any weather. Every batch is checked from raw steel to hot-dip galvanizing.
                 </p>
                 <p>
-                  We build lasting relationships with fence distributors through fair factory prices, custom packaging, and continuous investment in our in-house tool room.
+                  We partner with global fence distributors with direct factory prices and dependable on-time container shipping.
                 </p>
               </div>
 
@@ -117,10 +117,10 @@ export const ValuesAndCommitment: FC<OurFoundationProps> = ({ onNavigate }) => {
                 }`}
               >
                 <p>
-                  We stand behind every brace band, gate hinge, post cap, and tension bar we make. Our ISO 9001:2015 certified team tests steel strength, dimensions, and zinc thickness.
+                  We guarantee zero defects across all fittings. Our ISO 9001 certified lab tests steel strength, dimensions, and zinc coating.
                 </p>
                 <p>
-                  Our international export team works closely with importers to pack full containers securely, provide fast shipping, and clear customs smoothly.
+                  Our export team handles full container loading, export paperwork, and prompt global delivery.
                 </p>
               </div>
             </div>
@@ -132,7 +132,7 @@ export const ValuesAndCommitment: FC<OurFoundationProps> = ({ onNavigate }) => {
                 onClick={handleServicesClick}
                 className="group/link inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-[#0a1532] hover:text-[#2563EB] border-b-2 border-[#0a1532] hover:border-[#2563EB] pb-0.5 transition-all cursor-pointer"
               >
-                <span>Explore Catalog &amp; Products</span>
+                <span>View Product Catalog</span>
                 <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </button>
             </div>

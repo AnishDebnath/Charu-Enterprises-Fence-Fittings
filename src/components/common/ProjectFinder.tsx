@@ -14,29 +14,26 @@ export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {
     {
       id: 'heritage',
       image: yearBadge,
-      tag: 'Generational Trust',
-      title: '55+ Years of Industry Trust',
-      description:
-        'Over 55 years of manufacturing experience, high-precision tooling, and trusted global supply partnerships.',
-      alt: '55+ Years of Trust and Manufacturing Heritage Badge',
+      tag: '55+ Years',
+      title: 'Industry Experience',
+      description: 'Over 55 years of precision manufacturing and trusted supply.',
+      alt: '55+ Years Experience Badge',
     },
     {
       id: 'iso',
       image: isoBadge,
-      tag: 'Global Standards',
-      title: 'ISO 9001:2015 Certified',
-      description:
-        'Strict quality system ensuring strong steel, ASTM A153 hot-dip galvanizing, and full batch traceability.',
-      alt: 'ISO 9001:2015 Quality Management System Certification Badge',
+      tag: 'Certified',
+      title: 'ISO 9001:2015',
+      description: 'Strict quality control, ASTM A153 coating, and full traceability.',
+      alt: 'ISO 9001:2015 Badge',
     },
     {
       id: 'zero-defect',
       image: zeroDefectBadge,
-      tag: '100% Inspected',
-      title: 'Zero-Defect Quality Assurance',
-      description:
-        'Multi-stage inspections including thread gauging, tensile stress testing, and official Mill Test Certificates.',
-      alt: '100% Zero-Defect Quality Assurance Guarantee Badge',
+      tag: '100% Tested',
+      title: 'Zero-Defect Quality',
+      description: 'Thorough checks for strength, dimensions, and finish.',
+      alt: 'Zero Defect Quality Badge',
     },
   ];
 
@@ -64,14 +61,13 @@ export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {
           <div className="inline-flex items-center gap-2 justify-center">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block shrink-0" />
             <span className="text-[#60A5FA] text-xs sm:text-sm md:text-base font-bold tracking-tight uppercase">
-              Procurement &amp; Quality Credentials
+              Quality Credentials
             </span>
           </div>
 
           {/* Headline */}
           <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-[32px] lg:text-[34px] font-bold text-white tracking-tight leading-[1.2]">
-            Certified Quality &amp; Reliable Supply <br className="hidden sm:inline" />
-            for Global Fence Distributors.
+            Certified Quality &amp; Reliable Supply
           </h2>
         </div>
 

@@ -19,35 +19,35 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
   const steps = [
     {
       id: '01',
-      title: 'Precision Packaging & Palletization',
+      title: 'Export Packaging',
       description:
-        'Anti-rust packaging, strong 5-ply export boxes, and heat-treated wooden pallets with heavy steel strapping.',
+        'Anti-rust packaging, 5-ply cartons, and heat-treated wooden pallets with heavy steel strapping.',
       image: shipImg1,
-      alt: 'Export-grade packaging and wooden palletization of fence fittings',
+      alt: 'Export packaging and pallets',
     },
     {
       id: '02',
-      title: 'Pre-Shipment Inspection & QA Certification',
+      title: 'Quality Inspection',
       description:
-        'Every batch is tested for steel strength, galvanizing thickness (ASTM A153), and screw fit with Mill Test Certificates.',
+        'Every batch is tested for steel strength, ASTM A153 galvanizing thickness, and exact fit.',
       image: shipImg2,
-      alt: 'Pre-shipment quality verification and dimensional inspection',
+      alt: 'Quality inspection',
     },
     {
       id: '03',
-      title: 'Container Stuffing & Port Customs Clearance',
+      title: 'Container Loading',
       description:
-        'Careful factory container loading, quick transport to Kolkata and Haldia ports, and full export customs clearance.',
+        'Secure container stuffing at factory, port dispatch, and complete export customs clearance.',
       image: shipImg3,
-      alt: 'Container freight stuffing and maritime port dispatch',
+      alt: 'Container loading',
     },
     {
       id: '04',
-      title: 'Ocean Freight & Doorstep DDP Delivery',
+      title: 'Ocean Shipping & Delivery',
       description:
-        'Fast ocean shipping to USA, Canada, Europe, and Australia with live tracking, customs clearance, and direct delivery.',
+        'Direct ocean freight to USA, Canada, Europe, and Australia with doorstep delivery options.',
       image: shipImg4,
-      alt: 'Global maritime container shipping and doorstep delivery',
+      alt: 'Ocean freight delivery',
     },
   ];
 
@@ -70,27 +70,26 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
               <span className="text-[#3B82F6] text-sm sm:text-base font-bold tracking-tight uppercase">
-                Global Shipping Process
+                Shipping Process
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-              Seamless 4-Step Global Shipment <br className="hidden sm:inline" />
-              &amp; Doorstep Export Logistics.
+              4-Step Global Delivery
             </h2>
           </div>
 
           {/* Right Column: Paragraph + CTA Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-5 pt-1 lg:pt-2">
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-              Backed by 55+ years of export experience, Charu Enterprises ships full containers worldwide with secure packaging, duty-paid delivery, and 100% on-time logistics.
+              Over 55 years of exporting full container loads worldwide with verified quality and on-time delivery.
             </p>
 
             <button
               type="button"
               onClick={() => onNavigate?.('contact')}
-              className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+              className="group/btn w-fit bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full inline-flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer whitespace-nowrap"
             >
-              <span className="transition-colors">Request Shipping Quote</span>
+              <span className="transition-colors">Get Shipping Quote</span>
               <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
                 <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
               </div>

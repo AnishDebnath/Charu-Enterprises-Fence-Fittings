@@ -57,7 +57,7 @@ export const ProductGrid: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-2xl">
-            Hot-dip galvanized pressed steel, malleable iron castings, and sheet metal fabrication items manufactured as per product specifications for fence distributors worldwide.
+            Galvanized pressed steel, malleable iron, and custom sheet metal fence fittings for worldwide distribution.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export const ProductGrid: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by fitting name, item #, or material (e.g. Barbed Arm, 14 GA, Malleable)..."
+              placeholder="Search by name, item #, or material..."
               className="w-full pl-11 pr-4 py-3.5 bg-white rounded-full border border-slate-200/90 text-slate-800 placeholder-slate-400 text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2563EB]/40 focus:border-[#2563EB] transition-all"
             />
             {searchQuery && (
@@ -197,11 +197,11 @@ export const ProductGrid: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
                         e.stopPropagation();
                         onNavigate?.('product-detail', product);
                       }}
-                      className="group/btn w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-4 pr-1.5 py-2 rounded-full flex items-center justify-between text-xs sm:text-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98] cursor-pointer"
+                      className="group/btn w-fit bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-4 pr-1.5 py-1.5 sm:py-2 rounded-full inline-flex items-center gap-2.5 text-xs sm:text-sm transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98] cursor-pointer whitespace-nowrap"
                     >
                       <span className="transition-colors">View Details</span>
-                      <div className="w-6 h-6 rounded-full bg-white group-hover/btn:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover/btn:text-white shadow-sm shrink-0 transition-colors">
-                        <ArrowRight className="w-3.5 h-3.5 stroke-[2.5] group-hover/btn:translate-x-0.5 transition-transform" />
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white group-hover/btn:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover/btn:text-white shadow-sm shrink-0 transition-colors">
+                        <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[2.5] group-hover/btn:translate-x-0.5 transition-transform" />
                       </div>
                     </button>
                   </div>

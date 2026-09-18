@@ -39,10 +39,10 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
             <div className="lg:col-span-4 space-y-4 sm:space-y-6">
               <div className="space-y-2">
                 <span className="inline-block px-3 py-1 rounded-full bg-[#3B82F6]/20 border border-[#3B82F6]/40 text-[#60A5FA] text-[11px] sm:text-xs font-bold uppercase tracking-wider">
-                  Mfg. Since 1969 • 55+ Years of Growth
+                  Mfg. Since 1969 • 55+ Years
                 </span>
                 <p className="text-neutral-200 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm font-normal">
-                  Global leader in pressed steel, malleable iron, and aluminum fence fittings. 150 Million+ pieces exported across 4 continents. ISO 9001:2015 certified &amp; Govt. Export Excellence awardee.
+                  Manufacturer and global exporter of certified pressed steel and iron fence fittings. Over 150M+ pieces exported.
                 </p>
               </div>
 
@@ -109,7 +109,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                     onClick={() => handleNav('products')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
                   >
-                    Product Range
+                    Products
                   </button>
                 </li>
                 <li>
@@ -118,7 +118,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                     onClick={() => handleNav('case-study')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
                   >
-                    Catalog A25
+                    Applications
                   </button>
                 </li>
                 <li>

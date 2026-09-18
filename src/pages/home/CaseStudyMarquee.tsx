@@ -14,12 +14,12 @@ const caseStudyFiles = [
 const supplyImageList = caseStudyFiles.map((f) => getCloudinaryUrl(`${f}.jpg`));
 
 const caseStudyCards = [
-  { title: 'Commercial Chain Link Gate Hardware' },
-  { title: 'Commercial Fence Gate and Hardware' },
-  { title: 'Galvanized Fence Fittings Macro' },
-  { title: 'Industrial Fence Hardware Manufacturing' },
-  { title: 'Installing Commercial Chain Link' },
-  { title: 'Warehouse Inventory of Fence Hardware' },
+  { title: 'Commercial Chain-Link Fencing' },
+  { title: 'Industrial Facility Perimeters' },
+  { title: 'Heavy-Duty Gate Systems' },
+  { title: 'High-Security & Utility Facilities' },
+  { title: 'Highway & Infrastructure Barriers' },
+  { title: 'Logistics & Warehouse Enclosures' },
 ];
 
 interface RecentProjectsProps {
@@ -42,27 +42,26 @@ export const CaseStudyMarquee: FC<RecentProjectsProps> = ({ onNavigate }) => {
             <div className="flex items-start gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block shrink-0 self-start mt-0.5 sm:mt-1" />
               <span className="text-[#3B82F6] text-xs sm:text-sm md:text-base font-bold tracking-tight uppercase">
-                Supply in Action
+                Applications &amp; Uses
               </span>
             </div>
             <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-[40px] lg:text-[44px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-              High-Demand Fence Hardware <br className="hidden sm:inline" />
-              &amp; Catalog A25 Highlights.
+              Where Our Fittings Are Used
             </h2>
           </div>
 
           {/* Right Column: Narrative Subtitle + CTA Button */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-3.5 sm:space-y-5 pt-1 lg:pt-2">
             <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed font-medium">
-              See our most popular fence fittings, trusted by commercial fence suppliers and distributors across 4 continents.
+              Our manufactured steel fittings, post caps, and gate parts are used on commercial fences, factory gates, and security perimeters around the world.
             </p>
 
             <button
               type="button"
               onClick={() => onNavigate?.('case-study')}
-              className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 sm:pl-6 pr-2.5 py-2.5 sm:py-3 rounded-full flex items-center gap-3 text-xs sm:text-sm md:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+              className="group/btn w-fit bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 sm:pl-6 pr-2.5 py-2.5 sm:py-3 rounded-full inline-flex items-center gap-3 text-xs sm:text-sm md:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer whitespace-nowrap"
             >
-              <span className="transition-colors">Explore Case Study</span>
+              <span className="transition-colors">View All Applications</span>
               <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
                 <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
               </div>

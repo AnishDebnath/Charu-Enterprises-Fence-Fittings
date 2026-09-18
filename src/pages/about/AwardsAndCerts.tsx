@@ -94,7 +94,7 @@ export const AwardsAndCerts: FC = () => {
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal mt-2.5 max-w-2xl mx-auto">
-            Certified for strict international quality standards and recognized for excellence in global exports.
+            Certified quality standards and government export awards.
           </p>
         </div>
 

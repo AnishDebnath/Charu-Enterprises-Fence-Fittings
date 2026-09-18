@@ -36,12 +36,12 @@ export const CaseStudyBanner: FC<CaseStudyHeroProps> = ({ onNavigate }) => {
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Supply in Action
+              Applications &amp; Uses
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              Commercial fence installations, factory quality inspections, and project supply.
+              See where our factory-made fence fittings, post caps, and gate parts are used on real fences around the world.
             </p>
 
             {/* Breadcrumb Navigation */}
@@ -54,7 +54,7 @@ export const CaseStudyBanner: FC<CaseStudyHeroProps> = ({ onNavigate }) => {
                 Home
               </button>
               <span className="text-white/50">/</span>
-              <span className="text-[#f0c75e] font-bold">Supply in Action</span>
+              <span className="text-[#f0c75e] font-bold">Applications &amp; Uses</span>
             </div>
           </motion.div>
         </div>

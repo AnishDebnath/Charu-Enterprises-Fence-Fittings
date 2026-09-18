@@ -37,19 +37,19 @@ export const FactoryGallery: FC<GetToKnowUsProps> = ({ onNavigate }) => {
   const stats = [
     {
       value: '55+',
-      label: 'Years of manufacturing & export growth',
+      label: 'Years experience',
     },
     {
       value: '150M+',
-      label: 'Fittings exported across 4 continents',
+      label: 'Fittings exported',
     },
     {
       value: '20,000',
-      label: 'SQ. FT. factory plant in Howrah, India',
+      label: 'Sq. Ft. plant in India',
     },
     {
       value: '100%',
-      label: 'Zero Defects & ASTM A153 galvanizing',
+      label: 'Zero defects tested',
     },
   ];
 
@@ -70,10 +70,10 @@ export const FactoryGallery: FC<GetToKnowUsProps> = ({ onNavigate }) => {
           {/* Full section width headline with refined, harmonious font weights */}
           <h2 className="w-full text-xl sm:text-2xl md:text-3xl lg:text-[32px] xl:text-[34px] font-normal leading-[1.35] tracking-tight">
             <span className="font-semibold text-[#0a1532]">
-              Your trusted manufacturing partner for industrial fence fittings and sheet metal fabrication. With over 55+ years of growth, Charu Enterprises can manufacture
+              Your trusted partner for fence fittings and sheet metal fabrication.
             </span>{' '}
             <span className="text-slate-500 font-light sm:font-normal">
-              any sheet metal fabrication item as per your required product specifications, pressed steel stampings, and malleable iron castings.
+              Over 55 years of experience delivering custom pressed steel stampings and malleable iron parts worldwide.
             </span>
           </h2>
 
@@ -84,7 +84,7 @@ export const FactoryGallery: FC<GetToKnowUsProps> = ({ onNavigate }) => {
               onClick={() => onNavigate?.('contact')}
               className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-semibold pl-6 pr-2.5 py-3 rounded-full inline-flex items-center gap-3 text-sm sm:text-base shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer font-['Outfit',sans-serif]"
             >
-              <span className="transition-colors">Request Factory Direct Quote</span>
+              <span className="transition-colors">Get a Quote</span>
               <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover/btn:text-white shadow-sm shrink-0 transition-colors">
                 <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
               </div>

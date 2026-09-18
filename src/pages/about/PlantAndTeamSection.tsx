@@ -62,7 +62,7 @@ export const PlantAndTeamSection: FC = () => {
 
           {/* Subtitle */}
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal mt-3 max-w-2xl mx-auto">
-            Our 20,000 sq. ft. factory in Howrah, India has modern stamping presses, in-house galvanizing, and an expert testing team.
+            Our 20,000 sq. ft. facility features power presses, in-house galvanizing, and dedicated quality inspection.
           </p>
         </div>
 

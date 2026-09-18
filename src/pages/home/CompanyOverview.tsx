@@ -32,19 +32,19 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
   const stats = [
     {
       value: '55+',
-      label: 'Years of manufacturing growth (1969–2025)',
+      label: 'Years experience',
     },
     {
       value: '150M+',
-      label: 'Fence fittings exported globally',
+      label: 'Fittings exported',
     },
     {
       value: '20,000',
-      label: 'SQFT factory & galvanizing facility',
+      label: 'Sq. Ft. plant',
     },
     {
       value: '100%',
-      label: 'Zero defects satisfaction guarantee',
+      label: 'Zero defects tested',
     },
   ];
 
@@ -58,7 +58,7 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
             <div className="flex items-start gap-2">
               <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block shrink-0 self-start mt-0.5 sm:mt-1" />
               <span className="text-[#3B82F6] text-xs sm:text-sm md:text-base font-bold tracking-tight uppercase">
-                About Charu Enterprises
+                About Us
               </span>
             </div>
           </div>
@@ -67,10 +67,10 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
           <div className="lg:col-span-9">
             <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-[32px] lg:text-[34px] xl:text-[36px] font-medium leading-[1.28] text-slate-500 tracking-tight">
               <span className="font-bold text-[#0a1532]">
-                Manufacturing Excellence Since 1969. With over 55+ years of growth, Charu Enterprises is India's leading maker of fence fittings.
+                Manufacturing Since 1969. Over 55 years of quality fence hardware production.
               </span>{' '}
               <span className="text-slate-600 font-normal">
-                We specialize in pressed steel, malleable iron, and aluminum fence hardware with in-house tooling, hot-dip galvanizing, and strict quality checks.
+                We make pressed steel, malleable iron, and aluminum fence fittings with in-house tooling and ASTM galvanizing.
               </span>
             </h2>
           </div>
@@ -129,7 +129,7 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
               {/* Top Content */}
               <div className="relative z-10">
                 <h3 className="text-2xl xl:text-[28px] font-bold text-white leading-tight tracking-tight">
-                  Sheet Metal Fabrication <br /> &amp; Stamping
+                  Sheet Metal Stamping &amp; Forming
                 </h3>
               </div>
 
@@ -143,7 +143,7 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
                 </div>
 
                 <p className="text-neutral-100 text-sm xl:text-base leading-relaxed font-normal">
-                  We make any sheet metal fabrication item as per your product specifications, samples, or drawings.
+                  Custom parts made to your drawings, samples, and exact specifications.
                 </p>
 
                 <div className="pt-2">
@@ -152,7 +152,7 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
                     onClick={() => onNavigate?.('products')}
                     className="group/btn w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 pr-2.5 py-3 rounded-full flex items-center justify-between gap-3 text-sm xl:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
                   >
-                    <span className="transition-colors">Explore Product Range</span>
+                    <span className="transition-colors">View Products</span>
                     <div className="w-6 h-6 rounded-full bg-white group-hover/btn:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover/btn:text-white shadow-sm shrink-0 transition-colors">
                       <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                     </div>
@@ -232,7 +232,7 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
 
               <div className="relative z-10">
                 <h3 className="text-lg font-bold text-white leading-tight tracking-tight">
-                  Sheet Metal Fabrication <br /> &amp; Stamping
+                  Sheet Metal Stamping
                 </h3>
               </div>
 
@@ -245,7 +245,7 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
                 </div>
 
                 <p className="text-neutral-100 text-xs leading-relaxed font-normal">
-                  We make any sheet metal fabrication item as per your product specifications, samples, or drawings.
+                  Custom parts made to your drawings and specifications.
                 </p>
 
                 <div className="pt-1">
@@ -254,7 +254,7 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
                     onClick={() => onNavigate?.('products')}
                     className="group/btn w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-4 pr-2 py-2 rounded-full flex items-center justify-between gap-2 text-xs shadow-xl transition-all transform hover:scale-105 cursor-pointer"
                   >
-                    <span className="transition-colors">Explore Product Range</span>
+                    <span className="transition-colors">View Products</span>
                     <div className="w-5 h-5 rounded-full bg-white group-hover/btn:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover/btn:text-white shadow-sm shrink-0 transition-colors">
                       <ArrowRight className="w-3 h-3 stroke-[2.5]" />
                     </div>
@@ -325,7 +325,7 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
 
             <div className="relative z-10">
               <h3 className="text-xl font-bold text-white leading-tight tracking-tight">
-                Sheet Metal Fabrication <br /> &amp; Stamping
+                Sheet Metal Stamping
               </h3>
             </div>
 
@@ -338,7 +338,7 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
               </div>
 
               <p className="text-neutral-100 text-xs leading-relaxed font-normal">
-                We make any sheet metal fabrication item as per your product specifications, samples, or drawings.
+                Custom parts made to your drawings and specifications.
               </p>
 
               <div className="pt-1">
@@ -347,7 +347,7 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate?.('products')}
                   className="group/btn w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold px-4 py-2.5 rounded-full flex items-center justify-between gap-2 text-xs shadow-xl transition-all cursor-pointer"
                 >
-                  <span>Explore Product Range</span>
+                  <span>View Products</span>
                   <div className="w-5 h-5 rounded-full bg-white text-[#3B82F6] flex items-center justify-center shrink-0">
                     <ArrowRight className="w-3 h-3 stroke-[2.5]" />
                   </div>

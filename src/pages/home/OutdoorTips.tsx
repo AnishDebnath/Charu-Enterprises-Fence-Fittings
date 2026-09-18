@@ -124,13 +124,12 @@ export const OutdoorTips: FC = () => {
           <div className="inline-flex items-center justify-center gap-2">
             <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
             <span className="text-[#2563EB] text-xs sm:text-sm font-bold tracking-tight uppercase">
-              Technical Insights &amp; Guides
+              Technical Guides
             </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-            Engineering Standards, Metallurgy,
-            <br className="hidden sm:inline" /> and Galvanizing Best Practices.
+            Standards &amp; Manufacturing
           </h2>
         </div>
 

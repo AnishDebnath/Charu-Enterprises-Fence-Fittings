@@ -27,19 +27,19 @@ export const ContactForm: FC = () => {
   };
 
   return (
-    <section className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif] overflow-hidden">
+    <section className="w-full bg-white py-14 sm:py-18 lg:py-20 font-['Outfit',sans-serif] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-stretch">
           
           {/* Left Column: Form Card with rounded border & inputs */}
-          <div className="lg:col-span-6 xl:col-span-6">
-            <div className="bg-white rounded-2xl sm:rounded-3xl lg:rounded-[28px] border border-slate-200/90 p-6 sm:p-8 lg:p-10 shadow-sm">
+          <div className="lg:col-span-6 flex flex-col">
+            <div className="bg-white rounded-2xl sm:rounded-3xl lg:rounded-[28px] border border-slate-200/90 p-6 sm:p-7 lg:p-8 xl:p-9 shadow-sm h-full flex flex-col justify-between">
               
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="py-12 px-4 text-center flex flex-col items-center space-y-4"
+                  className="my-auto py-10 px-4 text-center flex flex-col items-center space-y-4"
                 >
                   <div className="w-16 h-16 rounded-full bg-blue-50 text-[#3B82F6] flex items-center justify-center shadow-inner">
                     <CheckCircle2 className="w-10 h-10" />
@@ -71,13 +71,13 @@ export const ContactForm: FC = () => {
                   </button>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="border-b border-slate-100 pb-3">
+                <form onSubmit={handleSubmit} className="flex flex-col flex-1 justify-between space-y-4 sm:space-y-4.5">
+                  <div className="border-b border-slate-100 pb-2.5">
                     <h3 className="text-xl sm:text-2xl font-bold text-[#0a1532]">
-                      Direct Factory Quotation Form
+                      Request a Quote
                     </h3>
-                    <p className="text-slate-500 text-xs sm:text-sm mt-1">
-                      FOB / CIF Container Load &amp; Custom Drawing Orders
+                    <p className="text-slate-500 text-xs sm:text-sm mt-0.5">
+                      FCL container shipments and custom fabrication orders
                     </p>
                   </div>
 
@@ -85,18 +85,18 @@ export const ContactForm: FC = () => {
                   <div>
                     <label
                       htmlFor="contact-form-name"
-                      className="block text-sm font-semibold text-[#0a1532] mb-1.5"
+                      className="block text-xs sm:text-sm font-semibold text-[#0a1532] mb-1"
                     >
-                      Full Name &amp; Company *
+                      Name &amp; Company *
                     </label>
                     <input
                       id="contact-form-name"
                       type="text"
                       required
-                      placeholder="e.g. John Miller, Acme Fence Supply"
+                      placeholder="e.g. John Smith, Acme Supply"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 outline-none transition-all text-slate-800 text-sm sm:text-base bg-white"
+                      className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 outline-none transition-all text-slate-800 text-sm sm:text-base bg-white"
                     />
                   </div>
 
@@ -104,18 +104,18 @@ export const ContactForm: FC = () => {
                   <div>
                     <label
                       htmlFor="contact-form-email"
-                      className="block text-sm font-semibold text-[#0a1532] mb-1.5"
+                      className="block text-xs sm:text-sm font-semibold text-[#0a1532] mb-1"
                     >
-                      Business Email Address *
+                      Email Address *
                     </label>
                     <input
                       id="contact-form-email"
                       type="email"
                       required
-                      placeholder="purchasing@company.com"
+                      placeholder="name@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 outline-none transition-all text-slate-800 text-sm sm:text-base bg-white"
+                      className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 outline-none transition-all text-slate-800 text-sm sm:text-base bg-white"
                     />
                   </div>
 
@@ -123,18 +123,18 @@ export const ContactForm: FC = () => {
                   <div>
                     <label
                       htmlFor="contact-form-phone"
-                      className="block text-sm font-semibold text-[#0a1532] mb-1.5"
+                      className="block text-xs sm:text-sm font-semibold text-[#0a1532] mb-1"
                     >
-                      Phone / WhatsApp Number (with Country Code) *
+                      Phone / WhatsApp *
                     </label>
                     <input
                       id="contact-form-phone"
                       type="tel"
                       required
-                      placeholder="+1 (555) 000-0000 / +91 ..."
+                      placeholder="+1 (555) 000-0000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 outline-none transition-all text-slate-800 text-sm sm:text-base bg-white"
+                      className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 outline-none transition-all text-slate-800 text-sm sm:text-base bg-white"
                     />
                   </div>
 
@@ -142,9 +142,9 @@ export const ContactForm: FC = () => {
                   <div>
                     <label
                       htmlFor="contact-form-service"
-                      className="block text-sm font-semibold text-[#0a1532] mb-1.5"
+                      className="block text-xs sm:text-sm font-semibold text-[#0a1532] mb-1"
                     >
-                      Product Categories / Items Required *
+                      Products Required *
                     </label>
                     <input
                       id="contact-form-service"
@@ -152,39 +152,39 @@ export const ContactForm: FC = () => {
                       required
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      placeholder="e.g., Barbed Arms (Item #1), Brace Bands, Gate Hinges, FCL Container"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 outline-none transition-all text-slate-800 text-sm sm:text-base bg-white"
+                      placeholder="e.g. Barbed Arms, Brace Bands, Gate Hinges"
+                      className="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 outline-none transition-all text-slate-800 text-sm sm:text-base bg-white"
                     />
                   </div>
 
-                  {/* Message */}
-                  <div>
+                  {/* Message / Notes */}
+                  <div className="flex-1 flex flex-col">
                     <label
                       htmlFor="contact-form-message"
-                      className="block text-sm font-semibold text-[#0a1532] mb-1.5"
+                      className="block text-xs sm:text-sm font-semibold text-[#0a1532] mb-1"
                     >
-                      Destination Port, Quantity &amp; Specifications *
+                      Port, Quantity &amp; Notes *
                     </label>
                     <textarea
                       id="contact-form-message"
-                      rows={4}
+                      rows={5}
                       required
-                      placeholder="Please specify target discharge port (e.g. Houston, Los Angeles, Felixstowe), estimated quantity, item numbers, or sheet metal fabrication specifications..."
+                      placeholder="Please specify destination port, estimated quantity, item numbers, or drawing details..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 outline-none transition-all text-slate-800 text-sm sm:text-base resize-none bg-white"
+                      className="w-full flex-1 min-h-[130px] lg:min-h-[145px] px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 outline-none transition-all text-slate-800 text-sm sm:text-base resize-none bg-white"
                     />
                   </div>
 
                   {/* Submit Button */}
-                  <div className="pt-2">
+                  <div className="pt-1">
                     <button
                       type="submit"
                       disabled={isSubmitting}
                       className="group bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-2.5 sm:py-3 rounded-full inline-flex items-center gap-3 text-sm sm:text-base transition-all duration-300 cursor-pointer shadow-lg font-['Outfit',sans-serif] disabled:opacity-60"
                     >
                       <span className="transition-colors">
-                        {isSubmitting ? 'Submitting...' : 'Submit Quotation Request'}
+                        {isSubmitting ? 'Submitting...' : 'Submit Request'}
                       </span>
                       <div className="w-7 h-7 rounded-full bg-white group-hover:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover:text-white shadow-sm shrink-0 transition-colors">
                         <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
@@ -198,52 +198,55 @@ export const ContactForm: FC = () => {
           </div>
 
           {/* Right Column: Information & Showcase Image */}
-          <div className="lg:col-span-6 xl:col-span-6 space-y-6 sm:space-y-7">
+          <div className="lg:col-span-6 flex flex-col justify-between space-y-5 sm:space-y-6">
             
-            {/* Eyebrow */}
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-              <span className="text-[#3B82F6] text-xs sm:text-sm font-semibold tracking-wide uppercase">
-                Contact Information
-              </span>
+            {/* Header Section */}
+            <div className="space-y-2 sm:space-y-2.5">
+              {/* Eyebrow */}
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
+                <span className="text-[#3B82F6] text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                  Contact Information
+                </span>
+              </div>
+
+              {/* Heading */}
+              <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#0a1532] tracking-tight leading-[1.15]">
+                Charu Enterprises
+              </h2>
+
+              {/* Subtitle / Paragraph */}
+              <p className="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed font-normal">
+                Manufacturer and exporter of chain link fence fittings, post caps, brace bands, gate hardware, and custom sheet metal parts since 1969.
+              </p>
             </div>
 
-            {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0a1532] tracking-tight leading-[1.15]">
-              Charu Enterprises
-            </h2>
-
-            {/* Subtitle / Paragraph */}
-            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed font-normal">
-              Manufacturer &amp; Exporter of Chain Link Fence Fittings, Post Caps, Brace Bands, Gate Hardware, and Sheet Metal Fabrication Items as per product specifications since 1969.
-            </p>
-
             {/* Contact Details List */}
-            <div className="space-y-4 pt-1 text-sm sm:text-base text-slate-700">
+            <div className="space-y-3.5 text-xs sm:text-sm lg:text-base text-slate-700">
               {/* Registered Office */}
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#3B82F6] shrink-0 mt-0.5" />
+                <MapPin className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold text-[#0a1532]">Registered Office:</div>
-                  <div className="text-slate-600 text-sm leading-relaxed">{COMPANY_INFO.addresses.office.full}</div>
+                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Registered Office:</div>
+                  <div className="text-slate-600 text-xs sm:text-sm leading-relaxed">{COMPANY_INFO.addresses.office.full}</div>
                 </div>
               </div>
 
               {/* Works & Factory */}
               <div className="flex items-start gap-3">
-                <Building2 className="w-5 h-5 text-[#3B82F6] shrink-0 mt-0.5" />
+                <Building2 className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold text-[#0a1532]">Works &amp; Factory:</div>
-                  <div className="text-slate-600 text-sm leading-relaxed">{COMPANY_INFO.addresses.factory.full}</div>
+                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Works &amp; Factory:</div>
+                  <div className="text-slate-600 text-xs sm:text-sm leading-relaxed">{COMPANY_INFO.addresses.factory.full}</div>
                 </div>
               </div>
 
               {/* Phone Contacts */}
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#3B82F6] shrink-0 mt-0.5" />
+                <Phone className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold text-[#0a1532]">Direct Phone &amp; WhatsApp:</div>
-                  <div className="flex flex-wrap gap-x-4 gap-y-1 text-slate-600 text-sm">
+                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Direct Phone &amp; WhatsApp:</div>
+                  <div className="flex flex-wrap gap-x-4 gap-y-0.5 text-slate-600 text-xs sm:text-sm">
                     <a href={`tel:${COMPANY_INFO.phones.indiaPrimary.replace(/\s+/g, '')}`} className="hover:text-[#3B82F6] transition-colors font-medium">
                       🇮🇳 India: {COMPANY_INFO.phones.indiaPrimary}
                     </a>
@@ -256,10 +259,10 @@ export const ContactForm: FC = () => {
 
               {/* Email */}
               <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#3B82F6] shrink-0 mt-0.5" />
+                <Mail className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold text-[#0a1532]">Official Email:</div>
-                  <div className="flex flex-wrap gap-x-4 text-slate-600 text-sm">
+                  <div className="font-bold text-[#0a1532] text-xs sm:text-sm">Official Email:</div>
+                  <div className="flex flex-wrap gap-x-4 text-slate-600 text-xs sm:text-sm">
                     <a
                       href={`mailto:${COMPANY_INFO.emails.primary}`}
                       className="hover:text-[#3B82F6] transition-colors font-medium"
@@ -277,17 +280,17 @@ export const ContactForm: FC = () => {
               </div>
 
               {/* Badges / Registration */}
-              <div className="flex items-center gap-3 pt-2">
-                <Globe2 className="w-5 h-5 text-[#3B82F6] shrink-0" />
-                <div className="text-xs sm:text-sm font-semibold text-slate-700">
+              <div className="flex items-center gap-2.5 pt-0.5">
+                <Globe2 className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#3B82F6] shrink-0" />
+                <div className="text-[11px] sm:text-xs font-semibold text-slate-700">
                   ISO 9001:2015 Certified • ASTM A153 Galvanizing • Port: Kolkata Sea
                 </div>
               </div>
             </div>
 
             {/* Bottom Showcase Image */}
-            <div className="pt-2">
-              <div className="relative rounded-2xl sm:rounded-3xl lg:rounded-[24px] overflow-hidden aspect-[16/9] w-full shadow-md border border-slate-200/80 bg-slate-100 group">
+            <div className="pt-1">
+              <div className="relative rounded-2xl sm:rounded-3xl lg:rounded-[24px] overflow-hidden aspect-[16/8.2] sm:aspect-[16/8] lg:aspect-[16/8] w-full shadow-md border border-slate-200/80 bg-slate-100 group">
                 <img
                   src={contactUsImg}
                   alt="Charu Enterprises precision manufacturing facility and container loading"

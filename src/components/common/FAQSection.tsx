@@ -12,33 +12,33 @@ export const FAQSection: FC<FAQSectionProps> = ({ onNavigate }) => {
   const faqs = [
     {
       id: '01',
-      question: 'What is your standard production time for container orders?',
+      question: 'What is your production lead time?',
       answer:
-        'Full container load (FCL) orders typically ship in 30 to 45 days after order confirmation. Standard catalog items can often be dispatched sooner.',
+        'Full container orders typically ship in 30 to 45 days. Standard catalog products ship even faster.',
     },
     {
       id: '02',
-      question: 'Can Charu Enterprises make sheet metal fabrication items as per our product specifications?',
+      question: 'Can you manufacture to our drawings?',
       answer:
-        'Yes. While we do not provide custom design services, we can manufacture and fabricate any sheet metal item as per your required product specifications, dimensions, technical drawings, or physical samples using our advanced power presses and tooling.',
+        'Yes. We make custom stamped parts based on your specifications, drawings, or physical samples.',
     },
     {
       id: '03',
-      question: 'What galvanizing and rust protection standards do you follow?',
+      question: 'What galvanizing standards do you use?',
       answer:
-        'All steel and malleable iron parts are hot-dip galvanized to ASTM A153 / ASTM A123 standards. We test coating thickness with digital gauges to ensure 30+ years of rust defense.',
+        'We hot-dip galvanize to ASTM A153 / A123 standards for long-lasting rust protection.',
     },
     {
       id: '04',
-      question: 'What shipping terms and countries do you deliver to?',
+      question: 'Where do you ship?',
       answer:
-        'We offer FOB, CIF, CFR, and door-to-door DDP (duty-paid) delivery across the USA, Canada, Europe, Australia, and the Middle East.',
+        'We ship worldwide under FOB, CIF, or door-to-door DDP terms to the USA, Canada, Europe, and Australia.',
     },
     {
       id: '05',
-      question: 'What quality inspection papers come with each shipment?',
+      question: 'What test reports are provided?',
       answer:
-        'Every shipment comes with ISO 9001:2015 inspection reports, Mill Test Certificates (MTC), galvanizing thickness data, and dimensional check sheets.',
+        'Every batch includes ISO 9001 test reports, mill certificates, and coating thickness data.',
     },
   ];
 
@@ -59,16 +59,16 @@ export const FAQSection: FC<FAQSectionProps> = ({ onNavigate }) => {
               <div className="flex items-start gap-2">
                 <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block shrink-0 self-start mt-0.5 sm:mt-1" />
                 <span className="text-[#3B82F6] text-xs sm:text-sm md:text-base font-bold tracking-tight uppercase">
-                  Frequently Asked Questions
+                  FAQ
                 </span>
               </div>
 
               <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-[38px] lg:text-[42px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-                Common Questions for Global Distributors &amp; Importers.
+                Frequently Asked Questions
               </h2>
 
               <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal pt-1">
-                Everything you need to know about our minimum order quantities, custom tooling lead times, ASTM galvanization standards, and shipping terms.
+                Quick answers on order lead times, custom stamping, ASTM coatings, and global delivery.
               </p>
             </div>
 
@@ -79,7 +79,7 @@ export const FAQSection: FC<FAQSectionProps> = ({ onNavigate }) => {
                 onClick={() => onNavigate?.('contact')}
                 className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 sm:pl-6 pr-2.5 py-2.5 sm:py-3 rounded-full inline-flex items-center gap-3 text-xs sm:text-sm md:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
               >
-                <span className="transition-colors">Request a Quote</span>
+                <span className="transition-colors">Ask a Question</span>
                 <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
                   <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                 </div>

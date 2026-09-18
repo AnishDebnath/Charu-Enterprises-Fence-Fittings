@@ -17,55 +17,55 @@ export const TestimonialCarousel: FC = () => {
     {
       id: 1,
       rating: '5.0',
-      ratingText: '5.0 rating on FCL Steel Fence Fittings Export',
+      ratingText: '5.0 Rating • Container Orders',
       quote:
-        'Charu Enterprises has been supplying our USA distribution centers with pressed steel barbed arms and offset hinges for over 8 years. Their galvanizing thickness and dimensional consistency are unmatched.',
+        'Charu Enterprises has supplied our US warehouses for 8+ years. Galvanizing and dimensions are always reliable.',
       name: 'Robert M. Gallagher',
-      role: 'VP Procurement, Regional Fence Supply Corp (Texas, USA)',
+      role: 'VP Procurement (Texas, USA)',
       avatar: clientImg1,
       image: '',
     },
     {
       id: 2,
       rating: '5.0',
-      ratingText: '5.0 rating on Custom Tooling & Stamping',
+      ratingText: '5.0 Rating • Custom Tooling',
       quote:
-        'Their in-house tool room engineered our proprietary cantilever roller design with zero flaws. Container shipments always arrive properly palletized, labeled, and on schedule.',
+        'Their tool room made our custom roller parts with zero flaws. Containers arrive safely packed and on time.',
       name: 'David L. Tremblay',
-      role: 'Director of Sourcing, Canadian Perimeter Solutions (Ontario, Canada)',
+      role: 'Director of Sourcing (Ontario, Canada)',
       avatar: clientImg2,
       image: '',
     },
     {
       id: 3,
       rating: '4.95',
-      ratingText: '4.95 rating on ISO 9001:2015 Compliance & DDP Delivery',
+      ratingText: '4.95 Rating • Quality & Delivery',
       quote:
-        'Working with Som and the Maskara family gives us complete peace of mind. Transparent communication, competitive FOB/DDP terms, and genuine commitment to zero defects.',
+        'Working with the Charu team is seamless. Clear communication, fair prices, and reliable zero-defect quality.',
       name: 'Klaus Richter',
-      role: 'Managing Director, Industrial Security Gates GmbH (Germany)',
+      role: 'Managing Director (Germany)',
       avatar: clientImg3,
       image: '',
     },
     {
       id: 4,
       rating: '5.0',
-      ratingText: '5.0 rating on Powder-Coated Fence Hardware Export',
+      ratingText: '5.0 Rating • Powder Coating',
       quote:
-        'We switched to Charu Enterprises for our Australian chain-link gate hardware. The powder coating finish and galvanizing quality exceeded our expectations. Reliable partner for large container orders.',
+        'Great powder coated fence fittings and fast support. Very dependable partner for our large container orders.',
       name: 'James Whitfield',
-      role: 'Supply Chain Manager, Aussie Fencing Pty Ltd (Melbourne, Australia)',
+      role: 'Supply Chain Manager (Melbourne, Australia)',
       avatar: clientImg4,
       image: '',
     },
     {
       id: 5,
       rating: '4.98',
-      ratingText: '4.98 rating on Malleable Iron Castings & Fast Delivery',
+      ratingText: '4.98 Rating • Malleable Castings',
       quote:
-        'Charu Enterprises delivers consistent quality malleable iron fittings every order. Their team handles export documentation smoothly and meetings are always punctual. Highly recommended for European distributors.',
+        'Consistent malleable iron parts on every order. Export paperwork and shipping are handled smoothly.',
       name: 'Marco Bianchi',
-      role: 'Procurement Director, Sicurezza Recinzioni SRL (Milan, Italy)',
+      role: 'Procurement Director (Milan, Italy)',
       avatar: clientImg5,
       image: '',
     },
@@ -99,8 +99,7 @@ export const TestimonialCarousel: FC = () => {
                 </span>
               </div>
               <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-[38px] lg:text-[42px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
-                Trusted by Fence Distributors <br className="hidden sm:inline" />
-                &amp; Contractors Across 4 Continents.
+                Trusted by Global Distributors
               </h2>
             </div>
 
