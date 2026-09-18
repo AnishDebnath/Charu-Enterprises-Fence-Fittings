@@ -82,12 +82,12 @@ export const PlantAndTeamSection: FC = () => {
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
-                {/* Hover Gradient Overlay - Hidden in normal, shows on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/85 via-[#071128]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                {/* Gradient Overlay - Visible on mobile, hover on desktop */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/85 via-[#071128]/25 to-transparent opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                {/* Hover Text at Bottom Left Side - Hidden in normal, slides up & fades in on hover */}
-                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out pointer-events-none">
-                  <span className="inline-block font-bold text-white text-base sm:text-lg md:text-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] tracking-wide">
+                {/* Text at Bottom Left Side - Visible on mobile, hover on desktop */}
+                <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 z-10 opacity-100 sm:opacity-0 sm:transform sm:translate-y-2 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-300 ease-out pointer-events-none">
+                  <span className="inline-block font-bold text-white text-sm sm:text-lg md:text-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] tracking-wide">
                     {item.title}
                   </span>
                 </div>

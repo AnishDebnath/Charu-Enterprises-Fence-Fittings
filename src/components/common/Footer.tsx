@@ -22,9 +22,9 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
   };
 
   return (
-    <footer className="w-full font-['Outfit',sans-serif] bg-white px-2 sm:px-3 md:px-4 pt-4 pb-4 sm:pb-6">
+    <footer className="w-full font-['Outfit',sans-serif] bg-white px-3 sm:px-4 md:px-6 lg:px-8 pt-4 pb-4 sm:pb-6 md:pb-8">
       {/* Outer Card Container matching Hero Section Width & Border-Radius */}
-      <div className="w-full bg-[#0c1219] border border-white/10 rounded-2xl sm:rounded-[24px] lg:rounded-[28px] p-6 sm:p-10 lg:p-12 text-white relative overflow-hidden shadow-2xl shadow-black/60">
+      <div className="w-full bg-[#0c1219] border border-white/10 rounded-2xl sm:rounded-[24px] md:rounded-[26px] lg:rounded-[28px] p-5 sm:p-8 md:p-10 lg:p-12 text-white relative overflow-hidden shadow-2xl shadow-black/60">
         
         {/* Top-left Ambient Accent */}
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#3B82F6]/10 rounded-full blur-3xl pointer-events-none" />
@@ -33,58 +33,58 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
         <div className="max-w-7xl mx-auto w-full relative z-10 px-2 sm:px-4">
           
           {/* 4-Column Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-8 lg:gap-10">
             
             {/* Column 1: Tagline & Socials */}
-            <div className="lg:col-span-4 space-y-6">
+            <div className="lg:col-span-4 space-y-4 sm:space-y-6">
               <div className="space-y-2">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#3B82F6]/20 border border-[#3B82F6]/40 text-[#60A5FA] text-xs font-bold uppercase tracking-wider">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#3B82F6]/20 border border-[#3B82F6]/40 text-[#60A5FA] text-[11px] sm:text-xs font-bold uppercase tracking-wider">
                   Mfg. Since 1969 • 55+ Years of Growth
                 </span>
-                <p className="text-neutral-200 text-sm sm:text-base leading-relaxed max-w-sm font-normal">
-                  Global leader in pressed steel, malleable iron, and aluminum fence fittings. 150 Million+ pieces exported across 4 continents. ISO 9001:2015 certified & Govt. Export Excellence awardee.
+                <p className="text-neutral-200 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm font-normal">
+                  Global leader in pressed steel, malleable iron, and aluminum fence fittings. 150 Million+ pieces exported across 4 continents. ISO 9001:2015 certified &amp; Govt. Export Excellence awardee.
                 </p>
               </div>
 
               {/* Social Icons Pills with Hover Effects */}
-              <div className="flex items-center gap-3 pt-1">
+              <div className="flex items-center gap-2.5 sm:gap-3 pt-1">
                 <a
                   href="#"
                   aria-label="LinkedIn"
-                  className="w-9 h-9 rounded-full bg-white hover:bg-[#3B82F6] text-black hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm transform hover:scale-110 cursor-pointer"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white hover:bg-[#3B82F6] text-black hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm transform hover:scale-110 cursor-pointer"
                 >
-                  <Linkedin className="w-4.5 h-4.5 fill-current stroke-0" />
+                  <Linkedin className="w-4 h-4 fill-current stroke-0" />
                 </a>
                 <a
                   href="#"
                   aria-label="Instagram"
-                  className="w-9 h-9 rounded-full bg-white hover:bg-[#3B82F6] text-black hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm transform hover:scale-110 cursor-pointer"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white hover:bg-[#3B82F6] text-black hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm transform hover:scale-110 cursor-pointer"
                 >
-                  <Instagram className="w-4.5 h-4.5 stroke-[2.2]" />
+                  <Instagram className="w-4 h-4 stroke-[2.2]" />
                 </a>
                 <a
                   href="#"
                   aria-label="Twitter / X"
-                  className="w-9 h-9 rounded-full bg-white hover:bg-[#3B82F6] text-black hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm transform hover:scale-110 cursor-pointer"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white hover:bg-[#3B82F6] text-black hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm transform hover:scale-110 cursor-pointer"
                 >
-                  <Twitter className="w-4.5 h-4.5 fill-current stroke-0" />
+                  <Twitter className="w-4 h-4 fill-current stroke-0" />
                 </a>
                 <a
                   href="#"
                   aria-label="YouTube"
-                  className="w-9 h-9 rounded-full bg-white hover:bg-[#3B82F6] text-black hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm transform hover:scale-110 cursor-pointer"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white hover:bg-[#3B82F6] text-black hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm transform hover:scale-110 cursor-pointer"
                 >
-                  <Youtube className="w-4.5 h-4.5 stroke-[2.2]" />
+                  <Youtube className="w-4 h-4 stroke-[2.2]" />
                 </a>
               </div>
             </div>
 
             {/* Column 2: Quick Links */}
-            <div className="lg:col-span-2 space-y-4">
-              <h4 className="font-bold text-white text-base sm:text-lg tracking-tight">
+            <div className="lg:col-span-2 space-y-3 sm:space-y-4">
+              <h4 className="font-bold text-white text-sm sm:text-base md:text-lg tracking-tight">
                 Quick Links
               </h4>
-              <ul className="space-y-3 text-sm sm:text-base text-neutral-200 font-normal">
+              <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm md:text-base text-neutral-200 font-normal">
                 <li>
                   <button
                     type="button"
@@ -134,11 +134,11 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
             </div>
 
             {/* Column 3: Products */}
-            <div className="lg:col-span-3 space-y-4">
-              <h4 className="font-bold text-white text-base sm:text-lg tracking-tight">
+            <div className="lg:col-span-3 space-y-3 sm:space-y-4">
+              <h4 className="font-bold text-white text-sm sm:text-base md:text-lg tracking-tight">
                 Product Categories
               </h4>
-              <ul className="space-y-3 text-sm sm:text-base text-neutral-200 font-normal">
+              <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm md:text-base text-neutral-200 font-normal">
                 <li>
                   <button
                     type="button"
@@ -172,7 +172,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                     onClick={() => handleNav('products')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
                   >
-                    Tension Bars & Bands
+                    Tension Bars &amp; Bands
                   </button>
                 </li>
                 <li>
@@ -181,7 +181,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                     onClick={() => handleNav('products')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 text-left"
                   >
-                    Cantilever & Gate Hardware
+                    Cantilever &amp; Gate Hardware
                   </button>
                 </li>
                 <li>
@@ -197,11 +197,11 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
             </div>
 
             {/* Column 4: Contact Us */}
-            <div className="lg:col-span-3 space-y-4">
-              <h4 className="font-bold text-white text-base sm:text-lg tracking-tight">
-                Contact & Office
+            <div className="lg:col-span-3 space-y-3 sm:space-y-4">
+              <h4 className="font-bold text-white text-sm sm:text-base md:text-lg tracking-tight">
+                Contact &amp; Office
               </h4>
-              <div className="space-y-2.5 text-xs sm:text-sm text-neutral-200 leading-relaxed font-normal">
+              <div className="space-y-2 text-xs sm:text-sm text-neutral-200 leading-relaxed font-normal">
                 <p className="text-white font-semibold">
                   Head Office:
                 </p>
@@ -253,21 +253,21 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           {/* Huge Metallic Gradient CHARU ENTERPRISES-INDIA Text Background Banner */}
-          <div className="mt-8 sm:mt-12 lg:mt-14 mb-2 sm:mb-4 select-none pointer-events-none text-center overflow-hidden flex items-center justify-center">
-            <h1 className="text-[24px] xs:text-[32px] sm:text-[48px] md:text-[64px] lg:text-[88px] xl:text-[104px] 2xl:text-[118px] font-black tracking-tight leading-none uppercase whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-b from-white/90 via-white/40 to-white/0 font-['Outfit',sans-serif]">
+          <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-14 mb-2 sm:mb-4 select-none pointer-events-none text-center overflow-hidden flex items-center justify-center">
+            <h1 className="text-[22px] xs:text-[28px] sm:text-[44px] md:text-[60px] lg:text-[84px] xl:text-[104px] 2xl:text-[118px] font-black tracking-tight leading-none uppercase whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-b from-white/90 via-white/40 to-white/0 font-['Outfit',sans-serif]">
               CHARU ENTERPRISES
             </h1>
           </div>
 
           {/* Bottom Bar Divider & Copyright */}
-          <div className="border-t border-white/15 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-neutral-300 font-medium">
+          <div className="border-t border-white/15 pt-5 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-neutral-300 font-medium">
             <p className="hover:text-white transition-colors">© 2026 Charu Enterprises - India (Mfg Since 1969). All Rights Reserved.</p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 sm:gap-6">
               <a href="#" className="hover:text-[#3B82F6] transition-colors duration-200">
                 Privacy Policy
               </a>
               <a href="#" className="hover:text-[#3B82F6] transition-colors duration-200">
-                Terms & Conditions
+                Terms &amp; Conditions
               </a>
             </div>
           </div>

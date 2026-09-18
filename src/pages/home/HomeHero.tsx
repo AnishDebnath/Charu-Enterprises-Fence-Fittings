@@ -33,10 +33,10 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
   const currentProduct = showcaseProducts[currentIndex] || CATALOG_PRODUCTS[0];
   const currentImgSrc = getProductImage(currentProduct.itemNumber) || currentProduct.image;
   return (
-    <div className="w-full bg-white px-2 sm:px-3 md:px-4 pt-2 sm:pt-3 pb-2">
-      {/* Outer Rounded Hero Container Card with slightly increased height */}
-      <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[700px] md:min-h-[760px] lg:min-h-[800px] xl:min-h-[830px] flex flex-col justify-between border border-blue-900/50 font-['Outfit',sans-serif]">
-        {/* Background Image spanning full screen size card with industrial metallurgy texture */}
+    <div className="w-full bg-white px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 pt-2 sm:pt-3 pb-2">
+      {/* Outer Rounded Hero Container Card with proportional min-height */}
+      <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[640px] md:min-h-[720px] lg:min-h-[780px] xl:min-h-[840px] flex flex-col justify-between border border-blue-900/50 font-['Outfit',sans-serif]">
+        {/* Background Image / Video spanning full card */}
         <div className="absolute inset-0 z-0">
           <video
             src={bannerVideo}
@@ -53,39 +53,39 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
         </div>
 
         {/* Hero Body Content */}
-        <div className="relative z-20 w-full flex-1 flex flex-col justify-center my-auto pt-32 sm:pt-36 lg:pt-42 pb-14 sm:pb-16 lg:pb-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end">
+        <div className="relative z-20 w-full flex-1 flex flex-col justify-center my-auto pt-28 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 pb-12 sm:pb-14 md:pb-16 lg:pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-10 xl:gap-12 items-end">
             {/* Left Column Content */}
-            <div className="lg:col-span-8 space-y-6 sm:space-y-7">
+            <div className="lg:col-span-8 space-y-5 sm:space-y-6 md:space-y-7">
               {/* Eyebrow */}
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-                <span className="text-[#60A5FA] text-sm sm:text-base font-semibold tracking-wide uppercase">
+              <div className="flex items-start gap-2">
+                <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block shrink-0 self-start mt-0.5 sm:mt-1" />
+                <span className="text-[#60A5FA] text-xs sm:text-sm md:text-base font-semibold tracking-wide uppercase">
                   Mfg Since 1969 • Celebrating 55+ Years of Growth
                 </span>
               </div>
 
               {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#FFFFFF] leading-[1.12]">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-[50px] lg:text-[54px] xl:text-[62px] font-bold tracking-tight text-[#FFFFFF] leading-[1.12]">
                 Global Leader in <br />
-                Fence Fittings & Hardware
+                Fence Fittings &amp; Hardware
               </h1>
 
               {/* Subtitle */}
-              <p className="text-neutral-100 text-base sm:text-lg max-w-xl leading-relaxed font-normal">
+              <p className="text-neutral-100 text-sm sm:text-base md:text-base lg:text-lg max-w-xl md:max-w-2xl leading-relaxed font-normal">
                 We manufacture and export high-quality pressed steel, malleable iron, and aluminum fence fittings. Over 150 million pieces exported to 4 continents with zero defects and direct warehouse delivery.
               </p>
 
               {/* Action Buttons Row */}
-              <div className="flex flex-wrap items-center gap-4 pt-1">
+              <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 pt-1">
                 {/* Explore Catalog Pill */}
                 <button
                   type="button"
                   onClick={() => onNavigate?.('case-study')}
-                  className="group bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+                  className="group bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 sm:pl-6 pr-2.5 py-2.5 sm:py-3 md:py-3.5 rounded-full flex items-center gap-3 text-xs sm:text-sm md:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
                 >
                   <span className="transition-colors">Explore Catalog A25</span>
-                  <div className="w-7 h-7 rounded-full bg-white group-hover:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover:text-white shadow-sm shrink-0 transition-colors">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white group-hover:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover:text-white shadow-sm shrink-0 transition-colors">
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                   </div>
                 </button>
@@ -93,9 +93,9 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
                 {/* Call Now Pill */}
                 <a
                   href="tel:+919830083777"
-                  className="group bg-transparent hover:bg-[#DBEAFE] text-white hover:text-black font-semibold pl-3.5 pr-6 py-3 rounded-full flex items-center gap-2.5 border border-white hover:border-[#DBEAFE] backdrop-blur-sm text-sm sm:text-base transition-all transform hover:scale-105 shadow-lg"
+                  className="group bg-transparent hover:bg-[#DBEAFE] text-white hover:text-black font-semibold pl-3 sm:pl-3.5 pr-5 sm:pr-6 py-2.5 sm:py-3 md:py-3.5 rounded-full flex items-center gap-2.5 border border-white hover:border-[#DBEAFE] backdrop-blur-sm text-xs sm:text-sm md:text-base transition-all transform hover:scale-105 shadow-lg"
                 >
-                  <div className="w-7 h-7 rounded-full bg-white group-hover:bg-[#22C55E] text-[#0a1532] group-hover:text-white flex items-center justify-center shadow-sm shrink-0 transition-colors">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white group-hover:bg-[#22C55E] text-[#0a1532] group-hover:text-white flex items-center justify-center shadow-sm shrink-0 transition-colors">
                     <Phone className="w-3.5 h-3.5 fill-current" />
                   </div>
                   <span className="transition-colors">Call: +91 9830083777</span>
@@ -103,66 +103,66 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
               </div>
 
               {/* Ratings row */}
-              <div className="pt-2 flex flex-wrap sm:flex-nowrap items-center gap-3.5">
+              <div className="pt-2 flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-3.5">
                 <div className="flex items-center -space-x-2.5 shrink-0 px-1 py-1">
-                  <img src={faceImage1} alt="Client" className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-40 object-cover" />
-                  <img src={faceImage2} alt="Client" className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-30 object-cover" />
-                  <img src={faceImage3} alt="Client" className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-20 object-cover" />
-                  <img src={faceImage4} alt="Client" className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-10 object-cover" />
+                  <img src={faceImage1} alt="Client" className="inline-flex h-8 w-8 sm:h-9.5 sm:w-9.5 md:h-10 md:w-10 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-40 object-cover" />
+                  <img src={faceImage2} alt="Client" className="inline-flex h-8 w-8 sm:h-9.5 sm:w-9.5 md:h-10 md:w-10 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-30 object-cover" />
+                  <img src={faceImage3} alt="Client" className="inline-flex h-8 w-8 sm:h-9.5 sm:w-9.5 md:h-10 md:w-10 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-20 object-cover" />
+                  <img src={faceImage4} alt="Client" className="inline-flex h-8 w-8 sm:h-9.5 sm:w-9.5 md:h-10 md:w-10 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-10 object-cover" />
                 </div>
 
                 <div className="shrink-0">
                   <div className="flex items-center gap-1 text-[#f0c75e]">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
+                      <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" />
                     ))}
                   </div>
-                  <p className="text-sm text-[#FFFFFF] font-semibold mt-0.5">
+                  <p className="text-xs sm:text-sm md:text-sm text-[#FFFFFF] font-semibold mt-0.5">
                     100% Satisfaction • 150M+ Pieces Exported Globally
                   </p>
                 </div>
               </div>
 
-              {/* Bottom Feature Key Points with increased top gap */}
-              <div className="pt-7 sm:pt-8">
-                <div className="flex flex-wrap lg:flex-nowrap items-center gap-4 sm:gap-6 text-sm sm:text-[15px] text-[#FFFFFF] font-semibold">
+              {/* Bottom Feature Key Points with responsive grid */}
+              <div className="pt-4 sm:pt-6 md:pt-7 lg:pt-8">
+                <div className="grid grid-cols-2 sm:flex sm:flex-wrap lg:flex-nowrap items-center gap-3 sm:gap-5 md:gap-6 text-xs sm:text-sm md:text-sm lg:text-[15px] text-[#FFFFFF] font-semibold">
                   <div className="flex items-center gap-2 shrink-0">
-                    <div className="w-5 h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
-                      <Check className="w-3.2 h-3.2 text-white stroke-[3.5]" />
+                    <div className="w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
+                      <Check className="w-3 h-3 sm:w-3.2 sm:h-3.2 text-white stroke-[3.5]" />
                     </div>
-                    <span>ISO 9001:2015 Certified</span>
+                    <span>ISO 9001:2015</span>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
-                    <div className="w-5 h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
-                      <Check className="w-3.2 h-3.2 text-white stroke-[3.5]" />
+                    <div className="w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
+                      <Check className="w-3 h-3 sm:w-3.2 sm:h-3.2 text-white stroke-[3.5]" />
                     </div>
-                    <span>Zero Defects Guarantee</span>
+                    <span>Zero Defects</span>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
-                    <div className="w-5 h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
-                      <Check className="w-3.2 h-3.2 text-white stroke-[3.5]" />
+                    <div className="w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
+                      <Check className="w-3 h-3 sm:w-3.2 sm:h-3.2 text-white stroke-[3.5]" />
                     </div>
                     <span>30+ Yrs FENCETECH</span>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
-                    <div className="w-5 h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
-                      <Check className="w-3.2 h-3.2 text-white stroke-[3.5]" />
+                    <div className="w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
+                      <Check className="w-3 h-3 sm:w-3.2 sm:h-3.2 text-white stroke-[3.5]" />
                     </div>
-                    <span>Govt. Export Awardee</span>
+                    <span>Export Awardee</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Floating Product Showcase Card */}
-            <div className="lg:col-span-4 flex justify-end items-end w-full">
+            <div className="lg:col-span-4 flex justify-center lg:justify-end items-end w-full pt-4 lg:pt-0">
               <a
                 href={`/products/${productSlug(currentProduct)}`}
                 onClick={(e) => {
                   e.preventDefault();
                   onNavigate?.('product-detail', currentProduct);
                 }}
-                className="bg-white rounded-[22px] sm:rounded-[24px] p-2.5 sm:p-3 shadow-2xl border border-white/80 max-w-[280px] sm:max-w-[310px] w-full transform transition-all hover:-translate-y-1 group cursor-pointer select-none"
+                className="bg-white rounded-[22px] sm:rounded-[24px] p-2.5 sm:p-3 shadow-2xl border border-white/80 max-w-[260px] xs:max-w-[280px] sm:max-w-[310px] md:max-w-[320px] w-full transform transition-all hover:-translate-y-1 group cursor-pointer select-none"
               >
                 {/* 1:1 Aspect Ratio Image Container with smooth transition */}
                 <div className="relative w-full aspect-square bg-[#f1f4f8] rounded-[16px] sm:rounded-[18px] overflow-hidden mb-2.5 border border-slate-100 flex items-center justify-center">

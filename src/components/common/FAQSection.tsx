@@ -49,38 +49,38 @@ export const FAQSection: FC<FAQSectionProps> = ({ onNavigate }) => {
   return (
     <section
       id="faq"
-      className="w-full bg-white py-16 sm:py-20 lg:py-24 font-['Outfit',sans-serif]"
+      className="w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24 font-['Outfit',sans-serif]"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 lg:gap-14 items-start">
           {/* Left Column: Eyebrow + Headline + Description + Let's Talk CTA */}
-          <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:space-y-8">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block" />
-                <span className="text-[#3B82F6] text-xs sm:text-sm font-bold tracking-tight uppercase">
+          <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-5 sm:space-y-6 md:space-y-8">
+            <div className="space-y-3 sm:space-y-4">
+              <div className="flex items-start gap-2">
+                <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block shrink-0 self-start mt-0.5 sm:mt-1" />
+                <span className="text-[#3B82F6] text-xs sm:text-sm md:text-base font-bold tracking-tight uppercase">
                   Frequently Asked Questions
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
+              <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-[38px] lg:text-[42px] font-bold text-[#0a1532] leading-[1.18] tracking-tight">
                 Common Questions for Global Distributors &amp; Importers.
               </h2>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal pt-1">
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal pt-1">
                 Everything you need to know about our minimum order quantities, custom tooling lead times, ASTM galvanization standards, and shipping terms.
               </p>
             </div>
 
             {/* Let's Talk Button matching website button design and hover effect */}
-            <div className="pt-2 lg:pt-8">
+            <div className="pt-1 sm:pt-2 lg:pt-8">
               <button
                 type="button"
                 onClick={() => onNavigate?.('contact')}
-                className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-6 pr-2.5 py-3 rounded-full inline-flex items-center gap-3 text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
+                className="group/btn bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 sm:pl-6 pr-2.5 py-2.5 sm:py-3 rounded-full inline-flex items-center gap-3 text-xs sm:text-sm md:text-base shadow-xl transition-all transform hover:scale-105 cursor-pointer"
               >
                 <span className="transition-colors">Request a Quote</span>
-                <div className="w-7 h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white group-hover/btn:bg-[#3B82F6] text-[#3B82F6] group-hover/btn:text-white flex items-center justify-center shadow-sm shrink-0 group-hover/btn:translate-x-0.5 transition-all">
                   <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                 </div>
               </button>
@@ -88,14 +88,14 @@ export const FAQSection: FC<FAQSectionProps> = ({ onNavigate }) => {
           </div>
 
           {/* Right Column: Accordion list */}
-          <div className="lg:col-span-7 space-y-3.5 sm:space-y-4">
+          <div className="lg:col-span-7 space-y-3 sm:space-y-3.5 md:space-y-4">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
 
               return (
                 <div
                   key={faq.id}
-                  className={`rounded-[20px] sm:rounded-[22px] transition-all duration-300 overflow-hidden cursor-pointer ${
+                  className={`rounded-[16px] sm:rounded-[20px] md:rounded-[22px] transition-all duration-300 overflow-hidden cursor-pointer ${
                     isOpen
                       ? 'bg-[#0a1532] text-white shadow-xl border border-blue-900/60'
                       : 'bg-white text-[#0a1532] hover:border-[#3B82F6]/50 shadow-sm border border-slate-200/90 hover:bg-slate-50/50'
@@ -103,9 +103,9 @@ export const FAQSection: FC<FAQSectionProps> = ({ onNavigate }) => {
                   onClick={() => toggleFAQ(index)}
                 >
                   {/* Accordion Header */}
-                  <div className="p-5 sm:p-6 flex items-center justify-between gap-4 select-none">
+                  <div className="p-4 sm:p-5 md:p-6 flex items-center justify-between gap-3.5 sm:gap-4 select-none">
                     <h3
-                      className={`text-base sm:text-lg font-semibold tracking-tight transition-colors ${
+                      className={`text-sm sm:text-base md:text-lg font-semibold tracking-tight transition-colors ${
                         isOpen ? 'text-white' : 'text-[#0a1532] hover:text-[#3B82F6]'
                       }`}
                     >
@@ -120,9 +120,9 @@ export const FAQSection: FC<FAQSectionProps> = ({ onNavigate }) => {
                       }`}
                     >
                       {isOpen ? (
-                        <ChevronUp className="w-5 h-5 stroke-[2.5]" />
+                        <ChevronUp className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2.5]" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 stroke-[2]" />
+                        <ChevronDown className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2]" />
                       )}
                     </div>
                   </div>
@@ -136,7 +136,7 @@ export const FAQSection: FC<FAQSectionProps> = ({ onNavigate }) => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                       >
-                        <div className="px-5 sm:px-6 pb-6 pt-1 text-[#DBEAFE]/90 text-xs sm:text-sm leading-relaxed border-t border-white/10 mt-1">
+                        <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-6 pt-1 text-[#DBEAFE]/90 text-xs sm:text-sm leading-relaxed border-t border-white/10 mt-1">
                           {faq.answer}
                         </div>
                       </motion.div>

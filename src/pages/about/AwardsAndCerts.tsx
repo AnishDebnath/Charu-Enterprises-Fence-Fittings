@@ -169,17 +169,17 @@ export const AwardsAndCerts: FC = () => {
               </button>
 
               {/* Certificate Image View */}
-              <div className="w-full md:w-[54%] lg:w-[58%] bg-slate-950 flex items-center justify-center p-3 sm:p-5 lg:p-7 overflow-auto min-h-[340px] md:min-h-full">
+              <div className="w-full md:w-[54%] lg:w-[58%] bg-slate-950 flex items-center justify-center p-3 sm:p-5 lg:p-7 overflow-auto min-h-[220px] sm:min-h-[300px] md:min-h-full">
                 <img
                   src={selectedCert.image}
                   alt={selectedCert.alt}
                   loading="lazy"
-                  className="max-h-[78vh] w-auto max-w-full object-contain rounded-lg shadow-2xl"
+                  className="max-h-[36vh] sm:max-h-[50vh] md:max-h-[78vh] w-auto max-w-full object-contain rounded-lg shadow-2xl"
                 />
               </div>
 
               {/* Certificate Meta & Details */}
-              <div className="w-full md:w-[46%] lg:w-[42%] p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-white overflow-y-auto">
+              <div className="w-full md:w-[46%] lg:w-[42%] p-5 sm:p-8 lg:p-10 flex flex-col justify-between bg-white overflow-y-auto">
                 <div className="space-y-4 sm:space-y-5">
                   {/* Category Pill */}
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#DBEAFE] text-[#1E40AF] text-xs font-bold rounded-full border border-blue-200">

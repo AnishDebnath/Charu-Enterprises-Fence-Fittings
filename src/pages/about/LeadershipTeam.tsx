@@ -60,8 +60,8 @@ export const LeadershipTeam: FC = () => {
                   isReversed ? 'sm:flex-row-reverse' : 'sm:flex-row'
                 }`}
               >
-                {/* 1:1 Square Ratio Ideal Proportion Showcase Image */}
-                <div className="w-full sm:w-[190px] md:w-[210px] lg:w-[230px] shrink-0 aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 relative border border-slate-100 shadow-sm">
+                {/* 4:5 Ratio Showcase Image */}
+                <div className="w-48 xs:w-52 sm:w-[190px] md:w-[210px] lg:w-[230px] shrink-0 aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 relative border border-slate-100 shadow-sm mx-auto sm:mx-0">
                   <img
                     src={member.image}
                     alt={member.alt}

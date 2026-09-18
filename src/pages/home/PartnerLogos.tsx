@@ -54,7 +54,7 @@ export const PartnerLogos = () => {
   const marqueeItems = [...partners, ...partners, ...partners];
 
   return (
-    <div className="w-full bg-white px-2 sm:px-3 md:px-4 py-8 sm:py-10">
+    <div className="w-full bg-white px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-6 sm:py-8 md:py-10">
       {/* Marquee viewport container matching hero section width with fade gradients on both edges */}
       <div className="w-full relative overflow-hidden">
         {/* Left Side Fade Effect */}
@@ -64,7 +64,7 @@ export const PartnerLogos = () => {
         <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-40 lg:w-52 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
         {/* Infinite Running Marquee Track (Right to Left) */}
-        <div className="animate-marquee flex items-center gap-12 sm:gap-16 md:gap-20 py-2">
+        <div className="animate-marquee flex items-center gap-10 sm:gap-14 md:gap-18 lg:gap-20 py-2">
           {marqueeItems.map((partner, index) => (
             <div
               key={index}

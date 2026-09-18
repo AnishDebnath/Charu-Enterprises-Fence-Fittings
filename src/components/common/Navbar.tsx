@@ -71,7 +71,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
     <div
       id="main-navbar-container"
       className={`fixed left-0 right-0 z-50 pointer-events-none transition-[top] duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] font-['Outfit',sans-serif] ${
-        isScrolled ? 'top-2.5 sm:top-3.5 md:top-4' : 'top-4 sm:top-6 md:top-7 lg:top-8'
+        isScrolled ? 'top-4 sm:top-4.5 md:top-5 lg:top-6' : 'top-5 sm:top-6 md:top-7 lg:top-8'
       }`}
     >
       {/* Outer Flex Wrapper for Centered Shrinking */}
@@ -79,10 +79,10 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
         {/* Transparent Glassmorphism Navbar Container */}
         <div
           id="glass-navbar"
-          className={`w-full rounded-full flex items-center justify-between border border-white/25 bg-[#0d1319]/90 shadow-2xl shadow-black/60 backdrop-blur-md sm:backdrop-blur-lg px-4 sm:px-6 py-2.5 sm:py-3 transition-[max-width] duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[max-width] ${
+          className={`w-full rounded-full flex items-center justify-between border border-white/25 bg-[#0d1319]/90 shadow-2xl shadow-black/60 backdrop-blur-md sm:backdrop-blur-lg px-3.5 sm:px-5 lg:px-6 py-2 sm:py-2.5 lg:py-3 transition-[max-width] duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[max-width] ${
             isScrolled
-              ? 'max-w-[300px] sm:max-w-[380px]'
-              : 'max-w-7xl'
+              ? 'max-w-[280px] sm:max-w-[340px] lg:max-w-[380px]'
+              : 'max-w-[280px] sm:max-w-[340px] lg:max-w-7xl'
           }`}
         >
           {/* Logo */}
@@ -170,8 +170,8 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
             </AnimatePresence>
           </div>
 
-          {/* Right: Phone + CTA with zero unmount shift */}
-          <div className="hidden sm:flex items-center shrink-0">
+          {/* Right on Desktop: Phone + Request Quote CTA */}
+          <div className="hidden lg:flex items-center shrink-0">
             <a
               href="tel:+919830083777"
               className="flex items-center gap-2 text-white text-sm font-semibold hover:text-[#60A5FA] transition-colors py-1 px-2 rounded-full hover:bg-white/5 shrink-0"
@@ -205,24 +205,22 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
             </AnimatePresence>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Right on Mobile / Tablet: Call Option + Hamburger Menu */}
           <div className="flex lg:hidden items-center gap-2 shrink-0">
+            {/* Call Option */}
             <a
               href="tel:+919830083777"
-              className="text-neutral-200 hover:text-white p-2 cursor-pointer bg-black/40 hover:bg-black/60 rounded-full border border-white/20 shadow-sm transition-colors"
-              aria-label="Call Us"
+              className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-white bg-blue-600/30 hover:bg-blue-600/50 rounded-full border border-blue-400/40 shadow-sm transition-colors cursor-pointer"
+              aria-label="Call +91 9830083777"
             >
-              <Phone className="w-4 h-4 text-[#60A5FA]" />
+              <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#60A5FA]" />
             </a>
+
+            {/* Hamburger Toggle */}
             <button
-              onClick={() => handleNavClick('contact')}
-              className="group sm:hidden bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold px-3 py-1.5 rounded-full text-xs shadow-sm transition-colors"
-            >
-              Quote
-            </button>
-            <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-neutral-200 hover:text-white p-2 cursor-pointer bg-black/40 hover:bg-black/60 rounded-full border border-white/20 shadow-sm transition-colors"
+              className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-neutral-200 hover:text-white bg-black/40 hover:bg-black/60 rounded-full border border-white/20 shadow-sm transition-colors cursor-pointer"
               aria-label="Toggle navigation menu"
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -252,99 +250,83 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu with Smooth Spring Motion Animation */}
+        {/* Mobile Dropdown Menu with Website Dark Theme and Reference Structure */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
               id="mobile-glass-menu"
-              initial={{ opacity: 0, y: -14, scale: 0.96 }}
+              initial={{ opacity: 0, y: -10, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -14, scale: 0.96 }}
-              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className={`mt-2.5 bg-[#0c1219]/95 backdrop-blur-2xl border border-white/20 rounded-2xl p-5 space-y-3 shadow-2xl text-white origin-top w-full ${
-                isScrolled ? 'max-w-[300px] sm:max-w-[420px] md:max-w-[440px]' : 'max-w-7xl'
-              }`}
+              exit={{ opacity: 0, y: -10, scale: 0.96 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-2.5 bg-[#0d1319]/95 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 sm:p-5 shadow-2xl shadow-black/90 text-white origin-top w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] flex flex-col gap-3 font-['Outfit',sans-serif]"
             >
-              <motion.button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleNavClick('home');
-                }}
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.05 }}
-                className={`w-full text-left py-2 font-bold text-base border-b border-white/10 transition-colors cursor-pointer ${
-                  currentPage === 'home' ? 'text-[#60A5FA]' : 'text-neutral-200 hover:text-white'
-                }`}
-              >
-                HOME
-              </motion.button>
-              <motion.button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleNavClick('about');
-                }}
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.09 }}
-                className={`w-full text-left py-2 font-bold text-base border-b border-white/10 transition-colors cursor-pointer ${
-                  currentPage === 'about' ? 'text-[#60A5FA]' : 'text-neutral-200 hover:text-white'
-                }`}
-              >
-                ABOUT
-              </motion.button>
-              <motion.button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleNavClick('products');
-                }}
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.13 }}
-                className={`w-full text-left py-2 text-base border-b border-white/10 transition-colors cursor-pointer ${
-                  currentPage === 'products' || currentPage === 'product-detail' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
-                }`}
-              >
-                PRODUCTS
-              </motion.button>
-              <motion.button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleNavClick('case-study');
-                }}
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.17 }}
-                className={`w-full text-left py-2 text-base border-b border-white/10 transition-colors cursor-pointer ${
-                  currentPage === 'case-study' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
-                }`}
-              >
-                CASE STUDY
-              </motion.button>
-              <motion.button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleNavClick('contact');
-                }}
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.21 }}
-                className={`w-full text-left py-2 text-base transition-colors cursor-pointer ${
-                  currentPage === 'contact' ? 'text-[#60A5FA] font-bold' : 'text-neutral-200 hover:text-white'
-                }`}
-              >
-                CONTACT
-              </motion.button>
+              {/* Navigation Links */}
+              <div className="space-y-1">
+                {[
+                  { id: 'home', label: 'Home' },
+                  { id: 'products', label: 'Products Catalog' },
+                  { id: 'about', label: 'About' },
+                  { id: 'case-study', label: 'Case Studies' },
+                  { id: 'contact', label: 'Contact' },
+                ].map((item, idx) => {
+                  const isActive = currentPage === item.id || (item.id === 'products' && currentPage === 'product-detail');
+                  return (
+                    <motion.div
+                      key={item.id}
+                      initial={{ opacity: 0, x: -6 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.03 * (idx + 1) }}
+                      className={isActive ? 'bg-blue-600/15 border border-blue-500/25 rounded-xl px-3.5 py-2.5' : 'px-3.5 py-2'}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          handleNavClick(item.id as any);
+                        }}
+                        className={`text-left text-base font-bold tracking-tight transition-colors cursor-pointer block w-full ${
+                          isActive ? 'text-white' : 'text-neutral-300 hover:text-white'
+                        }`}
+                      >
+                        <span>{item.label}</span>
+                        {isActive && <div className="w-7 h-[2.5px] bg-[#60A5FA] rounded-full mt-1" />}
+                      </button>
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              {/* Direct Wholesale Trade Desk Phone Line */}
               <motion.div
-                className="pt-2"
-                initial={{ opacity: 0, y: 6 }}
+                initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
+                className="pt-1"
+              >
+                <a
+                  href="tel:+919830083777"
+                  className="flex items-center gap-3 px-3 py-2 text-left rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
+                >
+                  <div className="w-8 h-8 rounded-full bg-blue-600/25 text-[#60A5FA] flex items-center justify-center shrink-0 border border-blue-400/30 group-hover:bg-[#3B82F6] group-hover:text-white transition-colors">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div className="leading-tight">
+                    <span className="text-[10px] font-bold text-blue-300 uppercase tracking-wider block">
+                      Wholesale Trade Desk
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-white group-hover:text-blue-200 transition-colors tracking-tight block">
+                      +91 98300 83777
+                    </span>
+                  </div>
+                </a>
+              </motion.div>
+
+              {/* Request Quote Button matching Desktop Navbar Button Design */}
+              <motion.div
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.24 }}
               >
                 <button
                   type="button"
@@ -352,10 +334,12 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                     setMobileMenuOpen(false);
                     handleNavClick('contact');
                   }}
-                  className="w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold py-3 rounded-full text-center flex items-center justify-center gap-2 text-sm shadow-lg transition-colors cursor-pointer"
+                  className="group w-full bg-[#3B82F6] hover:bg-[#DBEAFE] text-white hover:text-black font-bold pl-5 pr-2 py-2.5 rounded-full flex items-center justify-between text-sm transition-all cursor-pointer shadow-lg font-['Outfit',sans-serif]"
                 >
-                  <span>Request Product Quote</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span className="transition-colors">Request Quote</span>
+                  <div className="w-6 h-6 rounded-full bg-white group-hover:bg-[#3B82F6] flex items-center justify-center text-[#3B82F6] group-hover:text-white shadow-sm shrink-0 transition-colors">
+                    <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                  </div>
                 </button>
               </motion.div>
             </motion.div>

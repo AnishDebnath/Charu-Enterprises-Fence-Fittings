@@ -75,40 +75,47 @@ export const ProjectFinder: FC<ProjectFinderProps> = ({ onNavigate }) => {
           </h2>
         </div>
 
-        {/* Compact Centered 3 Badges Grid */}
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 items-stretch">
-          {badges.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => onNavigate?.('contact')}
-              className="bg-white rounded-[20px] sm:rounded-[22px] p-4 sm:p-5 flex flex-col items-center text-center shadow-xl hover:shadow-[0_16px_40px_rgba(59,130,246,0.18)] transition-all duration-300 transform hover:-translate-y-1 group border border-slate-100/90 cursor-pointer"
-            >
-              {/* Badge Visual Container */}
-              <div className="relative w-20 h-20 sm:w-22 sm:h-22 mb-3.5 flex items-center justify-center p-2 rounded-2xl bg-slate-50 border border-slate-100 group-hover:bg-[#f0f6ff] transition-colors duration-300">
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="w-full h-full object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
-                />
+        {/* Grid: 2-1 layout on Mobile (< sm), Single Line 3-Column layout on Tablet & Desktop (sm+) */}
+        <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-3 xs:gap-4 sm:gap-5 md:gap-6 items-stretch">
+          {badges.map((item, index) => {
+            const isLast = index === badges.length - 1;
+            return (
+              <div
+                key={item.id}
+                onClick={() => onNavigate?.('contact')}
+                className={`bg-white rounded-[18px] sm:rounded-[20px] md:rounded-[22px] p-3.5 xs:p-4 sm:p-5 md:p-6 flex flex-col items-center text-center shadow-xl hover:shadow-[0_16px_40px_rgba(59,130,246,0.18)] transition-all duration-300 transform hover:-translate-y-1 group border border-slate-100/90 cursor-pointer ${
+                  isLast
+                    ? 'col-span-2 w-[calc(50%-0.375rem)] xs:w-[calc(50%-0.5rem)] sm:w-full sm:col-span-1 mx-auto sm:mx-0'
+                    : 'w-full'
+                }`}
+              >
+                {/* Badge Visual Container */}
+                <div className="relative w-14 h-14 xs:w-16 xs:h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 mb-2.5 xs:mb-3 sm:mb-3.5 flex items-center justify-center p-2 rounded-2xl bg-slate-50 border border-slate-100 group-hover:bg-[#f0f6ff] transition-colors duration-300">
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="w-full h-full object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+
+                {/* Tag Pill */}
+                <span className="inline-block px-2 xs:px-2.5 py-0.5 bg-[#f0f6ff] text-[#1E40AF] text-[10px] xs:text-[11px] font-bold rounded-full mb-1.5 xs:mb-2 border border-blue-100">
+                  {item.tag}
+                </span>
+
+                {/* Title */}
+                <h3 className="text-xs xs:text-sm sm:text-[15px] font-bold text-[#0a1532] tracking-tight group-hover:text-[#3B82F6] transition-colors mb-1 xs:mb-1.5 leading-snug">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-slate-600 text-[10px] xs:text-[11px] sm:text-xs leading-tight xs:leading-relaxed font-normal">
+                  {item.description}
+                </p>
               </div>
-
-              {/* Tag Pill */}
-              <span className="inline-block px-2.5 py-0.5 bg-[#f0f6ff] text-[#1E40AF] text-[11px] font-bold rounded-full mb-2 border border-blue-100">
-                {item.tag}
-              </span>
-
-              {/* Title */}
-              <h3 className="text-sm sm:text-[15px] font-bold text-[#0a1532] tracking-tight group-hover:text-[#3B82F6] transition-colors mb-1.5">
-                {item.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-slate-600 text-[11px] sm:text-xs leading-relaxed font-normal">
-                {item.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
