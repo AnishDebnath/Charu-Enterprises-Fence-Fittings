@@ -139,7 +139,7 @@ export const ProductGrid: FC<ProductsShowcaseProps> = ({ onNavigate }) => {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
             {filteredProducts.map((product: CatalogProduct) => {
               const imgSrc = getProductImage(product.itemNumber) || product.image;
 

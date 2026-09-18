@@ -248,25 +248,24 @@ export const ProductInfo: FC<ProductDetailContentProps> = ({
               </p>
             </div>
 
-            {/* Key Spec Header: 2-1 Grid on Mobile (<lg), 3 Columns on Desktop (lg+) */}
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 py-3 sm:py-3.5 border-y border-slate-100">
-              <div className="space-y-1">
-                <span className="text-xs text-slate-400 block font-normal">Product ID</span>
-                <span className="text-xs sm:text-sm font-bold text-[#0a1532] block truncate">
+            {/* Key Spec Header: Single Row on all screens */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 py-3 sm:py-3.5 border-y border-slate-100">
+              <div className="space-y-0.5 sm:space-y-1 min-w-0">
+                <span className="text-[11px] sm:text-xs text-slate-400 block font-normal">Product ID</span>
+                <span className="text-xs sm:text-sm font-bold text-[#0a1532] block truncate" title={data.itemNumber}>
                   {data.itemNumber}
                 </span>
               </div>
-              <div className="space-y-1">
-                <span className="text-xs text-slate-400 block font-normal">Category</span>
-                <span className="text-xs sm:text-sm font-bold text-[#2563EB] block truncate">
+              <div className="space-y-0.5 sm:space-y-1 min-w-0">
+                <span className="text-[11px] sm:text-xs text-slate-400 block font-normal">Category</span>
+                <span className="text-xs sm:text-sm font-bold text-[#2563EB] block truncate" title={data.category || 'Fittings & Arms'}>
                   {data.category || 'Fittings & Arms'}
                 </span>
               </div>
-              <div className="col-span-2 lg:col-span-1 space-y-1 pt-2 sm:pt-2.5 lg:pt-0 border-t border-slate-100/70 lg:border-t-0">
-                <span className="text-xs text-slate-400 block font-normal">Total Sizes</span>
+              <div className="space-y-0.5 sm:space-y-1 min-w-0">
+                <span className="text-[11px] sm:text-xs text-slate-400 block font-normal">Total Sizes</span>
                 <span className="text-xs sm:text-sm font-bold text-[#059669] block truncate">
-                  <span className="lg:hidden">{totalSizesCount} Standard Sizes Available</span>
-                  <span className="hidden lg:inline">{totalSizesCount} Standard Sizes</span>
+                  {totalSizesCount} Standard Sizes
                 </span>
               </div>
             </div>
