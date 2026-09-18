@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Watermark } from '../Watermark';
 
 interface FooterProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
@@ -270,6 +271,9 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
               </a>
             </div>
           </div>
+
+          {/* Watermark */}
+          <Watermark />
 
         </div>
       </div>
