@@ -68,6 +68,7 @@ export const CompanyOverview: FC<AboutTeamProps> = ({ onNavigate }) => {
               loop
               muted
               playsInline
+              preload="metadata"
               className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-700"
             />
             {/* Subtle Overlay */}

@@ -4,8 +4,12 @@ import { motion, AnimatePresence } from 'motion/react';
 import { CATALOG_PRODUCTS, type CatalogProduct } from '../../data/companyData';
 import { getProductImage } from '../../data/productImages';
 import { productSlug } from '../../App';
-import { getCloudinaryVideoUrl } from '../../utils/cloudinary';
+import { getCloudinaryVideoUrl, getCloudinaryUrl } from '../../utils/cloudinary';
 const bannerVideo = getCloudinaryVideoUrl('banner-video.mp4');
+const faceImage1 = getCloudinaryUrl('client-rating-1.jpg');
+const faceImage2 = getCloudinaryUrl('client-rating-2.jpg');
+const faceImage3 = getCloudinaryUrl('client-rating-3.jpg');
+const faceImage4 = getCloudinaryUrl('client-rating-4.jpg');
 
 interface HeroProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
@@ -40,6 +44,7 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
             loop
             muted
             playsInline
+            preload="metadata"
             className="w-full h-full object-cover object-[70%_center] lg:object-[80%_center] opacity-85"
           />
           {/* Reduced multi-stop gradient overlay so image clearly shows */}
@@ -100,18 +105,10 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
               {/* Ratings row */}
               <div className="pt-2 flex flex-wrap sm:flex-nowrap items-center gap-3.5">
                 <div className="flex items-center -space-x-2.5 shrink-0 px-1 py-1">
-                  <div className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-40 items-center justify-center bg-[#3B82F6] text-white text-xs font-bold">
-                    JD
-                  </div>
-                  <div className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-30 items-center justify-center bg-[#2563EB] text-white text-xs font-bold">
-                    RK
-                  </div>
-                  <div className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-20 items-center justify-center bg-[#1E40AF] text-white text-xs font-bold">
-                    SM
-                  </div>
-                  <div className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-10 items-center justify-center bg-[#1E3A8A] text-white text-xs font-bold">
-                    AK
-                  </div>
+                  <img src={faceImage1} alt="Client" className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-40 object-cover" />
+                  <img src={faceImage2} alt="Client" className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-30 object-cover" />
+                  <img src={faceImage3} alt="Client" className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-20 object-cover" />
+                  <img src={faceImage4} alt="Client" className="inline-flex h-9.5 w-9.5 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-10 object-cover" />
                 </div>
 
                 <div className="shrink-0">

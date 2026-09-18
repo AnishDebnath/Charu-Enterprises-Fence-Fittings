@@ -48,6 +48,7 @@ export const ComingSoonPage: FC = () => {
             loop
             muted
             playsInline
+            preload="metadata"
             className="w-full h-full object-cover object-[70%_center] lg:object-[80%_center] opacity-75 sm:opacity-80"
           />
           {/* Multi-stop cinematic gradient matching Home Hero */}

@@ -74,11 +74,7 @@ export function getProductImage(itemNumber: number): string {
 export function getProductImageUrl(itemNumber: number, options?: { width?: number }): string {
   if (BASE_URL) {
     const slug = PRODUCT_SLUGS[itemNumber];
-    if (slug) {
-      const base = getCloudinaryUrl(`${slug}.jpg`);
-      const w = options?.width || 800;
-      return `${base}/w_${w},q_auto,f_auto`;
-    }
+    if (slug) return getCloudinaryUrl(`${slug}.jpg`, { width: options?.width || 800 });
   }
   return '';
 }
