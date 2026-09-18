@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { getCloudinaryUrl } from '../../utils/cloudinary';
+import { DraggableMarquee } from '../../components/common/DraggableMarquee';
 
 const caseStudyFiles = [
   'commercial-chain-link-gate-system',
@@ -27,7 +28,12 @@ interface RecentProjectsProps {
 }
 
 export const CaseStudyMarquee: FC<RecentProjectsProps> = ({ onNavigate }) => {
-  const marqueeCards = [...caseStudyCards, ...caseStudyCards];
+  const marqueeCards = [
+    ...caseStudyCards,
+    ...caseStudyCards,
+    ...caseStudyCards,
+    ...caseStudyCards,
+  ];
 
   return (
     <section
@@ -70,42 +76,41 @@ export const CaseStudyMarquee: FC<RecentProjectsProps> = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* Marquee Container */}
-      <div className="relative w-full overflow-hidden py-3">
-        <div className="animate-marquee flex gap-4 sm:gap-5 md:gap-6 lg:gap-6 cursor-grab active:cursor-grabbing px-4 md:px-8">
-          {marqueeCards.map((card, index) => {
-            const imgSrc = supplyImageList[index % supplyImageList.length];
-            return (
-              <div
-                key={index}
-                onClick={() => onNavigate?.('case-study')}
-                className="group relative rounded-[22px] xs:rounded-[26px] sm:rounded-[30px] overflow-hidden aspect-square w-[240px] xs:w-[270px] sm:w-[300px] md:w-[340px] lg:w-[370px] xl:w-[380px] shrink-0 bg-[#071128] shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between p-4 sm:p-5 md:p-6 cursor-pointer border border-slate-200/60 select-none"
-              >
-                {/* Background Supply Image */}
-                <img
-                  src={imgSrc}
-                  alt={card.title}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover object-center opacity-100 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
-                />
+      {/* Marquee Container - Draggable */}
+      <DraggableMarquee speed={0.75} pauseOnHover={true}>
+        {marqueeCards.map((card, index) => {
+          const imgSrc = supplyImageList[index % supplyImageList.length];
+          return (
+            <div
+              key={index}
+              onClick={() => onNavigate?.('case-study')}
+              className="group relative rounded-[22px] xs:rounded-[26px] sm:rounded-[30px] overflow-hidden aspect-square w-[240px] xs:w-[270px] sm:w-[300px] md:w-[340px] lg:w-[370px] xl:w-[380px] shrink-0 bg-[#071128] shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between p-4 sm:p-5 md:p-6 cursor-pointer border border-slate-200/60 select-none"
+            >
+              {/* Background Supply Image */}
+              <img
+                src={imgSrc}
+                alt={card.title}
+                loading="lazy"
+                draggable={false}
+                className="absolute inset-0 w-full h-full object-cover object-center opacity-100 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+              />
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/95 via-[#071128]/40 via-50% to-[#071128]/10 pointer-events-none" />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071128]/95 via-[#071128]/40 via-50% to-[#071128]/10 pointer-events-none" />
 
-                {/* Top spacer */}
-                <div />
+              {/* Top spacer */}
+              <div />
 
-                {/* Bottom Content Area */}
-                <div className="relative z-10">
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-white tracking-tight leading-snug drop-shadow-sm">
-                    {card.title}
-                  </h3>
-                </div>
+              {/* Bottom Content Area */}
+              <div className="relative z-10 pointer-events-none">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-white tracking-tight leading-snug drop-shadow-sm">
+                  {card.title}
+                </h3>
               </div>
-            );
-          })}
-        </div>
-      </div>
+            </div>
+          );
+        })}
+      </DraggableMarquee>
     </section>
   );
 };
