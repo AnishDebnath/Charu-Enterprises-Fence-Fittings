@@ -87,9 +87,9 @@ export const TestimonialCarousel: FC = () => {
       className="w-full bg-[#DBEAFE] py-12 sm:py-16 md:py-20 lg:py-24 font-['Outfit',sans-serif]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-8 lg:gap-10 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-8 lg:gap-10">
           {/* Left Column: Eyebrow + Headline + Image */}
-          <div className="lg:col-span-6 flex flex-col justify-end">
+          <div className="lg:col-span-6 flex flex-col justify-between">
             {/* Header directly above the image */}
             <div className="mb-4 sm:mb-6 md:mb-8 space-y-2.5 sm:space-y-3.5">
               <div className="flex items-start gap-2">

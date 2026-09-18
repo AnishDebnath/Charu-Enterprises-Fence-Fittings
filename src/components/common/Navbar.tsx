@@ -97,18 +97,18 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
     <div
       id="main-navbar-container"
       className={`fixed left-0 right-0 z-50 pointer-events-none transition-[top] duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] font-['Outfit',sans-serif] ${
-        isScrolled ? 'top-4 sm:top-4.5 md:top-5 lg:top-6' : 'top-5 sm:top-6 md:top-7 lg:top-8'
+        isScrolled ? 'top-4 sm:top-4.5 md:top-5 xl:top-6' : 'top-5 sm:top-6 md:top-7 xl:top-8'
       }`}
     >
       {/* Outer Flex Wrapper for Centered Shrinking */}
-      <div ref={navRef} className="w-full flex flex-col items-center px-2 sm:px-4 md:px-6 pointer-events-auto">
+      <div ref={navRef} className="w-full flex flex-col items-center px-2 sm:px-4 md:px-6 xl:px-8 pointer-events-auto">
         {/* Transparent Glassmorphism Navbar Container */}
         <div
           id="glass-navbar"
-          className={`w-full rounded-full flex items-center justify-between border border-white/25 bg-[#0d1319]/90 shadow-2xl shadow-black/60 backdrop-blur-md sm:backdrop-blur-lg px-3.5 sm:px-5 lg:px-6 py-2 sm:py-2.5 lg:py-3 transition-[max-width] duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[max-width] ${
+          className={`w-full rounded-full flex items-center justify-between border border-white/25 bg-[#0d1319]/90 shadow-2xl shadow-black/60 backdrop-blur-md sm:backdrop-blur-lg px-3.5 sm:px-5 xl:px-6 py-2 sm:py-2.5 xl:py-3 transition-[max-width] duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[max-width] ${
             isScrolled
-              ? 'max-w-[280px] sm:max-w-[340px] lg:max-w-[380px]'
-              : 'max-w-[280px] sm:max-w-[340px] lg:max-w-7xl'
+              ? 'max-w-[280px] sm:max-w-[440px] xl:max-w-[380px]'
+              : 'max-w-[280px] sm:max-w-[440px] xl:max-w-7xl'
           }`}
         >
           {/* Logo */}
@@ -123,7 +123,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
           </div>
 
           {/* Desktop Nav Links with synchronized zero-shift width and opacity transition */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden xl:flex items-center">
             <AnimatePresence initial={false}>
               {!isScrolled && (
                 <motion.div
@@ -134,7 +134,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden flex items-center"
                 >
-                  <nav className="flex items-center gap-7 xl:gap-8 text-sm font-bold tracking-wider uppercase text-neutral-100 whitespace-nowrap px-4 xl:px-6">
+                  <nav className="flex items-center gap-7 2xl:gap-8 text-sm font-bold tracking-wider uppercase text-neutral-100 whitespace-nowrap px-4 2xl:px-6">
                     <button
                       type="button"
                       onClick={() => handleNavClick('home')}
@@ -197,7 +197,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
           </div>
 
           {/* Right on Desktop: Phone + Request Quote CTA */}
-          <div className="hidden lg:flex items-center shrink-0">
+          <div className="hidden xl:flex items-center shrink-0">
             <a
               href="tel:+919830083777"
               className="flex items-center gap-2 text-white text-sm font-semibold hover:text-[#60A5FA] transition-colors py-1 px-2 rounded-full hover:bg-white/5 shrink-0"
@@ -232,14 +232,14 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
           </div>
 
           {/* Right on Mobile / Tablet: Call Option + Hamburger Menu */}
-          <div className="flex lg:hidden items-center gap-2 shrink-0">
+          <div className="flex xl:hidden items-center gap-2 shrink-0">
             {/* Call Option */}
             <a
               href="tel:+919830083777"
-              className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-white bg-blue-600/30 hover:bg-blue-600/50 rounded-full border border-blue-400/40 shadow-sm transition-colors cursor-pointer"
-              aria-label="Call +91 9830083777"
+              className="flex items-center gap-2 text-white text-sm font-semibold hover:text-[#60A5FA] transition-colors py-1 px-2 rounded-full hover:bg-white/5 shrink-0"
             >
-              <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#60A5FA]" />
+              <Phone className="w-4 h-4 text-[#60A5FA]" />
+              <span className="whitespace-nowrap hidden sm:inline">+91 9830083777</span>
             </a>
 
             {/* Hamburger Toggle */}

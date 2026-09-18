@@ -254,7 +254,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Huge Metallic Gradient CHARU ENTERPRISES-INDIA Text Background Banner */}
           <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-14 mb-2 sm:mb-4 select-none pointer-events-none text-center overflow-hidden flex items-center justify-center">
-            <h1 className="text-[22px] xs:text-[28px] sm:text-[44px] md:text-[60px] lg:text-[84px] xl:text-[104px] 2xl:text-[118px] font-black tracking-tight leading-none uppercase whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-b from-white/90 via-white/40 to-white/0 font-['Outfit',sans-serif]">
+            <h1 className="text-[22px] xs:text-[28px] sm:text-[44px] md:text-[60px] lg:text-[60px] xl:text-[84px] 2xl:text-[104px] font-black tracking-tight leading-none uppercase break-words text-transparent bg-clip-text bg-gradient-to-b from-white/90 via-white/40 to-white/0 font-['Outfit',sans-serif]">
               CHARU ENTERPRISES
             </h1>
           </div>

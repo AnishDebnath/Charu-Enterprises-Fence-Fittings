@@ -124,26 +124,26 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
 
               {/* Bottom Feature Key Points with responsive grid */}
               <div className="pt-4 sm:pt-6 md:pt-7 lg:pt-8">
-                <div className="grid grid-cols-2 sm:flex sm:flex-wrap lg:flex-nowrap items-center gap-3 sm:gap-5 md:gap-6 text-xs sm:text-sm md:text-sm lg:text-[15px] text-[#FFFFFF] font-semibold">
-                  <div className="flex items-center gap-2 shrink-0">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 items-center gap-3 sm:gap-5 md:gap-6 xl:gap-0 text-xs sm:text-sm md:text-sm lg:text-[15px] text-[#FFFFFF] font-semibold">
+                  <div className="flex items-center gap-2 w-full">
                     <div className="w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
                       <Check className="w-3 h-3 sm:w-3.2 sm:h-3.2 text-white stroke-[3.5]" />
                     </div>
                     <span>ISO 9001:2015</span>
                   </div>
-                  <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex items-center gap-2 w-full">
                     <div className="w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
                       <Check className="w-3 h-3 sm:w-3.2 sm:h-3.2 text-white stroke-[3.5]" />
                     </div>
                     <span>Zero Defects</span>
                   </div>
-                  <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex items-center gap-2 w-full">
                     <div className="w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
                       <Check className="w-3 h-3 sm:w-3.2 sm:h-3.2 text-white stroke-[3.5]" />
                     </div>
                     <span>30+ Yrs FENCETECH</span>
                   </div>
-                  <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex items-center gap-2 w-full">
                     <div className="w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-[#3B82F6] flex items-center justify-center text-white shrink-0 shadow-sm">
                       <Check className="w-3 h-3 sm:w-3.2 sm:h-3.2 text-white stroke-[3.5]" />
                     </div>

@@ -145,7 +145,7 @@ export const ProductCarousel: FC<OtherProductsProps> = ({ onNavigate, currentPro
                     e.preventDefault();
                     handleCardClick(product);
                   }}
-                  className="group bg-white rounded-xl sm:rounded-[22px] lg:rounded-[24px] p-2 sm:p-3 border border-slate-200/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_24px_rgba(10,21,50,0.1)] transition-all duration-300 flex flex-col justify-between cursor-pointer select-none relative hover:-translate-y-1 w-[calc(50%-6px)] sm:w-[calc(50%-8px)] md:w-[280px] lg:w-[300px] shrink-0 min-w-[145px]"
+                  className="group bg-white rounded-xl sm:rounded-[22px] lg:rounded-[24px] p-2 sm:p-3 border border-slate-200/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_24px_rgba(10,21,50,0.1)] transition-all duration-300 flex flex-col justify-between cursor-pointer select-none relative hover:-translate-y-1 w-[calc(50%-6px)] sm:w-[calc(50%-8px)] md:w-[calc(33.333%-10px)] lg:w-[300px] shrink-0 min-w-[145px]"
                 >
                   {/* Clean 1:1 Aspect Ratio Image Container */}
                   <div className="relative w-full aspect-square bg-[#f1f4f8] rounded-lg sm:rounded-[16px] lg:rounded-[18px] overflow-hidden border border-slate-100">

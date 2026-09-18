@@ -66,7 +66,7 @@ export const ProductSpecs: FC<ProductImprovementsProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Compact Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 sm:mb-8 pb-4 border-b border-blue-200/70">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-3 mb-6 sm:mb-8 pb-4 border-b border-blue-200/70">
           <div>
             <div className="inline-flex items-center gap-2 mb-1.5">
               <span className="w-1.5 h-3.5 bg-[#f0c75e] rounded-full inline-block" />
