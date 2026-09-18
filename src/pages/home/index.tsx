@@ -1,15 +1,15 @@
 import { Navbar } from '../../components/common/Navbar';
 import { Footer } from '../../components/common/Footer';
-import { Hero } from './Hero';
-import { Partners } from './Partners';
-import { AboutTeam } from './AboutTeam';
-import { ServicesGrid } from './ServicesGrid';
-import { FamilyOwned } from './FamilyOwned';
-import { ProjectFinder } from './ProjectFinder';
-import { RecentProjects } from './RecentProjects';
-import { HomeownerReviews } from './HomeownerReviews';
-import { FAQSection } from './FAQSection';
-import { BackyardCTA } from './BackyardCTA';
+import { ProjectFinder } from '../../components/common/ProjectFinder';
+import { TestimonialCarousel } from '../../components/common/TestimonialCarousel';
+import { FAQSection } from '../../components/common/FAQSection';
+import { CallToAction } from '../../components/common/CallToAction';
+import { ShippingProcess } from '../../components/common/ShippingProcess';
+import { HomeHero } from './HomeHero';
+import { PartnerLogos } from './PartnerLogos';
+import { CompanyOverview } from './CompanyOverview';
+import { ProductMarquee } from './ProductMarquee';
+import { CaseStudyMarquee } from './CaseStudyMarquee';
 
 import type { CatalogProduct } from '../../data/companyData';
 
@@ -21,17 +21,16 @@ export default function HomePage({ onNavigate }: HomePageProps) {
   return (
     <>
       <Navbar currentPage="home" onNavigate={onNavigate} />
-      <Hero onNavigate={onNavigate} />
-      <Partners />
-      <AboutTeam />
-      <ServicesGrid onNavigate={onNavigate} />
-      <FamilyOwned />
+      <HomeHero onNavigate={onNavigate} />
+      <PartnerLogos />
+      <CompanyOverview />
+      <ProductMarquee onNavigate={onNavigate} />
+      <ShippingProcess />
       <ProjectFinder />
-      <RecentProjects onNavigate={onNavigate} />
-      <HomeownerReviews />
-      <BackyardCTA />
+      <CaseStudyMarquee onNavigate={onNavigate} />
+      <TestimonialCarousel />
+      <CallToAction />
       <FAQSection />
-      {/* <OutdoorTips /> */}
       <Footer onNavigate={onNavigate} />
     </>
   );

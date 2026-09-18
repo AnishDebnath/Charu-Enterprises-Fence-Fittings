@@ -8,7 +8,7 @@ interface BackyardCTAProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
-export const BackyardCTA: FC<BackyardCTAProps> = ({ onNavigate }) => {
+export const CallToAction: FC<BackyardCTAProps> = ({ onNavigate }) => {
   return (
     <section
       id="estimate-cta"

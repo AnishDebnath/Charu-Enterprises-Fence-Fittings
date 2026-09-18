@@ -1,5 +1,4 @@
-const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'YOUR_CLOUD_NAME';
-const CLOUDINARY_BASE = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload`;
+import { getCloudinaryUrl, getCloudinaryVideoUrl } from '../utils/cloudinary';
 
 export interface CloudinaryOptions {
   width?: number;
@@ -11,6 +10,8 @@ export interface CloudinaryOptions {
 }
 
 export function cloudinaryUrl(publicId: string, options: CloudinaryOptions = {}): string {
+  const base = getCloudinaryUrl(publicId);
+  if (!base) return '';
   const {
     width,
     height,
@@ -20,29 +21,59 @@ export function cloudinaryUrl(publicId: string, options: CloudinaryOptions = {})
     gravity = 'auto',
   } = options;
 
-  const parts: string[] = [];
-
+  const transforms: string[] = [];
   if (width || height) {
-    const transforms: string[] = [];
     if (width) transforms.push(`w_${width}`);
     if (height) transforms.push(`h_${height}`);
     transforms.push(`c_${crop}`, `g_${gravity}`);
-    parts.push(transforms.join(','));
   }
+  transforms.push(`q_${quality}`, `f_${format}`);
 
-  parts.push(`q_${quality}`, `f_${format}`);
-
-  return `${CLOUDINARY_BASE}/${parts.join('/')}/${publicId}`;
+  return `${base}/${transforms.join('/')}`;
 }
 
-export function productImage(itemNumber: number, options?: CloudinaryOptions): string {
-  return cloudinaryUrl(`products/${itemNumber}`, options);
+export function productImage(slug: string, options?: CloudinaryOptions): string {
+  return cloudinaryUrl(`products/${slug}`, options);
 }
 
-export function testimonialImage(id: number, options?: CloudinaryOptions): string {
-  return cloudinaryUrl(`testimonials/${id}`, options);
+export function bannerImage(name: string, options?: CloudinaryOptions): string {
+  return cloudinaryUrl(`banners/${name}`, options);
 }
 
-export function staticImage(name: string, options?: CloudinaryOptions): string {
-  return cloudinaryUrl(`site/${name}`, options);
+export function founderImage(name: string, options?: CloudinaryOptions): string {
+  return cloudinaryUrl(`founders/${name}`, options);
 }
+
+export function testimonialImage(name: string, options?: CloudinaryOptions): string {
+  return cloudinaryUrl(`testimonials/${name}`, options);
+}
+
+export function shippingImage(name: string, options?: CloudinaryOptions): string {
+  return cloudinaryUrl(`shipping/${name}`, options);
+}
+
+export function caseStudyImage(name: string, options?: CloudinaryOptions): string {
+  return cloudinaryUrl(`case-study/${name}`, options);
+}
+
+export function badgeImage(name: string, options?: CloudinaryOptions): string {
+  return cloudinaryUrl(`badges/${name}`, options);
+}
+
+export function certificateImage(name: string, options?: CloudinaryOptions): string {
+  return cloudinaryUrl(`certificates/${name}`, options);
+}
+
+export function aboutImage(name: string, options?: CloudinaryOptions): string {
+  return cloudinaryUrl(`about/${name}`, options);
+}
+
+export function siteImage(name: string, options?: CloudinaryOptions): string {
+  return cloudinaryUrl(name, options);
+}
+
+export function videoUrl(name: string): string {
+  return getCloudinaryVideoUrl(name);
+}
+
+export { getCloudinaryUrl } from '../utils/cloudinary';

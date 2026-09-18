@@ -13,7 +13,7 @@ interface FamilyOwnedProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
-export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
+export const ShippingProcess: FC<FamilyOwnedProps> = ({ onNavigate }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const steps = [
@@ -171,5 +171,5 @@ export const FamilyOwned: FC<FamilyOwnedProps> = ({ onNavigate }) => {
   );
 };
 
-export default FamilyOwned;
+export default ShippingProcess;
 

@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 import { Navbar } from '../../components/common/Navbar';
 import { Footer } from '../../components/common/Footer';
-import { ProductDetailContent, defaultProductDetail, type ProductDetailData } from './ProductDetailContent';
-import { ProductImprovements } from './ProductImprovements';
-import { BackyardCTA } from '../home/BackyardCTA';
-import { ProductStoryTransformation } from './ProductStoryTransformation';
+import { CallToAction } from '../../components/common/CallToAction';
+import { ProductInfo, defaultProductDetail, type ProductDetailData } from './ProductInfo';
+import { ProductSpecs } from './ProductSpecs';
+import { ProductCarousel } from './ProductCarousel';
 import { getProductImage } from '../../data/productImages';
 import type { CatalogProduct } from '../../data/companyData';
 
@@ -44,25 +44,13 @@ export const ProductDetailPage: FC<ProductDetailPageProps> = ({ product, data, o
 
   return (
     <div className="min-h-screen bg-white flex flex-col justify-between selection:bg-[#3B82F6] selection:text-white font-['Outfit',sans-serif]">
-      {/* 1. Navbar */}
       <Navbar currentPage="product-detail" onNavigate={onNavigate} />
-
-      {/* Main Content Sections */}
       <main className="flex-1 flex flex-col pt-24 sm:pt-28 lg:pt-32 bg-white">
-        {/* Exact Product Detail Showcase matching the design layout */}
-        <ProductDetailContent data={detailData} product={product} onNavigate={onNavigate} />
-
-        {/* Quality Assurance / Manufacturing Standards */}
-        <ProductImprovements />
-
-        {/* Call to Action for Factory Direct RFQ */}
-        <BackyardCTA onNavigate={onNavigate} />
-
-        {/* Other Products Section / Interactive Carousel */}
-        <ProductStoryTransformation onNavigate={onNavigate} currentProductId={product?.itemNumber || 1} />
+        <ProductInfo data={detailData} product={product} onNavigate={onNavigate} />
+        <ProductSpecs />
+        <CallToAction onNavigate={onNavigate} />
+        <ProductCarousel onNavigate={onNavigate} currentProductId={product?.itemNumber || 1} />
       </main>
-
-      {/* 7. Footer */}
       <Footer onNavigate={onNavigate} />
     </div>
   );

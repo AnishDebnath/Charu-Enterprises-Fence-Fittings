@@ -1,8 +1,9 @@
 import { useState, useEffect, type FC } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail } from 'lucide-react';
+import { getCloudinaryVideoUrl } from '../../utils/cloudinary';
 import logo from '../../assets/logo.png';
-import bannerVideo from '../../assets/banner-video.mp4';
+const bannerVideo = getCloudinaryVideoUrl('banner-video.mp4');
 
 export const ComingSoonPage: FC = () => {
   // Target countdown timer (28 days launch window)
@@ -61,6 +62,7 @@ export const ComingSoonPage: FC = () => {
             <img
               src={logo}
               alt="Charu Enterprises"
+              loading="lazy"
               className="h-5 sm:h-6 md:h-7 lg:h-8 w-auto object-contain"
             />
           </div>

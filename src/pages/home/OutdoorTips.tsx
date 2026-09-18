@@ -148,6 +148,7 @@ export const OutdoorTips: FC = () => {
                   <img
                     src={article.image}
                     alt={article.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

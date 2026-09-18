@@ -1,23 +1,23 @@
 import type { FC } from 'react';
 import { motion } from 'motion/react';
 import { getCloudinaryUrl } from '../../utils/cloudinary';
-const bannerAbout = getCloudinaryUrl('about.jpg');
+const bannerContact = getCloudinaryUrl('contact.jpg');
 
-interface AboutHeroProps {
+interface ContactHeroProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
 }
 
-export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
+export const ContactBanner: FC<ContactHeroProps> = ({ onNavigate }) => {
   return (
     <div className="w-full bg-white px-2 sm:px-3 md:px-4 pt-2 sm:pt-3 pb-2 font-['Outfit',sans-serif]">
-      {/* Outer Rounded Hero Container Card with Expanded Height */}
+      {/* Outer Rounded Hero Container Card matching About Hero Design */}
       <div className="w-full bg-[#0a1532] rounded-2xl sm:rounded-[24px] lg:rounded-[28px] overflow-hidden relative shadow-2xl min-h-[420px] sm:min-h-[470px] md:min-h-[520px] lg:min-h-[560px] flex flex-col justify-between border border-blue-900/50">
         
-        {/* Background Image with Craftsman Deck Building & Soft Gradient Overlay */}
+        {/* Background Image with Outdoor Patio/Deck & Soft Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src={bannerAbout}
-            alt="Carpenter crafting outdoor deck wood structure"
+            src={bannerContact}
+            alt="Outdoor pergola and backyard patio living space"
             loading="lazy"
             className="w-full h-full object-cover object-[75%_center] lg:object-[80%_center] opacity-90"
           />
@@ -36,15 +36,15 @@ export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
           >
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              About Our Company
+              Contact Us
             </h1>
 
             {/* Subtitle */}
             <p className="text-neutral-100 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-xl">
-              55+ years of manufacturing excellence and certified fence hardware production.
+              Get direct factory pricing, request sheet metal quotes, and connect with our team.
             </p>
 
-            {/* Breadcrumb Navigation matching design */}
+            {/* Breadcrumb Navigation matching About Hero */}
             <div className="pt-2 flex items-center gap-2 text-sm sm:text-base font-semibold">
               <button
                 type="button"
@@ -54,7 +54,7 @@ export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
                 Home
               </button>
               <span className="text-white/50">/</span>
-              <span className="text-[#f0c75e] font-bold">About Us</span>
+              <span className="text-[#f0c75e] font-bold">Contact Us</span>
             </div>
           </motion.div>
         </div>
@@ -63,4 +63,4 @@ export const AboutHero: FC<AboutHeroProps> = ({ onNavigate }) => {
   );
 };
 
-export default AboutHero;
+export default ContactBanner;

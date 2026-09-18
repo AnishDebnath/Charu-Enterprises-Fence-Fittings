@@ -78,6 +78,7 @@ export const PlantAndTeamSection: FC = () => {
                 <img
                   src={item.image}
                   alt={item.alt}
+                  loading="lazy"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 

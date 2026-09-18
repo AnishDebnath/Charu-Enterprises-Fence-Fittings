@@ -10,7 +10,7 @@ const clientImg3 = getCloudinaryUrl('client-3.jpg');
 const clientImg4 = getCloudinaryUrl('client-4.jpg');
 const clientImg5 = getCloudinaryUrl('client-5.jpg');
 
-export const HomeownerReviews: FC = () => {
+export const TestimonialCarousel: FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const reviews = [
@@ -202,5 +202,5 @@ export const HomeownerReviews: FC = () => {
   );
 };
 
-export default HomeownerReviews;
+export default TestimonialCarousel;
 
