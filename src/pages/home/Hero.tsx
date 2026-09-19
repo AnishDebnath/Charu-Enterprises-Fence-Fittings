@@ -54,7 +54,7 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
             {/* Left Column Content */}
             <div className="lg:col-span-8 space-y-5 sm:space-y-6 md:space-y-7">
               {/* Logo */}
-              <img src={logo} alt="Charu Enterprises" className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto mb-2 sm:mb-3 md:mb-4" />
+              <img src={logo} alt="Charu Enterprises" className="h-12 sm:h-14 md:h-16 lg:h-18 w-auto mb-2 sm:mb-3 md:mb-4" />
 
               {/* Eyebrow */}
               <div className="flex items-start gap-2">
