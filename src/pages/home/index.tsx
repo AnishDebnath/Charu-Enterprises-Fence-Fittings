@@ -1,20 +1,20 @@
 import { Navbar } from '../../components/common/Navbar';
 import { Footer } from '../../components/common/Footer';
-import { ProjectFinder } from '../../components/common/ProjectFinder';
-import { TestimonialCarousel } from '../../components/common/TestimonialCarousel';
-import { FAQSection } from '../../components/common/FAQSection';
-import { CallToAction } from '../../components/common/CallToAction';
-import { ShippingProcess } from '../../components/common/ShippingProcess';
-import { HomeHero } from './HomeHero';
-import { PartnerLogos } from './PartnerLogos';
-import { CompanyOverview } from './CompanyOverview';
-import { ProductMarquee } from './ProductMarquee';
-import { CaseStudyMarquee } from './CaseStudyMarquee';
+import { ProjectFinder } from '../../components/common/Credentials';
+import { TestimonialCarousel } from '../../components/common/Reviews';
+import { FAQSection } from '../../components/common/FAQ';
+import { CallToAction } from '../../components/common/FactoryPricing';
+import { ShippingProcess } from '../../components/common/Shipping';
+import { HomeHero } from './Hero';
+import { PartnerLogos } from './Partners';
+import { CompanyOverview } from './AboutUs';
+import { ProductMarquee } from './ProductRange';
+import { CaseStudyMarquee } from './Applications';
 
 import type { CatalogProduct } from '../../data/companyData';
 
 interface HomePageProps {
-  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
 }
 
 export default function HomePage({ onNavigate }: HomePageProps) {

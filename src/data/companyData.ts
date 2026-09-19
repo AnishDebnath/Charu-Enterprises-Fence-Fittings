@@ -148,13 +148,13 @@ export const COMPANY_INFO: CompanyInfo = {
       name: 'Mr. OP Maskara',
       role: 'Founder President',
       experience: '62+ Years Experience',
-      bio: '62 years in engineering exports. Former Deputy Regional Chairman of EEPC India. Renowned yoga teacher and community leader.',
+      bio: 'Our Founder President, a renowned Yoga Guru, has taught 300,000+ people across India for free over two decades. With 62 years of experience in exports and engineering goods, he served as Deputy Regional Chairman (ER) of the Government Engineering Export Promotion Council. A Lions Clubs International member for 57 years, he also served as Deputy District Governor and has regularly appeared on television shows.',
     },
     {
       name: 'Mr. Som Maskara',
       role: 'Vice President',
       experience: 'Global Trade Leader',
-      bio: 'Leads global trade and operations. Dedicated humanitarian, athlete, and yoga practitioner focusing on quality and fast service.',
+      bio: 'Our Vice President is a dedicated humanitarian and former President of Leo Club International, actively supporting initiatives that provide meals to millions of underprivileged children. A passionate sportsman, he competes in badminton and rifle shooting, demonstrating discipline and precision. As an advanced yoga practitioner, he embraces holistic well-being through physical fitness and mindfulness. His diverse experiences reflect a strong commitment to leadership, community service, and personal excellence.',
     },
   ],
 };

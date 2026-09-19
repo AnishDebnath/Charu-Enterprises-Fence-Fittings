@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import HomePage from './pages/home';
 import AboutPage from './pages/about';
 import ProductsPage from './pages/products';
-import CaseStudyPage from './pages/case-study';
+import CaseStudyPage from './pages/application';
 import ProductDetailPage from './pages/product-detail';
 import ContactPage from './pages/contact';
 import { ComingSoonPage } from './pages/coming-soon';
 import { CATALOG_PRODUCTS, type CatalogProduct } from './data/companyData';
 
-type Page = 'coming-soon' | 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact';
+type Page = 'coming-soon' | 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact';
 
 export function slugify(name: string): string {
   return name
@@ -38,7 +38,7 @@ function pageFromPath(pathname: string): Page {
   if (path === '/about') return 'about';
   if (path === '/products') return 'products';
   if (/^\/products\/[^/]+\/?$/.test(path)) return 'product-detail';
-  if (path === '/applications' || path === '/case-study') return 'case-study';
+  if (path === '/applications' || path === '/case-study') return 'application';
   if (path === '/contact') return 'contact';
   return 'home';
 }
@@ -48,7 +48,7 @@ function pathFromPage(page: Page, product?: CatalogProduct | null): string {
     case 'about': return '/about';
     case 'products': return '/products';
     case 'product-detail': return product ? `/products/${productSlug(product)}` : '/products';
-    case 'case-study': return '/applications';
+    case 'application': return '/applications';
     case 'contact': return '/contact';
     default: return '/';
   }
@@ -98,7 +98,7 @@ export default function App() {
     return <ProductsPage onNavigate={navigateTo} />;
   }
 
-  if (currentPage === 'case-study') {
+  if (currentPage === 'application') {
     return <CaseStudyPage onNavigate={navigateTo} />;
   }
 

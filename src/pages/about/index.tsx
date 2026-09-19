@@ -1,16 +1,16 @@
 import type { FC } from 'react';
 import { Navbar } from '../../components/common/Navbar';
 import { Footer } from '../../components/common/Footer';
-import { ProjectFinder } from '../../components/common/ProjectFinder';
-import { ShippingProcess } from '../../components/common/ShippingProcess';
-import { AboutHero } from './AboutHero';
-import { FactoryGallery } from './FactoryGallery';
-import { ValuesAndCommitment } from './ValuesAndCommitment';
-import { LeadershipTeam } from './LeadershipTeam';
-import { AwardsAndCerts } from './AwardsAndCerts';
+import { ProjectFinder } from '../../components/common/Credentials';
+import { ShippingProcess } from '../../components/common/Shipping';
+import { AboutHero } from './Hero';
+import { FactoryGallery } from './WhoWeAre';
+import { ValuesAndCommitment } from './Foundation';
+import { LeadershipTeam } from './Founders';
+import { AwardsAndCerts } from './Certifications';
 
 interface AboutPageProps {
-  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact') => void;
 }
 
 export const AboutPage: FC<AboutPageProps> = ({ onNavigate }) => {

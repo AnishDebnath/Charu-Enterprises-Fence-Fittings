@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 import { Navbar } from '../../components/common/Navbar';
 import { Footer } from '../../components/common/Footer';
-import { CallToAction } from '../../components/common/CallToAction';
-import { ProductInfo, defaultProductDetail, type ProductDetailData } from './ProductInfo';
-import { ProductSpecs } from './ProductSpecs';
-import { ProductCarousel } from './ProductCarousel';
+import { CallToAction } from '../../components/common/FactoryPricing';
+import { ProductInfo, defaultProductDetail, type ProductDetailData } from './Info';
+import { ProductSpecs } from './Quality';
+import { ProductCarousel } from './MoreProducts';
 import { getProductImage } from '../../data/productImages';
 import type { CatalogProduct } from '../../data/companyData';
 
@@ -36,7 +36,7 @@ function catalogToDetail(product: CatalogProduct): ProductDetailData {
 interface ProductDetailPageProps {
   product?: CatalogProduct | null;
   data?: ProductDetailData;
-  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
 }
 
 export const ProductDetailPage: FC<ProductDetailPageProps> = ({ product, data, onNavigate }) => {

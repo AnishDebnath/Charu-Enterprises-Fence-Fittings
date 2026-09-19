@@ -1,13 +1,13 @@
 import type { FC } from 'react';
 import { Navbar } from '../../components/common/Navbar';
 import { Footer } from '../../components/common/Footer';
-import { ProjectFinder } from '../../components/common/ProjectFinder';
-import { FAQSection } from '../../components/common/FAQSection';
-import { ContactBanner } from './ContactBanner';
-import { ContactForm } from './ContactForm';
+import { ProjectFinder } from '../../components/common/Credentials';
+import { FAQSection } from '../../components/common/FAQ';
+import { ContactBanner } from './Banner';
+import { ContactForm } from '../../components/common/Form';
 
 interface ContactPageProps {
-  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact') => void;
 }
 
 export const ContactPage: FC<ContactPageProps> = ({ onNavigate }) => {

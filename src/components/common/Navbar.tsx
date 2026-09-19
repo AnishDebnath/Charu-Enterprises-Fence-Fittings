@@ -4,8 +4,8 @@ import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import logo from '../../assets/logo.png';
 
 interface NavbarProps {
-  currentPage?: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact';
-  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
+  currentPage?: 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact';
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact') => void;
 }
 
 export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) => {
@@ -13,7 +13,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
-  const handleNavClick = (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', hash?: string) => {
+  const handleNavClick = (page: 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact', hash?: string) => {
     if (onNavigate) {
       onNavigate(page);
     }
@@ -170,9 +170,9 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleNavClick('case-study')}
+                      onClick={() => handleNavClick('application')}
                       className={`transition-colors cursor-pointer ${
-                        currentPage === 'case-study'
+                        currentPage === 'application'
                           ? 'text-[#60A5FA] font-extrabold'
                           : 'text-neutral-100 hover:text-white'
                       }`}
@@ -293,7 +293,7 @@ export const Navbar: FC<NavbarProps> = ({ currentPage = 'home', onNavigate }) =>
                   { id: 'home', label: 'Home' },
                   { id: 'products', label: 'Products' },
                   { id: 'about', label: 'About' },
-                  { id: 'case-study', label: 'Applications' },
+                  { id: 'application', label: 'Applications' },
                   { id: 'contact', label: 'Contact' },
                 ].map((item, idx) => {
                   const isActive = currentPage === item.id || (item.id === 'products' && currentPage === 'product-detail');

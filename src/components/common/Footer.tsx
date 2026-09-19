@@ -3,11 +3,11 @@ import { Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
 import { Watermark } from '../Watermark';
 
 interface FooterProps {
-  onNavigate?: (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact') => void;
+  onNavigate?: (page: 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact') => void;
 }
 
 export const Footer: FC<FooterProps> = ({ onNavigate }) => {
-  const handleNav = (page: 'home' | 'about' | 'products' | 'case-study' | 'product-detail' | 'contact', hash?: string) => {
+  const handleNav = (page: 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact', hash?: string) => {
     if (onNavigate) {
       onNavigate(page);
     }
@@ -115,7 +115,7 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
                 <li>
                   <button
                     type="button"
-                    onClick={() => handleNav('case-study')}
+                    onClick={() => handleNav('application')}
                     className="hover:text-[#3B82F6] hover:translate-x-1.5 inline-block transition-all duration-200 cursor-pointer"
                   >
                     Applications
