@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
 import { Watermark } from '../Watermark';
+import logo from '../../assets/logo.png';
 
 interface FooterProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact') => void;
@@ -25,20 +26,23 @@ export const Footer: FC<FooterProps> = ({ onNavigate }) => {
     <footer className="w-full font-['Outfit',sans-serif] bg-white px-3 sm:px-4 md:px-6 lg:px-8 pt-4 pb-4 sm:pb-6 md:pb-8">
       {/* Outer Card Container matching Hero Section Width & Border-Radius */}
       <div className="w-full bg-[#0c1219] border border-white/10 rounded-2xl sm:rounded-[24px] md:rounded-[26px] lg:rounded-[28px] p-5 sm:p-8 md:p-10 lg:p-12 text-white relative overflow-hidden shadow-2xl shadow-black/60">
-        
+
         {/* Top-left Ambient Accent */}
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#3B82F6]/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* Centered Content Container matching other sections' width */}
         <div className="max-w-7xl mx-auto w-full relative z-10 px-2 sm:px-4">
-          
+
+          {/* Logo */}
+          <img src={logo} alt="Charu Enterprises" className="h-10 sm:h-12 md:h-14 w-auto mb-2 sm:mb-3 md:mb-4" style={{ filter: 'brightness(0) invert(1)' }} />
+
           {/* 4-Column Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-8 lg:gap-10">
-            
+
             {/* Column 1: Tagline & Socials */}
             <div className="lg:col-span-4 space-y-4 sm:space-y-6">
               <div className="space-y-2">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#3B82F6]/20 border border-[#3B82F6]/40 text-[#60A5FA] text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+                <span className="inline-block px-3 py-1 rounded-md bg-[#3B82F6]/20 border border-[#3B82F6]/40 text-[#60A5FA] text-[11px] sm:text-xs font-bold uppercase tracking-wider">
                   Mfg. Since 1969 • 55+ Years
                 </span>
                 <p className="text-neutral-200 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm font-normal">

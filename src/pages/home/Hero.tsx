@@ -5,6 +5,7 @@ import { CATALOG_PRODUCTS, type CatalogProduct } from '../../data/companyData';
 import { getProductImage } from '../../data/productImages';
 import { productSlug } from '../../App';
 import { bannerVideo, faceImage1, faceImage2, faceImage3, faceImage4 } from '../../data/images';
+import logo from '../../assets/white-logo.png';
 
 interface HeroProps {
   onNavigate?: (page: 'home' | 'about' | 'products' | 'application' | 'product-detail' | 'contact', product?: CatalogProduct) => void;
@@ -52,6 +53,9 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-10 xl:gap-12 items-end">
             {/* Left Column Content */}
             <div className="lg:col-span-8 space-y-5 sm:space-y-6 md:space-y-7">
+              {/* Logo */}
+              <img src={logo} alt="Charu Enterprises" className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto mb-2 sm:mb-3 md:mb-4" />
+
               {/* Eyebrow */}
               <div className="flex items-start gap-2">
                 <span className="w-1.5 h-4 bg-[#f0c75e] rounded-full inline-block shrink-0 self-start mt-0.5 sm:mt-1" />
@@ -72,7 +76,6 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
 
               {/* Action Buttons Row */}
               <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 pt-1">
-                {/* Explore Catalog Pill */}
                 <button
                   type="button"
                   onClick={() => onNavigate?.('products')}
@@ -83,8 +86,6 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                   </div>
                 </button>
-
-                {/* Call Now Pill */}
                 <a
                   href="tel:+919830083777"
                   className="group w-fit bg-transparent hover:bg-[#DBEAFE] text-white hover:text-black font-semibold pl-3 sm:pl-3.5 pr-5 sm:pr-6 py-2.5 sm:py-3 md:py-3.5 rounded-full inline-flex items-center gap-2.5 border border-white hover:border-[#DBEAFE] backdrop-blur-sm text-xs sm:text-sm md:text-base transition-all transform hover:scale-105 shadow-lg whitespace-nowrap"
@@ -104,7 +105,6 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
                   <img src={faceImage3} alt="Client" className="inline-flex h-8 w-8 sm:h-9.5 sm:w-9.5 md:h-10 md:w-10 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-20 object-cover" />
                   <img src={faceImage4} alt="Client" className="inline-flex h-8 w-8 sm:h-9.5 sm:w-9.5 md:h-10 md:w-10 rounded-full ring-2 ring-white shadow-md shrink-0 relative z-10 object-cover" />
                 </div>
-
                 <div className="shrink-0">
                   <div className="flex items-center gap-1 text-[#f0c75e]">
                     {[...Array(5)].map((_, i) => (
@@ -117,7 +117,7 @@ export const HomeHero: FC<HeroProps> = ({ onNavigate }) => {
                 </div>
               </div>
 
-              {/* Bottom Feature Key Points with responsive grid */}
+              {/* Bottom Feature Key Points */}
               <div className="pt-4 sm:pt-6 md:pt-7 lg:pt-8">
                 <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 items-center gap-3 sm:gap-5 md:gap-6 xl:gap-0 text-xs sm:text-sm md:text-sm lg:text-[15px] text-[#FFFFFF] font-semibold">
                   <div className="flex items-center gap-2 w-full">
