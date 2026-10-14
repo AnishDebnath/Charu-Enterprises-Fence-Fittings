@@ -3,7 +3,7 @@ import { Navbar } from '../../components/common/Navbar';
 import { Footer } from '../../components/common/Footer';
 import { CallToAction } from '../../components/common/FactoryPricing';
 import { ProductInfo, defaultProductDetail, type ProductDetailData } from './Info';
-import { ProductSpecs } from './Quality';
+// import { ProductSpecs } from './Quality';
 import { ProductCarousel } from './MoreProducts';
 import { getProductImage } from '../../data/productImages';
 import type { CatalogProduct } from '../../data/companyData';
@@ -47,7 +47,7 @@ export const ProductDetailPage: FC<ProductDetailPageProps> = ({ product, data, o
       <Navbar currentPage="product-detail" onNavigate={onNavigate} />
       <main className="flex-1 flex flex-col pt-24 sm:pt-28 lg:pt-32 bg-white">
         <ProductInfo data={detailData} product={product} onNavigate={onNavigate} />
-        <ProductSpecs />
+        {/* <ProductSpecs /> */}
         <CallToAction onNavigate={onNavigate} />
         <ProductCarousel onNavigate={onNavigate} currentProductId={product?.itemNumber || 1} />
       </main>
